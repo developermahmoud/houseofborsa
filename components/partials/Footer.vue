@@ -2,6 +2,7 @@
   <div>
     <v-bottom-navigation
       fixed
+      grow
       :value="value"
       height="55"
       color="primary"
