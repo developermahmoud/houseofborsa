@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h3 class="mb-5">Latest Community Feed</h3>
+    <h3 class="ml-2 mb-3">Latest Community Feed</h3>
     <v-slide-group :show-arrows="false">
       <v-slide-item v-for="n in 15" :key="n">
-        <v-card class="secondary mr-5" width="250" falt outlined>
+        <v-card tile class="secondary mr-5" width="250" falt outlined>
           <v-img height="200" src="/news/1.jpg" />
           <v-card-title class="subtitle-2"
             >Tata Motors to Hike Prices of CVs by 2.5% From Jan</v-card-title

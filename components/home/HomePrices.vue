@@ -1,6 +1,6 @@
 <template>
   <div>
-      <v-card class="secondary my-8" flat>
+    <v-card class="secondary" flat tile>
       <v-card-text class="text-center">
         <v-btn-toggle
           mandatory
@@ -71,14 +71,12 @@
 
 <script>
 export default {
-data() {
+  data() {
     return {
       toggle_exclusive: null,
     };
   },
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

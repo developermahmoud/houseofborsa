@@ -1,10 +1,12 @@
 <template>
   <div>
     <v-app-bar fixed class="background" flat>
-      <v-btn small outlined color="primary">Login/Register</v-btn>
+      <v-icon color="primary" class="mr-5">mdi-face-agent</v-icon>
       <v-spacer></v-spacer>
-      <v-icon>mdi-bell-circle-outline</v-icon>
-      <v-icon class="ml-2">mdi-face-agent</v-icon>
+      <strong class="primary--text">HÓB</strong>
+      <v-spacer></v-spacer>
+      <v-icon color="primary" class="mr-2">mdi-bell-circle-outline</v-icon>
+      <v-icon color="primary">mdi-magnify</v-icon>
     </v-app-bar>
   </div>
 </template>
