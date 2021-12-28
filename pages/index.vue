@@ -4,6 +4,7 @@
     <home-services />
     <home-trade class="mb-5" />
     <home-charts class="mb-4"/>
+    <img src="/platform.png" style="width:100%" class="my-5" />
     <home-news />
     <home-prices class="mb-16"/>
   </div>

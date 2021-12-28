@@ -4,29 +4,29 @@
       fixed
       grow
       :value="value"
-      height="70"
+      height="55"
       color="primary"
       class="secondaryBackground"
     >
-      <v-btn height="70" class="secondaryBackground">
-        <span>Home</span>
-        <v-icon>fa-home</v-icon>
+      <v-btn height="55" class="secondaryBackground">
+        <span style="font-size:10px;">Home</span>
+        <v-icon size="20">fa-home</v-icon>
       </v-btn>
-      <v-btn height="70" class="secondaryBackground">
-        <span>Wallet</span>
-        <v-icon>fa-wallet</v-icon>
+      <v-btn height="55" class="secondaryBackground">
+        <span style="font-size:10px;">Wallet</span>
+        <v-icon size="20">fa-wallet</v-icon>
       </v-btn>
-      <v-btn height="70" class="secondaryBackground">
-        <span>Markets</span>
-        <v-icon>fa-search-dollar</v-icon>
+      <v-btn height="55" class="secondaryBackground">
+        <span style="font-size:10px;">Markets</span>
+        <v-icon size="20">fa-search-dollar</v-icon>
       </v-btn>
-      <v-btn height="70" class="secondaryBackground">
-        <span>Community</span>
-        <v-icon>fa-users</v-icon>
+      <v-btn height="55" class="secondaryBackground">
+        <span style="font-size:10px;">Community</span>
+        <v-icon size="20">fa-users</v-icon>
       </v-btn>
-      <v-btn height="70" class="secondaryBackground">
-        <span>Support</span>
-        <v-icon>fa-question-circle</v-icon>
+      <v-btn height="55" class="secondaryBackground">
+        <span style="font-size:10px;">Portfolio</span>
+        <v-icon size="20">fa-user</v-icon>
       </v-btn>
     </v-bottom-navigation>
   </div>

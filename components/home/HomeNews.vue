@@ -1,6 +1,6 @@
 <template>
   <div>
-       <h3 class="mb-5">Latest Market News</h3>
+    <h3 class="mb-5">Latest Community Feed</h3>
     <v-slide-group :show-arrows="false">
       <v-slide-item v-for="n in 15" :key="n">
         <v-card class="secondary mr-5" width="250" falt outlined>
@@ -29,11 +29,7 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>

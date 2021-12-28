@@ -4,9 +4,9 @@
       <v-card-text class="text-center">
         <v-row align="center" justify="center">
           <v-col cols="3" v-for="(service, i) in services" :key="i">
-            <v-icon size="20" v-text="service.icon"></v-icon>
+            <v-icon size="20" color="primary" v-text="service.icon"></v-icon>
             <br />
-            {{ service.text }}
+            <span style="font-size:11px;">{{ service.text }}</span>
           </v-col>
         </v-row>
       </v-card-text>

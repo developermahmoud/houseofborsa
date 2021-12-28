@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex">
       <v-card width="50%" class="secondary mr-2" flat>
-        <v-card-title class="body-1 font-weight-bold">P2P Trading</v-card-title>
+        <v-card-title class="body-2 font-weight-bold">P2P Trading</v-card-title>
         <v-card-text style="height: 60px">
           Bank Transfer, PayPal, Revolut and more
         </v-card-text>
@@ -13,7 +13,7 @@
         </v-card-actions>
       </v-card>
       <v-card width="50%" class="secondary" flat>
-        <v-card-title class="body-1 font-weight-bold"
+        <v-card-title class="body-2 font-weight-bold"
           >Credit/Debit card</v-card-title
         >
         <v-card-text style="height: 60px"> Visa, Mastercard </v-card-text>
