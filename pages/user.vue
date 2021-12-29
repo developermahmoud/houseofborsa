@@ -31,7 +31,7 @@
             <div class="bg-card pa-2 rounded-lg">LIVE ACCOUNT</div>
           </v-col>
         </v-row>
-        <div class="bg-card pa-2 rounded-lg">
+        <div class="bg-card pa-2 rounded-lg mb-13">
             Account hostry
         </div>
       </v-card-text>
