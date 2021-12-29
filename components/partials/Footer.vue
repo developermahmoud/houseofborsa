@@ -16,9 +16,9 @@
         <span style="font-size:10px;">Portfolio</span>
         <v-icon size="15">fa-wallet</v-icon>
       </v-btn>
-      <v-btn class="secondaryBackground" link to="/markets">
-        <span style="font-size:10px;">Markets</span>
-        <v-icon size="15">fa-search-dollar</v-icon>
+      <v-btn class="secondaryBackground" link to="/invest">
+        <span style="font-size:10px;">Invest</span>
+        <v-icon size="15">fa-chart-line</v-icon>
       </v-btn>
       <v-btn class="secondaryBackground" link to="/community">
         <span style="font-size:10px;">Community</span>
