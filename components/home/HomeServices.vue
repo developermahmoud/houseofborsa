@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-2">
+  <div class="mb-2 secondary rounded pt-3">
     <v-row no-gutters>
       <v-col  class="text-center mb-3" cols="3" v-for="(service, i) in services" :key="i">
         <v-icon size="20" color="primary" v-text="service.icon"></v-icon>

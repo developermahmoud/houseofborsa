@@ -2,7 +2,10 @@
  <v-app dark class="background"> 
      <top-navbar />   
       <v-main class="background">
-          <Nuxt />
+        <v-container>
+           <Nuxt />
+        </v-container>
+         
       </v-main>
       <Footer />
   </v-app>

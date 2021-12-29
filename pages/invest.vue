@@ -8,7 +8,6 @@
               :input-value="active"
               active-class="primary"
               @click="toggle"
-              rounded
               small
               outlined
               >Stock
@@ -19,7 +18,6 @@
               :input-value="active"
               active-class="primary"
               @click="toggle"
-              rounded
               small
               outlined
               >ETFs
@@ -30,7 +28,6 @@
               :input-value="active"
               active-class="primary"
               @click="toggle"
-              rounded
               small
               outlined
               >Indices
@@ -41,7 +38,6 @@
               :input-value="active"
               active-class="primary"
               @click="toggle"
-              rounded
               small
               outlined
               >Oil
@@ -52,7 +48,6 @@
               :input-value="active"
               active-class="primary"
               @click="toggle"
-              rounded
               small
               outlined
               >Forex
@@ -63,7 +58,6 @@
               :input-value="active"
               active-class="primary"
               @click="toggle"
-              rounded
               small
               outlined
               >Futures
