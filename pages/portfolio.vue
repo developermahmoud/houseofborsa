@@ -1,9 +1,32 @@
 <template>
   <div>
+    <v-card class="primary mb-10">
+      <v-card-title>
+        <v-btn icon>
+          <v-icon color="white">mdi-format-align-center</v-icon>
+        </v-btn>
+        <v-spacer></v-spacer>
+        WALLET
+        <v-spacer></v-spacer>
+        <v-btn icon>
+          <v-icon color="white">mdi-qrcode</v-icon>
+        </v-btn>
+      </v-card-title>
+      <v-card-text class="text-center white--text">
+        <div class="mb-2"><span>$</span> <strong class="display-1">9238.31</strong></div>
+        <span>+ $ 170.25 (22.1%) </span>
+      </v-card-text>
+      <v-btn fab class="white" bottom right absolute>
+        <v-icon color="primary">mdi-selection-ellipse</v-icon>
+      </v-btn>
+    </v-card>
     <v-list-item>
       <v-list-item-content>
         <v-list-item-title>My Wallet</v-list-item-title>
-        <v-list-item-subtitle>$42.8 (+2.1%) <v-icon color="green">mdi-arrow-up-thin</v-icon></v-list-item-subtitle>
+        <v-list-item-subtitle
+          >$42.8 (+2.1%)
+          <v-icon color="green">mdi-arrow-up-thin</v-icon></v-list-item-subtitle
+        >
       </v-list-item-content>
       <v-list-item-action>
         <v-btn plain color="cyan">Add COIN</v-btn>
@@ -12,9 +35,7 @@
     <v-list class="pa-0 transparent">
       <v-list-item class="secondary rounded mb-3" v-for="i in 5" :key="i">
         <v-list-item-avatar>
-          <v-img
-            src="https://cdn.litemarkets.com/cache/uploads/blog_post/blog_posts/BTC_Price_Analysis/Bitcoin-Price-Prediction.jpg?q=75&w=1000&s=6c20e77623d5230b4c2fdd5d461b9feb"
-          ></v-img>
+          <v-img src="/opengraph.png"></v-img>
         </v-list-item-avatar>
         <v-list-item-content>
           <v-list-item-title>BTC</v-list-item-title>
@@ -39,6 +60,7 @@
 
 <script>
 export default {
+  layout: "portfolio",
   data() {
     return {
       value: [423, 446, 675, 510, 590, 610, 760],
