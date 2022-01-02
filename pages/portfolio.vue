@@ -52,7 +52,7 @@
         <v-list-item-action class="red--text">
           -395.00
           <br />
-          +1
+          +1.92%
         </v-list-item-action>
       </v-list-item>
     </v-list>
