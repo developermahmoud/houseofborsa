@@ -6,7 +6,7 @@
           <v-img src="/avatar.jpg"></v-img>
         </v-avatar>
       </v-responsive>
-      <v-card-title class="justify-center">Mahmoud, 24<v-icon small color="blue">mdi-decagram</v-icon></v-card-title>
+      <v-card-title class="justify-center">Mahmoud, 24<v-icon small color="blue">mdi-check-decagram</v-icon></v-card-title>
       <v-card-subtitle class="mb-0 pb-0">35 Following, 10000 Followers</v-card-subtitle>
       <v-card-subtitle class="pt-0">Fullstak Web developer</v-card-subtitle>
       <v-img src="/hobcard.jpg" class="rounded-xl mx-4" />
