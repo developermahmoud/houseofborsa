@@ -1,7 +1,8 @@
 <template>
   <div>
     <v-app-bar fixed class="background" flat app>
-      <v-icon class="mr-5">mdi-face-agent</v-icon>
+      <nuxt-link class="text-decoration-none" link to="/support"><v-icon class="mr-5">mdi-face-agent</v-icon></nuxt-link>
+      
       <v-spacer></v-spacer>
       <strong class="primary--text">HÓB</strong>
       <v-spacer></v-spacer>
