@@ -143,6 +143,7 @@
         <v-col cols="4">
           <v-card tile class="secondary py-2 text-center" outlined>
             <v-icon color="primary">mdi-arrow-down-thin</v-icon>
+            <br />
             Withdraw
           </v-card>
         </v-col>
