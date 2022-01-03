@@ -93,7 +93,7 @@
               <th>Market</th>
               <th>Sell</th>
               <th>Buy</th>
-              <th>Change %</th>
+              <th>Change%</th>
             </tr>
           </thead>
           <tbody>
@@ -101,85 +101,85 @@
               <td>EURUSD</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5</span></td>
+              <td><span class="red--text">0.5%</span></td>
             </tr>
             <tr>
               <td>AUDCAD</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="success--text">0.5</span></td>
+              <td><span class="success--text">0.5%</span></td>
             </tr>
             <tr>
               <td>EURGBP</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5</span></td>
+              <td><span class="red--text">0.5%</span></td>
             </tr>
             <tr>
               <td>CADCHF</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="success--text">0.5</span></td>
+              <td><span class="success--text">0.5%</span></td>
             </tr>
             <tr>
               <td>USDJPY</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5</span></td>
+              <td><span class="red--text">0.5%</span></td>
             </tr>
             <tr>
               <td>USDNOK</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="success--text">10.5</span></td>
+              <td><span class="success--text">10.5%</span></td>
             </tr>
             <tr>
               <td>USDJPY</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5</span></td>
+              <td><span class="red--text">0.5%</span></td>
             </tr>
             <tr>
               <td>USDNOK</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="success--text">10.5</span></td>
+              <td><span class="success--text">10.5%</span></td>
             </tr>
             <tr>
               <td>USDJPY</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5</span></td>
+              <td><span class="red--text">0.5%</span></td>
             </tr>
             <tr>
               <td>USDNOK</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="success--text">10.5</span></td>
+              <td><span class="success--text">10.5%</span></td>
             </tr>
             <tr>
               <td>USDJPY</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5</span></td>
+              <td><span class="red--text">0.5%</span></td>
             </tr>
             <tr>
               <td>USDNOK</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="success--text">10.5</span></td>
+              <td><span class="success--text">10.5%</span></td>
             </tr>
             <tr>
               <td>USDJPY</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5</span></td>
+              <td><span class="red--text">0.5%</span></td>
             </tr>
             <tr>
               <td>USDNOK</td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="success--text">10.5</span></td>
+              <td><span class="success--text">10.5%</span></td>
             </tr>
           </tbody>
         </template>

@@ -9,25 +9,23 @@
       class="secondaryBackground"
     >
       <v-btn class="secondaryBackground" link to="/">
-        <span style="font-size: 12px; line-height: 2">Home</span>
+        <span style="font-size:12px;line-height: 2.0;">Home</span>
         <v-icon size="15">fa-home</v-icon>
       </v-btn>
       <v-btn class="secondaryBackground" link to="/portfolio">
-        <span style="font-size: 12px; line-height: 2">Portfolio</span>
-        <v-icon size="15">fa-wallet</v-icon>
+        <span style="font-size:12px;line-height: 2.0;">Portfolio</span>
+        <v-icon size="15">mdi-chart-pie</v-icon>
       </v-btn>
-      <v-btn class="secondaryBackground" active-class="green" link to="/invest">
-        <span style="font-size: 12px; line-height: 2" class="green--text"
-          >Invest</span
-        >
-        <v-icon size="15" color="green" style="">fa-chart-pie</v-icon>
+      <v-btn class="secondaryBackground" link to="/invest">
+        <span style="font-size:12px;line-height: 2.0;">Invest</span>
+        <v-icon size="15">fa-chart-line</v-icon>
       </v-btn>
       <v-btn class="secondaryBackground" link to="/community">
-        <span style="font-size: 12px; line-height: 2">Community</span>
+        <span style="font-size:12px;line-height: 2.0;">Community</span>
         <v-icon size="15">fa-users</v-icon>
       </v-btn>
       <v-btn class="secondaryBackground" link to="/user">
-        <span style="font-size: 12px; line-height: 2">User</span>
+        <span style="font-size:12px;line-height: 2.0;">User</span>
         <v-icon size="15">fa-user</v-icon>
       </v-btn>
     </v-bottom-navigation>

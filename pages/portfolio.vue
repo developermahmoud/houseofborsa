@@ -24,19 +24,15 @@
     </v-card>
     <v-list class="pa-0 transparent mb-2">
       <v-list-item style="min-height: 30px">
-        <v-list-item-title>Open Positions Value</v-list-item-title>
+        <v-list-item-title>Total Invested</v-list-item-title>
         <v-list-item-action-text>$00.00</v-list-item-action-text>
       </v-list-item>
       <v-list-item style="min-height: 30px">
-        <v-list-item-title>Available cash</v-list-item-title>
+        <v-list-item-title>AAvailable cash</v-list-item-title>
         <v-list-item-action-text>$00.00</v-list-item-action-text>
       </v-list-item>
       <v-list-item style="min-height: 30px">
-        <v-list-item-title>Net deposits Amount</v-list-item-title>
-        <v-list-item-action-text>$00.00</v-list-item-action-text>
-      </v-list-item>
-      <v-list-item style="min-height: 30px">
-        <v-list-item-title>Withdrawals</v-list-item-title>
+        <v-list-item-title>Margin Levl %</v-list-item-title>
         <v-list-item-action-text>$00.00</v-list-item-action-text>
       </v-list-item>
     </v-list>
