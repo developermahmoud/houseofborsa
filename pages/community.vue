@@ -25,9 +25,14 @@
       </v-card-text>
       <v-img src="/wall.png" />
       <v-card-title>
-        <v-icon>mdi-heart-outline</v-icon>&nbsp;1k&nbsp;&nbsp;
-        <v-icon>mdi-comment-outline</v-icon>&nbsp;10&nbsp;&nbsp;
-        <v-icon>mdi-share</v-icon>
+        <v-icon size="19">mdi-heart-outline</v-icon>&nbsp;<span
+          style="font-size: 15px"
+          >1k</span
+        >&nbsp;&nbsp; <v-icon size="19">mdi-comment-outline</v-icon>&nbsp;<span
+          style="font-size: 15px"
+          >10</span
+        >&nbsp;&nbsp;
+        <v-icon size="19">mdi-share</v-icon>
         <v-spacer></v-spacer>
         <v-avatar size="30" class="ml-n3">
           <v-img src="/profile/1.jpg"></v-img>
@@ -70,9 +75,14 @@
         elit. <nuxt-link to="/">#second_hash_tag</nuxt-link>
       </v-card-text>
       <v-card-title>
-        <v-icon>mdi-heart-outline</v-icon>&nbsp;1k&nbsp;&nbsp;
-        <v-icon>mdi-comment-outline</v-icon>&nbsp;10&nbsp;&nbsp;
-        <v-icon>mdi-share</v-icon>
+        <v-icon size="19">mdi-heart-outline</v-icon>&nbsp;<span
+          style="font-size: 15px"
+          >1k</span
+        >&nbsp;&nbsp; <v-icon size="19">mdi-comment-outline</v-icon>&nbsp;<span
+          style="font-size: 15px"
+          >10</span
+        >&nbsp;&nbsp;
+        <v-icon size="19">mdi-share</v-icon>
         <v-spacer></v-spacer>
         <v-avatar size="30" class="ml-n3">
           <v-img src="/profile/1.jpg"></v-img>
@@ -124,9 +134,9 @@
         allowfullscreen
       ></iframe>
       <v-card-title>
-        <v-icon>mdi-heart-outline</v-icon>&nbsp;1k&nbsp;&nbsp;
-        <v-icon>mdi-comment-outline</v-icon>&nbsp;10&nbsp;&nbsp;
-        <v-icon>mdi-share</v-icon>
+        <v-icon size="19">mdi-heart-outline</v-icon>&nbsp;<span style="font-size:15px;">1k</span>&nbsp;&nbsp;
+        <v-icon size="19">mdi-comment-outline</v-icon>&nbsp;<span style="font-size:15px;">10</span>&nbsp;&nbsp;
+        <v-icon size="19">mdi-share</v-icon>
         <v-spacer></v-spacer>
         <v-avatar size="30" class="ml-n3">
           <v-img src="/profile/1.jpg"></v-img>
@@ -151,25 +161,25 @@
         <v-row class="pt-5">
           <v-col>
             <div class="text-center">
-              <v-avatar style="border:solid 1px white;" class="mb-2">
+              <v-avatar style="border: solid 1px white" class="mb-2">
                 <v-icon>mdi-link-variant</v-icon>
               </v-avatar>
               <br />
               Link
             </div>
           </v-col>
-           <v-col>
+          <v-col>
             <div class="text-center">
-              <v-avatar style="border:solid 1px white;" class="mb-2">
+              <v-avatar style="border: solid 1px white" class="mb-2">
                 <v-icon>mdi-share-variant</v-icon>
               </v-avatar>
               <br />
               Share
             </div>
           </v-col>
-           <v-col>
+          <v-col>
             <div class="text-center">
-              <v-avatar style="border:solid 1px red;" class="mb-2">
+              <v-avatar style="border: solid 1px red" class="mb-2">
                 <v-icon color="red">mdi-comment-alert-outline</v-icon>
               </v-avatar>
               <br />

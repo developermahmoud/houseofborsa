@@ -3,6 +3,16 @@
     <v-card class="secondary" flat tile>
       <v-card-text class="text-center">
         <v-slide-group mandatory v-model="toggle_exclusive">
+           <v-slide-item class="mr-2" v-slot="{ active, toggle }">
+            <v-btn
+              :input-value="active"
+              active-class="primary"
+              @click="toggle"
+              small
+              outlined
+              >Favorites
+            </v-btn>
+          </v-slide-item>
           <v-slide-item class="mr-2" v-slot="{ active, toggle }">
             <v-btn
               :input-value="active"
@@ -21,6 +31,16 @@
               small
               outlined
               >ETFs
+            </v-btn>
+          </v-slide-item>
+           <v-slide-item class="mr-2" v-slot="{ active, toggle }">
+            <v-btn
+              :input-value="active"
+              active-class="primary"
+              @click="toggle"
+              small
+              outlined
+              >Cryptocurrency
             </v-btn>
           </v-slide-item>
           <v-slide-item class="mr-2" v-slot="{ active, toggle }">
@@ -63,6 +83,7 @@
               >Futures
             </v-btn>
           </v-slide-item>
+         
         </v-slide-group>
       </v-card-text>
       <v-simple-table class="secondary">
@@ -70,9 +91,9 @@
           <thead>
             <tr>
               <th>Market</th>
-              <th>Bid</th>
-              <th>Ask</th>
-              <th>Spread</th>
+              <th>Sell</th>
+              <th>Buy</th>
+              <th>Change %</th>
             </tr>
           </thead>
           <tbody>
