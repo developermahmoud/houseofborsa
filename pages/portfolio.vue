@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-card class="primary mb-8">
+    <v-card class="primary mb-8" tile>
       <v-card-title>
-        <v-btn icon>
+        <v-btn icon @click="orderDialog = true">
           <v-icon color="white">mdi-format-align-center</v-icon>
         </v-btn>
         <v-spacer></v-spacer>
@@ -135,8 +135,8 @@
         </v-col>
         <v-col cols="4">
           <v-card tile class="secondary py-2 text-center" outlined>
-              <v-icon color="primary">mdi-swap-horizontal</v-icon>
-              <br />
+            <v-icon color="primary">mdi-swap-horizontal</v-icon>
+            <br />
             Transfer
           </v-card>
         </v-col>
@@ -149,6 +149,47 @@
         </v-col>
       </v-row>
     </v-dialog>
+    <v-dialog v-model="orderDialog" max-width="700" scrollable>
+      <v-card class="secondary">
+        <v-card-title class="justify-center">Orders</v-card-title>
+        <v-slide-group mandatory v-model="toggle_exclusive">
+          <v-slide-item v-slot="{ active, toggle }">
+            <v-btn
+              :input-value="active"
+              active-class="primary"
+              @click="toggle"
+              tile
+              small
+              text
+              >Active
+            </v-btn>
+          </v-slide-item>
+          <v-slide-item v-slot="{ active, toggle }">
+            <v-btn
+              :input-value="active"
+              active-class="primary"
+              @click="toggle"
+              tile
+              small
+              text
+              >Pending
+            </v-btn>
+          </v-slide-item>
+          <v-slide-item v-slot="{ active, toggle }">
+            <v-btn
+              :input-value="active"
+              active-class="primary"
+              @click="toggle"
+              tile
+              small
+              text
+              >Closed
+            </v-btn>
+          </v-slide-item>
+        </v-slide-group>
+        <v-card-text></v-card-text>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -157,8 +198,10 @@ export default {
   layout: "portfolio",
   data() {
     return {
+      toggle_exclusive: null,
       showCalendar: false,
       dialog: false,
+      orderDialog: false,
       selectedItem: 0,
     };
   },
