@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       fill: true,
-      selectedGradient: gradients[3],
+      selectedGradient: gradients[2],
       gradients,
       padding: 8,
       radius: 10,

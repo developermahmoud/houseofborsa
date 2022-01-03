@@ -3,7 +3,7 @@
     <v-row no-gutters>
       <v-col cols="6">
         <v-card class="secondary mr-2" flat>
-          <v-card-title class="title pb-0">Open</v-card-title>
+          <v-card-title class="title py-0">Open</v-card-title>
           <v-card-text>Live Account</v-card-text>
           <v-card-actions>
             <img style="width: 80px" class="rounded-lg" src="/p2p.png" />
@@ -14,8 +14,7 @@
       </v-col>
       <v-col cols="6">
         <v-card class="secondary" flat>
-          <v-card-title class="title pb-0">Open</v-card-title
-          >
+          <v-card-title class="title py-0">Open</v-card-title>
           <v-card-text> Demo Account</v-card-text>
           <v-card-actions>
             <img style="width: 70px" class="rounded-lg" src="/credit.jpg" />
@@ -25,10 +24,13 @@
         </v-card>
       </v-col>
       <v-col cols="12" class="mt-2">
-        <v-list-item class="secondary py-2 rounded">
+        <v-list-item class="secondary rounded">
           <v-list-item-content>
             <v-list-item-title>HÓB Card</v-list-item-title>
-            <v-list-item-subtitle>The HÓB prepaid card is linked to your trading account</v-list-item-subtitle>
+            <v-list-item-subtitle
+              >The HÓB prepaid card is linked to your trading
+              account</v-list-item-subtitle
+            >
           </v-list-item-content>
           <v-list-item-action>
             <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
