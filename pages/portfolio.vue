@@ -14,7 +14,8 @@
       </v-card-title>
       <v-card-text class="text-center white--text">
         <div class="mb-2">
-          <span>$</span> <strong class="display-1">9238.31</strong>
+          <v-icon @click="dialog = true" large class="mb-5">mdi-cards</v-icon
+          ><strong class="display-1">9238.31</strong>
         </div>
         <span>+ $ 170.25 (22.1%) </span>
       </v-card-text>
@@ -32,7 +33,12 @@
         <v-list-item-action-text>$00.00</v-list-item-action-text>
       </v-list-item>
       <v-list-item style="min-height: 30px">
-        <v-list-item-title>Margin Levl %</v-list-item-title>
+        <v-list-item-title
+          >Margin Level%
+          <v-icon @click="infoDialog = true" small
+            >mdi-information-outline</v-icon
+          ></v-list-item-title
+        >
         <v-list-item-action-text>$00.00</v-list-item-action-text>
       </v-list-item>
     </v-list>
@@ -83,14 +89,15 @@
                 v-model="selectedItem"
                 :items="[0, 1]"
                 dense
-                placeholder="Account *"
+                class="pt-2"
+                label="Account *"
                 outlined
               >
                 <template v-slot:selection="{ index }">
                   <v-avatar size="30" v-if="index === 0">
                     <v-img src="/opengraph.png"></v-img>
                   </v-avatar>
-                  Margin AWS
+                  HOB 125.22
                 </template>
               </v-select>
             </v-col>
@@ -186,6 +193,45 @@
         <v-card-text></v-card-text>
       </v-card>
     </v-dialog>
+    <v-dialog fullscreen hidden v-model="infoDialog">
+      <v-card class="secondary">
+        <v-toolbar flat class="secondary">
+          <v-icon @click="infoDialog = false">mdi-close</v-icon>
+          <v-toolbar-title class="ml-2">Margin info</v-toolbar-title>
+        </v-toolbar>
+        <v-card-text class="pa-0">
+          <div class="px-2 mb-2" style="font-size:11px;line-height:17px;">
+            we show you the margin level in real-time to protect your funds the
+            calculation consists of your equity (available money) and the margin
+            used in all of your currently opened trades the calculation of the
+            levels is as follows: (Equity/margin used)*100
+          </div>
+          <div class="mb-2 mx-1">
+            <div class="px-2 red--text" style="background:#5a303c;">-100%</div>
+            <div class="px-2 secondaryBackground" style="font-size:10px;line-height:17px;">
+              in the margin level drops below 100% your positions will start
+              closing beginning from the most unprofitable one, until there is
+              enough margin in your account to sustain any remaining open
+              positions . we notify you via App notification and e-mail
+            </div>
+          </div>
+          <div class="mb-2 mx-1">
+            <div class="px-2 amber--text" style="background:#463931;">-120%</div>
+            <div class="px-2 secondaryBackground" style="font-size:10px;line-height:17px;">
+              if your margin level is below 120% we recommended to fund your
+              account or close some losing position we notify you via app
+              notification and e-mail
+            </div>
+          </div>
+          <div class="mb-2 mx-1">
+            <div class="px-2 green--text" style="background:#354b3f;">>120%</div>
+            <div class="px-2 secondaryBackground" style="font-size:10px;line-height:17px;">
+              if margin level is above 120% everything is fine
+            </div>
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -194,6 +240,7 @@ export default {
   layout: "portfolio",
   data() {
     return {
+      infoDialog: false,
       toggle_exclusive: null,
       showCalendar: false,
       dialog: false,

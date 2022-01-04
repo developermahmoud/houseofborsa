@@ -31,6 +31,7 @@
         <span style="font-size: 9px">Android</span>
       </v-col>
     </v-row>
+    <v-img width="100%" src="/platform.png" />
     <home-news class="mb-3" />
     <home-prices class="mb-16" />
   </div>
