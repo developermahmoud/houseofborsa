@@ -4,29 +4,29 @@
       fixed
       grow
       :value="value"
-      height="53"
+      height="58"
       color="primary"
       class="secondaryBackground"
     >
       <v-btn class="secondaryBackground" link to="/">
         <span style="font-size:12px;line-height: 2.0;">Home</span>
-        <v-icon size="15">fa-home</v-icon>
+        <img style="width:25px;" src="/Terminal.ico" />
       </v-btn>
       <v-btn class="secondaryBackground" link to="/portfolio">
         <span style="font-size:12px;line-height: 2.0;">Portfolio</span>
-        <v-icon size="15">mdi-chart-pie</v-icon>
+        <v-icon size="25">mdi-chart-pie</v-icon>
       </v-btn>
       <v-btn class="secondaryBackground" link to="/invest">
         <span style="font-size:12px;line-height: 2.0;">Invest</span>
-        <v-icon size="15">fa-chart-line</v-icon>
+        <v-icon size="25">fa-chart-line</v-icon>
       </v-btn>
       <v-btn class="secondaryBackground" link to="/community">
         <span style="font-size:12px;line-height: 2.0;">Community</span>
-        <v-icon size="15">fa-users</v-icon>
+        <v-icon size="25">fa-users</v-icon>
       </v-btn>
       <v-btn class="secondaryBackground" link to="/user">
         <span style="font-size:12px;line-height: 2.0;">User</span>
-        <v-icon size="15">fa-user</v-icon>
+        <v-icon size="25">fa-user</v-icon>
       </v-btn>
     </v-bottom-navigation>
   </div>

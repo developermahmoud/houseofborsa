@@ -6,7 +6,7 @@
           <v-icon color="white">mdi-format-align-center</v-icon>
         </v-btn>
         <v-spacer></v-spacer>
-        Portfolio Value
+        Portfolio Gain/Loss
         <v-spacer></v-spacer>
         <v-btn icon @click="showCalendar = true">
           <v-icon color="white">mdi-calendar</v-icon>
@@ -14,10 +14,12 @@
       </v-card-title>
       <v-card-text class="text-center white--text">
         <div class="mb-2">
-          <v-icon @click="dialog = true" large class="mb-5">mdi-cards</v-icon
-          ><strong class="display-1">9238.31</strong>
+          <v-icon large class="mb-5">mdi-cards</v-icon
+          ><strong class="display-2">9238.31</strong>
+          <v-icon @click="dialog = true" class="mb-3">mdi-arrow-expand</v-icon>
         </div>
-        <span>+ $ 170.25 (22.1%) </span>
+        <span class="text-body-1 font-weight-bold">22.1%</span
+        ><v-icon class="pa-0 mb-1">mdi-arrow-up-thin</v-icon>
       </v-card-text>
       <v-btn
         fab
@@ -32,14 +34,52 @@
     </v-card>
     <template v-if="showChart">
       <v-chart class="chart" :option="option" />
+      <v-list dense class="pa-0 transparent mb-2">
+        <v-list-item style="min-height: 30px">
+          <v-list-item-icon>
+            <v-icon color="#ed6d77">mdi-square-rounded</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="body-1">Stock</v-list-item-title>
+          <v-list-item-action>10%</v-list-item-action>
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-icon>
+            <v-icon color="#4992ff">mdi-square-rounded</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="body-1">ETFs</v-list-item-title>
+          <v-list-item-action>35%</v-list-item-action>
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-icon>
+            <v-icon color="#7cffb2">mdi-square-rounded</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="body-1">Cryptocurrency</v-list-item-title>
+          <v-list-item-action>35%</v-list-item-action>
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-icon>
+            <v-icon color="#f9dd60">mdi-square-rounded</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="body-1">Indices</v-list-item-title>
+          <v-list-item-action>20%</v-list-item-action>
+        </v-list-item>
+      </v-list>
     </template>
     <v-list v-else class="pa-0 transparent mb-2">
       <v-list-item style="min-height: 30px">
-        <v-list-item-title>Total Invested</v-list-item-title>
+        <v-list-item-title>Portfolio Balance</v-list-item-title>
         <v-list-item-action-text>$00.00</v-list-item-action-text>
       </v-list-item>
       <v-list-item style="min-height: 30px">
-        <v-list-item-title>AAvailable cash</v-list-item-title>
+        <v-list-item-title>Portfolio Value</v-list-item-title>
+        <v-list-item-action-text>$00.00</v-list-item-action-text>
+      </v-list-item>
+      <v-list-item style="min-height: 30px">
+        <v-list-item-title>invested Value</v-list-item-title>
+        <v-list-item-action-text>$00.00</v-list-item-action-text>
+      </v-list-item>
+      <v-list-item style="min-height: 30px">
+        <v-list-item-title>Available cash now</v-list-item-title>
         <v-list-item-action-text>$00.00</v-list-item-action-text>
       </v-list-item>
       <v-list-item style="min-height: 30px">
@@ -304,37 +344,38 @@ export default {
       option: {
         backgroundColor: "#181e2e",
         title: {
-          text: "HOB chart",
-          left: "center",
-        },
-        tooltip: {
-          trigger: "item",
-          formatter: "{a} <br/>{b} : {c} ({d}%)",
+          text: "Exposure",
+          left: "left",
         },
         legend: {
-          orient: "vertical",
-          left: "left",
-          data: ["BTC", "CB", "ADA", "OTH"],
+          show: false,
         },
         series: [
           {
             name: "HOB charts",
             type: "pie",
-            radius: "55%",
-            center: ["50%", "60%"],
-            data: [
-              { value: 335, name: "BTC" },
-              { value: 310, name: "CB" },
-              { value: 234, name: "ADA" },
-              { value: 135, name: "OTH" },
-            ],
+            radius: ["40%", "70%"],
+            avoidLabelOverlap: false,
+            label: {
+              show: false,
+              position: "center",
+            },
             emphasis: {
-              itemStyle: {
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowColor: "rgba(0, 0, 0, 0.5)",
+              label: {
+                show: true,
+                fontSize: "40",
+                fontWeight: "bold",
               },
             },
+            labelLine: {
+              show: false,
+            },
+            data: [
+              { value: 335, name: "Stock" },
+              { value: 310, name: "ETFs" },
+              { value: 234, name: "Cryptocurrency" },
+              { value: 135, name: "Indices" },
+            ],
           },
         ],
       },
@@ -345,6 +386,6 @@ export default {
 
 <style scoped>
 .chart {
-  height: 300px;
+  height: 260px;
 }
 </style>
