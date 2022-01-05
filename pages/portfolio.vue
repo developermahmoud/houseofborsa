@@ -19,11 +19,21 @@
         </div>
         <span>+ $ 170.25 (22.1%) </span>
       </v-card-text>
-      <v-btn fab class="white" bottom right absolute @click="dialog = true">
+      <v-btn
+        fab
+        class="white"
+        bottom
+        right
+        absolute
+        @click="showChart = !showChart"
+      >
         <v-icon color="primary">mdi-selection-ellipse</v-icon>
       </v-btn>
     </v-card>
-    <v-list class="pa-0 transparent mb-2">
+    <template v-if="showChart">
+      <v-chart class="chart" :option="option" />
+    </template>
+    <v-list v-else class="pa-0 transparent mb-2">
       <v-list-item style="min-height: 30px">
         <v-list-item-title>Total Invested</v-list-item-title>
         <v-list-item-action-text>$00.00</v-list-item-action-text>
@@ -200,15 +210,18 @@
           <v-toolbar-title class="ml-2">Margin info</v-toolbar-title>
         </v-toolbar>
         <v-card-text class="pa-0">
-          <div class="px-2 mb-2" style="font-size:11px;line-height:17px;">
+          <div class="px-2 mb-2" style="font-size: 11px; line-height: 17px">
             we show you the margin level in real-time to protect your funds the
             calculation consists of your equity (available money) and the margin
             used in all of your currently opened trades the calculation of the
             levels is as follows: (Equity/margin used)*100
           </div>
           <div class="mb-2 mx-1">
-            <div class="px-2 red--text" style="background:#5a303c;">-100%</div>
-            <div class="px-2 secondaryBackground" style="font-size:10px;line-height:17px;">
+            <div class="px-2 red--text" style="background: #5a303c">-100%</div>
+            <div
+              class="px-2 secondaryBackground"
+              style="font-size: 10px; line-height: 17px"
+            >
               in the margin level drops below 100% your positions will start
               closing beginning from the most unprofitable one, until there is
               enough margin in your account to sustain any remaining open
@@ -216,16 +229,26 @@
             </div>
           </div>
           <div class="mb-2 mx-1">
-            <div class="px-2 amber--text" style="background:#463931;">-120%</div>
-            <div class="px-2 secondaryBackground" style="font-size:10px;line-height:17px;">
+            <div class="px-2 amber--text" style="background: #463931">
+              -120%
+            </div>
+            <div
+              class="px-2 secondaryBackground"
+              style="font-size: 10px; line-height: 17px"
+            >
               if your margin level is below 120% we recommended to fund your
               account or close some losing position we notify you via app
               notification and e-mail
             </div>
           </div>
           <div class="mb-2 mx-1">
-            <div class="px-2 green--text" style="background:#354b3f;">>120%</div>
-            <div class="px-2 secondaryBackground" style="font-size:10px;line-height:17px;">
+            <div class="px-2 green--text" style="background: #354b3f">
+              >120%
+            </div>
+            <div
+              class="px-2 secondaryBackground"
+              style="font-size: 10px; line-height: 17px"
+            >
               if margin level is above 120% everything is fine
             </div>
           </div>
@@ -236,19 +259,92 @@
 </template>
 
 <script>
+import { use } from "echarts/core";
+import { CanvasRenderer } from "echarts/renderers";
+import { PieChart } from "echarts/charts";
+import {
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+} from "echarts/components";
+import VChart, { THEME_KEY } from "vue-echarts";
+
+use([
+  CanvasRenderer,
+  PieChart,
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+]);
+
+use([
+  CanvasRenderer,
+  PieChart,
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+]);
 export default {
   layout: "portfolio",
+  components: {
+    VChart,
+  },
+  provide: {
+    [THEME_KEY]: "dark",
+  },
   data() {
     return {
+      showChart: false,
       infoDialog: false,
       toggle_exclusive: null,
       showCalendar: false,
       dialog: false,
       orderDialog: false,
       selectedItem: 0,
+      option: {
+        backgroundColor: "#181e2e",
+        title: {
+          text: "HOB chart",
+          left: "center",
+        },
+        tooltip: {
+          trigger: "item",
+          formatter: "{a} <br/>{b} : {c} ({d}%)",
+        },
+        legend: {
+          orient: "vertical",
+          left: "left",
+          data: ["BTC", "CB", "ADA", "OTH"],
+        },
+        series: [
+          {
+            name: "HOB charts",
+            type: "pie",
+            radius: "55%",
+            center: ["50%", "60%"],
+            data: [
+              { value: 335, name: "BTC" },
+              { value: 310, name: "CB" },
+              { value: 234, name: "ADA" },
+              { value: 135, name: "OTH" },
+            ],
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: "rgba(0, 0, 0, 0.5)",
+              },
+            },
+          },
+        ],
+      },
     };
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+.chart {
+  height: 300px;
+}
+</style>
