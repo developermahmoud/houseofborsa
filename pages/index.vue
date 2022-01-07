@@ -1,6 +1,12 @@
 <template>
   <div>
     <home-slider />
+    <div class="d-flex my-2">
+      <v-icon>mdi-bullhorn</v-icon>
+      <marquee class="mx-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus tenetur possimus minus hic, sequi ad eveniet officia architecto, tempora, quasi illum consectetur. Omnis magni quaerat quo, tenetur ab sit optio!</marquee>
+      <v-icon>mdi-format-list-bulleted</v-icon>
+    </div>
+
     <home-services />
     <home-trade class="mb-3" />
     <home-charts class="mb-3" />

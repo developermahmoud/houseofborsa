@@ -2,6 +2,7 @@
   <div>
     <v-card class="secondary" flat tile>
       <v-card-text class="text-center">
+        <v-text-field outlined prepend-inner-icon="mdi-magnify" placeholder="Search Coin Pairs" dense filled></v-text-field>
         <v-slide-group mandatory v-model="toggle_exclusive">
           <v-slide-item class="mr-2" v-slot="{ active, toggle }">
             <v-btn

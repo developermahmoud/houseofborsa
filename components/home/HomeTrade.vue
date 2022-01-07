@@ -25,6 +25,9 @@
       </v-col>
       <v-col cols="12" class="mt-2">
         <v-list-item class="secondary rounded">
+          <v-list-item-avatar tile width="50">
+            <img src="/hobcard.jpg"  />
+          </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title>HÓB Card</v-list-item-title>
             <v-list-item-subtitle
