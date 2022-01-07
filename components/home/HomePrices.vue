@@ -1,6 +1,6 @@
 <template>
   <div>
-   <v-card class="secondary" flat tile>
+    <v-card class="secondary" flat tile>
       <v-card-text class="text-center">
         <v-slide-group mandatory v-model="toggle_exclusive">
           <v-slide-item class="mr-2" v-slot="{ active, toggle }">
@@ -101,210 +101,238 @@
                 <div class="d-flex">
                   <img
                     src="/currency/1.png"
-                    style="width: 18px; height:18px;"
+                    style="width: 18px; height: 18px"
                     class="mr-2"
                   /><span>BTC</span>
                 </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Bitcoin vs US Dollar</div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Bitcoin vs US Dollar
+                </div>
               </td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5%</span></td>
+              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
             </tr>
             <tr>
-               <td>
+              <td>
                 <div class="d-flex">
                   <img
                     src="/currency/2.png"
-                    style="width: 18px; height:18px;"
+                    style="width: 18px; height: 18px"
                     class="mr-2 rounded-circle"
                   /><span>XAU/USD</span>
                 </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Gold vs US Dollar</div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Gold vs US Dollar
+                </div>
               </td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="success--text">0.5%</span></td>
+              <td><v-chip label small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
-               <td>
+              <td>
                 <div class="d-flex">
                   <img
                     src="/currency/3.png"
-                    style="width: 18px; height:18px;"
+                    style="width: 18px; height: 18px"
                     class="mr-2 rounded-circle"
                   /><span>SOL</span>
                 </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Solana Token vs US Dollar</div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Solana Token vs US Dollar
+                </div>
               </td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5%</span></td>
+              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
             </tr>
             <tr>
-               <td>
+              <td>
                 <div class="d-flex">
                   <img
                     src="/currency/4.jpg"
-                    style="width: 18px; height:18px;"
+                    style="width: 18px; height: 18px"
                     class="mr-2 rounded-circle"
                   /><span>AAPL</span>
                 </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Apple inc.</div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Apple inc.
+                </div>
               </td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="success--text">0.5%</span></td>
+              <td><v-chip label small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
-               <td>
+              <td>
                 <div class="d-flex">
                   <img
                     src="/currency/4.png"
-                    style="width: 18px; height:18px;"
+                    style="width: 18px; height: 18px"
                     class="mr-2 rounded-circle"
                   /><span>EUR/USD</span>
                 </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Euro vs US Dollar</div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Euro vs US Dollar
+                </div>
               </td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5%</span></td>
+              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
             </tr>
             <tr>
               <td>
                 <div class="d-flex">
                   <img
                     src="/currency/1.png"
-                    style="width: 18px; height:18px;"
+                    style="width: 18px; height: 18px"
                     class="mr-2"
                   /><span>ETH</span>
                 </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Ethereum vs US Dollar</div>
-              </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><span class="success--text">10.5%</span></td>
-            </tr>
-            <tr>
-               <td>
-                <div class="d-flex">
-                  <img
-                    src="/currency/1.png"
-                    style="width: 18px; height:18px;"
-                    class="mr-2"
-                  /><span>BTC</span>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Ethereum vs US Dollar
                 </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Bitcoin vs US Dollar</div>
               </td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5%</span></td>
-            </tr>
-            <tr>
-               <td>
-                <div class="d-flex">
-                  <img
-                    src="/currency/1.png"
-                    style="width: 18px; height:18px;"
-                    class="mr-2"
-                  /><span>BTC</span>
-                </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Bitcoin vs US Dollar</div>
-              </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><span class="success--text">10.5%</span></td>
-            </tr>
-            <tr>
-               <td>
-                <div class="d-flex">
-                  <img
-                    src="/currency/1.png"
-                    style="width: 18px; height:18px;"
-                    class="mr-2"
-                  /><span>BTC</span>
-                </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Bitcoin vs US Dollar</div>
-              </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><span class="red--text">0.5%</span></td>
+              <td><v-chip label small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
               <td>
                 <div class="d-flex">
                   <img
                     src="/currency/1.png"
-                    style="width: 18px; height:18px;"
+                    style="width: 18px; height: 18px"
                     class="mr-2"
                   /><span>BTC</span>
                 </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Bitcoin vs US Dollar</div>
-              </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><span class="success--text">10.5%</span></td>
-            </tr>
-            <tr>
-               <td>
-                <div class="d-flex">
-                  <img
-                    src="/currency/1.png"
-                    style="width: 18px; height:18px;"
-                    class="mr-2"
-                  /><span>BTC</span>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Bitcoin vs US Dollar
                 </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Bitcoin vs US Dollar</div>
               </td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="red--text">0.5%</span></td>
-            </tr>
-            <tr>
-               <td>
-                <div class="d-flex">
-                  <img
-                    src="/currency/1.png"
-                    style="width: 18px; height:18px;"
-                    class="mr-2"
-                  /><span>BTC</span>
-                </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Bitcoin vs US Dollar</div>
-              </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><span class="success--text">10.5%</span></td>
-            </tr>
-            <tr>
-               <td>
-                <div class="d-flex">
-                  <img
-                    src="/currency/1.png"
-                    style="width: 18px; height:18px;"
-                    class="mr-2"
-                  /><span>BTC</span>
-                </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Bitcoin vs US Dollar</div>
-              </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><span class="red--text">0.5%</span></td>
+              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
             </tr>
             <tr>
               <td>
                 <div class="d-flex">
                   <img
                     src="/currency/1.png"
-                    style="width: 18px; height:18px;"
+                    style="width: 18px; height: 18px"
                     class="mr-2"
                   /><span>BTC</span>
                 </div>
-                <div class="grey--text" style="font-size:12px;width:140px;">Bitcoin vs US Dollar</div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Bitcoin vs US Dollar
+                </div>
               </td>
               <td>1.12485</td>
               <td>1.12493</td>
-              <td><span class="success--text">10.5%</span></td>
+              <td><v-chip label small class="green">10.5%</v-chip></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex">
+                  <img
+                    src="/currency/1.png"
+                    style="width: 18px; height: 18px"
+                    class="mr-2"
+                  /><span>BTC</span>
+                </div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Bitcoin vs US Dollar
+                </div>
+              </td>
+              <td>1.12485</td>
+              <td>1.12493</td>
+              <td><v-chip label small class="red">0.5%</v-chip></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex">
+                  <img
+                    src="/currency/1.png"
+                    style="width: 18px; height: 18px"
+                    class="mr-2"
+                  /><span>BTC</span>
+                </div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Bitcoin vs US Dollar
+                </div>
+              </td>
+              <td>1.12485</td>
+              <td>1.12493</td>
+              <td><v-chip label small class="green">10.5%</v-chip></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex">
+                  <img
+                    src="/currency/1.png"
+                    style="width: 18px; height: 18px"
+                    class="mr-2"
+                  /><span>BTC</span>
+                </div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Bitcoin vs US Dollar
+                </div>
+              </td>
+              <td>1.12485</td>
+              <td>1.12493</td>
+              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex">
+                  <img
+                    src="/currency/1.png"
+                    style="width: 18px; height: 18px"
+                    class="mr-2"
+                  /><span>BTC</span>
+                </div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Bitcoin vs US Dollar
+                </div>
+              </td>
+              <td>1.12485</td>
+              <td>1.12493</td>
+              <td><v-chip label small class="green">10.5%</v-chip></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex">
+                  <img
+                    src="/currency/1.png"
+                    style="width: 18px; height: 18px"
+                    class="mr-2"
+                  /><span>BTC</span>
+                </div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Bitcoin vs US Dollar
+                </div>
+              </td>
+              <td>1.12485</td>
+              <td>1.12493</td>
+              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex">
+                  <img
+                    src="/currency/1.png"
+                    style="width: 18px; height: 18px"
+                    class="mr-2"
+                  /><span>BTC</span>
+                </div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  Bitcoin vs US Dollar
+                </div>
+              </td>
+              <td>1.12485</td>
+              <td>1.12493</td>
+              <td><v-chip label small class="green">10.5%</v-chip></td>
             </tr>
           </tbody>
         </template>

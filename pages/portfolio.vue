@@ -13,9 +13,10 @@
         </v-btn>
       </v-card-title>
       <v-card-text class="text-center white--text">
+        <div>Market value <v-icon @click="isBlur=!isBlur">{{ isBlur ? 'mdi-eye-off-outline' : 'mdi-eye' }}</v-icon></div>
         <div class="mb-2">
           <v-icon large class="mb-5">mdi-cards</v-icon
-          ><strong class="display-2">9238.31</strong>
+          >$<strong :class="isBlur ? 'blur-text display-2': 'display-2'">9238.31</strong>
           <v-icon @click="dialog = true" class="mb-3">mdi-arrow-expand</v-icon>
         </div>
         <span class="text-body-1 font-weight-bold">22.1%</span
@@ -334,6 +335,7 @@ export default {
   },
   data() {
     return {
+      isBlur: true,
       showChart: false,
       infoDialog: false,
       toggle_exclusive: null,
