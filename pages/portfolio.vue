@@ -1,25 +1,37 @@
 <template>
   <div>
     <v-card class="primary mb-8" tile>
-      <v-card-title>
+      <v-card-title class="pb-0">
         <v-btn icon @click="orderDialog = true">
           <v-icon color="white">mdi-format-align-center</v-icon>
         </v-btn>
-        <v-spacer></v-spacer>
-        Portfolio Gain/Loss
         <v-spacer></v-spacer>
         <v-btn icon @click="showCalendar = true">
           <v-icon color="white">mdi-calendar</v-icon>
         </v-btn>
       </v-card-title>
       <v-card-text class="text-center white--text">
-        <div>Market value <v-icon @click="isBlur=!isBlur">{{ isBlur ? 'mdi-eye-off-outline' : 'mdi-eye' }}</v-icon></div>
-        <div class="mb-2">
-          <v-icon large class="mb-5">mdi-cards</v-icon
-          >$<strong :class="isBlur ? 'blur-text display-2': 'display-2'">9238.31</strong>
-          <v-icon @click="dialog = true" class="mb-3">mdi-arrow-expand</v-icon>
+        <div>
+          Portfolio P/L($)
+          <v-icon small @click="isBlur = !isBlur">{{
+            isBlur ? "mdi-eye-off-outline" : "mdi-eye"
+          }}</v-icon>
         </div>
-        <span class="text-body-1 font-weight-bold">22.1%</span
+        <div>
+          <v-icon large class="mb-5">mdi-cards</v-icon>$<strong
+            :class="isBlur ? 'blur-text display-2' : 'display-2'"
+            >9238.31</strong
+          >
+          <v-icon
+            @click="
+              showMargin = !showMargin;
+              showChart = false;
+            "
+            class="mb-3"
+            >mdi-arrow-expand</v-icon
+          >
+        </div>
+        <span class="font-weight-bold body-1"> P/L(22.1%)</span
         ><v-icon class="pa-0 mb-1">mdi-arrow-up-thin</v-icon>
       </v-card-text>
       <v-btn
@@ -28,7 +40,10 @@
         bottom
         right
         absolute
-        @click="showChart = !showChart"
+        @click="
+          showChart = !showChart;
+          showMargin = false;
+        "
       >
         <v-icon color="primary">mdi-selection-ellipse</v-icon>
       </v-btn>
@@ -36,28 +51,28 @@
     <template v-if="showChart">
       <v-chart class="chart" :option="option" />
       <v-list dense class="pa-0 transparent mb-2">
-        <v-list-item style="min-height: 30px">
+        <v-list-item style="min-height: 20px; height: 35px">
           <v-list-item-icon>
             <v-icon color="#ed6d77">mdi-square-rounded</v-icon>
           </v-list-item-icon>
           <v-list-item-title class="body-1">Stock</v-list-item-title>
           <v-list-item-action>10%</v-list-item-action>
         </v-list-item>
-        <v-list-item style="min-height: 30px">
+        <v-list-item style="min-height: 20px; height: 35px">
           <v-list-item-icon>
             <v-icon color="#4992ff">mdi-square-rounded</v-icon>
           </v-list-item-icon>
           <v-list-item-title class="body-1">ETFs</v-list-item-title>
           <v-list-item-action>35%</v-list-item-action>
         </v-list-item>
-        <v-list-item style="min-height: 30px">
+        <v-list-item style="min-height: 20px; height: 35px">
           <v-list-item-icon>
             <v-icon color="#7cffb2">mdi-square-rounded</v-icon>
           </v-list-item-icon>
           <v-list-item-title class="body-1">Cryptocurrency</v-list-item-title>
           <v-list-item-action>35%</v-list-item-action>
         </v-list-item>
-        <v-list-item style="min-height: 30px">
+        <v-list-item style="min-height: 20px; height: 35px">
           <v-list-item-icon>
             <v-icon color="#f9dd60">mdi-square-rounded</v-icon>
           </v-list-item-icon>
@@ -66,22 +81,30 @@
         </v-list-item>
       </v-list>
     </template>
-    <v-list v-else class="pa-0 transparent mb-2">
+    <v-list v-if="showMargin" class="pa-0 transparent mb-2">
       <v-list-item style="min-height: 30px">
         <v-list-item-title>Portfolio Balance</v-list-item-title>
-        <v-list-item-action-text>$00.00</v-list-item-action-text>
+        <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+          >$00.00</v-list-item-action-text
+        >
       </v-list-item>
       <v-list-item style="min-height: 30px">
         <v-list-item-title>Portfolio Value</v-list-item-title>
-        <v-list-item-action-text>$00.00</v-list-item-action-text>
+        <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+          >$00.00</v-list-item-action-text
+        >
       </v-list-item>
       <v-list-item style="min-height: 30px">
         <v-list-item-title>invested Value</v-list-item-title>
-        <v-list-item-action-text>$00.00</v-list-item-action-text>
+        <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+          >$00.00</v-list-item-action-text
+        >
       </v-list-item>
       <v-list-item style="min-height: 30px">
         <v-list-item-title>Available cash now</v-list-item-title>
-        <v-list-item-action-text>$00.00</v-list-item-action-text>
+        <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+          >$00.00</v-list-item-action-text
+        >
       </v-list-item>
       <v-list-item style="min-height: 30px">
         <v-list-item-title
@@ -90,31 +113,48 @@
             >mdi-information-outline</v-icon
           ></v-list-item-title
         >
-        <v-list-item-action-text>$00.00</v-list-item-action-text>
+        <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+          >$00.00</v-list-item-action-text
+        >
       </v-list-item>
     </v-list>
-    <v-list three-line class="mx-2 mb-13 transparent">
-      <v-list-item class="secondary rounded mb-3" v-for="i in 5" :key="i">
-        <v-list-item-avatar>
-          <v-img src="/opengraph.png"></v-img>
-        </v-list-item-avatar>
-        <v-list-item-content>
-          <v-list-item-title
-            >AWS,
-            <span class="primary--text">buy 500.00</span></v-list-item-title
-          >
-          <v-list-item-subtitle
-            >30.94
-            <v-icon>mdi-arrow-right-thin</v-icon> 30.15</v-list-item-subtitle
-          >
-        </v-list-item-content>
-        <v-list-item-action class="red--text">
-          -395.00
-          <br />
-          +1.92%
-        </v-list-item-action>
-      </v-list-item>
-    </v-list>
+    <v-tabs background-color="transparent" fixed-tabs v-model="tab">
+      <v-tab href="#open">Open</v-tab>
+      <v-tab href="#pending">Pending</v-tab>
+      <v-tab href="#closed">Closed</v-tab>
+    </v-tabs>
+    <v-tabs-items v-model="tab" class="transparent">
+      <v-tab-item value="open">
+        <v-list three-line class="mx-2 mb-13 transparent">
+          <v-list-item class="secondary rounded mb-3" v-for="i in 5" :key="i">
+            <v-list-item-avatar>
+              <v-img src="/opengraph.png"></v-img>
+            </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title
+                >AWS,
+                <span class="primary--text">buy 500.00</span></v-list-item-title
+              >
+              <v-list-item-subtitle
+                >30.94
+                <v-icon>mdi-arrow-right-thin</v-icon>
+                30.15</v-list-item-subtitle
+              >
+            </v-list-item-content>
+            <v-list-item-action-text class="green--text">
+              <div class="font-weight-bold">$ 395.00</div>
+              <div style="font-size: 0.875rem; text-align: left">+1.92%</div>
+            </v-list-item-action-text>
+          </v-list-item>
+        </v-list>
+      </v-tab-item>
+      <v-tab-item value="closed">
+        closed
+      </v-tab-item>
+      <v-tab-item value="pending">
+        Pending
+      </v-tab-item>
+    </v-tabs-items>
     <v-dialog v-model="showCalendar" max-width="700" scrollable>
       <v-card class="secondary">
         <v-tabs
@@ -335,6 +375,8 @@ export default {
   },
   data() {
     return {
+      tab: 'open',
+      showMargin: true,
       isBlur: true,
       showChart: false,
       infoDialog: false,
@@ -347,7 +389,7 @@ export default {
         backgroundColor: "#181e2e",
         title: {
           text: "Exposure",
-          left: "left",
+          left: "center",
         },
         legend: {
           show: false,
@@ -388,6 +430,8 @@ export default {
 
 <style scoped>
 .chart {
+  padding: 0;
+  widows: 300px;
   height: 260px;
 }
 </style>

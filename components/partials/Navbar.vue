@@ -2,7 +2,7 @@
   <div>
     <v-app-bar fixed class="background" flat app>
       <nuxt-link class="text-decoration-none" link to="/support"
-        ><v-icon >fa-question-circle</v-icon></nuxt-link
+        ><v-icon size="20">fa-question-circle</v-icon></nuxt-link
       >
       <v-spacer></v-spacer>
       <div class="text-center">
@@ -11,8 +11,7 @@
        
       </div>
       <v-spacer></v-spacer>
-      <v-icon class="mr-2">mdi-bell-circle-outline</v-icon>
-      <v-icon>mdi-account</v-icon>
+      <v-icon size="18">fa-envelope-open-text</v-icon>
     </v-app-bar>
   </div>
 </template>

@@ -17,11 +17,11 @@ export default {
       services: [
         {
           icon: "fa-user-circle",
-          text: "Accounts",
+          text: "Trading\nAccounts",
         },
         {
           icon: "fa-search-dollar",
-          text: "Markets",
+          text: "Trading\nProducts",
         },
         {
           icon: "mdi-devices",
