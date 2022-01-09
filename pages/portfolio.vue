@@ -120,8 +120,8 @@
     </v-list>
     <v-tabs background-color="transparent" fixed-tabs v-model="tab">
       <v-tab href="#open">Open</v-tab>
-      <v-tab href="#pending">Pending</v-tab>
       <v-tab href="#closed">Closed</v-tab>
+      <v-tab href="#pending">Pending</v-tab>
     </v-tabs>
     <v-tabs-items v-model="tab" class="transparent">
       <v-tab-item value="open">
@@ -149,11 +149,68 @@
         </v-list>
       </v-tab-item>
       <v-tab-item value="closed">
-        closed
+        <v-list-item style="min-height: 30px">
+          <v-list-item-title>Total Profits</v-list-item-title>
+          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+            >$00.00</v-list-item-action-text
+          >
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-title>Returns(%)</v-list-item-title>
+          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+            >$00.00</v-list-item-action-text
+          >
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-title>commission</v-list-item-title>
+          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+            >$00.00</v-list-item-action-text
+          >
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-title>Dividends</v-list-item-title>
+          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+            >$00.00</v-list-item-action-text
+          >
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-title>Fees</v-list-item-title>
+          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+            >$00.00</v-list-item-action-text
+          >
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-title>Taxes</v-list-item-title>
+          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+            >$00.00</v-list-item-action-text
+          >
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-title>Swap</v-list-item-title>
+          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+            >$00.00</v-list-item-action-text
+          >
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-title>Net Balance</v-list-item-title>
+          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+            >$00.00</v-list-item-action-text
+          >
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-title>Total Withdrawals</v-list-item-title>
+          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+            >$00.00</v-list-item-action-text
+          >
+        </v-list-item>
+        <v-list-item style="min-height: 30px">
+          <v-list-item-title>Net deposit Amount</v-list-item-title>
+          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+            >$00.00</v-list-item-action-text
+          >
+        </v-list-item>
       </v-tab-item>
-      <v-tab-item value="pending">
-        Pending
-      </v-tab-item>
+      <v-tab-item value="pending"> Pending </v-tab-item>
     </v-tabs-items>
     <v-dialog v-model="showCalendar" max-width="700" scrollable>
       <v-card class="secondary">
@@ -375,7 +432,7 @@ export default {
   },
   data() {
     return {
-      tab: 'open',
+      tab: "open",
       showMargin: true,
       isBlur: true,
       showChart: false,
