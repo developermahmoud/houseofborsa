@@ -18,8 +18,8 @@
           }}</v-icon>
         </div>
         <div>
-          <v-icon @click="dialog=true" large class="mb-5">mdi-cards</v-icon>$<strong
-            :class="isBlur ? 'blur-text display-2' : 'display-2'"
+          <v-icon @click="dialog = true" large class="mb-5">mdi-cards</v-icon
+          >$<strong :class="isBlur ? 'blur-text display-2' : 'display-2'"
             >9238.31</strong
           >
           <v-icon
@@ -48,6 +48,7 @@
         <v-icon color="primary">mdi-selection-ellipse</v-icon>
       </v-btn>
     </v-card>
+
     <template v-if="showChart">
       <v-chart class="chart" :option="option" />
       <v-list dense class="pa-0 transparent mb-2">
@@ -81,137 +82,140 @@
         </v-list-item>
       </v-list>
     </template>
-    <v-list v-if="showMargin" class="pa-0 transparent mb-2">
-      <v-list-item style="min-height: 30px">
-        <v-list-item-title>Portfolio Balance</v-list-item-title>
-        <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-          >$00.00</v-list-item-action-text
-        >
-      </v-list-item>
-      <v-list-item style="min-height: 30px">
-        <v-list-item-title>Portfolio Value</v-list-item-title>
-        <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-          >$00.00</v-list-item-action-text
-        >
-      </v-list-item>
-      <v-list-item style="min-height: 30px">
-        <v-list-item-title>invested Value</v-list-item-title>
-        <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-          >$00.00</v-list-item-action-text
-        >
-      </v-list-item>
-      <v-list-item style="min-height: 30px">
-        <v-list-item-title>Available cash now</v-list-item-title>
-        <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-          >$00.00</v-list-item-action-text
-        >
-      </v-list-item>
-      <v-list-item style="min-height: 30px">
-        <v-list-item-title
-          >Margin Level%
-          <v-icon @click="infoDialog = true" small
-            >mdi-information-outline</v-icon
-          ></v-list-item-title
-        >
-        <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-          >$00.00</v-list-item-action-text
-        >
+    <template v-if="showMargin">
+      <v-tabs background-color="transparent" fixed-tabs v-model="tab">
+        <v-tab href="#open">Open <v-badge inline content="4"></v-badge></v-tab>
+        <v-tab href="#closed">Closed</v-tab>
+        <v-tab href="#pending">Pending</v-tab>
+      </v-tabs>
+      <v-tabs-items v-model="tab" class="transparent">
+        <v-tab-item value="open">
+          <v-list class="pa-0 transparent mb-2">
+            <v-list-item style="min-height: 30px">
+              <v-list-item-title>Portfolio Balance</v-list-item-title>
+              <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                >$00.00</v-list-item-action-text
+              >
+            </v-list-item>
+            <v-list-item style="min-height: 30px">
+              <v-list-item-title>Portfolio Value</v-list-item-title>
+              <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                >$00.00</v-list-item-action-text
+              >
+            </v-list-item>
+            <v-list-item style="min-height: 30px">
+              <v-list-item-title>invested Value</v-list-item-title>
+              <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                >$00.00</v-list-item-action-text
+              >
+            </v-list-item>
+            <v-list-item style="min-height: 30px">
+              <v-list-item-title>Available cash now</v-list-item-title>
+              <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                >$00.00</v-list-item-action-text
+              >
+            </v-list-item>
+            <v-list-item style="min-height: 30px">
+              <v-list-item-title
+                >Margin Level%
+                <v-icon @click="infoDialog = true" small
+                  >mdi-information-outline</v-icon
+                ></v-list-item-title
+              >
+              <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                >$00.00</v-list-item-action-text
+              >
+            </v-list-item>
+          </v-list>
+        </v-tab-item>
+        <v-tab-item value="closed">
+          <v-list-item style="min-height: 30px">
+            <v-list-item-title>Total Profits</v-list-item-title>
+            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+              >$00.00</v-list-item-action-text
+            >
+          </v-list-item>
+          <v-list-item style="min-height: 30px">
+            <v-list-item-title>Returns(%)</v-list-item-title>
+            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+              >$00.00</v-list-item-action-text
+            >
+          </v-list-item>
+          <v-list-item style="min-height: 30px">
+            <v-list-item-title>commission</v-list-item-title>
+            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+              >$00.00</v-list-item-action-text
+            >
+          </v-list-item>
+          <v-list-item style="min-height: 30px">
+            <v-list-item-title>Dividends</v-list-item-title>
+            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+              >$00.00</v-list-item-action-text
+            >
+          </v-list-item>
+          <v-list-item style="min-height: 30px">
+            <v-list-item-title>Fees</v-list-item-title>
+            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+              >$00.00</v-list-item-action-text
+            >
+          </v-list-item>
+          <v-list-item style="min-height: 30px">
+            <v-list-item-title>Taxes</v-list-item-title>
+            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+              >$00.00</v-list-item-action-text
+            >
+          </v-list-item>
+          <v-list-item style="min-height: 30px">
+            <v-list-item-title>Swap</v-list-item-title>
+            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+              >$00.00</v-list-item-action-text
+            >
+          </v-list-item>
+          <v-list-item style="min-height: 30px">
+            <v-list-item-title>Net Balance</v-list-item-title>
+            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+              >$00.00</v-list-item-action-text
+            >
+          </v-list-item>
+          <v-list-item style="min-height: 30px">
+            <v-list-item-title>Total Withdrawals</v-list-item-title>
+            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+              >$00.00</v-list-item-action-text
+            >
+          </v-list-item>
+          <v-list-item style="min-height: 30px">
+            <v-list-item-title>Net deposit Amount</v-list-item-title>
+            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+              >$00.00</v-list-item-action-text
+            >
+          </v-list-item>
+        </v-tab-item>
+        <v-tab-item value="pending"> Pending </v-tab-item>
+      </v-tabs-items>
+    </template>
+
+    <v-list three-line class="mx-2 mb-13 transparent">
+      <v-list-item class="secondary rounded mb-3" v-for="i in 5" :key="i">
+        <v-list-item-avatar>
+          <v-img src="/opengraph.png"></v-img>
+        </v-list-item-avatar>
+        <v-list-item-content>
+          <v-list-item-title
+            >AWS,
+            <span class="primary--text">buy 500.00</span></v-list-item-title
+          >
+          <v-list-item-subtitle
+            >30.94
+            <v-icon>mdi-arrow-right-thin</v-icon>
+            30.15</v-list-item-subtitle
+          >
+        </v-list-item-content>
+        <v-list-item-action-text class="green--text">
+          <div class="font-weight-bold">$ 395.00</div>
+          <div style="font-size: 0.875rem; text-align: left">+1.92%</div>
+        </v-list-item-action-text>
       </v-list-item>
     </v-list>
-    <v-tabs background-color="transparent" fixed-tabs v-model="tab">
-      <v-tab href="#open">Open <v-badge inline content="4"></v-badge></v-tab>
-      <v-tab href="#closed">Closed</v-tab>
-      <v-tab href="#pending">Pending</v-tab>
-    </v-tabs>
-    <v-tabs-items v-model="tab" class="transparent">
-      <v-tab-item value="open">
-        <v-list three-line class="mx-2 mb-13 transparent">
-          <v-list-item class="secondary rounded mb-3" v-for="i in 5" :key="i">
-            <v-list-item-avatar>
-              <v-img src="/opengraph.png"></v-img>
-            </v-list-item-avatar>
-            <v-list-item-content>
-              <v-list-item-title
-                >AWS,
-                <span class="primary--text">buy 500.00</span></v-list-item-title
-              >
-              <v-list-item-subtitle
-                >30.94
-                <v-icon>mdi-arrow-right-thin</v-icon>
-                30.15</v-list-item-subtitle
-              >
-            </v-list-item-content>
-            <v-list-item-action-text class="green--text">
-              <div class="font-weight-bold">$ 395.00</div>
-              <div style="font-size: 0.875rem; text-align: left">+1.92%</div>
-            </v-list-item-action-text>
-          </v-list-item>
-        </v-list>
-      </v-tab-item>
-      <v-tab-item value="closed">
-        <v-list-item style="min-height: 30px">
-          <v-list-item-title>Total Profits</v-list-item-title>
-          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-            >$00.00</v-list-item-action-text
-          >
-        </v-list-item>
-        <v-list-item style="min-height: 30px">
-          <v-list-item-title>Returns(%)</v-list-item-title>
-          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-            >$00.00</v-list-item-action-text
-          >
-        </v-list-item>
-        <v-list-item style="min-height: 30px">
-          <v-list-item-title>commission</v-list-item-title>
-          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-            >$00.00</v-list-item-action-text
-          >
-        </v-list-item>
-        <v-list-item style="min-height: 30px">
-          <v-list-item-title>Dividends</v-list-item-title>
-          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-            >$00.00</v-list-item-action-text
-          >
-        </v-list-item>
-        <v-list-item style="min-height: 30px">
-          <v-list-item-title>Fees</v-list-item-title>
-          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-            >$00.00</v-list-item-action-text
-          >
-        </v-list-item>
-        <v-list-item style="min-height: 30px">
-          <v-list-item-title>Taxes</v-list-item-title>
-          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-            >$00.00</v-list-item-action-text
-          >
-        </v-list-item>
-        <v-list-item style="min-height: 30px">
-          <v-list-item-title>Swap</v-list-item-title>
-          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-            >$00.00</v-list-item-action-text
-          >
-        </v-list-item>
-        <v-list-item style="min-height: 30px">
-          <v-list-item-title>Net Balance</v-list-item-title>
-          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-            >$00.00</v-list-item-action-text
-          >
-        </v-list-item>
-        <v-list-item style="min-height: 30px">
-          <v-list-item-title>Total Withdrawals</v-list-item-title>
-          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-            >$00.00</v-list-item-action-text
-          >
-        </v-list-item>
-        <v-list-item style="min-height: 30px">
-          <v-list-item-title>Net deposit Amount</v-list-item-title>
-          <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-            >$00.00</v-list-item-action-text
-          >
-        </v-list-item>
-      </v-tab-item>
-      <v-tab-item value="pending"> Pending </v-tab-item>
-    </v-tabs-items>
     <v-dialog v-model="showCalendar" max-width="700" scrollable>
       <v-card class="secondary">
         <v-tabs
