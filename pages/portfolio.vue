@@ -18,7 +18,7 @@
           }}</v-icon>
         </div>
         <div>
-          <v-icon large class="mb-5">mdi-cards</v-icon>$<strong
+          <v-icon @click="dialog=true" large class="mb-5">mdi-cards</v-icon>$<strong
             :class="isBlur ? 'blur-text display-2' : 'display-2'"
             >9238.31</strong
           >
@@ -119,7 +119,7 @@
       </v-list-item>
     </v-list>
     <v-tabs background-color="transparent" fixed-tabs v-model="tab">
-      <v-tab href="#open">Open</v-tab>
+      <v-tab href="#open">Open <v-badge inline content="4"></v-badge></v-tab>
       <v-tab href="#closed">Closed</v-tab>
       <v-tab href="#pending">Pending</v-tab>
     </v-tabs>
