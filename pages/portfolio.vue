@@ -12,8 +12,10 @@
       </v-card-title>
       <v-card-text class="text-center white--text">
         <div>
-          Portfolio P/L($)
-          <v-icon small @click="isBlur = !isBlur">{{
+          <span class="font-weight-bold" style="font-size: 20px"
+            >Portfolio P/L($)</span
+          >
+          <v-icon @click="isBlur = !isBlur">{{
             isBlur ? "mdi-eye-off-outline" : "mdi-eye"
           }}</v-icon>
         </div>
@@ -236,26 +238,92 @@
         </v-tabs>
         <v-card-text>
           <v-row no-gutters>
-            <v-col cols="12">
+            <v-col cols="12" class="mb-2">
               <v-select
                 v-model="selectedItem"
                 :items="[0, 1]"
                 dense
                 class="pt-2"
                 label="Account *"
+                hide-details
                 outlined
               >
-                <template v-slot:selection="{ index }">
-                  <v-avatar size="30" v-if="index === 0">
-                    <v-img src="/opengraph.png"></v-img>
-                  </v-avatar>
-                  HOB 125.22
-                </template>
+                <template v-slot:selection="{}"> HOB 125.22 </template>
               </v-select>
             </v-col>
-            <v-col cols="12">
+            <v-col cols="12" class="mb-2">
+              <v-slide-group
+                v-model="toggle_btn"
+                mandatory
+                active-class="primary"
+                :show-arrows="false"
+              >
+                <v-slide-item v-slot="{ active, toggle }">
+                  <v-btn
+                    small
+                    class="secondaryBackground mr-1"
+                    :input-value="active"
+                    @click="toggle"
+                  >
+                    1m
+                  </v-btn>
+                </v-slide-item>
+                <v-slide-item v-slot="{ active, toggle }">
+                  <v-btn
+                    small
+                    class="secondaryBackground mr-1"
+                    :input-value="active"
+                    @click="toggle"
+                  >
+                    3m
+                  </v-btn>
+                </v-slide-item>
+                <v-slide-item v-slot="{ active, toggle }">
+                  <v-btn
+                    small
+                    class="secondaryBackground mr-1"
+                    :input-value="active"
+                    @click="toggle"
+                  >
+                    6m
+                  </v-btn>
+                </v-slide-item>
+                <v-slide-item v-slot="{ active, toggle }">
+                  <v-btn
+                    small
+                    class="secondaryBackground mr-1"
+                    :input-value="active"
+                    @click="toggle"
+                  >
+                    1y
+                  </v-btn>
+                </v-slide-item>
+                <v-slide-item v-slot="{ active, toggle }">
+                  <v-btn
+                    small
+                    class="secondaryBackground mr-1"
+                    :input-value="active"
+                    @click="toggle"
+                  >
+                    3y
+                  </v-btn>
+                </v-slide-item>
+                <v-slide-item v-slot="{ active, toggle }">
+                  <v-btn
+                    small
+                    class="secondaryBackground mr-1"
+                    :input-value="active"
+                    @click="toggle"
+                  >
+                    All time
+                  </v-btn>
+                </v-slide-item>
+              </v-slide-group>
+            </v-col>
+            <v-col cols="12" class="mb-2">
               <v-text-field
                 dense
+                hide-details
                 placeholder="From"
                 outlined
                 append-icon="mdi-calendar"
@@ -304,48 +372,63 @@
         </v-col>
       </v-row>
     </v-dialog>
-    <v-dialog v-model="orderDialog" max-width="700" scrollable>
+    <v-dialog v-model="orderDialog" fullscreen hide-overlay>
       <v-card class="secondary">
-        <v-card-title class="justify-center">Orders</v-card-title>
-        <v-slide-group mandatory v-model="toggle_exclusive">
-          <v-slide-item v-slot="{ active, toggle }">
-            <v-btn
-              :input-value="active"
-              active-class="primary"
-              @click="toggle"
-              tile
-              small
-              text
-              >Active
-            </v-btn>
-          </v-slide-item>
-          <v-slide-item v-slot="{ active, toggle }">
-            <v-btn
-              :input-value="active"
-              active-class="primary"
-              @click="toggle"
-              tile
-              small
-              text
-              >Pending
-            </v-btn>
-          </v-slide-item>
-          <v-slide-item v-slot="{ active, toggle }">
-            <v-btn
-              :input-value="active"
-              active-class="primary"
-              @click="toggle"
-              tile
-              small
-              text
-              >Closed
-            </v-btn>
-          </v-slide-item>
-        </v-slide-group>
-        <v-card-text></v-card-text>
+        <v-card-title>
+          Accounts
+          <v-spacer></v-spacer>
+          <v-btn icon @click="orderDialog = false">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+        <div class="mt-4 mx-2">
+          <h3>Currently Logged In</h3>
+          <v-list-item dense class="px-0 my-2">
+            <v-list-item-icon class="px-0 mr-2">
+              <v-btn icon class="green">
+                <v-icon>mdi-currency-usd</v-icon>
+              </v-btn>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>HÓB - USD</v-list-item-title>
+              <v-list-item-subtitle class="green--text"
+                >0.00$</v-list-item-subtitle
+              >
+            </v-list-item-content>
+            <v-list-item-action>
+              <v-icon>mdi-dots-horizontal</v-icon>
+            </v-list-item-action>
+          </v-list-item>
+          <v-chip small label color="grey">6091858</v-chip>
+          <v-chip small label color="blue">MT5</v-chip>
+          <v-chip small label color="green">LIVE</v-chip>
+        </div>
+        <div class="mt-4 mx-2">
+          <h3>Your Trading Account</h3>
+          <v-list-item dense class="px-0 my-2">
+            <v-list-item-icon class="px-0 mr-2">
+              <v-btn icon class="green">
+                <v-icon>mdi-currency-usd</v-icon>
+              </v-btn>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>HÓB - USD</v-list-item-title>
+              <v-list-item-subtitle class="green--text"
+                >10.000.00$</v-list-item-subtitle
+              >
+            </v-list-item-content>
+            <v-list-item-action>
+              <v-icon>mdi-dots-horizontal</v-icon>
+            </v-list-item-action>
+          </v-list-item>
+          <v-chip small label color="grey">6091858</v-chip>
+          <v-chip small label color="blue">MT5</v-chip>
+          <v-chip small label color="red">DEMO</v-chip>
+        </div>
       </v-card>
     </v-dialog>
-    <v-dialog fullscreen hidden v-model="infoDialog">
+    <v-dialog v-model="infoDialog" fullscreen hide-overlay>
       <v-card class="secondary">
         <v-toolbar flat class="secondary">
           <v-icon @click="infoDialog = false">mdi-close</v-icon>
@@ -437,8 +520,9 @@ export default {
   data() {
     return {
       tab: "open",
+      toggle_btn: undefined,
       showMargin: true,
-      isBlur: true,
+      isBlur: false,
       showChart: false,
       infoDialog: false,
       toggle_exclusive: null,
