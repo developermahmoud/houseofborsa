@@ -375,7 +375,7 @@
     <v-dialog v-model="orderDialog" fullscreen hide-overlay>
       <v-card class="secondary">
         <v-card-title>
-          Accounts
+          My Accounts
           <v-spacer></v-spacer>
           <v-btn icon @click="orderDialog = false">
             <v-icon>mdi-close</v-icon>
@@ -383,7 +383,7 @@
         </v-card-title>
         <v-divider></v-divider>
         <div class="mt-4 mx-2">
-          <h3>Currently Logged In</h3>
+          <h3>Live Accounts</h3>
           <v-list-item dense class="px-0 my-2">
             <v-list-item-icon class="px-0 mr-2">
               <v-btn icon class="green">
@@ -405,7 +405,7 @@
           <v-chip small label color="green">LIVE</v-chip>
         </div>
         <div class="mt-4 mx-2">
-          <h3>Your Trading Account</h3>
+          <h3>Demo Accounts</h3>
           <v-list-item dense class="px-0 my-2">
             <v-list-item-icon class="px-0 mr-2">
               <v-btn icon class="green">
