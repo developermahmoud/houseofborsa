@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h3 class="mb-5">Chat and Contact</h3>
+    <top title="Support" />
+    <h3 class="ml-3 mb-5">Chat and Contact</h3>
     <v-row no-gutters>
       <v-col
         class="text-center mb-3"
@@ -13,7 +14,7 @@
         <span style="font-size: 11px">{{ contact.text }}</span>
       </v-col>
     </v-row>
-    <h3 class="mb-5">Help</h3>
+    <h3 class="ml-3 mb-5">Help</h3>
     <v-row no-gutters>
       <v-col
         class="text-center mb-3"
@@ -26,7 +27,7 @@
         <span style="font-size: 11px">{{ item.text }}</span>
       </v-col>
     </v-row>
-     <h3 class="mb-5">HOB Academy</h3>
+    <h3 class="ml-3 mb-5">HOB Academy</h3>
     <v-row no-gutters>
       <v-col
         class="text-center mb-3"
@@ -43,7 +44,10 @@
 </template>
 
 <script>
+import Top from "../components/partials/Top.vue";
 export default {
+  components: { Top },
+  layout: "internal",
   data() {
     return {
       contacts: [
@@ -80,7 +84,7 @@ export default {
           text: "Youtube",
         },
       ],
-       helps: [
+      helps: [
         {
           icon: "mdi-whatsapp",
           text: "Whatsapp",

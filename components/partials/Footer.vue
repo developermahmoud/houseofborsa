@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-bottom-navigation
+      app
       fixed
       grow
       :value="value"

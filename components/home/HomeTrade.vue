@@ -2,26 +2,26 @@
   <div>
     <v-row no-gutters>
       <v-col cols="6">
-        <v-card class="secondary mr-2" flat>
-          <v-card-title class="title py-0">Open</v-card-title>
-          <v-card-text>Live Account</v-card-text>
-          <v-card-actions>
-            <img style="width: 80px" class="rounded-lg" src="/p2p.png" />
-            <v-spacer></v-spacer>
-            <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
-          </v-card-actions>
-        </v-card>
+        <v-list-item class="secondary px-2 mr-2">
+          <v-list-item-content>
+            <v-list-item-title>Open</v-list-item-title>
+            <v-list-item-subtitle class="caption">Live Account</v-list-item-subtitle>
+          </v-list-item-content>
+          <v-list-item-avatar size="20">
+            <v-img src="/p2p.png"></v-img>
+          </v-list-item-avatar>
+        </v-list-item>
       </v-col>
       <v-col cols="6">
-        <v-card class="secondary" flat>
-          <v-card-title class="title py-0">Open</v-card-title>
-          <v-card-text> Demo Account</v-card-text>
-          <v-card-actions>
-            <img style="width: 70px" class="rounded-lg" src="/credit.jpg" />
-            <v-spacer></v-spacer>
-            <v-icon>mdi-arrow-right-drop-circle-outline</v-icon>
-          </v-card-actions>
-        </v-card>
+         <v-list-item class="secondary px-2">
+          <v-list-item-content>
+            <v-list-item-title>Open</v-list-item-title>
+            <v-list-item-subtitle class="caption">Demo Account</v-list-item-subtitle>
+          </v-list-item-content>
+          <v-list-item-avatar size="20">
+            <v-img src="/credit.jpg"></v-img>
+          </v-list-item-avatar>
+        </v-list-item>
       </v-col>
       <v-col cols="12" class="mt-2">
         <v-list-item class="secondary rounded">
