@@ -209,7 +209,7 @@
         <v-tab-item value="pending"> Pending </v-tab-item>
       </v-tabs-items>
     </template>
-    <v-list three-line class="mx-2 mb-13 transparent">
+    <v-list three-line class="mx-2 transparent">
       <v-list-item class="secondary rounded mb-3" v-for="i in 5" :key="i">
         <v-list-item-avatar>
           <v-img src="/opengraph.png"></v-img>

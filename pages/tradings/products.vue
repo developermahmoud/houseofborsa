@@ -1,14 +1,11 @@
 <template>
   <div>
-     <top title="Trading Products" />
+     
   </div>
 </template>
 
 <script>
-import Top from '../../components/partials/Top.vue'
 export default {
-  components: { Top },
-  layout: "internal",
 }
 </script>
 

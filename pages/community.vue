@@ -101,7 +101,7 @@
         </v-avatar>
       </v-card-title>
     </v-card>
-    <v-card class="secondary mb-12" flat>
+    <v-card class="secondary" flat>
       <v-list-item>
         <v-list-item-avatar>
           <v-img src="/opengraph.png"></v-img>

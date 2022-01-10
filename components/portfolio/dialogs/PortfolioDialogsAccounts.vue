@@ -1,11 +1,11 @@
 <template>
   <v-dialog v-model="dialog" fullscreen hide-overlay>
     <v-card class="secondary">
-        <v-toolbar flat class="secondary">
+      <v-toolbar flat class="secondary">
         <v-btn icon @click="$emit('close-dialog')">
           <v-icon>mdi-close</v-icon>
         </v-btn>
-        <v-toolbar-title class="ml-2">   My Accounts</v-toolbar-title>
+        <v-toolbar-title class="ml-2"> My Accounts</v-toolbar-title>
       </v-toolbar>
       <v-divider></v-divider>
       <div class="mt-4 mx-2">
@@ -53,6 +53,7 @@
         <v-chip small label color="grey">Silver</v-chip>
         <v-chip small label color="green">LIVE</v-chip>
       </div>
+      <v-divider class="mt-5"></v-divider>
       <div class="mt-4 mx-2">
         <h3>Demo Accounts</h3>
         <v-list-item dense class="px-0 my-2">

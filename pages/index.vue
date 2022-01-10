@@ -39,7 +39,7 @@
     </v-row>
     <v-img width="100%" src="/platform.png" />
     <home-news class="mb-3" />
-    <home-prices class="mb-16" />
+    <home-prices />
   </div>
 </template>
 <script>

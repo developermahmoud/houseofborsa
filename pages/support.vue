@@ -1,6 +1,5 @@
 <template>
   <div>
-    <top title="Support" />
     <h3 class="ml-3 mb-5">Chat and Contact</h3>
     <v-row no-gutters>
       <v-col
@@ -44,10 +43,7 @@
 </template>
 
 <script>
-import Top from "../components/partials/Top.vue";
 export default {
-  components: { Top },
-  layout: "internal",
   data() {
     return {
       contacts: [

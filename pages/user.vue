@@ -1,6 +1,5 @@
 <template>
   <div>
-    <top title="Me" />
     <v-list-item two-line>
       <v-list-item-avatar size="60">
         <v-img src="/avatar.jpg"></v-img>
@@ -38,7 +37,7 @@
       </v-col>
     </v-row>
     <div class="bg-card text-center pa-2 rounded-lg">Account hostry</div>
-    <v-list class="mb-15 transparent">
+    <v-list class="transparent">
       <v-list-item>
         <v-list-item-icon>
           <v-icon>mdi-cog</v-icon>
@@ -92,11 +91,7 @@
 </template>
 
 <script>
-import Top from "../components/partials/Top.vue";
-export default {
-  components: { Top },
-  layout: "internal",
-};
+export default {};
 </script>
 
 <style></style>

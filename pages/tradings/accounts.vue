@@ -1,6 +1,5 @@
 <template>
   <div>
-    <top title="Trading Accounts" />
     <v-container>
       <h3 class="primary--text">Trading Account Types</h3>
       <p>
@@ -62,10 +61,7 @@
 </template>
 
 <script>
-import Top from "../../components/partials/Top.vue";
 export default {
-  components: { Top },
-  layout: "internal",
   data() {
     return {
       plans: [
