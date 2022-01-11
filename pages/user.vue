@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-list-item two-line>
+    <v-list-item two-line class="px-0">
       <v-list-item-avatar size="60">
         <v-img src="/avatar.jpg"></v-img>
       </v-list-item-avatar>
@@ -10,11 +10,30 @@
             >mdi-check-decagram</v-icon
           ></v-list-item-title
         >
-        <v-list-item-subtitle
-          >35 Following, 10000 Followers</v-list-item-subtitle
-        >
+        <v-list-item-subtitle>Fullstack Web Developer</v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
+    <div class="mb-3">
+      <v-chip label outlined x-small>35 Friend</v-chip>
+      <v-chip label outlined x-small>35 Follower</v-chip>
+      <v-chip label outlined x-small>35 Post</v-chip>
+      <v-chip label outlined x-small>3 Account</v-chip>
+    </div>
+    <div class="d-flex align-center justify-space-between mb-3">
+      <v-btn icon class="secondary">
+        <v-icon>mdi-cellphone</v-icon>
+      </v-btn>
+      <v-btn icon class="secondary">
+        <v-icon>mdi-whatsapp</v-icon>
+      </v-btn>
+      <v-btn icon class="secondary">
+        <v-icon>mdi-email</v-icon>
+      </v-btn>
+      <v-btn icon class="secondary">
+        <v-icon>mdi-chat</v-icon>
+      </v-btn>
+    </div>
+
     <v-img src="/hobcard.jpg" class="rounded-xl mb-3" />
     <v-row no-gutters>
       <v-col cols="6" class="text-center mb-5">
