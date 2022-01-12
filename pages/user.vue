@@ -33,29 +33,63 @@
         <v-icon>mdi-chat</v-icon>
       </v-btn>
     </div>
-
     <v-img src="/hobcard.jpg" class="rounded-xl mb-3" />
-    <v-row no-gutters>
-      <v-col cols="6" class="text-center mb-5">
-        <div class="bg-card pa-2 rounded-lg">Funding</div>
+    <v-row>
+      <v-col cols="6" class="text-center">
+        <div class="secondaryBackground pa-2 rounded-lg">
+          <v-icon color="primary">fas fa-money-check-alt</v-icon>
+          <br />
+          <span style="font-size: 11px" class="white--text"> Funding </span>
+        </div>
       </v-col>
-      <v-col cols="6" class="text-center mb-5">
-        <div class="bg-card pa-2 rounded-lg">Withdrawal</div>
+      <v-col cols="6" class="text-center">
+        <div class="secondaryBackground pa-2 rounded-lg">
+           <v-icon color="primary">fas fa-wallet</v-icon>
+          <br />
+          <span style="font-size: 11px" class="white--text">Withdrawal</span>
+        </div>
       </v-col>
-      <v-col cols="6" class="text-center mb-5">
-        <div class="bg-card pa-2 rounded-lg">Internal Transfer</div>
+      <v-col cols="6" class="text-center">
+        <div class="secondaryBackground pa-2 rounded-lg">
+          <v-icon color="primary">fas fa-exchange-alt</v-icon>
+          <br />
+          <span style="font-size: 11px" class="white--text"
+            >Internal Transfer</span
+          >
+        </div>
       </v-col>
-      <v-col cols="6" class="text-center mb-5">
-        <div class="bg-card pa-2 rounded-lg">HÖB Card</div>
+      <v-col cols="6" class="text-center">
+        <div class="secondaryBackground pa-2 rounded-lg">
+          <v-icon color="primary">far fa-credit-card</v-icon>
+          <br />
+          <span style="font-size: 11px" class="white--text">HÖB Card</span>
+        </div>
       </v-col>
-      <v-col cols="6" class="text-center mb-5">
-        <div class="bg-card pa-2 rounded-lg">DEMO ACCOUNT</div>
+      <v-col cols="6" class="text-center">
+        <div class="secondaryBackground pa-2 rounded-lg">
+          <v-icon color="primary">fas fa-user-clock</v-icon>
+          <br />
+          <span style="font-size: 11px" class="white--text">DEMO ACCOUNT</span>
+        </div>
       </v-col>
-      <v-col cols="6" class="text-center mb-5">
-        <div class="bg-card pa-2 rounded-lg">LIVE ACCOUNT</div>
+      <v-col cols="6" class="text-center">
+        <div class="secondaryBackground pa-2 rounded-lg">
+          <v-icon color="primary">fas fa-chart-line</v-icon>
+          <br />
+          <span style="font-size: 11px" class="white--text">LIVE ACCOUNT</span>
+        </div>
+      </v-col>
+      <v-col cols="12">
+        <div class="secondaryBackground text-center pa-2 rounded-lg">
+          <v-icon color="primary">fas fa-history</v-icon>
+          <br />
+          <span style="font-size: 11px" class="white--text">
+            Account hostry
+          </span>
+        </div>
       </v-col>
     </v-row>
-    <div class="bg-card text-center pa-2 rounded-lg">Account hostry</div>
+
     <v-list class="transparent">
       <v-list-item>
         <v-list-item-icon>
