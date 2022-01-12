@@ -14,10 +14,10 @@
       </v-list-item-content>
     </v-list-item>
     <div class="mb-3">
-      <v-chip label outlined x-small>35 Friend</v-chip>
-      <v-chip label outlined x-small>35 Follower</v-chip>
-      <v-chip label outlined x-small>35 Post</v-chip>
-      <v-chip label outlined x-small>3 Account</v-chip>
+      <v-chip label outlined small>35 Friend</v-chip>
+      <v-chip label outlined small>35 Follower</v-chip>
+      <v-chip label outlined small>35 Post</v-chip>
+      <v-chip label outlined small>3 Account</v-chip>
     </div>
     <div class="d-flex align-center justify-space-between mb-3">
       <v-btn icon class="secondary">
@@ -36,57 +36,77 @@
     <v-img src="/hobcard.jpg" class="rounded-xl mb-3" />
     <v-row>
       <v-col cols="6" class="text-center">
-        <div class="secondaryBackground pa-2 rounded-lg">
-          <v-icon color="primary">fas fa-money-check-alt</v-icon>
+        <v-card
+          flat
+          class="secondaryBackground pa-2 rounded-lg"
+          link
+          to="/accounts/deposit"
+        >
+          <v-icon color="primary">fas fa-user</v-icon>
           <br />
-          <span style="font-size: 11px" class="white--text"> Funding </span>
-        </div>
+          <span style="font-size: 14px" class="white--text">My Profile</span>
+        </v-card>
       </v-col>
       <v-col cols="6" class="text-center">
-        <div class="secondaryBackground pa-2 rounded-lg">
-           <v-icon color="primary">fas fa-wallet</v-icon>
+        <v-card
+          flat
+          class="secondaryBackground pa-2 rounded-lg"
+          link
+          to="/accounts/deposit"
+        >
+           <v-icon color="primary">fas fa-user-clock</v-icon>
           <br />
-          <span style="font-size: 11px" class="white--text">Withdrawal</span>
-        </div>
+          <span style="font-size: 14px" class="white--text">My Accounts</span>
+        </v-card>
       </v-col>
       <v-col cols="6" class="text-center">
-        <div class="secondaryBackground pa-2 rounded-lg">
-          <v-icon color="primary">fas fa-exchange-alt</v-icon>
-          <br />
-          <span style="font-size: 11px" class="white--text"
-            >Internal Transfer</span
-          >
-        </div>
-      </v-col>
-      <v-col cols="6" class="text-center">
-        <div class="secondaryBackground pa-2 rounded-lg">
+        <v-card flat class="secondaryBackground pa-2 rounded-lg">
           <v-icon color="primary">far fa-credit-card</v-icon>
           <br />
-          <span style="font-size: 11px" class="white--text">HÖB Card</span>
-        </div>
+          <span style="font-size: 14px" class="white--text">My HÖB Card</span>
+        </v-card>
       </v-col>
       <v-col cols="6" class="text-center">
-        <div class="secondaryBackground pa-2 rounded-lg">
-          <v-icon color="primary">fas fa-user-clock</v-icon>
+        <v-card
+          flat
+          class="secondaryBackground pa-2 rounded-lg"
+          link
+          to="/accounts/deposit"
+        >
+          <v-icon color="primary">fas fa-arrow-down</v-icon>
           <br />
-          <span style="font-size: 11px" class="white--text">DEMO ACCOUNT</span>
-        </div>
+          <span style="font-size: 14px" class="white--text">Deposit</span>
+        </v-card>
       </v-col>
       <v-col cols="6" class="text-center">
-        <div class="secondaryBackground pa-2 rounded-lg">
-          <v-icon color="primary">fas fa-chart-line</v-icon>
+        <v-card
+          flat
+          class="secondaryBackground pa-2 rounded-lg"
+          link
+          to="/accounts/withdrawal"
+        >
+         <v-icon color="primary">fas fa-arrow-up</v-icon>
           <br />
-          <span style="font-size: 11px" class="white--text">LIVE ACCOUNT</span>
-        </div>
+          <span style="font-size: 14px" class="white--text">Withdrawal</span>
+        </v-card>
+      </v-col>
+      <v-col cols="6" class="text-center">
+        <v-card flat class="secondaryBackground pa-2 rounded-lg">
+          <v-icon color="primary">fas fa-exchange-alt</v-icon>
+          <br />
+          <span style="font-size: 14px" class="white--text"
+            >Internal Transfer</span
+          >
+        </v-card>
       </v-col>
       <v-col cols="12">
-        <div class="secondaryBackground text-center pa-2 rounded-lg">
+        <v-card flat class="secondaryBackground text-center pa-2 rounded-lg">
           <v-icon color="primary">fas fa-history</v-icon>
           <br />
-          <span style="font-size: 11px" class="white--text">
+          <span style="font-size: 14px" class="white--text">
             Account hostry
           </span>
-        </div>
+        </v-card>
       </v-col>
     </v-row>
 
@@ -96,6 +116,26 @@
           <v-icon>mdi-cog</v-icon>
         </v-list-item-icon>
         <v-list-item-title>Settings</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-arrow-right</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-icon>
+          <v-icon>mdi-information-outline</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>ABOUT HOB</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-arrow-right</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-icon>
+          <v-icon>fa-question-circle</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>Support and chat</v-list-item-title>
         <v-list-item-icon>
           <v-icon>mdi-arrow-right</v-icon>
         </v-list-item-icon>
@@ -113,31 +153,12 @@
       <v-divider></v-divider>
       <v-list-item>
         <v-list-item-icon>
-          <v-icon>mdi-earth</v-icon>
+          <v-icon>mdi-logout</v-icon>
         </v-list-item-icon>
-        <v-list-item-title>Language</v-list-item-title>
-        <v-list-item-action>
-          <v-menu offset-y>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn icon v-bind="attrs" v-on="on">
-                <v-icon>mdi-dots-vertical</v-icon>
-              </v-btn>
-            </template>
-            <v-list dense class="secondary pa-0">
-              <v-list-item>
-                <v-list-item-title>عربى</v-list-item-title>
-              </v-list-item>
-              <v-divider></v-divider>
-              <v-list-item>
-                <v-list-item-title>English</v-list-item-title>
-              </v-list-item>
-              <v-divider></v-divider>
-              <v-list-item>
-                <v-list-item-title>中文</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </v-list-item-action>
+        <v-list-item-title>Sign out</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-arrow-right</v-icon>
+        </v-list-item-icon>
       </v-list-item>
     </v-list>
   </div>

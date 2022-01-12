@@ -52,11 +52,11 @@
                   </v-btn>
                 </template>
                 <v-list class="py-0" dense>
-                  <v-list-item class="secondary" @click="withdrawalDialog=true">
+                  <v-list-item class="secondary" link to="/accounts/withdrawal">
                     <v-list-item-title>Withdrawal</v-list-item-title>
                   </v-list-item>
                   <v-divider></v-divider>
-                  <v-list-item class="secondary" @click="depsitDialog=true;">
+                  <v-list-item class="secondary" link to="/accounts/deposit">
                     <v-list-item-title>Deposit</v-list-item-title>
                   </v-list-item>
                   <v-divider></v-divider>
@@ -144,24 +144,11 @@
         </div>
       </v-card>
     </v-dialog>
-    <portfolio-dialogs-deposit
-      v-if="depsitDialog"
-      :dialog="depsitDialog"
-      @close-dialog-deposit="depsitDialog = false"
-    />
-    <portfolio-dialogs-withdrawal 
-     v-if="withdrawalDialog"
-      :dialog="withdrawalDialog"
-      @close-dialog-withdrawal="withdrawalDialog = false"
-    />
   </div>
 </template>
 
 <script>
-import PortfolioDialogsDeposit from './PortfolioDialogsDeposit.vue';
-import PortfolioDialogsWithdrawal from './PortfolioDialogsWithdrawal.vue';
 export default {
-  components: { PortfolioDialogsDeposit, PortfolioDialogsWithdrawal },
   props: {
     dialog: {
       required: true,
