@@ -11,7 +11,8 @@
        
       </div>
       <v-spacer></v-spacer>
-      <v-icon size="18">fa-envelope-open-text</v-icon>
+      <nuxt-link class="text-decoration-none" link to="/messages"
+        ><v-icon size="18">fa-envelope-open-text</v-icon></nuxt-link>
     </v-app-bar>
   </div>
 </template>
