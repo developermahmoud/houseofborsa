@@ -6,12 +6,21 @@
       </v-list-item-avatar>
       <v-list-item-content>
         <v-list-item-title
-          >Mahmoud, 24&nbsp;<v-icon small color="blue"
-            >mdi-check-decagram</v-icon
-          ></v-list-item-title
+          >Mahmoud, 24</v-list-item-title
         >
         <v-list-item-subtitle>Fullstack Web Developer</v-list-item-subtitle>
       </v-list-item-content>
+      <v-list-item-action>
+        <v-progress-circular
+          :rotate="360"
+          :size="50"
+          :width="4"
+          :value="80"
+          color="primary"
+        >
+         80%
+        </v-progress-circular>
+      </v-list-item-action>
     </v-list-item>
     <div class="mb-3">
       <v-chip label outlined small>35 Friend</v-chip>
@@ -54,7 +63,7 @@
           link
           to="/accounts/deposit"
         >
-           <v-icon color="primary">fas fa-user-clock</v-icon>
+          <v-icon color="primary">fas fa-user-clock</v-icon>
           <br />
           <span style="font-size: 14px" class="white--text">My Accounts</span>
         </v-card>
@@ -85,7 +94,7 @@
           link
           to="/accounts/withdrawal"
         >
-         <v-icon color="primary">fas fa-arrow-up</v-icon>
+          <v-icon color="primary">fas fa-arrow-up</v-icon>
           <br />
           <span style="font-size: 14px" class="white--text">Withdrawal</span>
         </v-card>
@@ -121,7 +130,7 @@
         </v-list-item-icon>
       </v-list-item>
       <v-divider></v-divider>
-      <v-list-item>
+      <v-list-item link to="/support">
         <v-list-item-icon>
           <v-icon>mdi-information-outline</v-icon>
         </v-list-item-icon>
@@ -131,7 +140,7 @@
         </v-list-item-icon>
       </v-list-item>
       <v-divider></v-divider>
-      <v-list-item>
+      <v-list-item link to="/support">
         <v-list-item-icon>
           <v-icon>fa-question-circle</v-icon>
         </v-list-item-icon>
