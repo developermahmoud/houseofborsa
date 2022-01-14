@@ -15,6 +15,12 @@
     </v-row>
     <h3>Help Center</h3>
     <v-row no-gutters>
+        <v-col cols="12"
+        ><v-icon size="20" color="primary">mdi-check</v-icon>About HOB
+      </v-col>
+        <v-col cols="12"
+        ><v-icon size="20" color="primary">mdi-check</v-icon>HOB – Why Us?
+      </v-col>
       <v-col cols="12"
         ><v-icon size="20" color="primary">mdi-check</v-icon>Regulations
       </v-col>

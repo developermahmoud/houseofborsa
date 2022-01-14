@@ -26,7 +26,6 @@
       <v-chip label outlined small>35 Friend</v-chip>
       <v-chip label outlined small>35 Follower</v-chip>
       <v-chip label outlined small>35 Post</v-chip>
-      <v-chip label outlined small>3 Account</v-chip>
     </div>
     <div class="d-flex align-center justify-space-between mb-3">
       <v-btn icon class="secondary">
