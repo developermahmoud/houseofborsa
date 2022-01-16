@@ -12,7 +12,7 @@
       </v-card-title>
       <v-card-text class="text-center white--text">
         <div>
-          <span class="font-weight-bold" style="font-size: 20px">
+          <span style="font-size: 20px">
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
                 <v-icon color="green" small v-bind="attrs" v-on="on">
@@ -31,11 +31,11 @@
           <div class="d-flex align-center justify-center">
             <v-icon @click="dialog = true" large>mdi-cards</v-icon>
             <div>
-              <span class="text-h4">$</span>
-              <strong :class="isBlur ? 'blur-text display-2' : 'display-2'">
+              <span class="text-h5">$</span>
+              <strong :class="isBlur ? 'blur-text display-1' : 'display-1'">
                 9238.</strong
               >
-              <span class="text-h4">31</span>
+              <span class="text-h5">31</span>
             </div>
             <v-icon
               @click="

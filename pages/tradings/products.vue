@@ -1,22 +1,7 @@
 <template>
   <div>
     <v-row>
-      <v-col cols="6" class="text-center">
-        <v-card flat class="secondaryBackground pa-2 rounded-lg" link to="/">
-          <span style="font-size: 14px" class="white--text">Forex</span>
-        </v-card>
-      </v-col>
-       <v-col cols="6" class="text-center">
-        <v-card flat class="secondaryBackground pa-2 rounded-lg" link to="/">
-          <span style="font-size: 14px" class="white--text">Indices</span>
-        </v-card>
-      </v-col>
-       <v-col cols="6" class="text-center">
-        <v-card flat class="secondaryBackground pa-2 rounded-lg" link to="/">
-          <span style="font-size: 14px" class="white--text">Commodities</span>
-        </v-card>
-      </v-col>
-       <v-col cols="6" class="text-center">
+         <v-col cols="6" class="text-center">
         <v-card flat class="secondaryBackground pa-2 rounded-lg" link to="/">
           <span style="font-size: 14px" class="white--text">Equities</span>
         </v-card>
@@ -24,6 +9,21 @@
        <v-col cols="6" class="text-center">
         <v-card flat class="secondaryBackground pa-2 rounded-lg" link to="/">
           <span style="font-size: 14px" class="white--text">ETFs</span>
+        </v-card>
+      </v-col>
+      <v-col cols="6" class="text-center">
+        <v-card flat class="secondaryBackground pa-2 rounded-lg" link to="/">
+          <span style="font-size: 14px" class="white--text">Indices</span>
+        </v-card>
+      </v-col>
+      <v-col cols="6" class="text-center">
+        <v-card flat class="secondaryBackground pa-2 rounded-lg" link to="/">
+          <span style="font-size: 14px" class="white--text">Commodities</span>
+        </v-card>
+      </v-col>
+      <v-col cols="6" class="text-center">
+        <v-card flat class="secondaryBackground pa-2 rounded-lg" link to="/">
+          <span style="font-size: 14px" class="white--text">Forex</span>
         </v-card>
       </v-col>
        <v-col cols="6" class="text-center">

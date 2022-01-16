@@ -5,9 +5,7 @@
         <v-img src="/avatar.jpg"></v-img>
       </v-list-item-avatar>
       <v-list-item-content>
-        <v-list-item-title
-          >Mahmoud, 24</v-list-item-title
-        >
+        <v-list-item-title>Mahmoud, 24</v-list-item-title>
         <v-list-item-subtitle>Fullstack Web Developer</v-list-item-subtitle>
       </v-list-item-content>
       <v-list-item-action>
@@ -18,7 +16,7 @@
           :value="80"
           color="primary"
         >
-         80%
+          80%
         </v-progress-circular>
       </v-list-item-action>
     </v-list-item>
@@ -47,8 +45,7 @@
         <v-card
           flat
           class="secondaryBackground pa-2 rounded-lg"
-          link
-          to="/accounts/deposit"
+            @click="myProfileDialog = true"
         >
           <v-icon color="primary">fas fa-user</v-icon>
           <br />
@@ -59,8 +56,7 @@
         <v-card
           flat
           class="secondaryBackground pa-2 rounded-lg"
-          link
-          to="/accounts/deposit"
+          @click="myAccountsDialog = true"
         >
           <v-icon color="primary">fas fa-user-clock</v-icon>
           <br />
@@ -68,7 +64,11 @@
         </v-card>
       </v-col>
       <v-col cols="6" class="text-center">
-        <v-card flat class="secondaryBackground pa-2 rounded-lg">
+        <v-card
+          flat
+          class="secondaryBackground pa-2 rounded-lg"
+          @click="hobCardDialog = true"
+        >
           <v-icon color="primary">far fa-credit-card</v-icon>
           <br />
           <span style="font-size: 14px" class="white--text">My HÖB Card</span>
@@ -99,7 +99,7 @@
         </v-card>
       </v-col>
       <v-col cols="6" class="text-center">
-        <v-card flat class="secondaryBackground pa-2 rounded-lg">
+        <v-card flat class="secondaryBackground pa-2 rounded-lg"  @click="internalTransferDialog = true">
           <v-icon color="primary">fas fa-exchange-alt</v-icon>
           <br />
           <span style="font-size: 14px" class="white--text"
@@ -108,7 +108,7 @@
         </v-card>
       </v-col>
       <v-col cols="12">
-        <v-card flat class="secondaryBackground text-center pa-2 rounded-lg">
+        <v-card flat  @click="myAccountsHistoryDialog = true" class="secondaryBackground text-center pa-2 rounded-lg">
           <v-icon color="primary">fas fa-history</v-icon>
           <br />
           <span style="font-size: 14px" class="white--text">
@@ -169,11 +169,58 @@
         </v-list-item-icon>
       </v-list-item>
     </v-list>
+    <user-dialogs-my-account
+      v-if="myAccountsDialog"
+      :dialog="myAccountsDialog"
+      @close-dialog="myAccountsDialog = false"
+    />
+    <user-dialogs-account-history
+      v-if="myAccountsHistoryDialog"
+      :dialog="myAccountsHistoryDialog"
+      @close-dialog="myAccountsHistoryDialog = false"
+    />
+    <user-dialogs-internal-transfer
+      v-if="internalTransferDialog"
+      :dialog="internalTransferDialog"
+      @close-dialog="internalTransferDialog = false"
+    />
+    <user-dialogs-my-profile
+      v-if="myProfileDialog"
+      :dialog="myProfileDialog"
+      @close-dialog="myProfileDialog = false"
+    />
+    <user-dialogs-h-o-b-card
+      v-if="hobCardDialog"
+      :dialog="hobCardDialog"
+      @close-dialog="hobCardDialog = false"
+    />
   </div>
 </template>
 
 <script>
-export default {};
+import UserDialogsAccountHistory from "../components/user/dialogs/UserDialogsAccountHistory.vue";
+import UserDialogsHOBCard from "../components/user/dialogs/UserDialogsHOBCard.vue";
+import UserDialogsInternalTransfer from "../components/user/dialogs/UserDialogsInternalTransfer.vue";
+import UserDialogsMyAccount from "../components/user/dialogs/UserDialogsMyAccount.vue";
+import UserDialogsMyProfile from "../components/user/dialogs/UserDialogsMyProfile.vue";
+export default {
+  components: {
+    UserDialogsMyAccount,
+    UserDialogsAccountHistory,
+    UserDialogsInternalTransfer,
+    UserDialogsMyProfile,
+    UserDialogsHOBCard,
+  },
+  data() {
+    return {
+      myAccountsDialog: false,
+      myAccountsHistoryDialog: false,
+      internalTransferDialog: false,
+      myProfileDialog: false,
+      hobCardDialog: false,
+    };
+  },
+};
 </script>
 
 <style></style>
