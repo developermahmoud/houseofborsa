@@ -3,7 +3,7 @@
     <home-slider />
     <div class="d-flex my-2">
       <v-icon>mdi-bullhorn</v-icon>
-      <marquee class="mx-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus tenetur possimus minus hic, sequi ad eveniet officia architecto, tempora, quasi illum consectetur. Omnis magni quaerat quo, tenetur ab sit optio!</marquee>
+      <marquee class="mx-2">CFDs and FX are complex instruments and come with a high risk of losing money rapidly due to leverage. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money. Professional clients can lose more than they deposit. All trading involves risk</marquee>
       <v-icon>mdi-format-list-bulleted</v-icon>
     </div>
 

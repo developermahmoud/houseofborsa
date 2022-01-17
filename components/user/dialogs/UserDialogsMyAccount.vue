@@ -14,7 +14,7 @@
           <v-spacer></v-spacer>
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
-              <v-btn icon v-bind="attrs" v-on="on" color="green"
+              <v-btn icon v-bind="attrs" v-on="on" color="green" link to="/accounts/live"
                 ><v-icon>mdi-plus</v-icon></v-btn
               >
             </template>
@@ -72,7 +72,7 @@
           <v-spacer></v-spacer>
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
-              <v-btn icon v-bind="attrs" v-on="on" color="green"
+              <v-btn icon v-bind="attrs" v-on="on" color="green" link to="/accounts/demo"
                 ><v-icon>mdi-plus</v-icon></v-btn
               >
             </template>

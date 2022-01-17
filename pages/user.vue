@@ -1,9 +1,12 @@
 <template>
   <div>
     <v-list-item two-line class="px-0">
-      <v-list-item-avatar size="60">
-        <v-img src="/avatar.jpg"></v-img>
-      </v-list-item-avatar>
+      <v-list-item-action class="mr-4">
+        <div class="avatarDiv">
+          <img src="/avatar.jpg" class="avatarClassImg" />
+          <v-icon small color="black" class="iconAbsolute">mdi-camera</v-icon>
+        </div>
+      </v-list-item-action>
       <v-list-item-content>
         <v-list-item-title>Mahmoud, 24</v-list-item-title>
         <v-list-item-subtitle>Fullstack Web Developer</v-list-item-subtitle>
@@ -45,7 +48,7 @@
         <v-card
           flat
           class="secondaryBackground pa-2 rounded-lg"
-            @click="myProfileDialog = true"
+          @click="myProfileDialog = true"
         >
           <v-icon color="primary">fas fa-user</v-icon>
           <br />
@@ -99,7 +102,11 @@
         </v-card>
       </v-col>
       <v-col cols="6" class="text-center">
-        <v-card flat class="secondaryBackground pa-2 rounded-lg"  @click="internalTransferDialog = true">
+        <v-card
+          flat
+          class="secondaryBackground pa-2 rounded-lg"
+          @click="internalTransferDialog = true"
+        >
           <v-icon color="primary">fas fa-exchange-alt</v-icon>
           <br />
           <span style="font-size: 14px" class="white--text"
@@ -108,7 +115,11 @@
         </v-card>
       </v-col>
       <v-col cols="12">
-        <v-card flat  @click="myAccountsHistoryDialog = true" class="secondaryBackground text-center pa-2 rounded-lg">
+        <v-card
+          flat
+          @click="myAccountsHistoryDialog = true"
+          class="secondaryBackground text-center pa-2 rounded-lg"
+        >
           <v-icon color="primary">fas fa-history</v-icon>
           <br />
           <span style="font-size: 14px" class="white--text">
@@ -223,4 +234,35 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.avatarDiv {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #ffffff;
+  position: relative;
+}
+
+.avatarClassImg {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.iconAbsolute {
+  position: absolute;
+  cursor: pointer;
+  top: 30px;
+  right: -10px;
+  /* border: 1px solid; */
+  border-radius: 50%;
+  /* padding: 11px; */
+  height: 20px;
+  width: 20px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background-color: #e4e6eb;
+}
+</style>

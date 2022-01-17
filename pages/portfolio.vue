@@ -126,14 +126,14 @@
               >
             </v-list-item>
             <v-list-item style="min-height: 30px">
-              <v-list-item-title>Available cash now</v-list-item-title>
+              <v-list-item-title>Available cash now </v-list-item-title>
               <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
                 >$00.00</v-list-item-action-text
               >
             </v-list-item>
             <v-list-item style="min-height: 30px">
               <v-list-item-title
-                >Margin Level%
+                >Margin Level(%): 
                 <v-icon @click="marginInfoDialog = true" small
                   >mdi-information-outline</v-icon
                 ></v-list-item-title
