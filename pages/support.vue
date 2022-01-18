@@ -88,7 +88,7 @@
         Execution Policy
       </v-col>
     </v-row>
-    <h3 class="ml-3 mt-5">HÓB Academy</h3>
+    <h3 class="mt-5">HÓB Academy</h3>
     <v-list class="py-0 transparent" dense>
       <v-list-item>
         <v-list-item-icon class="mr-3">
