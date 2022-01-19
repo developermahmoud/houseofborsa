@@ -133,7 +133,7 @@
             </v-list-item>
             <v-list-item style="min-height: 30px">
               <v-list-item-title
-                >Margin Level(%): 
+                >Margin Level(%):
                 <v-icon @click="marginInfoDialog = true" small
                   >mdi-information-outline</v-icon
                 ></v-list-item-title
@@ -209,11 +209,17 @@
         <v-tab-item value="pending"> Pending </v-tab-item>
       </v-tabs-items>
     </template>
-    <v-list three-line class="mx-2 transparent">
-      <v-list-item class="secondary rounded mb-3" v-for="i in 5" :key="i">
-        <v-list-item-avatar>
-          <v-img src="/opengraph.png"></v-img>
-        </v-list-item-avatar>
+    <v-list two-line class="mx-2 transparent">
+      <v-list-item
+        class="secondary rounded mb-3"
+        v-for="(item, i) in items"
+        :key="i"
+      >
+        <v-list-item-icon :class="`mr-2`" @click="item.is_open = !item.is_open">
+          <v-icon>{{
+            item.is_open ? "mdi-chevron-up" : "mdi-chevron-down"
+          }}</v-icon>
+        </v-list-item-icon>
         <v-list-item-content>
           <v-list-item-title
             >AWS,
@@ -224,8 +230,33 @@
             <v-icon>mdi-arrow-right-thin</v-icon>
             30.15</v-list-item-subtitle
           >
+          <div v-if="item.is_open">
+            2022.01.11 14:18
+            <v-simple-table class="transparent">
+              <template v-slot:default>
+                <tbody>
+                  <tr>
+                    <td>S/L:</td>
+                    <td>-</td>
+                    <td>Swap</td>
+                    <td>-0.24 USD</td>
+                  </tr>
+                  <tr>
+                    <td>T/P:</td>
+                    <td>-</td>
+                    <td>Commission</td>
+                    <td>-0.00 USD</td>
+                  </tr>
+                  <tr>
+                    <td>ID:</td>
+                    <td colspan="3">47984555</td>
+                  </tr>
+                </tbody>
+              </template>
+            </v-simple-table>
+          </div>
         </v-list-item-content>
-        <v-list-item-action-text class="green--text">
+        <v-list-item-action-text v-if="!item.is_open" class="green--text">
           <div class="font-weight-bold">$ 395.00</div>
           <div style="font-size: 0.875rem; text-align: left">+1.92%</div>
         </v-list-item-action-text>
@@ -298,6 +329,26 @@ export default {
   },
   data() {
     return {
+      items: [
+        {
+          is_open: false,
+        },
+        {
+          is_open: false,
+        },
+        {
+          is_open: false,
+        },
+        {
+          is_open: false,
+        },
+        {
+          is_open: false,
+        },
+        {
+          is_open: false,
+        },
+      ],
       tab: "open",
       showMargin: true,
       isBlur: false,

@@ -105,7 +105,8 @@
         <v-card
           flat
           class="secondaryBackground pa-2 rounded-lg"
-          @click="internalTransferDialog = true"
+          link
+          to="/accounts/internal-transfer"
         >
           <v-icon color="primary">fas fa-exchange-alt</v-icon>
           <br />
@@ -130,7 +131,7 @@
     </v-row>
 
     <v-list class="transparent">
-      <v-list-item>
+      <v-list-item to="/accounts/setting">
         <v-list-item-icon>
           <v-icon>mdi-cog</v-icon>
         </v-list-item-icon>
@@ -152,22 +153,28 @@
       <v-divider></v-divider>
       <v-list-item link to="/support">
         <v-list-item-icon>
-          <v-icon>fa-question-circle</v-icon>
+          <v-icon>fa-headset</v-icon>
         </v-list-item-icon>
-        <v-list-item-title>Support and chat</v-list-item-title>
+        <v-list-item-title>Live Support</v-list-item-title>
         <v-list-item-icon>
           <v-icon>mdi-arrow-right</v-icon>
         </v-list-item-icon>
       </v-list-item>
       <v-divider></v-divider>
-      <v-list-item>
+      <v-list-item link to="/support">
         <v-list-item-icon>
-          <v-icon>mdi-brightness-4</v-icon>
+          <v-icon>fa-gavel</v-icon>
         </v-list-item-icon>
-        <v-list-item-title>Dark Mode</v-list-item-title>
-        <v-list-item-action class="pr-4">
-          <v-switch class="mr-2"></v-switch>
-        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title>Legal Information</v-list-item-title>
+          <v-list-item-subtitle
+            >HÓB documents and third-party licenses</v-list-item-subtitle
+          >
+        </v-list-item-content>
+
+        <v-list-item-icon>
+          <v-icon>mdi-arrow-right</v-icon>
+        </v-list-item-icon>
       </v-list-item>
       <v-divider></v-divider>
       <v-list-item>
@@ -190,11 +197,6 @@
       :dialog="myAccountsHistoryDialog"
       @close-dialog="myAccountsHistoryDialog = false"
     />
-    <user-dialogs-internal-transfer
-      v-if="internalTransferDialog"
-      :dialog="internalTransferDialog"
-      @close-dialog="internalTransferDialog = false"
-    />
     <user-dialogs-my-profile
       v-if="myProfileDialog"
       :dialog="myProfileDialog"
@@ -211,14 +213,12 @@
 <script>
 import UserDialogsAccountHistory from "../components/user/dialogs/UserDialogsAccountHistory.vue";
 import UserDialogsHOBCard from "../components/user/dialogs/UserDialogsHOBCard.vue";
-import UserDialogsInternalTransfer from "../components/user/dialogs/UserDialogsInternalTransfer.vue";
 import UserDialogsMyAccount from "../components/user/dialogs/UserDialogsMyAccount.vue";
 import UserDialogsMyProfile from "../components/user/dialogs/UserDialogsMyProfile.vue";
 export default {
   components: {
     UserDialogsMyAccount,
     UserDialogsAccountHistory,
-    UserDialogsInternalTransfer,
     UserDialogsMyProfile,
     UserDialogsHOBCard,
   },

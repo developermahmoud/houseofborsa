@@ -14,81 +14,85 @@
       </v-col>
     </v-row>
     <h3>Help Center</h3>
-    <v-row no-gutters>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon>About
-        HÓB
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon>HOB –
-        Why Us?
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon
-        >Regulations
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon
-        >Financial Ombudsman Service
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon
-        >Protecting Client Funds
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon
-        >Treating Customers Fairly
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon
-        >Professional Clients
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon>House
-        Of Borse Careers
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon
-        >Financial Terms
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon
-        >Trading Hours
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon
-        >Download Center
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon>TERMS
-        OF USE
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon>RISK
-        DISCLOSURE STATEMENT
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon
-        >PRIVACY POLICY
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon
-        >COOKIES POLICY
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon>PILLAR
-        3 DISCLOSURE
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon>Terms
-        and Conditions
-      </v-col>
-      <v-col cols="12"
-        ><v-icon size="20" class="mr-1" color="primary">mdi-check</v-icon>Order
-        Execution Policy
-      </v-col>
-    </v-row>
-    <h3 class="mt-5">HÓB Academy</h3>
+     <v-list class="py-0 transparent" dense>
+      <v-list-item>
+        <v-list-item-title>House Of Borse Careers </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+         <v-list-item>
+        <v-list-item-title>Financial Terms </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+         <v-list-item>
+        <v-list-item-title>Trading Hours </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+         <v-list-item>
+        <v-list-item-title>Download Center </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+         <v-list-item>
+        <v-list-item-title>TERMS OF USE </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+         <v-list-item>
+        <v-list-item-title>RISK DISCLOSURE STATEMENT </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+         <v-list-item>
+        <v-list-item-title>PRIVACY POLICY</v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+         <v-list-item>
+        <v-list-item-title>COOKIES POLICY </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+         <v-list-item>
+        <v-list-item-title>PILLAR 3 DISCLOSURE </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+         <v-list-item>
+        <v-list-item-title>Terms and Conditions </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+         <v-list-item>
+        <v-list-item-title>Order Execution Policy </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+    </v-list>
+    <h3 class="mt-1">HÓB Academy</h3>
     <v-list class="py-0 transparent" dense>
       <v-list-item>
         <v-list-item-icon class="mr-3">

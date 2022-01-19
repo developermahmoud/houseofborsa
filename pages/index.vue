@@ -10,7 +10,7 @@
     <home-services />
     <home-trade class="mb-3" />
     <home-charts class="mb-3" />
-    <v-row class="mb-2">
+    <v-row class="mb-1">
       <v-col class="text-center">
         <v-icon size="20">fab fa-windows</v-icon>
         <br />
@@ -37,6 +37,7 @@
         <span style="font-size: 9px">Android</span>
       </v-col>
     </v-row>
+    <h3 class="mb-3">HÓB platforms</h3>
     <v-img width="100%" src="/platform.png" />
     <home-news class="mb-3" />
     <home-prices />

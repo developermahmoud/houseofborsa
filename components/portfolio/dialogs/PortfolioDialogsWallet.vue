@@ -9,7 +9,7 @@
           </v-card>
         </v-col>
         <v-col cols="4">
-          <v-card tile class="secondary py-2 text-center" outlined>
+          <v-card tile class="secondary py-2 text-center" outlined link  to="/accounts/internal-transfer">
             <v-icon color="primary">mdi-swap-horizontal</v-icon>
             <br />
             Transfer
