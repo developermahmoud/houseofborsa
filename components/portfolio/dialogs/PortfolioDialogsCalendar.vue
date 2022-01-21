@@ -44,6 +44,16 @@
               active-class="primary"
               :show-arrows="false"
             >
+            <v-slide-item v-slot="{ active, toggle }">
+                <v-btn
+                  small
+                  class="secondaryBackground mr-1"
+                  :input-value="active"
+                  @click="toggle"
+                >
+                  1d
+                </v-btn>
+              </v-slide-item>
               <v-slide-item v-slot="{ active, toggle }">
                 <v-btn
                   small

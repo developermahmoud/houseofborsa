@@ -42,7 +42,7 @@
         <v-icon>mdi-chat</v-icon>
       </v-btn>
     </div>
-    <v-img src="/hobcard.jpg" class="rounded-xl mb-3" />
+    <v-img src="/HOB-credit-card final png2.png" class="mb-3" />
     <v-row>
       <v-col cols="6" class="text-center">
         <v-card

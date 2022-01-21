@@ -100,9 +100,15 @@
     </template>
     <template v-if="showMargin">
       <v-tabs background-color="transparent" fixed-tabs v-model="tab">
-        <v-tab href="#open">Open <v-badge inline content="4"></v-badge></v-tab>
-        <v-tab href="#closed">Closed</v-tab>
-        <v-tab href="#pending">Pending</v-tab>
+        <v-tab href="#open"
+          >Open <v-badge content="4" offset-y="-4" color="green"></v-badge
+        ></v-tab>
+        <v-tab href="#closed"
+          >Closed <v-badge content="1" offset-y="-4"></v-badge
+        ></v-tab>
+        <v-tab href="#pending"
+          >Pending <v-badge content="1" offset-y="-4" color="red"></v-badge
+        ></v-tab>
       </v-tabs>
       <v-tabs-items v-model="tab" class="transparent">
         <v-tab-item value="open">
@@ -114,7 +120,7 @@
               >
             </v-list-item>
             <v-list-item style="min-height: 30px">
-              <v-list-item-title>Portfolio Value</v-list-item-title>
+              <v-list-item-title>Portfolio Equity</v-list-item-title>
               <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
                 >$00.00</v-list-item-action-text
               >
@@ -126,7 +132,7 @@
               >
             </v-list-item>
             <v-list-item style="min-height: 30px">
-              <v-list-item-title>Available cash now </v-list-item-title>
+              <v-list-item-title>Available cash</v-list-item-title>
               <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
                 >$00.00</v-list-item-action-text
               >
@@ -193,18 +199,6 @@
               >$00.00</v-list-item-action-text
             >
           </v-list-item>
-          <v-list-item style="min-height: 30px">
-            <v-list-item-title>Total Withdrawals</v-list-item-title>
-            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-              >$00.00</v-list-item-action-text
-            >
-          </v-list-item>
-          <v-list-item style="min-height: 30px">
-            <v-list-item-title>Net deposit Amount</v-list-item-title>
-            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-              >$00.00</v-list-item-action-text
-            >
-          </v-list-item>
         </v-tab-item>
         <v-tab-item value="pending"> Pending </v-tab-item>
       </v-tabs-items>
@@ -232,28 +226,25 @@
           >
           <div v-if="item.is_open">
             2022.01.11 14:18
-            <v-simple-table class="transparent">
-              <template v-slot:default>
-                <tbody>
-                  <tr>
-                    <td>S/L:</td>
-                    <td>-</td>
-                    <td>Swap</td>
-                    <td>-0.24 USD</td>
-                  </tr>
-                  <tr>
-                    <td>T/P:</td>
-                    <td>-</td>
-                    <td>Commission</td>
-                    <td>-0.00 USD</td>
-                  </tr>
-                  <tr>
-                    <td>ID:</td>
-                    <td colspan="3">47984555</td>
-                  </tr>
-                </tbody>
-              </template>
-            </v-simple-table>
+            <div class="d-flex justify-space-between my-1 mt-3">
+              <div>S/L:</div>
+              <div v-if="tab != 'pending'">Swap</div>
+              <div v-if="tab != 'pending'">0.24$</div>
+            </div>
+            <v-divider></v-divider>
+            <div
+              class="d-flex justify-space-between my-1"
+              v-if="['closed', 'pending'].includes(tab)"
+            >
+              <div>T/P:</div>
+              <div v-if="tab != 'pending'">Commission</div>
+              <div v-if="tab != 'pending'">-0.00$</div>
+            </div>
+            <v-divider></v-divider>
+            <div class="d-flex justify-space-between my-1">
+              <div>ID:</div>
+              <div>47984555</div>
+            </div>
           </div>
         </v-list-item-content>
         <v-list-item-action-text v-if="!item.is_open" class="green--text">
