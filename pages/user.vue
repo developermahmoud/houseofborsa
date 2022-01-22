@@ -4,6 +4,7 @@
       <v-list-item-action class="mr-4">
         <div class="avatarDiv">
           <img src="/avatar.jpg" class="avatarClassImg" />
+          <v-badge dot color="green" offset-y="-30"></v-badge>
           <v-icon small color="black" class="iconAbsolute">mdi-camera</v-icon>
         </div>
       </v-list-item-action>
@@ -23,24 +24,29 @@
         </v-progress-circular>
       </v-list-item-action>
     </v-list-item>
-    <div class="mb-3">
-      <v-chip label outlined small>35 Friend</v-chip>
-      <v-chip label outlined small>35 Follower</v-chip>
-      <v-chip label outlined small>35 Post</v-chip>
-    </div>
     <div class="d-flex align-center justify-space-between mb-3">
-      <v-btn icon class="secondary">
-        <v-icon>mdi-cellphone</v-icon>
-      </v-btn>
-      <v-btn icon class="secondary">
-        <v-icon>mdi-whatsapp</v-icon>
-      </v-btn>
-      <v-btn icon class="secondary">
-        <v-icon>mdi-email</v-icon>
-      </v-btn>
-      <v-btn icon class="secondary">
-        <v-icon>mdi-chat</v-icon>
-      </v-btn>
+      <div class="text-center body-2">
+        <span>422</span> <v-icon color="primary" small>mdi-chart-box</v-icon>
+        <br />
+        <span style="font-size:12px;" class="grey--text">REPUTATION</span>
+      </div>
+      <div class="text-center body-2">
+        <span>120</span>
+        <v-icon color="primary" small>mdi-head-lightbulb</v-icon>
+        <br />
+        <span style="font-size:12px;" class="grey--text">IDEAS</span>
+      </div>
+      <div class="text-center body-2">
+        <span>50</span> <v-icon color="primary" small>mdi-thumb-up</v-icon>
+        <br />
+        <span style="font-size:12px;" class="grey--text">LIKES</span>
+      </div>
+      <div class="text-center body-2">
+        <span>100</span>
+        <v-icon color="primary" small>mdi-account-group</v-icon>
+        <br />
+        <span style="font-size:12px;" class="grey--text">FOLLOWERS</span>
+      </div>
     </div>
     <v-img src="/HOB-credit-card final png2.png" class="mb-3" />
     <v-row>
@@ -129,13 +135,32 @@
         </v-card>
       </v-col>
     </v-row>
-
     <v-list class="transparent">
       <v-list-item to="/accounts/setting">
         <v-list-item-icon>
           <v-icon>mdi-cog</v-icon>
         </v-list-item-icon>
         <v-list-item-title>Settings</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-arrow-right</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item to="/accounts/setting">
+        <v-list-item-icon>
+          <v-icon>mdi-account-arrow-right-outline</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>Refer a friend</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-arrow-right</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-icon>
+          <v-icon>mdi-at</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>We're on social media</v-list-item-title>
         <v-list-item-icon>
           <v-icon>mdi-arrow-right</v-icon>
         </v-list-item-icon>

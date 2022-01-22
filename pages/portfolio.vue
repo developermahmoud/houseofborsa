@@ -228,22 +228,29 @@
             2022.01.11 14:18
             <div class="d-flex justify-space-between my-1 mt-3">
               <div>S/L:</div>
+              <div v-if="tab == 'pending'">T/P:</div>
               <div v-if="tab != 'pending'">Swap</div>
               <div v-if="tab != 'pending'">0.24$</div>
             </div>
             <v-divider></v-divider>
             <div
               class="d-flex justify-space-between my-1"
-              v-if="['closed', 'pending'].includes(tab)"
+              v-if="['closed'].includes(tab)"
             >
               <div>T/P:</div>
               <div v-if="tab != 'pending'">Commission</div>
               <div v-if="tab != 'pending'">-0.00$</div>
             </div>
             <v-divider></v-divider>
-            <div class="d-flex justify-space-between my-1">
+            <div v-if="tab=='open'" class="d-flex justify-space-between my-1">
+              <div>T/P:</div>
+              <div>-</div>
+              <div>#47984555</div>
+            </div>
+              <div v-if="tab=='pending'" class="d-flex justify-space-between my-1">
               <div>ID:</div>
-              <div>47984555</div>
+              <div>-</div>
+              <div>#47984555</div>
             </div>
           </div>
         </v-list-item-content>
