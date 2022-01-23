@@ -6,11 +6,6 @@
           <v-icon color="white">mdi-format-align-center</v-icon>
         </v-btn>
         <v-spacer></v-spacer>
-        <v-btn icon @click="calendarDialog = true">
-          <v-icon color="white">mdi-calendar</v-icon>
-        </v-btn>
-      </v-card-title>
-      <v-card-text class="text-center white--text">
         <div>
           <span style="font-size: 20px">
             <v-tooltip bottom>
@@ -27,6 +22,12 @@
             isBlur ? "mdi-eye-off-outline" : "mdi-eye"
           }}</v-icon>
         </div>
+        <v-spacer></v-spacer>
+        <v-btn icon @click="calendarDialog = true">
+          <v-icon color="white">mdi-calendar</v-icon>
+        </v-btn>
+      </v-card-title>
+      <v-card-text class="text-center white--text">
         <div>
           <div class="d-flex align-center justify-center">
             <v-icon @click="dialog = true" large>mdi-cards</v-icon>
@@ -242,12 +243,15 @@
               <div v-if="tab != 'pending'">-0.00$</div>
             </div>
             <v-divider></v-divider>
-            <div v-if="tab=='open'" class="d-flex justify-space-between my-1">
+            <div v-if="tab == 'open'" class="d-flex justify-space-between my-1">
               <div>T/P:</div>
               <div>-</div>
               <div>#47984555</div>
             </div>
-              <div v-if="tab=='pending'" class="d-flex justify-space-between my-1">
+            <div
+              v-if="tab == 'pending'"
+              class="d-flex justify-space-between my-1"
+            >
               <div>ID:</div>
               <div>-</div>
               <div>#47984555</div>
