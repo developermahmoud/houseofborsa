@@ -11,10 +11,14 @@
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
                 <v-icon color="green" small v-bind="attrs" v-on="on">
-                  mdi-checkbox-blank-circle
+                  mdi-chevron-down-circle
                 </v-icon>
               </template>
-              <span>HOB 5000</span>
+              <div>
+                <v-chip label small color="black">6091858</v-chip>
+                <v-chip label small color="grey">silver</v-chip>
+                <v-chip label small color="green">live</v-chip>
+              </div>
             </v-tooltip>
             Portfolio P/L($)</span
           >
@@ -246,7 +250,7 @@
             <div v-if="tab == 'open'" class="d-flex justify-space-between my-1">
               <div>T/P:</div>
               <div>-</div>
-              <div>#47984555</div>
+              <div>ID: 47984555</div>
             </div>
             <div
               v-if="tab == 'pending'"
