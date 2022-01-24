@@ -7,7 +7,7 @@
         </v-btn>
         <v-spacer></v-spacer>
         <div>
-          <span style="font-size: 20px">
+          <span style="font-size: 17px">
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
                 <v-icon color="green" small v-bind="attrs" v-on="on">
@@ -22,7 +22,7 @@
             </v-tooltip>
             Portfolio P/L($)</span
           >
-          <v-icon @click="isBlur = !isBlur">{{
+          <v-icon small @click="isBlur = !isBlur">{{
             isBlur ? "mdi-eye-off-outline" : "mdi-eye"
           }}</v-icon>
         </div>
@@ -34,15 +34,16 @@
       <v-card-text class="text-center white--text">
         <div>
           <div class="d-flex align-center justify-center">
-            <v-icon @click="dialog = true" large>mdi-cards</v-icon>
+            <v-icon @click="dialog = true">mdi-cards</v-icon>
             <div>
-              <span class="text-h5">$</span>
-              <strong :class="isBlur ? 'blur-text display-1' : 'display-1'">
+              <span class="text-h6">$</span>
+              <strong style="font-size:25px;" :class="isBlur ? 'blur-text' : ''">
                 9238.</strong
               >
-              <span class="text-h5">31</span>
+              <span class="text-h6">31</span>
             </div>
             <v-icon
+            small
               @click="
                 showMargin = !showMargin;
                 showChart = false;
