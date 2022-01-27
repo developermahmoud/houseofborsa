@@ -86,6 +86,28 @@
           <v-btn x-small dense outlined>Request Update</v-btn>
         </v-card-actions>
         <v-divider></v-divider>
+        <v-card-title>Bank Information</v-card-title>
+        <v-list class="transparent">
+          <v-list-item>
+            <v-list-item-avatar color="secondaryBackground">
+              <v-icon>mdi-bank</v-icon>
+            </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title>Al-Rajhi Bank</v-list-item-title>
+              <v-list-item-subtitle>2 month ago</v-list-item-subtitle>
+            </v-list-item-content>
+            <v-list-item-action>
+              <v-btn icon><v-icon color="red">mdi-delete</v-icon></v-btn>
+            </v-list-item-action>
+          </v-list-item>
+        </v-list>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn x-small dense outlined @click="dialogBank = true"
+            >Request New</v-btn
+          >
+        </v-card-actions>
+        <v-divider></v-divider>
         <v-card-title> Upload documents </v-card-title>
         <v-list class="transparent">
           <v-list-item>
@@ -100,7 +122,7 @@
             </v-list-item-content>
           </v-list-item>
           <v-list-item>
-             <v-list-item-avatar>
+            <v-list-item-avatar>
               <v-icon class="grey lighten-1"> mdi-clipboard-text </v-icon>
             </v-list-item-avatar>
             <v-list-item-content>
@@ -126,6 +148,40 @@
         </v-card-text>
       </v-card>
     </v-dialog>
+    <v-dialog v-model="dialogBank" max-width="700">
+      <v-card class="secondary">
+        <v-card-title>
+          <v-btn icon @click="dialogBank = false">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+          <v-spacer></v-spacer>
+          Add New
+          <v-spacer></v-spacer>
+        
+        </v-card-title>
+        <v-divider class="mb-5"></v-divider>
+        <v-card-text>
+          <v-textarea
+            outlined
+            dense
+            label="Beneficiary's Bank Account Number"
+          ></v-textarea>
+          <v-text-field outlined dense label="Swift Code"></v-text-field>
+          <v-text-field outlined dense label="IBAN Number"></v-text-field>
+          <v-text-field
+            outlined
+            dense
+            label="Branch Name Of Beneficiary's Bank"
+          ></v-text-field>
+          <v-text-field
+            outlined
+            dense
+            label="Address Of Beneficiary's Bank"
+          ></v-text-field>
+            <v-btn class="primary" block text>Save</v-btn>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -136,6 +192,11 @@ export default {
       required: true,
       type: Boolean,
     },
+  },
+  data() {
+    return {
+      dialogBank: false,
+    };
   },
 };
 </script>

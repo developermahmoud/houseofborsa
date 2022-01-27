@@ -4,12 +4,15 @@
       <v-list-item-action class="mr-4">
         <div class="avatarDiv">
           <img src="/avatar.jpg" class="avatarClassImg" />
-          <v-badge dot color="green" offset-y="-30"></v-badge>
           <v-icon small color="black" class="iconAbsolute">mdi-camera</v-icon>
         </div>
       </v-list-item-action>
       <v-list-item-content>
-        <v-list-item-title>Mahmoud, 24</v-list-item-title>
+        <v-list-item-title
+          >Mahmoud, 24
+          <v-chip x-small color="primary">Platinum</v-chip></v-list-item-title
+        >
+        <v-list-item-subtitle>Egypt, Giza</v-list-item-subtitle>
         <v-list-item-subtitle>Fullstack Web Developer</v-list-item-subtitle>
       </v-list-item-content>
       <v-list-item-action>
@@ -25,27 +28,23 @@
       </v-list-item-action>
     </v-list-item>
     <div class="d-flex align-center justify-space-between mb-3">
-      <div class="text-center body-2">
-        <span>422</span> <v-icon color="primary" small>mdi-chart-box</v-icon>
+      <div style="cursor: pointer;" class="text-center body-2" @click="followingDialog = true">
+        <span>20k</span>
+        <v-icon color="primary" small>mdi-account-arrow-right</v-icon>
         <br />
-        <span style="font-size:12px;" class="grey--text">REPUTATION</span>
+        <span style="font-size: 12px" class="grey--text">Following</span>
       </div>
       <div class="text-center body-2">
         <span>120</span>
         <v-icon color="primary" small>mdi-head-lightbulb</v-icon>
         <br />
-        <span style="font-size:12px;" class="grey--text">IDEAS</span>
+        <span style="font-size: 12px" class="grey--text">IDEAS</span>
       </div>
-      <div class="text-center body-2">
-        <span>50</span> <v-icon color="primary" small>mdi-thumb-up</v-icon>
-        <br />
-        <span style="font-size:12px;" class="grey--text">LIKES</span>
-      </div>
-      <div class="text-center body-2">
+      <div style="cursor: pointer;" class="text-center body-2" @click="followingDialog = true">
         <span>100</span>
-        <v-icon color="primary" small>mdi-account-group</v-icon>
+        <v-icon color="primary" small>mdi-account-arrow-left</v-icon>
         <br />
-        <span style="font-size:12px;" class="grey--text">FOLLOWERS</span>
+        <span style="font-size: 12px" class="grey--text">FOLLOWERS</span>
       </div>
     </div>
     <v-img src="/HOB-credit-card final png2.png" class="mb-3" />
@@ -232,10 +231,16 @@
       :dialog="hobCardDialog"
       @close-dialog="hobCardDialog = false"
     />
+    <user-dialog-following
+      v-if="followingDialog"
+      :dialog="followingDialog"
+      @close-dialog="followingDialog = false"
+    />
   </div>
 </template>
 
 <script>
+import UserDialogFollowing from "../components/user/dialogs/UserDialogFollowing.vue";
 import UserDialogsAccountHistory from "../components/user/dialogs/UserDialogsAccountHistory.vue";
 import UserDialogsHOBCard from "../components/user/dialogs/UserDialogsHOBCard.vue";
 import UserDialogsMyAccount from "../components/user/dialogs/UserDialogsMyAccount.vue";
@@ -246,9 +251,11 @@ export default {
     UserDialogsAccountHistory,
     UserDialogsMyProfile,
     UserDialogsHOBCard,
+    UserDialogFollowing,
   },
   data() {
     return {
+      followingDialog: false,
       myAccountsDialog: false,
       myAccountsHistoryDialog: false,
       internalTransferDialog: false,

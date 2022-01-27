@@ -1,16 +1,17 @@
 <template>
   <div>
-    <v-tabs
-      fixed-tabs
-      background-color="secondary"
-    >
+    <v-tabs fixed-tabs background-color="secondary">
       <v-tab>Inbox</v-tab>
       <v-tab>Outbox</v-tab>
     </v-tabs>
-    <v-list two-line class="transparent">
+    <v-list three-line class="transparent">
       <template v-for="(item, index) in items">
         <v-list-item :key="item.title">
           <template v-slot:default="{ active }">
+            <v-list-item-avatar size="30" tile>
+              <v-img v-if="index === 1" src="/hob.jpeg"></v-img>
+              <v-img v-else src="/avatar.jpg"></v-img>
+            </v-list-item-avatar>
             <v-list-item-content>
               <v-list-item-title v-text="item.title"></v-list-item-title>
 

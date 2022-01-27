@@ -2,7 +2,13 @@
   <div>
     <v-card class="secondary" flat tile>
       <v-card-text class="text-center">
-        <v-text-field outlined prepend-inner-icon="mdi-magnify" placeholder="Search Coin Pairs" dense filled></v-text-field>
+        <v-text-field
+          outlined
+          prepend-inner-icon="mdi-magnify"
+          placeholder="Search Coin Pairs"
+          dense
+          filled
+        ></v-text-field>
         <v-slide-group mandatory v-model="toggle_exclusive">
           <v-slide-item class="mr-2" v-slot="{ active, toggle }">
             <v-btn
@@ -11,7 +17,7 @@
               @click="toggle"
               small
               outlined
-              >Favorites
+              >My Watchlist
             </v-btn>
           </v-slide-item>
           <v-slide-item class="mr-2" v-slot="{ active, toggle }">
@@ -110,9 +116,21 @@
                   Bitcoin vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td>
+                <v-chip label x-small style="width: 57px" class="red"
+                  >0.5%</v-chip
+                >
+              </td>
             </tr>
             <tr>
               <td>
@@ -127,9 +145,17 @@
                   Gold vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small class="green">10.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td><v-chip label x-small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
               <td>
@@ -144,9 +170,21 @@
                   Solana Token vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td>
+                <v-chip label x-small style="width: 57px" class="red"
+                  >0.5%</v-chip
+                >
+              </td>
             </tr>
             <tr>
               <td>
@@ -161,9 +199,17 @@
                   Apple inc.
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small class="green">10.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td><v-chip label x-small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
               <td>
@@ -178,9 +224,21 @@
                   Euro vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td>
+                <v-chip label x-small style="width: 57px" class="red"
+                  >0.5%</v-chip
+                >
+              </td>
             </tr>
             <tr>
               <td>
@@ -195,9 +253,17 @@
                   Ethereum vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small class="green">10.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td><v-chip label x-small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
               <td>
@@ -212,9 +278,21 @@
                   Bitcoin vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td>
+                <v-chip label x-small style="width: 57px" class="red"
+                  >0.5%</v-chip
+                >
+              </td>
             </tr>
             <tr>
               <td>
@@ -229,9 +307,17 @@
                   Bitcoin vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small class="green">10.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td><v-chip label x-small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
               <td>
@@ -246,9 +332,17 @@
                   Bitcoin vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small class="red">0.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td><v-chip label x-small class="red">0.5%</v-chip></td>
             </tr>
             <tr>
               <td>
@@ -263,9 +357,17 @@
                   Bitcoin vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small class="green">10.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td><v-chip label x-small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
               <td>
@@ -280,9 +382,21 @@
                   Bitcoin vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td>
+                <v-chip label x-small style="width: 57px" class="red"
+                  >0.5%</v-chip
+                >
+              </td>
             </tr>
             <tr>
               <td>
@@ -297,9 +411,17 @@
                   Bitcoin vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small class="green">10.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td><v-chip label x-small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
               <td>
@@ -314,9 +436,21 @@
                   Bitcoin vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small style="width:57px;" class="red">0.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption">Low 1.4222</div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption">High 1.6422</div>
+              </td>
+              <td>
+                <v-chip label x-small style="width: 57px" class="red"
+                  >0.5%</v-chip
+                >
+              </td>
             </tr>
             <tr>
               <td>
@@ -331,9 +465,21 @@
                   Bitcoin vs US Dollar
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small class="green">10.5%</v-chip></td>
+              <td>
+                1.12485
+                <br />
+                <div class="grey--text caption" style="width: 70px">
+                  Low 1.4222
+                </div>
+              </td>
+              <td>
+                1.12493
+                <br />
+                <div class="grey--text caption" style="width: 70px">
+                  High 1.6422
+                </div>
+              </td>
+              <td><v-chip label x-small class="green">10.5%</v-chip></td>
             </tr>
           </tbody>
         </template>

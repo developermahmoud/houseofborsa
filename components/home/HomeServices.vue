@@ -44,8 +44,8 @@ export default {
         },
         {
           icon: "fa-tools",
-          text: "Tools",
-          to: "/tools",
+          text: "HÓB Academy",
+          to: "/support",
         },
         {
           icon: "fa-users",
