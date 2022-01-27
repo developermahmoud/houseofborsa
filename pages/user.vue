@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-list-item two-line class="px-0">
+    <v-list-item three-line class="px-0">
       <v-list-item-action class="mr-4">
         <div class="avatarDiv">
           <img src="/avatar.jpg" class="avatarClassImg" />
@@ -9,10 +9,18 @@
       </v-list-item-action>
       <v-list-item-content>
         <v-list-item-title
-          >Mahmoud, 24
-          <v-chip x-small color="primary">Platinum</v-chip></v-list-item-title
+          ><v-icon small color="green">mdi-circle</v-icon> Mahmoud,
+          24</v-list-item-title
         >
-        <v-list-item-subtitle>Egypt, Giza</v-list-item-subtitle>
+        <v-list-item-subtitle>
+          <v-chip x-small label color="primary"
+            >Platinum</v-chip
+          ></v-list-item-subtitle
+        >
+        <v-list-item-subtitle
+          ><v-icon small>mdi-map-marker</v-icon> Egypt,
+          Giza</v-list-item-subtitle
+        >
         <v-list-item-subtitle>Fullstack Web Developer</v-list-item-subtitle>
       </v-list-item-content>
       <v-list-item-action>
@@ -28,21 +36,29 @@
       </v-list-item-action>
     </v-list-item>
     <div class="d-flex align-center justify-space-between mb-3">
-      <div style="cursor: pointer;" class="text-center body-2" @click="followingDialog = true">
-        <span>20k</span>
+      <div
+        style="cursor: pointer"
+        class="text-center body-2"
+        @click="followingDialog = true"
+      >
         <v-icon color="primary" small>mdi-account-arrow-right</v-icon>
+        <span>20k</span>
         <br />
         <span style="font-size: 12px" class="grey--text">Following</span>
       </div>
       <div class="text-center body-2">
-        <span>120</span>
         <v-icon color="primary" small>mdi-head-lightbulb</v-icon>
+        <span>120</span>
         <br />
         <span style="font-size: 12px" class="grey--text">IDEAS</span>
       </div>
-      <div style="cursor: pointer;" class="text-center body-2" @click="followingDialog = true">
-        <span>100</span>
+      <div
+        style="cursor: pointer"
+        class="text-center body-2"
+        @click="followingDialog = true"
+      >
         <v-icon color="primary" small>mdi-account-arrow-left</v-icon>
+        <span>100</span>
         <br />
         <span style="font-size: 12px" class="grey--text">FOLLOWERS</span>
       </div>

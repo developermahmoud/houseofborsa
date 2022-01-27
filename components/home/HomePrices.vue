@@ -10,16 +10,6 @@
               @click="toggle"
               small
               outlined
-              >Favorites
-            </v-btn>
-          </v-slide-item>
-          <v-slide-item class="mr-2" v-slot="{ active, toggle }">
-            <v-btn
-              :input-value="active"
-              active-class="primary"
-              @click="toggle"
-              small
-              outlined
               >Stock
             </v-btn>
           </v-slide-item>

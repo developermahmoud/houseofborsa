@@ -161,6 +161,7 @@
         </v-card-title>
         <v-divider class="mb-5"></v-divider>
         <v-card-text>
+           <v-text-field outlined dense label="Beneficiary's Name"></v-text-field>
           <v-textarea
             outlined
             dense
