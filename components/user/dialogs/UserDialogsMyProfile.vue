@@ -157,11 +157,19 @@
           <v-spacer></v-spacer>
           Add New
           <v-spacer></v-spacer>
-        
         </v-card-title>
         <v-divider class="mb-5"></v-divider>
         <v-card-text>
-           <v-text-field outlined dense label="Beneficiary's Name"></v-text-field>
+          <v-text-field
+            outlined
+            dense
+            label="Beneficiary's Name"
+          ></v-text-field>
+          <v-text-field
+            outlined
+            dense
+            label="Beneficiary's Bank Name"
+          ></v-text-field>
           <v-textarea
             outlined
             dense
@@ -179,7 +187,7 @@
             dense
             label="Address Of Beneficiary's Bank"
           ></v-text-field>
-            <v-btn class="primary" block text>Save</v-btn>
+          <v-btn class="primary" block text>Save</v-btn>
         </v-card-text>
       </v-card>
     </v-dialog>

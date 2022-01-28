@@ -72,7 +72,6 @@
             </v-list-item-action>
           </v-list-item>
           <v-chip small label color="secondaryBackground">6091858</v-chip>
-          <v-chip small label color="green">LIVE</v-chip>
         </div>
          <div class="mt-4 mx-2">
           <h3>Live Accounts</h3>
@@ -116,7 +115,6 @@
             </v-list-item-action>
           </v-list-item>
           <v-chip small label color="secondaryBackground">6091858</v-chip>
-          <v-chip small label color="green">LIVE</v-chip>
         </div>
         <v-divider class="mt-7 mb-7"></v-divider>
         <div class="mt-4 mx-2">
@@ -149,7 +147,6 @@
             </v-list-item-action>
           </v-list-item>
           <v-chip small label color="secondaryBackground">6091858</v-chip>
-          <v-chip small label color="red">DEMO</v-chip>
         </div>
         <div class="mt-4 mx-2">
           <v-list-item dense class="px-0 my-2">
@@ -180,7 +177,6 @@
             </v-list-item-action>
           </v-list-item>
           <v-chip small label color="secondaryBackground">6091858</v-chip>
-          <v-chip small label color="red">DEMO</v-chip>
         </div>
       </v-card>
     </v-dialog>

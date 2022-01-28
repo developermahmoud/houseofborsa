@@ -37,13 +37,16 @@
             <v-icon @click="dialog = true">mdi-cards</v-icon>
             <div>
               <span class="text-h6">$</span>
-              <strong style="font-size:25px;" :class="isBlur ? 'blur-text' : ''">
+              <strong
+                style="font-size: 25px"
+                :class="isBlur ? 'blur-text' : ''"
+              >
                 9238.</strong
               >
               <span class="text-h6">31</span>
             </div>
             <v-icon
-            small
+              small
               @click="
                 showMargin = !showMargin;
                 showChart = false;
@@ -109,11 +112,11 @@
         <v-tab href="#open"
           >Open <v-badge content="4" offset-y="-4" color="green"></v-badge
         ></v-tab>
-        <v-tab href="#closed"
-          >Closed <v-badge content="1" offset-y="-4"></v-badge
-        ></v-tab>
         <v-tab href="#pending"
           >Pending <v-badge content="1" offset-y="-4" color="red"></v-badge
+        ></v-tab>
+        <v-tab href="#closed"
+          >Closed <v-badge content="1" offset-y="-4"></v-badge
         ></v-tab>
       </v-tabs>
       <v-tabs-items v-model="tab" class="transparent">
@@ -230,38 +233,76 @@
             <v-icon>mdi-arrow-right-thin</v-icon>
             30.15</v-list-item-subtitle
           >
-          <div v-if="item.is_open">
-            2022.01.11 14:18
-            <div class="d-flex justify-space-between my-1 mt-3">
-              <div>S/L:</div>
-              <div v-if="tab == 'pending'">T/P:</div>
-              <div v-if="tab != 'pending'">Swap</div>
-              <div v-if="tab != 'pending'">0.24$</div>
+          <template v-if="item.is_open">
+            <div v-if="tab == 'closed'">
+              2022.01.11 14:18
+              <div class="d-flex justify-space-between">
+                <div>
+                  S/L:
+                  <br />
+                  Open
+                  <br />
+                  ID
+                </div>
+                <div>
+                  -
+                  <br />
+                  2021.10.26 16:46:11
+                  <br />
+                  #84158208
+                </div>
+                <div>
+                  T/P:
+                  <br />
+                  Swap:
+                  <br />
+                  Commission:
+                </div>
+                <div>
+                  -
+                  <br />
+                  0.00
+                  <br />
+                  -3.50
+                </div>
+              </div>
             </div>
-            <v-divider></v-divider>
-            <div
-              class="d-flex justify-space-between my-1"
-              v-if="['closed'].includes(tab)"
-            >
-              <div>T/P:</div>
-              <div v-if="tab != 'pending'">Commission</div>
-              <div v-if="tab != 'pending'">-0.00$</div>
+            <div v-else>
+              2022.01.11 14:18
+              <div class="d-flex justify-space-between my-1 mt-3">
+                <div>S/L:</div>
+                <div v-if="tab == 'pending'">T/P:</div>
+                <div v-if="tab != 'pending'">Swap</div>
+                <div v-if="tab != 'pending'">0.24$</div>
+              </div>
+              <v-divider></v-divider>
+              <div
+                class="d-flex justify-space-between my-1"
+                v-if="['closed'].includes(tab)"
+              >
+                <div>T/P:</div>
+                <div v-if="tab != 'pending'">Commission</div>
+                <div v-if="tab != 'pending'">-0.00$</div>
+              </div>
+              <v-divider></v-divider>
+              <div
+                v-if="tab == 'open'"
+                class="d-flex justify-space-between my-1"
+              >
+                <div>T/P:</div>
+                <div>-</div>
+                <div>ID: 47984555</div>
+              </div>
+              <div
+                v-if="tab == 'pending'"
+                class="d-flex justify-space-between my-1"
+              >
+                <div>ID:</div>
+                <div>-</div>
+                <div>#47984555</div>
+              </div>
             </div>
-            <v-divider></v-divider>
-            <div v-if="tab == 'open'" class="d-flex justify-space-between my-1">
-              <div>T/P:</div>
-              <div>-</div>
-              <div>ID: 47984555</div>
-            </div>
-            <div
-              v-if="tab == 'pending'"
-              class="d-flex justify-space-between my-1"
-            >
-              <div>ID:</div>
-              <div>-</div>
-              <div>#47984555</div>
-            </div>
-          </div>
+          </template>
         </v-list-item-content>
         <v-list-item-action-text v-if="!item.is_open" class="green--text">
           <div class="font-weight-bold">$ 395.00</div>

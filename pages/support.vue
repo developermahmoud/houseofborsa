@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Chat and Contact</h3>
+    <h3 class="mb-2">Chat and Contact</h3>
     <v-row no-gutters>
       <v-col
         class="text-center mb-3"
@@ -13,85 +13,6 @@
         <span style="font-size: 11px">{{ contact.text }}</span>
       </v-col>
     </v-row>
-    <h3>Help Center</h3>
-     <v-list class="py-0 transparent" dense>
-      <v-list-item>
-        <v-list-item-title>House Of Borse Careers </v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-         <v-list-item>
-        <v-list-item-title>Financial Terms </v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-         <v-list-item>
-        <v-list-item-title>Trading Hours </v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-         <v-list-item>
-        <v-list-item-title>Download Center </v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-         <v-list-item>
-        <v-list-item-title>TERMS OF USE </v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-         <v-list-item>
-        <v-list-item-title>RISK DISCLOSURE STATEMENT </v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-         <v-list-item>
-        <v-list-item-title>PRIVACY POLICY</v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-         <v-list-item>
-        <v-list-item-title>COOKIES POLICY </v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-         <v-list-item>
-        <v-list-item-title>PILLAR 3 DISCLOSURE </v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-         <v-list-item>
-        <v-list-item-title>Terms and Conditions </v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-         <v-list-item>
-        <v-list-item-title>Order Execution Policy </v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-    </v-list>
     <h3 class="mt-1">HÓB Academy</h3>
     <v-list class="py-0 transparent" dense>
       <v-list-item>
@@ -134,6 +55,85 @@
         </v-list-item-action>
       </v-list-item>
       <v-divider></v-divider>
+    </v-list>
+    <h3 class="mt-5">Help Center</h3>
+    <v-list class="py-0 transparent" dense>
+      <v-list-item>
+        <v-list-item-title>House Of Borse Careers </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-title>Financial Terms </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-title>Trading Hours </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-title>Download Center </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-title>TERMS OF USE </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-title>RISK DISCLOSURE STATEMENT </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-title>PRIVACY POLICY</v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-title>COOKIES POLICY </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-title>PILLAR 3 DISCLOSURE </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-title>Terms and Conditions </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-title>Order Execution Policy </v-list-item-title>
+        <v-list-item-action>
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-list-item-action>
+      </v-list-item>
     </v-list>
   </div>
 </template>
