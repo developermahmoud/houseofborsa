@@ -236,7 +236,7 @@
           <template v-if="item.is_open">
             <div v-if="tab == 'closed'">
               2022.01.11 14:18
-              <div class="d-flex justify-space-between">
+              <div class="d-flex justify-space-between grey--text" style="font-size:11px;">
                 <div>
                   S/L:
                   <br />

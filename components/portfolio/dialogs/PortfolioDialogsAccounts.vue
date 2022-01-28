@@ -39,7 +39,11 @@
               </v-btn>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>HÓB <v-chip x-small class="brown">Platinum</v-chip></v-list-item-title>
+              <v-list-item-title>
+                <v-chip label  x-small color="black">60918</v-chip>
+                <v-chip label  x-small color="brown">Platinum</v-chip>
+                <v-chip label  x-small color="green">live</v-chip>
+              </v-list-item-title>
               <v-list-item-subtitle class="green--text"
                 >0.00$</v-list-item-subtitle
               >
@@ -71,9 +75,8 @@
               </v-menu>
             </v-list-item-action>
           </v-list-item>
-          <v-chip small label color="secondaryBackground">6091858</v-chip>
         </div>
-         <div class="mt-4 mx-2">
+        <div class="mt-4 mx-2">
           <h3>Live Accounts</h3>
           <v-list-item dense class="px-0 my-2">
             <v-list-item-icon class="px-0 mr-2">
@@ -82,9 +85,13 @@
               </v-btn>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>HÓB <v-chip x-small color="brown">Platinum</v-chip></v-list-item-title>
+              <v-list-item-title>
+                <v-chip label  x-small color="black">60918</v-chip>
+                <v-chip label  x-small color="brown">Platinum</v-chip>
+                <v-chip label  x-small color="green">live</v-chip>
+              </v-list-item-title>
               <v-list-item-subtitle class="green--text"
-                >0.00€</v-list-item-subtitle
+                >10.00€</v-list-item-subtitle
               >
             </v-list-item-content>
             <v-list-item-action>
@@ -114,7 +121,6 @@
               </v-menu>
             </v-list-item-action>
           </v-list-item>
-          <v-chip small label color="secondaryBackground">6091858</v-chip>
         </div>
         <v-divider class="mt-7 mb-7"></v-divider>
         <div class="mt-4 mx-2">
@@ -126,7 +132,11 @@
               </v-btn>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>HÓB <v-chip x-small color="primary">Gold</v-chip></v-list-item-title>
+              <v-list-item-title>
+                <v-chip label  x-small color="black">60918</v-chip>
+                <v-chip label  x-small color="orange">Gold</v-chip>
+                <v-chip label  x-small color="red">Demo</v-chip>
+              </v-list-item-title>
               <v-list-item-subtitle class="green--text"
                 >10.000.00$</v-list-item-subtitle
               >
@@ -146,7 +156,6 @@
               </v-menu>
             </v-list-item-action>
           </v-list-item>
-          <v-chip small label color="secondaryBackground">6091858</v-chip>
         </div>
         <div class="mt-4 mx-2">
           <v-list-item dense class="px-0 my-2">
@@ -156,7 +165,11 @@
               </v-btn>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>HÓB <v-chip x-small color="grey">Silver</v-chip></v-list-item-title>
+              <v-list-item-title>
+                <v-chip label x-small color="black">60918</v-chip>
+                <v-chip label  x-small color="grey">Silver</v-chip>
+                <v-chip label  x-small color="red">Demo</v-chip>
+              </v-list-item-title>
               <v-list-item-subtitle class="green--text"
                 >10.000.00$</v-list-item-subtitle
               >
@@ -176,7 +189,6 @@
               </v-menu>
             </v-list-item-action>
           </v-list-item>
-          <v-chip small label color="secondaryBackground">6091858</v-chip>
         </div>
       </v-card>
     </v-dialog>
@@ -200,5 +212,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
