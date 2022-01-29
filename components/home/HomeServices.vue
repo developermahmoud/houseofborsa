@@ -35,12 +35,12 @@ export default {
         {
           icon: "mdi-devices",
           text: "Platforms",
-          to: "/platforms",
+          to: "/services/platforms",
         },
         {
           icon: "fa-info-circle",
           text: "About us",
-          to: "/about-us",
+          to: "/services/about-us",
         },
         {
           icon: "fa-tools",
@@ -54,8 +54,8 @@ export default {
         },
         {
           icon: "fa-handshake",
-          text: "Parteners",
-          to: "/parteners",
+          text: "Partners",
+          to: "/services/partners",
         },
         {
           icon: "fa-question-circle",

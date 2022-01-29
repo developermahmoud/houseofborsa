@@ -27,14 +27,11 @@
           }}</v-icon>
         </div>
         <v-spacer></v-spacer>
-        <v-btn icon @click="calendarDialog = true">
-          <v-icon color="white">mdi-calendar</v-icon>
-        </v-btn>
+        <v-icon @click="dialog = true">mdi-cards</v-icon>
       </v-card-title>
       <v-card-text class="text-center white--text">
         <div>
           <div class="d-flex align-center justify-center">
-            <v-icon @click="dialog = true">mdi-cards</v-icon>
             <div>
               <span class="text-h6">$</span>
               <strong
@@ -115,7 +112,7 @@
         <v-tab href="#pending"
           >Pending <v-badge content="1" offset-y="-4" color="red"></v-badge
         ></v-tab>
-        <v-tab href="#closed"
+        <v-tab href="#closed" @click="calendarDialog = true"
           >Closed <v-badge content="1" offset-y="-4"></v-badge
         ></v-tab>
       </v-tabs>
@@ -236,7 +233,10 @@
           <template v-if="item.is_open">
             <div v-if="tab == 'closed'">
               2022.01.11 14:18
-              <div class="d-flex justify-space-between grey--text" style="font-size:11px;">
+              <div
+                class="d-flex justify-space-between grey--text"
+                style="font-size: 11px"
+              >
                 <div>
                   S/L:
                   <br />

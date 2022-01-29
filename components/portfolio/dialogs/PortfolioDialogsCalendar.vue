@@ -1,10 +1,5 @@
 <template>
-  <v-dialog
-    v-model="dialog"
-    max-width="700"
-    scrollable
-    @click:outside="$emit('close-dialog')"
-  >
+  <v-dialog v-model="dialog" fullscreen hide-overlay  transition="dialog-top-transition">
     <v-card class="secondary">
       <v-tabs
         fixed-tabs
@@ -44,7 +39,7 @@
               active-class="primary"
               :show-arrows="false"
             >
-            <v-slide-item v-slot="{ active, toggle }">
+              <v-slide-item v-slot="{ active, toggle }">
                 <v-btn
                   small
                   class="secondaryBackground mr-1"
@@ -137,7 +132,9 @@
         </v-row>
       </v-card-text>
       <v-card-actions>
-        <v-btn block class="background" text><v-icon>mdi-filter</v-icon></v-btn>
+        <v-btn block class="background" @click="$emit('close-dialog')" text
+          ><v-icon>mdi-filter</v-icon></v-btn
+        >
       </v-card-actions>
     </v-card>
   </v-dialog>

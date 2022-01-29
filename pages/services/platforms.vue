@@ -6,7 +6,7 @@
           flat
           class="secondaryBackground pa-2 rounded-lg"
           link
-          to="/"
+          to="/platforms/metatrader5-platform"
         >
           <v-icon color="primary">fas fa-chart-line</v-icon>
           <br />
@@ -18,7 +18,7 @@
           flat
           class="secondaryBackground pa-2 rounded-lg"
           link
-          to="/"
+          href="https://trade.houseofborse.com/"
         >
           <v-icon color="primary">fas fa-globe</v-icon>
           <br />
@@ -30,7 +30,7 @@
           flat
           class="secondaryBackground pa-2 rounded-lg"
           link
-          to="/"
+          to="/platforms/mobile-trading"
         >
           <v-icon color="primary">fas fa-mobile-alt</v-icon>
           <br />
@@ -44,7 +44,7 @@
           flat
           class="secondaryBackground pa-2 rounded-lg"
           link
-          to="/"
+          to="/platforms/fix-api"
         >
           <v-icon color="primary">fas fa-network-wired</v-icon>
           <br />
@@ -56,7 +56,7 @@
           flat
           class="secondaryBackground pa-2 rounded-lg"
           link
-          to="/"
+          to="/platforms/download-trading-platform"
         >
           <v-icon color="primary">fas fa-download</v-icon>
           <br />
