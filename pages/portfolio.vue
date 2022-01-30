@@ -304,9 +304,9 @@
             </div>
           </template>
         </v-list-item-content>
-        <v-list-item-action-text v-if="!item.is_open" class="green--text">
-          <div class="font-weight-bold">$ 395.00</div>
-          <div style="font-size: 0.875rem; text-align: left">+1.92%</div>
+        <v-list-item-action-text v-if="!item.is_open">
+          <div class="font-weight-bold"><v-chip label small color="green">$ 395.00</v-chip></div>
+          <div class="grey--text mt-1" style="font-size: 0.875rem; text-align: left">+1.92%</div>
         </v-list-item-action-text>
       </v-list-item>
     </v-list>

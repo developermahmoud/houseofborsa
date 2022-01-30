@@ -92,7 +92,9 @@
           <v-icon>mdi-chevron-right</v-icon>
         </v-list-item-action>
       </v-list-item>
-      <v-divider></v-divider>
+    </v-list>
+    <h3 class="mt-5">Legal information</h3>
+    <v-list class="py-0 transparent" dense>
       <v-list-item>
         <v-list-item-title>RISK DISCLOSURE STATEMENT </v-list-item-title>
         <v-list-item-action>

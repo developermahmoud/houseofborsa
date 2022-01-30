@@ -40,13 +40,16 @@
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>
-                <v-chip label  x-small color="black">60918</v-chip>
-                <v-chip label  x-small color="brown">Platinum</v-chip>
-                <v-chip label  x-small color="green">live</v-chip>
+                <div class="d-flex justify-space-between">
+                  <div>
+                    Balance<br /><span class="grey--text">$124900</span>
+                  </div>
+                  <div>
+                    Equity<br /><span class="grey--text">$1236788</span>
+                  </div>
+                  <div>P/L($)<br /><span class="grey--text">1000</span></div>
+                </div>
               </v-list-item-title>
-              <v-list-item-subtitle class="green--text"
-                >0.00$</v-list-item-subtitle
-              >
             </v-list-item-content>
             <v-list-item-action>
               <v-menu offset-y>
@@ -71,13 +74,14 @@
                   <v-list-item class="secondary">
                     <v-list-item-title>Change Password</v-list-item-title>
                   </v-list-item>
+                  <v-divider></v-divider>
+                  <v-list-item class="secondary">
+                    <v-list-item-title>Show Password</v-list-item-title>
+                  </v-list-item>
                 </v-list>
               </v-menu>
             </v-list-item-action>
           </v-list-item>
-        </div>
-        <div class="mt-4 mx-2">
-          <h3>Live Accounts</h3>
           <v-list-item dense class="px-0 my-2">
             <v-list-item-icon class="px-0 mr-2">
               <v-btn icon class="green">
@@ -86,13 +90,16 @@
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>
-                <v-chip label  x-small color="black">60918</v-chip>
-                <v-chip label  x-small color="brown">Platinum</v-chip>
-                <v-chip label  x-small color="green">live</v-chip>
+                <div class="d-flex justify-space-between">
+                  <div>
+                    Balance<br /><span class="grey--text">$124900</span>
+                  </div>
+                  <div>
+                    Equity<br /><span class="grey--text">$1236788</span>
+                  </div>
+                  <div>P/L($)<br /><span class="grey--text">1000</span></div>
+                </div>
               </v-list-item-title>
-              <v-list-item-subtitle class="green--text"
-                >10.00€</v-list-item-subtitle
-              >
             </v-list-item-content>
             <v-list-item-action>
               <v-menu offset-y>
@@ -116,6 +123,10 @@
                   <v-divider></v-divider>
                   <v-list-item class="secondary">
                     <v-list-item-title>Change Password</v-list-item-title>
+                  </v-list-item>
+                  <v-divider></v-divider>
+                  <v-list-item class="secondary">
+                    <v-list-item-title>Show Password</v-list-item-title>
                   </v-list-item>
                 </v-list>
               </v-menu>
@@ -133,13 +144,16 @@
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>
-                <v-chip label  x-small color="black">60918</v-chip>
-                <v-chip label  x-small color="orange">Gold</v-chip>
-                <v-chip label  x-small color="red">Demo</v-chip>
+                <div class="d-flex justify-space-between">
+                  <div>
+                    Balance<br /><span class="grey--text">$124900</span>
+                  </div>
+                  <div>
+                    Equity<br /><span class="grey--text">$1236788</span>
+                  </div>
+                  <div>P/L($)<br /><span class="grey--text">1000</span></div>
+                </div>
               </v-list-item-title>
-              <v-list-item-subtitle class="green--text"
-                >10.000.00$</v-list-item-subtitle
-              >
             </v-list-item-content>
             <v-list-item-action>
               <v-menu offset-y>
@@ -152,12 +166,14 @@
                   <v-list-item class="secondary">
                     <v-list-item-title>Change Password</v-list-item-title>
                   </v-list-item>
+                  <v-divider></v-divider>
+                  <v-list-item class="secondary">
+                    <v-list-item-title>Show Password</v-list-item-title>
+                  </v-list-item>
                 </v-list>
               </v-menu>
             </v-list-item-action>
           </v-list-item>
-        </div>
-        <div class="mt-4 mx-2">
           <v-list-item dense class="px-0 my-2">
             <v-list-item-icon class="px-0 mr-2">
               <v-btn icon class="red">
@@ -166,13 +182,16 @@
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>
-                <v-chip label x-small color="black">60918</v-chip>
-                <v-chip label  x-small color="grey">Silver</v-chip>
-                <v-chip label  x-small color="red">Demo</v-chip>
+                <div class="d-flex justify-space-between">
+                  <div>
+                    Balance<br /><span class="grey--text">$124900</span>
+                  </div>
+                  <div>
+                    Equity<br /><span class="grey--text">$1236788</span>
+                  </div>
+                  <div>P/L($)<br /><span class="grey--text">1000</span></div>
+                </div>
               </v-list-item-title>
-              <v-list-item-subtitle class="green--text"
-                >10.000.00$</v-list-item-subtitle
-              >
             </v-list-item-content>
             <v-list-item-action>
               <v-menu offset-y>
@@ -184,6 +203,10 @@
                 <v-list class="py-0" dense>
                   <v-list-item class="secondary">
                     <v-list-item-title>Change Password</v-list-item-title>
+                  </v-list-item>
+                  <v-divider></v-divider>
+                  <v-list-item class="secondary">
+                    <v-list-item-title>Show Password</v-list-item-title>
                   </v-list-item>
                 </v-list>
               </v-menu>
