@@ -105,7 +105,11 @@
           <tbody>
             <tr v-for="(item, i) in items" :key="i">
               <td>
-                <div class="d-flex" @click="makeDialog = true" style="cursor: pointer;">
+                <div
+                  class="d-flex"
+                  @click="makeDialog = true"
+                  style="cursor: pointer"
+                >
                   <img
                     :src="item.icon"
                     style="width: 18px; height: 18px"
@@ -148,7 +152,7 @@
 import InvestMakeDialog from "../components/invest/InvestMakeDialog.vue";
 export default {
   components: { InvestMakeDialog },
-    head() {
+  head() {
     return {
       script: [
         {

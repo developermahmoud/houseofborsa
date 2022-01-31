@@ -36,16 +36,6 @@
           <v-alert type="info" dense text class="mx-2"
             >This symbol is a CFD.</v-alert
           >
-          <v-tabs
-            fixed-tabs
-            right
-            active-class="secondary"
-            background-color="secondary"
-          >
-            <v-tab>Chart</v-tab>
-            <v-tab>Feed</v-tab>
-            <v-tabs-slider color="primary"></v-tabs-slider>
-          </v-tabs>
           <div>
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
