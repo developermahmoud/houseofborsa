@@ -215,18 +215,16 @@
         v-for="(item, i) in items"
         :key="i"
       >
-        <v-list-item-icon :class="`mr-2`" @click="item.is_open = !item.is_open">
-          <v-icon>{{
-            item.is_open ? "mdi-chevron-up" : "mdi-chevron-down"
-          }}</v-icon>
-        </v-list-item-icon>
         <v-list-item-content>
           <v-list-item-title
-            >AWS,
+            >{{ item.name }},
             <span class="primary--text">buy 500.00</span></v-list-item-title
           >
           <v-list-item-subtitle
-            >30.94
+            ><v-icon @click="item.is_open = !item.is_open">{{
+              item.is_open ? "mdi-chevron-up" : "mdi-chevron-down"
+            }}</v-icon>
+            30.94
             <v-icon>mdi-arrow-right-thin</v-icon>
             30.15</v-list-item-subtitle
           >
@@ -305,8 +303,15 @@
           </template>
         </v-list-item-content>
         <v-list-item-action-text v-if="!item.is_open">
-          <div class="font-weight-bold"><v-chip label small color="green">$ 395.00</v-chip></div>
-          <div class="grey--text mt-1" style="font-size: 0.875rem; text-align: left">+1.92%</div>
+          <div class="font-weight-bold">
+            <v-chip label small :color="item.color" style="width:60px;">${{ item.amount }}</v-chip>
+          </div>
+          <div
+            class="grey--text mt-1"
+            style="font-size: 0.875rem; text-align: left"
+          >
+            +1.92%
+          </div>
         </v-list-item-action-text>
       </v-list-item>
     </v-list>
@@ -379,21 +384,63 @@ export default {
     return {
       items: [
         {
+          name:"Oil", 
+          color: "green",
+          amount: 1555,
           is_open: false,
         },
         {
+          name:"Gold", 
+          color: "green",
+          amount: 1555,
           is_open: false,
         },
         {
+          name:"Silver", 
+          color: "red",
+          amount: 123,
           is_open: false,
         },
         {
+          name:"FB", 
+          color: "green",
+          amount: 1555,
           is_open: false,
         },
         {
+          name:"TWTR", 
+          color: "red",
+          amount: 23,
           is_open: false,
         },
         {
+          name:"TSLA", 
+          color: "red",
+          amount: 341,
+          is_open: false,
+        },
+        {
+          name:"AMZN", 
+          color: "green",
+          amount: 1555,
+          is_open: false,
+        },
+        {
+          name:"Ripple XRP ", 
+          color: "green",
+          amount: 1555,
+          is_open: false,
+        },
+        {
+          name:"BTC", 
+          color: "red",
+          amount: 33,
+          is_open: false,
+        },
+        {
+          name:"SPY. ETF", 
+          color: "green",
+          amount: 1555,
           is_open: false,
         },
       ],

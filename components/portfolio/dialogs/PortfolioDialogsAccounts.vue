@@ -40,6 +40,11 @@
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>
+                <v-chip label x-small color="black">6091858</v-chip>
+                <v-chip label x-small color="brown">Platinum</v-chip>
+                <v-chip label x-small color="green">live</v-chip>
+              </v-list-item-title>
+              <v-list-item-subtitle>
                 <div class="d-flex justify-space-between">
                   <div>
                     Balance<br /><span class="grey--text">$124900</span>
@@ -49,7 +54,7 @@
                   </div>
                   <div>P/L($)<br /><span class="grey--text">1000</span></div>
                 </div>
-              </v-list-item-title>
+              </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-action>
               <v-menu offset-y>
@@ -89,7 +94,12 @@
               </v-btn>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>
+               <v-list-item-title>
+                <v-chip label x-small color="black">6091858</v-chip>
+                <v-chip label x-small color="brown">Platinum</v-chip>
+                <v-chip label x-small color="green">live</v-chip>
+              </v-list-item-title>
+              <v-list-item-subtitle>
                 <div class="d-flex justify-space-between">
                   <div>
                     Balance<br /><span class="grey--text">$124900</span>
@@ -99,7 +109,7 @@
                   </div>
                   <div>P/L($)<br /><span class="grey--text">1000</span></div>
                 </div>
-              </v-list-item-title>
+              </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-action>
               <v-menu offset-y>
@@ -143,7 +153,12 @@
               </v-btn>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>
+               <v-list-item-title>
+                <v-chip label x-small color="black">6091858</v-chip>
+                <v-chip label x-small color="grey">silver</v-chip>
+                <v-chip label x-small color="red">demo</v-chip>
+              </v-list-item-title>
+              <v-list-item-subtitle>
                 <div class="d-flex justify-space-between">
                   <div>
                     Balance<br /><span class="grey--text">$124900</span>
@@ -153,7 +168,7 @@
                   </div>
                   <div>P/L($)<br /><span class="grey--text">1000</span></div>
                 </div>
-              </v-list-item-title>
+              </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-action>
               <v-menu offset-y>
@@ -181,7 +196,12 @@
               </v-btn>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>
+               <v-list-item-title>
+                <v-chip label x-small color="black">6091858</v-chip>
+                <v-chip label x-small color="orange">gold</v-chip>
+                <v-chip label x-small color="red">demo</v-chip>
+              </v-list-item-title>
+              <v-list-item-subtitle>
                 <div class="d-flex justify-space-between">
                   <div>
                     Balance<br /><span class="grey--text">$124900</span>
@@ -191,7 +211,7 @@
                   </div>
                   <div>P/L($)<br /><span class="grey--text">1000</span></div>
                 </div>
-              </v-list-item-title>
+              </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-action>
               <v-menu offset-y>

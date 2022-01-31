@@ -176,7 +176,7 @@
           </v-list-item-icon>
           <v-list-item-title>Refer a friend</v-list-item-title>
           <v-list-item-icon>
-            <v-icon>mdi-arrow-right</v-icon>
+            <v-icon>mdi-account</v-icon>
           </v-list-item-icon>
         </v-list-item>
         <v-divider></v-divider>
