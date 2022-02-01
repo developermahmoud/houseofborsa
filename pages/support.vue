@@ -15,7 +15,7 @@
     </v-row>
     <h3 class="mt-1">HÓB Academy</h3>
     <v-list class="py-0 transparent" dense>
-      <v-list-item>
+      <v-list-item link to="/academy">
         <v-list-item-icon class="mr-3">
           <v-icon size="20"> fas fa-film</v-icon>
         </v-list-item-icon>

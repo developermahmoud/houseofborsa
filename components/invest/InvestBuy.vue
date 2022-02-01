@@ -151,6 +151,9 @@
             </div>
           </div>
         </v-card-text>
+         <v-alert class="mx-4" type="warning" dense text>
+               Attention! The trade will be executed at market conditions, difference with requested price may be significant!
+          </v-alert>
         <v-card-actions>
           <v-btn block text :class="action == 'buy' ? 'green' : 'red'"
             ><v-icon

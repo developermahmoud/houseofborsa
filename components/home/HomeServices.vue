@@ -43,7 +43,7 @@ export default {
           to: "/services/about-us",
         },
         {
-          icon: "fa-tools",
+          icon: "fa-play",
           text: "HÓB Academy",
           to: "/support",
         },

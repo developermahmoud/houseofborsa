@@ -92,17 +92,18 @@
               >
                 <v-card-title>Yearly</v-card-title>
                 <v-card-subtitle class="pb-1 text-decoration-line-through"
-                  >AED467.88</v-card-subtitle
+                  >AED99.00</v-card-subtitle
                 >
                 <h4 class="ml-4">AED369.99</h4>
-                <span class="grey--text ml-4 caption">AED30.83/month</span>
+                <span class="grey--text ml-4 caption">AED8.25/month</span>
+                <br />
                 <span class="ml-4">Billed yearly</span>
               </v-card>
             </v-col>
             <v-col>
               <v-card flat class="secondary">
                 <v-card-title class="pb-0">Monthly</v-card-title>
-                  <h4 class="ml-4">AED38.99</h4>
+                  <h4 class="ml-4">AED9.9</h4>
                   <span class="ml-4">Billed Monthly</span>
               </v-card>
             </v-col>
