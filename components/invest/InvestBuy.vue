@@ -9,6 +9,10 @@
           <v-toolbar-title>New Order</v-toolbar-title>
         </v-toolbar>
         <v-divider></v-divider>
+        <div class="text-center my-5">
+          <v-btn text small class="green" @click="action = 'buy'">buy</v-btn>
+          <v-btn text small class="red" @click="action = 'sell'">sell</v-btn>
+        </div>
         <v-list-item three-line>
           <v-list-item-avatar>
             <v-img src="/currency/4.jpg" />
@@ -17,28 +21,20 @@
             <v-list-item-title> Apple </v-list-item-title>
             <v-list-item-subtitle class="green--text"
               ><v-chip outlined x-small color="white">CFD</v-chip>
-              8.35%</v-list-item-subtitle
-            >
+            </v-list-item-subtitle>
             <v-list-item-subtitle class="mt-2" style="font-size: 11px"
               >PRICES BY ETORO, <br />IN USD |
               <v-icon small color="primary">mdi-clock</v-icon> MARKET
               OPEN</v-list-item-subtitle
             >
           </v-list-item-content>
-          <v-list-item-action>172.44</v-list-item-action>
+          <v-list-item-action
+            >172.44<br />
+            <span class="green--text">8.35%</span></v-list-item-action
+          >
         </v-list-item>
         <v-card-text class="px-2">
           <div class="d-flex justify-space-between pa-1 background rounded-lg">
-            <div style="width: 50%">
-              <v-btn
-                small
-                text
-                block
-                @click="topChange = 'current_price'"
-                :class="topChange == 'current_price' ? 'secondary' : ''"
-                >Market Price
-              </v-btn>
-            </div>
             <div style="width: 50%">
               <v-btn
                 small
@@ -48,6 +44,16 @@
                 :class="topChange == 'specefic_rate' ? 'secondary' : ''"
                 >Specfic Price</v-btn
               >
+            </div>
+            <div style="width: 50%">
+              <v-btn
+                small
+                text
+                block
+                @click="topChange = 'current_price'"
+                :class="topChange == 'current_price' ? 'secondary' : ''"
+                >Market Price
+              </v-btn>
             </div>
           </div>
           <v-row class="mt-5">
@@ -78,11 +84,13 @@
               ></v-text-field>
             </v-col>
           </v-row>
-
           <v-alert class="my-3" type="error" dense text
             >You need at least to trade</v-alert
           >
-          <v-icon color="red" small>mdi-flash</v-icon> HOB Protector
+          <div class="d-flex align-center mb-3">
+            <img style="width: 20px" src="/Terminal.ico" /> HOB Protector
+          </div>
+
           <div class="d-flex justify-space-between pa-1 background rounded-lg">
             <div style="width: 50%">
               <v-btn
@@ -143,11 +151,17 @@
               <v-switch :value="true" dense></v-switch>
             </div>
           </div>
-          <div class="text-center mt-2">
-            <v-btn x-large text class="green"><v-icon>mdi-arrow-top-right-thick</v-icon> Buy</v-btn>
-            <v-btn x-large text class="red"><v-icon>mdi-arrow-bottom-right-thick</v-icon> Sell </v-btn>
-          </div>
         </v-card-text>
+        <v-card-actions>
+          <v-btn block text :class="action == 'buy' ? 'green' : 'red'"
+            ><v-icon
+              >mdi-arrow-{{
+                action == "buy" ? "top" : "bottom"
+              }}-right-thick</v-icon
+            >
+            {{ action }}
+          </v-btn>
+        </v-card-actions>
       </v-card>
     </v-dialog>
   </div>
@@ -163,6 +177,7 @@ export default {
   },
   data() {
     return {
+      action: "buy",
       topChange: "current_price",
       otherChange: "amount",
       toggle_none: null,

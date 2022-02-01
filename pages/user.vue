@@ -170,6 +170,16 @@
           </v-list-item-icon>
         </v-list-item>
         <v-divider></v-divider>
+         <v-list-item to="/accounts/premium">
+          <v-list-item-icon class="mr-3">
+            <v-icon>mdi-certificate</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>HOB Premium</v-list-item-title>
+          <v-list-item-icon>
+            <v-icon>mdi-arrow-right</v-icon>
+          </v-list-item-icon>
+        </v-list-item>
+        <v-divider></v-divider>
         <v-list-item @click="referrDialog = true">
           <v-list-item-icon class="mr-3">
             <v-icon>mdi-account-arrow-right-outline</v-icon>
