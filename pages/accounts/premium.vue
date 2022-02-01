@@ -50,7 +50,8 @@
                 <v-list-item-content>
                   <v-list-item-title>Day 7</v-list-item-title>
                   <v-list-item-subtitle
-                    >We will charge you the<br />subscribtion amount</v-list-item-subtitle
+                    >We will charge you the<br />subscribtion
+                    amount</v-list-item-subtitle
                   >
                 </v-list-item-content>
                 <v-list-item-icon>
@@ -60,7 +61,66 @@
             </v-timeline-item>
           </v-timeline>
           <div class="mx-2">
-            <v-btn class="primary" block text> Select Plan </v-btn>
+            <v-btn
+              class="primary"
+              block
+              text
+              @click="
+                firstStep = false;
+                secondStep = true;
+              "
+            >
+              Select Plan
+            </v-btn>
+          </div>
+        </div>
+      </v-sheet>
+    </v-bottom-sheet>
+    <v-bottom-sheet v-model="secondStep">
+      <v-sheet class="secondary">
+        <div class="pa-3">
+          <h2>Subscription</h2>
+          <p class="grey--text">
+            Select an option and start your 7-day free trial
+          </p>
+          <v-row class="my-5">
+            <v-col>
+              <v-card
+                class="background pb-3"
+                style="border: solid 1px green !important"
+                flat
+              >
+                <v-card-title>Yearly</v-card-title>
+                <v-card-subtitle class="pb-1 text-decoration-line-through"
+                  >AED467.88</v-card-subtitle
+                >
+                <h4 class="ml-4">AED369.99</h4>
+                <span class="grey--text ml-4 caption">AED30.83/month</span>
+                <span class="ml-4">Billed yearly</span>
+              </v-card>
+            </v-col>
+            <v-col>
+              <v-card flat class="secondary">
+                <v-card-title class="pb-0">Monthly</v-card-title>
+                  <h4 class="ml-4">AED38.99</h4>
+                  <span class="ml-4">Billed Monthly</span>
+              </v-card>
+            </v-col>
+          </v-row>
+          <strong>What's included</strong>
+          <ul>
+            <li>Refinitiv stock analysis + reports</li>
+            <li>Investment Themes</li>
+          </ul>
+          <div class="text-center caption my-5">
+            By continuing, you agree on our<br />
+            <nuxt-link to="/">Terms & Conditions</nuxt-link> and
+            <nuxt-link to="/">Privacy Policy</nuxt-link>
+          </div>
+          <div class="mx-2">
+            <v-btn class="primary" block text @click="secondStep = false">
+              Select Plan
+            </v-btn>
           </div>
         </div>
       </v-sheet>
@@ -76,6 +136,7 @@ export default {
   data() {
     return {
       firstStep: false,
+      secondStep: false,
       interval: {},
       value: 0,
     };
@@ -94,5 +155,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 </style>
