@@ -23,8 +23,15 @@
                     Apple <v-icon small>mdi-chevron-down</v-icon>
                   </v-list-item-title>
                   <v-list-item-subtitle class="green--text"
-                    ><v-chip outlined class="px-1" x-small color="white">CFD</v-chip> 6.97%</v-list-item-subtitle
-                  >
+                    ><v-chip outlined class="px-1" x-small color="white"
+                      >CFD</v-chip
+                    >
+                    6.97%
+                    <br />
+                    <v-icon small color="primary">mdi-clock</v-icon> <span class="caption white--text">MARKET
+                    OPEN</span>
+                  </v-list-item-subtitle>
+                  
                 </v-list-item-content>
               </v-list-item>
             </div>
@@ -39,12 +46,12 @@
             </div>
           </div>
           <div class="text-center my-5">
-            <v-btn x-large text class="green" @click="buyDialog = true"
-              ><v-icon>mdi-arrow-top-right-thick</v-icon> Buy</v-btn
-            >
             <v-btn x-large text class="red" @click="buyDialog = true"
               ><v-icon>mdi-arrow-bottom-right-thick</v-icon> Sell
             </v-btn>
+            <v-btn x-large text class="green" @click="buyDialog = true"
+              ><v-icon>mdi-arrow-top-right-thick</v-icon> Buy</v-btn
+            >
           </div>
         </v-card-text>
       </v-card>

@@ -10,8 +10,8 @@
         </v-toolbar>
         <v-divider></v-divider>
         <div class="text-center my-5">
-          <v-btn text small class="green" @click="action = 'buy'">buy</v-btn>
           <v-btn text small class="red" @click="action = 'sell'">sell</v-btn>
+          <v-btn text small class="green" @click="action = 'buy'">buy</v-btn>
         </div>
         <v-list-item three-line>
           <v-list-item-avatar>
@@ -23,8 +23,7 @@
               ><v-chip outlined x-small color="white">CFD</v-chip>
             </v-list-item-subtitle>
             <v-list-item-subtitle class="mt-2" style="font-size: 11px"
-              >PRICES BY ETORO, <br />IN USD |
-              <v-icon small color="primary">mdi-clock</v-icon> MARKET
+              ><v-icon small color="primary">mdi-clock</v-icon> MARKET
               OPEN</v-list-item-subtitle
             >
           </v-list-item-content>
