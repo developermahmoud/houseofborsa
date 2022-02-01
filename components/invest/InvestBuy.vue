@@ -6,9 +6,10 @@
           <v-btn icon @click="$emit('close-dialog')">
             <v-icon>mdi-arrow-left</v-icon>
           </v-btn>
+          <v-toolbar-title>New Order</v-toolbar-title>
         </v-toolbar>
         <v-divider></v-divider>
-        <v-list-item two-line>
+        <v-list-item three-line>
           <v-list-item-avatar>
             <v-img src="/currency/4.jpg" />
           </v-list-item-avatar>
@@ -18,29 +19,34 @@
               ><v-chip outlined x-small color="white">CFD</v-chip>
               8.35%</v-list-item-subtitle
             >
+            <v-list-item-subtitle class="mt-2" style="font-size: 11px"
+              >PRICES BY ETORO, <br />IN USD |
+              <v-icon small color="primary">mdi-clock</v-icon> MARKET
+              OPEN</v-list-item-subtitle
+            >
           </v-list-item-content>
           <v-list-item-action>172.44</v-list-item-action>
         </v-list-item>
         <v-card-text class="px-2">
-          <div class="d-flex justify-space-between mb-3">
+          <div class="d-flex justify-space-between pa-1 background rounded-lg">
             <div style="width: 50%">
               <v-btn
                 small
+                text
                 block
-                outlined
                 @click="topChange = 'current_price'"
-                :color="topChange == 'current_price' ? 'primary' : ''"
-                >current price
+                :class="topChange == 'current_price' ? 'secondary' : ''"
+                >Market Price
               </v-btn>
             </div>
             <div style="width: 50%">
               <v-btn
                 small
+                text
                 block
-                outlined
                 @click="topChange = 'specefic_rate'"
-                :color="topChange == 'specefic_rate' ? 'primary' : ''"
-                >specefic rate</v-btn
+                :class="topChange == 'specefic_rate' ? 'secondary' : ''"
+                >Specfic Price</v-btn
               >
             </div>
           </div>
@@ -64,7 +70,12 @@
             </v-col>
             <v-col cols="2" align="center">=</v-col>
             <v-col cols="5">
-              <v-text-field type="number" value="1.0" dense label="Lot Size"></v-text-field>
+              <v-text-field
+                type="number"
+                value="1.0"
+                dense
+                label="Position Size"
+              ></v-text-field>
             </v-col>
           </v-row>
 
@@ -72,14 +83,14 @@
             >You need at least to trade</v-alert
           >
           <v-icon color="red" small>mdi-flash</v-icon> HOB Protector
-          <div class="d-flex justify-center my-3">
+          <div class="d-flex justify-space-between pa-1 background rounded-lg">
             <div style="width: 50%">
               <v-btn
                 small
                 block
-                outlined
+                text
                 @click="otherChange = 'amount'"
-                :color="otherChange == 'amount' ? 'primary' : ''"
+                :class="otherChange == 'amount' ? 'secondary' : ''"
                 >Amount
               </v-btn>
             </div>
@@ -87,17 +98,17 @@
               <v-btn
                 small
                 block
-                outlined
+                text
                 @click="otherChange = 'specefic_rate'"
-                :color="otherChange == 'specefic_rate' ? 'primary' : ''"
-                >specefic rate
+                :class="otherChange == 'specefic_rate' ? 'secondary' : ''"
+                >Specfic Price
               </v-btn>
             </div>
           </div>
           <div class="d-flex justify-space-between align-center">
             <div>
               <v-text-field
-              type="number"
+                type="number"
                 autofocus
                 dense
                 hide-details
@@ -133,10 +144,8 @@
             </div>
           </div>
           <div class="text-center mt-2">
-            <v-btn-toggle v-model="toggle_none" background-color="secondary">
-              <v-btn small class="secondary"> Short </v-btn>
-              <v-btn small class="green"> Long </v-btn>
-            </v-btn-toggle>
+            <v-btn x-large text class="green"><v-icon>mdi-arrow-top-right-thick</v-icon> Buy</v-btn>
+            <v-btn x-large text class="red"><v-icon>mdi-arrow-bottom-right-thick</v-icon> Sell </v-btn>
           </div>
         </v-card-text>
       </v-card>

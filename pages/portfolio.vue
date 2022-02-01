@@ -42,12 +42,7 @@
               >
               <span class="text-h6">31</span>
             </div>
-            <v-icon
-              small
-              @click="
-                showMargin = !showMargin;
-                showChart = false;
-              "
+            <v-icon small @click="showMargin = !showMargin"
               >mdi-arrow-expand</v-icon
             >
           </div>
@@ -57,53 +52,10 @@
           ><v-icon class="pa-0 mb-1">mdi-arrow-up-thin</v-icon>
         </div>
       </v-card-text>
-      <v-btn
-        fab
-        class="white"
-        bottom
-        right
-        absolute
-        @click="
-          showChart = !showChart;
-          showMargin = false;
-        "
-      >
+      <v-btn fab class="white" bottom right absolute @click="showChart = true">
         <v-icon color="primary">mdi-selection-ellipse</v-icon>
       </v-btn>
     </v-card>
-    <template v-if="showChart">
-      <v-chart class="chart" :option="option" />
-      <v-list dense class="pa-0 transparent mb-2">
-        <v-list-item style="min-height: 20px; height: 35px">
-          <v-list-item-icon>
-            <v-icon color="#ed6d77">mdi-square-rounded</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title class="body-1">Stock</v-list-item-title>
-          <v-list-item-action>10%</v-list-item-action>
-        </v-list-item>
-        <v-list-item style="min-height: 20px; height: 35px">
-          <v-list-item-icon>
-            <v-icon color="#4992ff">mdi-square-rounded</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title class="body-1">ETFs</v-list-item-title>
-          <v-list-item-action>35%</v-list-item-action>
-        </v-list-item>
-        <v-list-item style="min-height: 20px; height: 35px">
-          <v-list-item-icon>
-            <v-icon color="#7cffb2">mdi-square-rounded</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title class="body-1">Cryptocurrency</v-list-item-title>
-          <v-list-item-action>35%</v-list-item-action>
-        </v-list-item>
-        <v-list-item style="min-height: 20px; height: 35px">
-          <v-list-item-icon>
-            <v-icon color="#f9dd60">mdi-square-rounded</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title class="body-1">Indices</v-list-item-title>
-          <v-list-item-action>20%</v-list-item-action>
-        </v-list-item>
-      </v-list>
-    </template>
     <template v-if="showMargin">
       <v-tabs background-color="transparent" fixed-tabs v-model="tab">
         <v-tab href="#open"
@@ -206,7 +158,7 @@
             >
           </v-list-item>
         </v-tab-item>
-        <v-tab-item value="pending"> Pending </v-tab-item>
+        <v-tab-item value="pending"></v-tab-item>
       </v-tabs-items>
     </template>
     <v-list two-line class="mx-2 transparent">
@@ -221,7 +173,7 @@
             <span class="primary--text">buy 500.00</span></v-list-item-title
           >
           <v-list-item-subtitle
-            ><v-icon @click="item.is_open = !item.is_open">{{
+            ><v-icon class="ml-1" small @click="item.is_open = !item.is_open">{{
               item.is_open ? "mdi-chevron-up" : "mdi-chevron-down"
             }}</v-icon>
             30.94
@@ -265,6 +217,22 @@
                 </div>
               </div>
             </div>
+            <div v-else-if="tab == 'pending'">
+              2022.01.11 14:18
+              <div class="d-flex justify-space-between my-1 mt-3">
+                <div style="width: 50px">S/L:</div>
+                <div style="width: 50px" class="text-center">--</div>
+                <div style="width: 50px">Price</div>
+                <div>0.24000</div>
+              </div>
+              <v-divider></v-divider>
+              <div class="d-flex aling-center justify-space-between my-1">
+                <div style="width: 50px">T/P:</div>
+                <div style="width: 50px" class="text-center">--</div>
+                <div style="width: 50px"></div>
+                <div>#47984</div>
+              </div>
+            </div>
             <div v-else>
               2022.01.11 14:18
               <div class="d-flex justify-space-between my-1 mt-3">
@@ -303,18 +271,30 @@
           </template>
         </v-list-item-content>
         <v-list-item-action-text v-if="!item.is_open">
-          <div class="font-weight-bold">
-            <v-chip label small :color="item.color" style="width:60px;">${{ item.amount }}</v-chip>
-          </div>
-          <div
-            class="grey--text mt-1"
-            style="font-size: 0.875rem; text-align: left"
-          >
-            +1.92%
-          </div>
+          <template v-if="tab == 'pending'">
+            <v-btn plain>placed</v-btn>
+          </template>
+          <template v-else>
+            <div class="font-weight-bold">
+              <v-chip label small :color="item.color" style="width: 60px"
+                >${{ item.amount }}</v-chip
+              >
+            </div>
+            <div
+              class="grey--text mt-1"
+              style="font-size: 0.875rem; text-align: left"
+            >
+              +1.92%
+            </div>
+          </template>
         </v-list-item-action-text>
       </v-list-item>
     </v-list>
+    <portfolio-dialogs-chart
+      v-if="showChart"
+      :dialog="showChart"
+      @close-dialog="showChart = false"
+    />
     <portfolio-dialogs-calendar
       v-if="calendarDialog"
       :dialog="calendarDialog"
@@ -339,106 +319,81 @@
 </template>
 
 <script>
-import { use } from "echarts/core";
-import { CanvasRenderer } from "echarts/renderers";
-import { PieChart } from "echarts/charts";
-import {
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-} from "echarts/components";
-import VChart, { THEME_KEY } from "vue-echarts";
 import PortfolioDialogsMarginInfo from "../components/portfolio/dialogs/PortfolioDialogsMarginInfo.vue";
 import PortfolioDialogsAccounts from "../components/portfolio/dialogs/PortfolioDialogsAccounts.vue";
 import PortfolioDialogsWallet from "../components/portfolio/dialogs/PortfolioDialogsWallet.vue";
 import PortfolioDialogsCalendar from "../components/portfolio/dialogs/PortfolioDialogsCalendar.vue";
+import PortfolioDialogsChart from "../components/portfolio/dialogs/PortfolioDialogsChart.vue";
 
-use([
-  CanvasRenderer,
-  PieChart,
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-]);
-
-use([
-  CanvasRenderer,
-  PieChart,
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-]);
 export default {
   layout: "internal",
   components: {
-    VChart,
     PortfolioDialogsMarginInfo,
     PortfolioDialogsAccounts,
     PortfolioDialogsWallet,
     PortfolioDialogsCalendar,
+    PortfolioDialogsChart,
   },
-  provide: {
-    [THEME_KEY]: "dark",
-  },
+
   data() {
     return {
       items: [
         {
-          name:"Oil", 
+          name: "Oil",
           color: "green",
           amount: 1555,
           is_open: false,
         },
         {
-          name:"Gold", 
+          name: "Gold",
           color: "green",
           amount: 1555,
           is_open: false,
         },
         {
-          name:"Silver", 
+          name: "Silver",
           color: "red",
           amount: 123,
           is_open: false,
         },
         {
-          name:"FB", 
+          name: "FB",
           color: "green",
           amount: 1555,
           is_open: false,
         },
         {
-          name:"TWTR", 
+          name: "TWTR",
           color: "red",
           amount: 23,
           is_open: false,
         },
         {
-          name:"TSLA", 
+          name: "TSLA",
           color: "red",
           amount: 341,
           is_open: false,
         },
         {
-          name:"AMZN", 
+          name: "AMZN",
           color: "green",
           amount: 1555,
           is_open: false,
         },
         {
-          name:"Ripple XRP ", 
+          name: "Ripple XRP ",
           color: "green",
           amount: 1555,
           is_open: false,
         },
         {
-          name:"BTC", 
+          name: "BTC",
           color: "red",
           amount: 33,
           is_open: false,
         },
         {
-          name:"SPY. ETF", 
+          name: "SPY. ETF",
           color: "green",
           amount: 1555,
           is_open: false,
@@ -453,54 +408,11 @@ export default {
       calendarDialog: false,
       dialog: false,
       accountsDialog: false,
-
-      option: {
-        backgroundColor: "#181e2e",
-        title: {
-          text: "Exposure",
-          left: "center",
-        },
-        legend: {
-          show: false,
-        },
-        series: [
-          {
-            name: "HOB charts",
-            type: "pie",
-            radius: ["40%", "70%"],
-            avoidLabelOverlap: false,
-            label: {
-              show: false,
-              position: "center",
-            },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: "40",
-                fontWeight: "bold",
-              },
-            },
-            labelLine: {
-              show: false,
-            },
-            data: [
-              { value: 335, name: "Stock" },
-              { value: 310, name: "ETFs" },
-              { value: 234, name: "Cryptocurrency" },
-              { value: 135, name: "Indices" },
-            ],
-          },
-        ],
-      },
     };
   },
 };
 </script>
 
 <style scoped>
-.chart {
-  padding: 0;
-  widows: 300px;
-  height: 260px;
-}
+
 </style>
