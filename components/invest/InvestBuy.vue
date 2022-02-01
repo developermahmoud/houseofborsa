@@ -50,6 +50,7 @@
                 value="178.85"
                 dense
                 label="Entry price"
+                type="number"
               ></v-text-field>
             </v-col>
             <v-col cols="5">
@@ -58,11 +59,12 @@
                 value="17.26"
                 dense
                 label="Investment"
+                type="number"
               ></v-text-field>
             </v-col>
             <v-col cols="2" align="center">=</v-col>
             <v-col cols="5">
-              <v-text-field value="1.0" dense label="Lot Size"></v-text-field>
+              <v-text-field type="number" value="1.0" dense label="Lot Size"></v-text-field>
             </v-col>
           </v-row>
 
@@ -95,6 +97,7 @@
           <div class="d-flex justify-space-between align-center">
             <div>
               <v-text-field
+              type="number"
                 autofocus
                 dense
                 hide-details
@@ -103,7 +106,7 @@
                 :value="otherChange == 'amount' ? '-8.63' : '0.00'"
               ></v-text-field>
             </div>
-            <div style="width:150px;">
+            <div style="width: 150px">
               <template v-if="otherChange == 'amount'">164.01</template>
               <template v-else>$ -8.63</template>
             </div>
@@ -114,19 +117,19 @@
           <div class="d-flex justify-space-between align-center">
             <div>
               <v-text-field
-                autofocus
+                type="number"
                 hide-details
                 label="Take Profit"
                 prefix="$"
                 :value="otherChange == 'amount' ? '8.63' : '0.00'"
               ></v-text-field>
             </div>
-            <div style="width:150px;">
+            <div style="width: 150px">
               <template v-if="otherChange == 'amount'">181.27</template>
               <template v-else>$ 8.63</template>
             </div>
             <div>
-              <v-switch value="true" dense></v-switch>
+              <v-switch :value="true" dense></v-switch>
             </div>
           </div>
           <div class="text-center mt-2">
