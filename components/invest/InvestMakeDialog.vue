@@ -82,7 +82,7 @@ export default {
   mounted() {
     new TradingView.widget({
       width: "100%",
-      height: 600,
+      height: window.innerHeight-230,
       symbol: "NASDAQ:AAPL",
       interval: "D",
       timezone: "Etc/UTC",

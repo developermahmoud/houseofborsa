@@ -168,7 +168,7 @@
         :key="i"
       >
         <v-list-item-content>
-          <v-list-item-title
+          <v-list-item-title style="cursor: pointer" @click="showClosed"
             >{{ item.name }},
             <span class="primary--text">buy 500.00</span></v-list-item-title
           >
@@ -281,15 +281,21 @@
               >
             </div>
             <div
-              class="grey--text mt-1"
+              :class="`mt-1 ${item.color}--text`"
               style="font-size: 0.875rem; text-align: left"
             >
-              +1.92%
+            <template v-if="item.color == 'red'">-0.92%</template>
+            <template v-else>+1.92%</template>
             </div>
           </template>
         </v-list-item-action-text>
       </v-list-item>
     </v-list>
+    <invest-closed
+      v-if="showClosedDialog"
+      :dialog="showClosedDialog"
+      @close-dialog="showClosedDialog = false"
+    />
     <portfolio-dialogs-chart
       v-if="showChart"
       :dialog="showChart"
@@ -401,6 +407,7 @@ export default {
       ],
       tab: "open",
       showMargin: true,
+      showClosedDialog: true,
       isBlur: false,
       showChart: false,
       marginInfoDialog: false,
@@ -410,9 +417,15 @@ export default {
       accountsDialog: false,
     };
   },
+  methods: {
+    showClosed() {
+      if (this.tab === "open") {
+        this.showClosedDialog = true;
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
-
 </style>

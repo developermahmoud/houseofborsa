@@ -6,19 +6,15 @@
           <v-btn icon @click="$emit('close-dialog')">
             <v-icon>mdi-arrow-left</v-icon>
           </v-btn>
-          <v-toolbar-title>New Order</v-toolbar-title>
+          <v-toolbar-title>Close Order</v-toolbar-title>
         </v-toolbar>
         <v-divider></v-divider>
-        <div class="text-center my-5">
-          <v-btn text small class="red" @click="action = 'sell'">sell</v-btn>
-          <v-btn text small class="green" @click="action = 'buy'">buy</v-btn>
-        </div>
         <v-list-item three-line>
           <v-list-item-avatar>
             <v-img src="/currency/4.jpg" />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title> Apple </v-list-item-title>
+            <v-list-item-title>Buy Apple </v-list-item-title>
             <v-list-item-subtitle class="green--text"
               ><v-chip outlined x-small color="white">CFD</v-chip>
             </v-list-item-subtitle>
@@ -33,53 +29,32 @@
           >
         </v-list-item>
         <v-card-text class="px-2">
-          <div class="d-flex justify-space-between pa-1 background rounded-lg">
-            <div style="width: 50%">
-              <v-btn
-                small
-                text
-                block
-                @click="topChange = 'specefic_rate'"
-                :class="topChange == 'specefic_rate' ? 'secondary' : ''"
-                >Specfic Price</v-btn
-              >
-            </div>
-            <div style="width: 50%">
-              <v-btn
-                small
-                text
-                block
-                @click="topChange = 'current_price'"
-                :class="topChange == 'current_price' ? 'secondary' : ''"
-                >Market Price
-              </v-btn>
-            </div>
-          </div>
           <v-row class="mt-5">
-            <v-col cols="12" v-if="topChange === 'specefic_rate'">
-              <v-text-field
-                value="178.85"
-                dense
-                label="Entry price"
-                type="number"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="5">
+            <v-col cols="4">
               <v-text-field
                 prefix="$"
                 value="17.26"
                 dense
-                label="Investment"
+                label="Open Price"
                 type="number"
               ></v-text-field>
             </v-col>
-            <v-col cols="2" align="center">=</v-col>
-            <v-col cols="5">
+            <v-col cols="4">
               <v-text-field
                 type="number"
-                value="1.0"
+                value="1.33"
+                  prefix="$"
                 dense
-                label="Position Size"
+                label="CURRENT P/L $"
+              ></v-text-field>
+            </v-col>
+              <v-col cols="4">
+              <v-text-field
+                type="number"
+                  prefix="%"
+                value="12"
+                dense
+                label="P/L (%)"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -153,16 +128,10 @@
          <v-alert class="mx-4" type="warning" dense text style="font-size:12px;">
                Attention! The trade will be executed at market conditions, difference with requested price may be significant!
           </v-alert>
-        <v-card-actions>
-          <v-btn block text :class="action == 'buy' ? 'green' : 'red'"
-            ><v-icon
-              >mdi-arrow-{{
-                action == "buy" ? "top" : "bottom"
-              }}-right-thick</v-icon
-            >
-            {{ action }}
-          </v-btn>
-        </v-card-actions>
+        <v-card-text>
+          <v-btn block text  class="primary mb-2">update</v-btn>
+          <v-btn block text  class="red">close</v-btn>
+        </v-card-text>
       </v-card>
     </v-dialog>
   </div>
