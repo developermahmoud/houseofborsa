@@ -2,7 +2,7 @@
   <div>
     <v-row no-gutters>
       <v-col>
-        <h5 class="text-center">BNB/BUD<span class="green--text">&nbsp;+14.47%</span></h5>
+        <h5 class="text-center">SILVER<span class="green--text">&nbsp;+14.47%</span></h5>
         <v-sparkline
           height="110"
           :fill="fill"
@@ -15,7 +15,7 @@
         ></v-sparkline>
       </v-col>
       <v-col>
-        <h5 class="text-center">BTC/BUSD<span class="green--text">&nbsp; +3.06%</span></h5>
+        <h5 class="text-center">GOLD<span class="green--text">&nbsp; +3.06%</span></h5>
         <v-sparkline
           height="110"
           :fill="fill"

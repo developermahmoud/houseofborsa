@@ -407,7 +407,7 @@ export default {
       ],
       tab: "open",
       showMargin: true,
-      showClosedDialog: true,
+      showClosedDialog: false,
       isBlur: false,
       showChart: false,
       marginInfoDialog: false,

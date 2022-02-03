@@ -13,49 +13,6 @@
         <span style="font-size: 11px">{{ contact.text }}</span>
       </v-col>
     </v-row>
-    <h3 class="mt-1">HÓB Academy</h3>
-    <v-list class="py-0 transparent" dense>
-      <v-list-item link to="/academy">
-        <v-list-item-icon class="mr-3">
-          <v-icon size="20"> fas fa-film</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>Educational videos</v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-      <v-list-item>
-        <v-list-item-icon class="mr-3">
-          <v-icon size="20"> far fa-newspaper</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>Educational articles</v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-      <v-list-item>
-        <v-list-item-icon class="mr-3">
-          <v-icon size="18"> fas fa-chalkboard-teacher</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>Webinars and Interviews</v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-      <v-list-item>
-        <v-list-item-icon class="mr-3">
-          <v-icon size="18"> fas fa-hourglass-start</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>Webinars are coming</v-list-item-title>
-        <v-list-item-action>
-          <v-icon>mdi-chevron-right</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-      <v-divider></v-divider>
-    </v-list>
     <h3 class="mt-5">Help Center</h3>
     <v-list class="py-0 transparent" dense>
       <v-list-item>

@@ -16,12 +16,10 @@
           <v-list-item-content>
             <v-list-item-title>Buy Apple </v-list-item-title>
             <v-list-item-subtitle class="green--text"
-              ><v-chip outlined x-small color="white">CFD</v-chip>
+              ><v-chip class="px-1" outlined x-small color="white">CFD</v-chip>
+              <v-icon small color="primary">mdi-clock</v-icon
+              ><span class="caption">MARKET OPEN</span>
             </v-list-item-subtitle>
-            <v-list-item-subtitle class="mt-2" style="font-size: 11px"
-              ><v-icon small color="primary">mdi-clock</v-icon> MARKET
-              OPEN</v-list-item-subtitle
-            >
           </v-list-item-content>
           <v-list-item-action
             >172.44<br />
@@ -43,18 +41,46 @@
               <v-text-field
                 type="number"
                 value="1.33"
-                  prefix="$"
+                prefix="$"
                 dense
                 label="CURRENT P/L $"
               ></v-text-field>
             </v-col>
-              <v-col cols="4">
+            <v-col cols="4">
               <v-text-field
                 type="number"
-                  prefix="%"
+                prefix="%"
                 value="12"
                 dense
                 label="P/L (%)"
+              ></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row class="mt-5">
+            <v-col cols="12" v-if="topChange === 'specefic_rate'">
+              <v-text-field
+                value="178.85"
+                dense
+                label="Entry price"
+                type="number"
+              ></v-text-field>
+            </v-col>
+            <v-col cols="5">
+              <v-text-field
+                prefix="$"
+                value="17.26"
+                dense
+                label="Investment"
+                type="number"
+              ></v-text-field>
+            </v-col>
+            <v-col cols="2" align="center">=</v-col>
+            <v-col cols="5">
+              <v-text-field
+                type="number"
+                value="1.0"
+                dense
+                label="Position Size"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -125,12 +151,13 @@
             </div>
           </div>
         </v-card-text>
-         <v-alert class="mx-4" type="warning" dense text style="font-size:12px;">
-               Attention! The trade will be executed at market conditions, difference with requested price may be significant!
-          </v-alert>
-        <v-card-text>
-          <v-btn block text  class="primary mb-2">update</v-btn>
-          <v-btn block text  class="red">close</v-btn>
+        <v-alert class="mx-4" type="warning" dense text style="font-size: 12px">
+          Attention! The trade will be executed at market conditions, difference
+          with requested price may be significant!
+        </v-alert>
+        <v-card-text class="text-center">
+          <v-btn  text class="primary">update</v-btn>
+          <v-btn  text class="red">close</v-btn>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -153,8 +180,7 @@ export default {
       toggle_none: null,
     };
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
 

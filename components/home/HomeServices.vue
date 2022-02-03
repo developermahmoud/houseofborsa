@@ -43,9 +43,9 @@ export default {
           to: "/services/about-us",
         },
         {
-          icon: "fa-university",
+          icon: "fa-graduation-cap",
           text: "HÓB Academy",
-          to: "/support",
+          to: "/academy",
         },
         {
           icon: "fa-users",
