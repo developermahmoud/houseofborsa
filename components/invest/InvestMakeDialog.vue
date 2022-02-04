@@ -35,9 +35,6 @@
             <div class="caption mt-2">
               <v-icon small color="green">mdi-menu-up</v-icon>17.24
             </div>
-            <div class="caption">
-              <v-icon small color="red">mdi-menu-down</v-icon>17.24
-            </div>
             <div class="caption ml-1 green--text">6.97%</div>
           </v-col>
         </v-row>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <home-slider class="mb-2" />
     <div class="d-flex justify-space-between align-center mb-2">
       <h4>Educational videos</h4>
       <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
@@ -27,7 +28,7 @@
         </v-card>
       </v-slide-item></v-slide-group
     >
-    <v-divider class="mt-5 mb-3"></v-divider>
+    <v-divider class="mt-7 mb-5"></v-divider>
     <div class="d-flex justify-space-between align-center mb-2">
       <h4>Educational articles</h4>
       <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
@@ -47,7 +48,7 @@
         </v-card>
       </v-slide-item>
     </v-slide-group>
-    <v-divider class="mt-5 mb-3"></v-divider>
+    <v-divider class="mt-7 mb-5"></v-divider>
     <div class="d-flex justify-space-between align-center mb-2">
       <h4>Webinars and Interviews</h4>
       <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
@@ -74,7 +75,7 @@
         </v-card>
       </v-slide-item>
     </v-slide-group>
-    <v-divider class="mt-5 mb-3"></v-divider>
+    <v-divider class="mt-7 mb-5"></v-divider>
     <div class="d-flex justify-space-between align-center mb-2">
       <h4>Webinars are coming</h4>
       <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
@@ -94,7 +95,7 @@
         </v-card>
       </v-slide-item>
     </v-slide-group>
-    <v-divider class="mt-5 mb-3"></v-divider>
+    <v-divider class="mt-7 mb-5"></v-divider>
     <div class="d-flex justify-space-between align-center mb-2">
       <h4>Training and exams</h4>
       <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
@@ -123,7 +124,9 @@
 </template>
 
 <script>
+import HomeSlider from '../components/home/HomeSlider.vue';
 export default {
+  components: { HomeSlider },
   data() {
     return {
       firstCatgegories: [
