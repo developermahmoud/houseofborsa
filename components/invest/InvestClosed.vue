@@ -9,20 +9,22 @@
           <v-toolbar-title>Close Order</v-toolbar-title>
         </v-toolbar>
         <v-divider></v-divider>
-        <v-list-item three-line>
+        <v-list-item two-line>
           <v-list-item-avatar>
             <v-img src="/currency/4.jpg" />
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title>Buy Apple </v-list-item-title>
-            <v-list-item-subtitle class="green--text"
-              ><v-chip class="px-1" outlined x-small color="white">CFD</v-chip>
-              <v-icon small color="primary">mdi-clock</v-icon
-              ><span class="caption">MARKET OPEN</span>
+            <v-list-item-subtitle
+              ><v-chip outlined class="px-1" x-small color="white">CFD</v-chip>
+              <v-icon small>mdi-clock</v-icon>
+              <span class="grey--text" style="font-size:12px;'"
+                >MARKET OPEN</span
+              >
             </v-list-item-subtitle>
           </v-list-item-content>
           <v-list-item-action
-            >172.44<br />
+            >$172.44<br />
             <span class="green--text">8.35%</span></v-list-item-action
           >
         </v-list-item>
@@ -33,60 +35,72 @@
                 prefix="$"
                 value="17.26"
                 dense
-                label="Open Price"
+                disabled
                 type="number"
-              ></v-text-field>
+              >
+                <template v-slot:label>
+                  <strong class="body-1">Open Price</strong>
+                </template>
+              </v-text-field>
             </v-col>
             <v-col cols="4">
               <v-text-field
                 type="number"
                 value="1.33"
+                disabled
                 prefix="$"
                 dense
-                label="CURRENT P/L $"
-              ></v-text-field>
+              >
+                <template v-slot:label>
+                  <strong class="body-1">CURRENT P/L $</strong>
+                </template>
+              </v-text-field>
             </v-col>
             <v-col cols="4">
-              <v-text-field
-                type="number"
-                prefix="%"
-                value="12"
-                dense
-                label="P/L (%)"
-              ></v-text-field>
+              <v-text-field type="number" prefix="%" value="12" disabled dense>
+                <template v-slot:label>
+                  <strong class="body-1">P/L (%)</strong>
+                </template>
+              </v-text-field>
             </v-col>
           </v-row>
           <v-row class="mt-5">
             <v-col cols="12" v-if="topChange === 'specefic_rate'">
-              <v-text-field
-                value="178.85"
-                dense
-                label="Entry price"
-                type="number"
-              ></v-text-field>
+              <v-text-field value="178.85" dense disabled type="number">
+                <template v-slot:label>
+                  <strong class="body-1">Entry price</strong>
+                </template>
+              </v-text-field>
             </v-col>
             <v-col cols="5">
               <v-text-field
                 prefix="$"
                 value="17.26"
                 dense
-                label="Investment"
+                disabled
                 type="number"
-              ></v-text-field>
+              >
+                <template v-slot:label>
+                  <strong class="body-1">Investment</strong>
+                </template>
+              </v-text-field>
             </v-col>
             <v-col cols="2" align="center">=</v-col>
             <v-col cols="5">
-              <v-text-field
-                type="number"
-                value="1.0"
-                dense
-                label="Position Size"
-              ></v-text-field>
+              <v-text-field type="number" value="1.0" disabled dense>
+                <template v-slot:label>
+                  <strong class="body-1">Position Size</strong>
+                </template>
+              </v-text-field>
             </v-col>
           </v-row>
           <v-alert class="my-3" type="error" dense text
             >You need at least to trade</v-alert
           >
+          <div class="d-flex align-center mb-3">
+            <v-icon small class="mr-1">mdi-wallet</v-icon> Available funds:
+            <strong class="green--text">0.85 $</strong>
+          </div>
           <div class="d-flex align-center mb-3">
             <img style="width: 20px" src="/Terminal.ico" /> HOB Protector
           </div>
@@ -119,10 +133,14 @@
                 type="number"
                 dense
                 hide-details
-                label="Stop Loss"
+                label=""
                 prefix="$"
                 :value="otherChange == 'amount' ? '-8.63' : '0.00'"
-              ></v-text-field>
+              >
+                <template v-slot:label>
+                  <strong class="red--text body-1">Stop Loss</strong>
+                </template>
+              </v-text-field>
             </div>
             <div style="width: 150px">
               <template v-if="otherChange == 'amount'">164.01</template>
@@ -137,10 +155,14 @@
               <v-text-field
                 type="number"
                 hide-details
-                label="Take Profit"
+                label=""
                 prefix="$"
                 :value="otherChange == 'amount' ? '8.63' : '0.00'"
-              ></v-text-field>
+              >
+                <template v-slot:label>
+                  <strong class="green--text body-1">Take Profit</strong>
+                </template>
+              </v-text-field>
             </div>
             <div style="width: 150px">
               <template v-if="otherChange == 'amount'">181.27</template>
@@ -156,16 +178,23 @@
           with requested price may be significant!
         </v-alert>
         <v-card-text class="text-center">
-          <v-btn  text class="primary">update</v-btn>
-          <v-btn  text class="red">close</v-btn>
+          <v-btn text class="primary" @click="orderedDialog=true">update</v-btn>
+          <v-btn text class="red" @click="orderedDialog=true">close</v-btn>
         </v-card-text>
       </v-card>
     </v-dialog>
+    <invest-ordered
+      v-if="orderedDialog"
+      :dialog="orderedDialog"
+      @close-dialog="orderedDialog = false"
+    />
   </div>
 </template>
 
 <script>
+import InvestOrdered from "./InvestOrdered.vue";
 export default {
+  components: { InvestOrdered },
   props: {
     dialog: {
       required: true,
@@ -174,6 +203,7 @@ export default {
   },
   data() {
     return {
+      orderedDialog: false,
       action: "buy",
       topChange: "current_price",
       otherChange: "amount",

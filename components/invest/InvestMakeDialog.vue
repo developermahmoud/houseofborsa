@@ -11,33 +11,25 @@
           <v-icon class="mr-2">mdi-bell</v-icon>
           <v-icon color="amber">mdi-star</v-icon>
         </v-toolbar>
-        <v-row>
-          <v-col cols="9">
-            <v-list-item two-line class="pl-1">
-              <v-list-item-avatar>
-                <v-img src="/currency/4.jpg" />
-              </v-list-item-avatar>
-              <v-list-item-content>
-                <v-list-item-title>
-                  Apple <v-icon small>mdi-chevron-down</v-icon>
-                </v-list-item-title>
-                <v-list-item-subtitle class="green--text"
-                  ><v-chip outlined class="px-1" x-small color="white"
-                    >CFD</v-chip
-                  >
-                  <v-icon small color="primary">mdi-clock</v-icon>
-                  <span class="caption white--text">MARKET OPEN</span>
-                </v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-          </v-col>
-          <v-col cols="3">
-            <div class="caption mt-2">
-              <v-icon small color="green">mdi-menu-up</v-icon>17.24
-            </div>
-            <div class="caption ml-1 green--text">6.97%</div>
-          </v-col>
-        </v-row>
+          <v-list-item two-line>
+          <v-list-item-avatar>
+            <v-img src="/currency/4.jpg" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title> Apple </v-list-item-title>
+            <v-list-item-subtitle
+              ><v-chip outlined class="px-1" x-small color="white">CFD</v-chip>
+              <v-icon small>mdi-clock</v-icon>
+              <span class="grey--text " style="font-size:12px;'"
+                >MARKET OPEN</span
+              >
+            </v-list-item-subtitle>
+          </v-list-item-content>
+          <v-list-item-action
+            >$172.44<br />
+            <span class="green--text">8.35%</span></v-list-item-action
+          >
+        </v-list-item>
         <v-card-text class="px-0">
           <div>
             <div class="tradingview-widget-container">

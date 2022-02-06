@@ -13,22 +13,22 @@
           <v-btn text small class="red" @click="action = 'sell'">sell</v-btn>
           <v-btn text small class="green" @click="action = 'buy'">buy</v-btn>
         </div>
-        <v-list-item three-line>
+        <v-list-item two-line>
           <v-list-item-avatar>
             <v-img src="/currency/4.jpg" />
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title> Apple </v-list-item-title>
-            <v-list-item-subtitle class="green--text"
-              ><v-chip outlined x-small color="white">CFD</v-chip>
+            <v-list-item-subtitle
+              ><v-chip outlined class="px-1" x-small color="white">CFD</v-chip>
+              <v-icon small>mdi-clock</v-icon>
+              <span class="grey--text" style="font-size:12px;'"
+                >MARKET OPEN</span
+              >
             </v-list-item-subtitle>
-            <v-list-item-subtitle class="mt-2" style="font-size: 11px"
-              ><v-icon small color="primary">mdi-clock</v-icon> MARKET
-              OPEN</v-list-item-subtitle
-            >
           </v-list-item-content>
           <v-list-item-action
-            >172.44<br />
+            >$172.44<br />
             <span class="green--text">8.35%</span></v-list-item-action
           >
         </v-list-item>
@@ -118,10 +118,13 @@
                 type="number"
                 dense
                 hide-details
-                label="Stop Loss"
                 prefix="$"
                 :value="otherChange == 'amount' ? '-8.63' : '0.00'"
-              ></v-text-field>
+              >
+                <template v-slot:label>
+                  <strong class="red--text body-1">Stop Loss</strong>
+                </template>
+              </v-text-field>
             </div>
             <div style="width: 150px">
               <template v-if="otherChange == 'amount'">164.01</template>
@@ -136,10 +139,13 @@
               <v-text-field
                 type="number"
                 hide-details
-                label="Take Profit"
                 prefix="$"
                 :value="otherChange == 'amount' ? '8.63' : '0.00'"
-              ></v-text-field>
+              >
+                <template v-slot:label>
+                  <strong class="green--text body-1">Take Profit</strong>
+                </template>
+              </v-text-field>
             </div>
             <div style="width: 150px">
               <template v-if="otherChange == 'amount'">181.27</template>
@@ -150,11 +156,12 @@
             </div>
           </div>
         </v-card-text>
-         <v-alert class="mx-4" type="warning" dense text style="font-size:12px;">
-               Attention! The trade will be executed at market conditions, difference with requested price may be significant!
-          </v-alert>
+        <v-alert class="mx-4" type="warning" dense text style="font-size: 12px">
+          Attention! The trade will be executed at market conditions, difference
+          with requested price may be significant!
+        </v-alert>
         <v-card-actions>
-          <v-btn block text :class="action == 'buy' ? 'green' : 'red'"
+          <v-btn @click="orderedDialog=true" block text :class="action == 'buy' ? 'green' : 'red'"
             ><v-icon
               >mdi-arrow-{{
                 action == "buy" ? "top" : "bottom"
@@ -165,11 +172,18 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+    <invest-ordered
+      v-if="orderedDialog"
+      :dialog="orderedDialog"
+      @close-dialog="orderedDialog = false"
+    />
   </div>
 </template>
 
 <script>
+import InvestOrdered from "./InvestOrdered.vue";
 export default {
+  components: { InvestOrdered },
   props: {
     dialog: {
       required: true,
@@ -178,14 +192,14 @@ export default {
   },
   data() {
     return {
+      orderedDialog: false,
       action: "buy",
       topChange: "current_price",
       otherChange: "amount",
       toggle_none: null,
     };
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
 
