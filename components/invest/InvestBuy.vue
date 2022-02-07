@@ -83,6 +83,10 @@
               ></v-text-field>
             </v-col>
           </v-row>
+          <div class="d-flex justify-space-between align-center">
+            <div><v-icon size="18" class="mr-1">mdi-wallet</v-icon>Available funds: $ </div>
+            <div><v-icon size="18" class="mr-1">mdi-chart-pie</v-icon>Used margin: $</div>
+          </div>
           <v-alert class="my-3" type="error" dense text
             >You need at least to trade</v-alert
           >
@@ -161,13 +165,16 @@
           with requested price may be significant!
         </v-alert>
         <v-card-actions>
-          <v-btn @click="orderedDialog=true" block text :class="action == 'buy' ? 'green' : 'red'"
+          <!-- <v-btn @click="orderedDialog=true" block text :class="action == 'buy' ? 'green' : 'red'"
             ><v-icon
               >mdi-arrow-{{
                 action == "buy" ? "top" : "bottom"
               }}-right-thick</v-icon
             >
             {{ action }}
+          </v-btn> -->
+          <v-btn @click="orderedDialog=true" block text class="grey"
+            >place order
           </v-btn>
         </v-card-actions>
       </v-card>

@@ -7,7 +7,7 @@
         </v-btn>
         <v-spacer></v-spacer>
         <div>
-          <span style="font-size: 17px">
+          <span style="font-size: 20px">
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
                 <v-icon color="green" small v-bind="attrs" v-on="on">
@@ -22,9 +22,6 @@
             </v-tooltip>
             Portfolio P/L($)</span
           >
-          <v-icon small @click="isBlur = !isBlur">{{
-            isBlur ? "mdi-eye-off-outline" : "mdi-eye"
-          }}</v-icon>
         </div>
         <v-spacer></v-spacer>
         <v-icon @click="dialog = true">mdi-cards</v-icon>
@@ -32,19 +29,23 @@
       <v-card-text class="text-center white--text">
         <div>
           <div class="d-flex align-center justify-center">
+             <v-icon small @click="showMargin = !showMargin"
+              >mdi-arrow-expand</v-icon
+            >
             <div>
               <span class="text-h6">$</span>
               <strong
-                style="font-size: 25px"
+                style="font-size: 27px"
                 :class="isBlur ? 'blur-text' : ''"
               >
                 9238.</strong
               >
               <span class="text-h6">31</span>
             </div>
-            <v-icon small @click="showMargin = !showMargin"
-              >mdi-arrow-expand</v-icon
-            >
+           
+            <v-icon small @click="isBlur = !isBlur">{{
+              isBlur ? "mdi-eye-off-outline" : "mdi-eye"
+            }}</v-icon>
           </div>
         </div>
         <div>
@@ -284,8 +285,8 @@
               :class="`mt-1 ${item.color}--text`"
               style="font-size: 0.875rem; text-align: left"
             >
-            <template v-if="item.color == 'red'">-0.92%</template>
-            <template v-else>+1.92%</template>
+              <template v-if="item.color == 'red'">-0.92%</template>
+              <template v-else>+1.92%</template>
             </div>
           </template>
         </v-list-item-action-text>

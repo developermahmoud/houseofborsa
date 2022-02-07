@@ -1,6 +1,15 @@
 <template>
   <div>
     <home-slider class="mb-2" />
+    <v-card class="mb-5 secondary" flat rounded>
+      <v-card-title class="body-1">Earn up to 14% interest!<v-spacer></v-spacer><v-icon>mdi-close</v-icon></v-card-title>
+      <v-card-text>Start earning high returns on your crypto with Covesting Yield Account.</v-card-text>
+      <v-card-actions>
+        <v-img width="100" src="/cov-yield.875d03a81a9cb1ce.png"></v-img>
+        <v-spacer></v-spacer>
+        <v-btn text class="primary">start earning</v-btn>
+      </v-card-actions>
+    </v-card>
     <div class="d-flex justify-space-between align-center mb-2">
       <h4>Educational videos</h4>
       <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
@@ -34,17 +43,15 @@
       <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
     </div>
     <v-slide-group>
-      <v-slide-item v-for="i in 10" :key="i">
-        <v-card class="secondary mr-2" width="200" falt outlined>
-          <v-img
-            class="white--text align-end"
-            height="200px"
-            src="/courses/1.jpg"
-          >
-            <v-card-title>HLadislave</v-card-title>
-            <v-card-subtitle class="green--text pb-0">69.33%</v-card-subtitle>
-            <span class="ml-4 grey--text caption">RETURN (12M)</span>
-          </v-img>
+      <v-slide-item v-for="(item, i) in exams" :key="i">
+        <v-card :class="`${item.color} mr-2`" width="200" falt outlined>
+          <v-card-title>{{ item.title }}</v-card-title>
+          <v-responsive class="text-center">
+            <v-avatar size="100">
+              <v-icon size="80">{{ item.icon }}</v-icon>
+            </v-avatar>
+          </v-responsive>
+          <v-card-text> 1 Mintue </v-card-text>
         </v-card>
       </v-slide-item>
     </v-slide-group>
@@ -98,33 +105,12 @@
     <v-divider class="mt-7 mb-5"></v-divider>
     <div class="d-flex justify-space-between align-center mb-2">
       <h4>Training and exams</h4>
-      <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
     </div>
-    <v-slide-group>
-      <v-slide-item v-for="(item, i) in exams" :key="i">
-        <v-card
-          :class="`${item.color} mr-2`"
-          width="200"
-          falt
-          outlined
-        >
-        <v-card-title>{{ item.title }}</v-card-title>
-          <v-responsive class="text-center">
-            <v-avatar size="100">
-              <v-icon size="80">{{ item.icon }}</v-icon>
-            </v-avatar>
-          </v-responsive>
-          <v-card-text>
-            1 Mintue
-          </v-card-text>
-        </v-card>
-      </v-slide-item>
-    </v-slide-group>
   </div>
 </template>
 
 <script>
-import HomeSlider from '../components/home/HomeSlider.vue';
+import HomeSlider from "../components/home/HomeSlider.vue";
 export default {
   components: { HomeSlider },
   data() {

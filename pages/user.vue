@@ -36,6 +36,15 @@
       </v-list-item-action>
     </v-list-item>
     <div class="d-flex align-center justify-space-between mb-3">
+        <div
+        class="text-center body-2"
+        style="cursor: pointer"
+      >
+        <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
+        <span>215</span>
+        <br />
+        <span style="font-size: 12px" class="grey--text">Trade stats</span>
+      </div>
       <div
         class="text-center body-2"
         style="cursor: pointer"

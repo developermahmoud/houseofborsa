@@ -178,8 +178,12 @@
           with requested price may be significant!
         </v-alert>
         <v-card-text class="text-center">
-          <v-btn text class="primary" @click="orderedDialog=true">update</v-btn>
-          <v-btn text class="red" @click="orderedDialog=true">close</v-btn>
+          <v-btn text small class="primary" @click="orderedDialog = true"
+            >update order</v-btn
+          >
+          <v-btn text small class="red" @click="orderedDialog = true"
+            >close order</v-btn
+          >
         </v-card-text>
       </v-card>
     </v-dialog>

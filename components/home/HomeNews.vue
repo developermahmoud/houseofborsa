@@ -1,17 +1,16 @@
 <template>
   <div>
     <div class="mb-3 d-flex justify-space-between align-center">
-      <h4>Featured Posts</h4>
-      <nuxt-link to="/" class="text-decoration-none">Show All</nuxt-link>
+      <h4 class="text-truncate">Community posts & latest news</h4>
+      <nuxt-link to="/" class="text-decoration-none" style="font-size:12px;">Show All</nuxt-link>
     </div>
     <v-slide-group :show-arrows="false">
       <v-slide-item v-for="n in 15" :key="n">
         <v-card tile class="secondary mr-2" width="200" falt outlined>
           <v-img height="150" src="/news/shutterstock_756585199.webp">
-          <div class="mt-3 ml-3">
-            <v-icon>mdi-lightning-bolt-circle</v-icon> BTC-Stories
-          </div>
-            
+            <div class="mt-3 ml-3">
+              <v-icon>mdi-lightning-bolt-circle</v-icon> BTC-Stories
+            </div>
           </v-img>
           <v-card-title class="body-1">
             Top Economic events of this weeks
@@ -30,8 +29,8 @@
       </v-slide-item>
     </v-slide-group>
     <div class="my-3 d-flex justify-space-between align-center">
-      <h4>Copy-Trading | Top</h4>
-      <nuxt-link to="/" class="text-decoration-none">Show All</nuxt-link>
+      <h4>Traders Ranking | Top</h4>
+      <nuxt-link to="/" class="text-decoration-none" style="font-size:12px;">Show All</nuxt-link>
     </div>
     <v-slide-group :show-arrows="false">
       <v-slide-item v-for="n in 15" :key="n">
