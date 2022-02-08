@@ -10,8 +10,8 @@
         </v-toolbar>
         <v-divider></v-divider>
         <div class="text-center my-5">
-          <v-btn text small class="red" @click="action = 'sell'">sell</v-btn>
-          <v-btn text small class="green" @click="action = 'buy'">buy</v-btn>
+          <v-btn text class="red" @click="action = 'sell'">sell</v-btn>
+          <v-btn text class="green" @click="action = 'buy'">buy</v-btn>
         </div>
         <v-list-item two-line>
           <v-list-item-avatar>
@@ -32,7 +32,7 @@
             <span class="green--text">8.35%</span></v-list-item-action
           >
         </v-list-item>
-        <v-card-text class="px-2">
+        <v-card-text>
           <div class="d-flex justify-space-between pa-1 background rounded-lg">
             <div style="width: 50%">
               <v-btn
@@ -84,13 +84,19 @@
             </v-col>
           </v-row>
           <div class="d-flex justify-space-between align-center">
-            <div><v-icon size="18" class="mr-1">mdi-wallet</v-icon>Available funds: $ </div>
-            <div><v-icon size="18" class="mr-1">mdi-chart-pie</v-icon>Used margin: $</div>
+            <div>
+              <v-icon size="18" class="mr-1">mdi-wallet</v-icon>Available funds:
+              $
+              <br />
+              <span class="green--text">7650,5555$</span>
+            </div>
+            <div>
+              <v-icon size="18" class="mr-1">mdi-chart-pie</v-icon>Used margin:
+              $ <br />
+              <span class="green--text">2560,000$</span>
+            </div>
           </div>
-          <v-alert class="my-3" type="error" dense text
-            >You need at least to trade</v-alert
-          >
-          <div class="d-flex align-center mb-3">
+          <div class="d-flex align-center my-3">
             <img style="width: 20px" src="/Terminal.ico" /> HOB Protector
           </div>
 
@@ -160,37 +166,31 @@
             </div>
           </div>
         </v-card-text>
-        <v-alert class="mx-4" type="warning" dense text style="font-size: 12px">
-          Attention! The trade will be executed at market conditions, difference
-          with requested price may be significant!
+        <v-alert class="mx-4 pa-1" color="warning" dense text >
+          <div class="d-flex">
+            <v-icon class="ml-0 pl-0" color="warning">mdi-exclamation</v-icon>
+            <p style="font-size: 12px">Attention! The trade will be executed at market conditions, difference
+          with requested price may be significant!</p>
+          </div>
         </v-alert>
         <v-card-actions>
-          <!-- <v-btn @click="orderedDialog=true" block text :class="action == 'buy' ? 'green' : 'red'"
-            ><v-icon
-              >mdi-arrow-{{
-                action == "buy" ? "top" : "bottom"
-              }}-right-thick</v-icon
-            >
-            {{ action }}
-          </v-btn> -->
-          <v-btn @click="orderedDialog=true" block text class="grey"
+          <v-btn
+            link
+            to="/order?page=invest"
+            @click="orderedDialog = true"
+            block
+            text
+            :class="action == 'buy' ? 'green' : 'red'"
             >place order
           </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <invest-ordered
-      v-if="orderedDialog"
-      :dialog="orderedDialog"
-      @close-dialog="orderedDialog = false"
-    />
   </div>
 </template>
 
 <script>
-import InvestOrdered from "./InvestOrdered.vue";
 export default {
-  components: { InvestOrdered },
   props: {
     dialog: {
       required: true,

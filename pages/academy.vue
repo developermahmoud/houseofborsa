@@ -1,15 +1,6 @@
 <template>
   <div>
     <home-slider class="mb-2" />
-    <v-card class="mb-5 secondary" flat rounded>
-      <v-card-title class="body-1">Earn up to 14% interest!<v-spacer></v-spacer><v-icon>mdi-close</v-icon></v-card-title>
-      <v-card-text>Start earning high returns on your crypto with Covesting Yield Account.</v-card-text>
-      <v-card-actions>
-        <v-img width="100" src="/cov-yield.875d03a81a9cb1ce.png"></v-img>
-        <v-spacer></v-spacer>
-        <v-btn text class="primary">start earning</v-btn>
-      </v-card-actions>
-    </v-card>
     <div class="d-flex justify-space-between align-center mb-2">
       <h4>Educational videos</h4>
       <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
@@ -37,8 +28,7 @@
         </v-card>
       </v-slide-item></v-slide-group
     >
-    <v-divider class="mt-7 mb-5"></v-divider>
-    <div class="d-flex justify-space-between align-center mb-2">
+    <div class="d-flex justify-space-between align-center mb-2 mt-7">
       <h4>Educational articles</h4>
       <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
     </div>
@@ -55,8 +45,7 @@
         </v-card>
       </v-slide-item>
     </v-slide-group>
-    <v-divider class="mt-7 mb-5"></v-divider>
-    <div class="d-flex justify-space-between align-center mb-2">
+    <div class="d-flex justify-space-between align-center mb-2 mt-7">
       <h4>Webinars and Interviews</h4>
       <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
     </div>
@@ -82,30 +71,29 @@
         </v-card>
       </v-slide-item>
     </v-slide-group>
-    <v-divider class="mt-7 mb-5"></v-divider>
-    <div class="d-flex justify-space-between align-center mb-2">
+    <div class="d-flex justify-space-between align-center mb-2 mt-7">
       <h4>Webinars are coming</h4>
       <nuxt-link class="text-decoration-none" to="#">Show all</nuxt-link>
     </div>
     <v-slide-group>
-      <v-slide-item v-for="i in 10" :key="i">
-        <v-card class="secondary mr-2" width="200" falt outlined>
-          <v-img
-            class="white--text align-end"
-            height="200px"
-            src="/courses/1.jpg"
-          >
-            <v-card-title>HLadislave</v-card-title>
-            <v-card-subtitle class="green--text pb-0">69.33%</v-card-subtitle>
-            <span class="ml-4 grey--text caption">RETURN (12M)</span>
-          </v-img>
-        </v-card>
+      <v-slide-item v-for="item in webinars" :key="item">
+        <img style="width: 200px" class="mr-2" :src="item" />
       </v-slide-item>
     </v-slide-group>
-    <v-divider class="mt-7 mb-5"></v-divider>
-    <div class="d-flex justify-space-between align-center mb-2">
+    <div class="d-flex justify-space-between align-center mb-2 mt-7">
       <h4>Training and exams</h4>
     </div>
+    <v-card class="mb-5 secondary" flat rounded>
+      <v-card-title>Academy</v-card-title>
+      <v-card-text
+        >Learn on-th-go: question taht keep you sharp and help you get an
+        edge</v-card-text
+      >
+      <div class="d-flex justify-space-between align-center px-3">
+        <v-img width="50" src="/cov-yield.875d03a81a9cb1ce.png"></v-img>
+        <v-btn text small class="mt-5 primary">start earning</v-btn>
+      </div>
+    </v-card>
   </div>
 </template>
 
@@ -154,6 +142,14 @@ export default {
           icon: "mdi-youtube",
           color: "red",
         },
+      ],
+      webinars: [
+        "/webinar/1.jpeg",
+        "/webinar/2.jpeg",
+        "/webinar/3.jpeg",
+        "/webinar/4.jpeg",
+        "/webinar/5.jpeg",
+        "/webinar/6.jpeg",
       ],
       exams: [
         {

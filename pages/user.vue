@@ -36,10 +36,7 @@
       </v-list-item-action>
     </v-list-item>
     <div class="d-flex align-center justify-space-between mb-3">
-        <div
-        class="text-center body-2"
-        style="cursor: pointer"
-      >
+      <div class="text-center body-2" style="cursor: pointer">
         <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
         <span>215</span>
         <br />
@@ -179,7 +176,7 @@
           </v-list-item-icon>
         </v-list-item>
         <v-divider></v-divider>
-         <v-list-item to="/accounts/premium">
+        <v-list-item to="/accounts/premium">
           <v-list-item-icon class="mr-3">
             <v-icon>mdi-certificate</v-icon>
           </v-list-item-icon>
@@ -195,7 +192,17 @@
           </v-list-item-icon>
           <v-list-item-title>Refer a friend</v-list-item-title>
           <v-list-item-icon>
-          0&nbsp;  <v-icon class="mr-5">mdi-account</v-icon>
+            0&nbsp; <v-icon class="mr-2">mdi-account</v-icon>
+          </v-list-item-icon>
+        </v-list-item>
+        <v-divider></v-divider>
+        <v-list-item @click="referrDialog = true">
+          <v-list-item-icon class="mr-3">
+            <v-icon>mdi-podium-gold</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>Contests</v-list-item-title>
+          <v-list-item-icon>
+            <v-icon>mdi-arrow-right</v-icon>
           </v-list-item-icon>
         </v-list-item>
         <v-divider></v-divider>

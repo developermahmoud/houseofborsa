@@ -178,27 +178,20 @@
           with requested price may be significant!
         </v-alert>
         <v-card-text class="text-center">
-          <v-btn text small class="primary" @click="orderedDialog = true"
+          <v-btn text small class="primary" link to="/order?page=portfolio"
             >update order</v-btn
           >
-          <v-btn text small class="red" @click="orderedDialog = true"
+          <v-btn text small class="red" link to="/order?page=portfolio"
             >close order</v-btn
           >
         </v-card-text>
       </v-card>
     </v-dialog>
-    <invest-ordered
-      v-if="orderedDialog"
-      :dialog="orderedDialog"
-      @close-dialog="orderedDialog = false"
-    />
   </div>
 </template>
 
 <script>
-import InvestOrdered from "./InvestOrdered.vue";
 export default {
-  components: { InvestOrdered },
   props: {
     dialog: {
       required: true,
@@ -207,7 +200,6 @@ export default {
   },
   data() {
     return {
-      orderedDialog: false,
       action: "buy",
       topChange: "current_price",
       otherChange: "amount",
