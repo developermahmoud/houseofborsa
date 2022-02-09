@@ -34,7 +34,7 @@
     </div>
     <v-slide-group>
       <v-slide-item v-for="(item, i) in exams" :key="i">
-        <v-card :class="`${item.color} mr-2`" width="200" falt outlined>
+        <v-card :class="`${item.color} mr-2`" width="200" falt outlined link to="/articles">
           <v-card-title>{{ item.title }}</v-card-title>
           <v-responsive class="text-center">
             <v-avatar size="100">
@@ -85,14 +85,15 @@
     </div>
     <v-card class="mb-5 secondary" flat rounded>
       <v-card-title>Academy</v-card-title>
-      <v-card-text
+      <v-card-text class="pb-0"
         >Learn on-th-go: question taht keep you sharp and help you get an
         edge</v-card-text
       >
-      <div class="d-flex justify-space-between align-center px-3">
-        <v-img width="50" src="/cov-yield.875d03a81a9cb1ce.png"></v-img>
-        <v-btn text small class="mt-5 primary">start earning</v-btn>
-      </div>
+      <v-card-actions>
+        <img style="width:70px;" src="/cov-yield.875d03a81a9cb1ce.png" />
+        <v-spacer></v-spacer>
+        <v-btn text small class="primary">start earning</v-btn>
+      </v-card-actions>
     </v-card>
   </div>
 </template>

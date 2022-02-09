@@ -2,13 +2,19 @@
   <div>
     <v-card class="mb-5 secondary" flat rounded>
       <v-card-title class="body-1">Earn up to 14% interest!<v-spacer></v-spacer><v-icon>mdi-close</v-icon></v-card-title>
-      <v-card-text>Start earning high returns on your crypto with Covesting Yield Account.</v-card-text>
+      <v-card-text class="pb-0">Start earning high returns on your crypto with Covesting Yield Account.</v-card-text>
       <v-card-actions>
-        <v-img width="100" src="/cov-yield.875d03a81a9cb1ce.png"></v-img>
+        <img style="width:70px;" src="/cov-yield.875d03a81a9cb1ce.png" />
         <v-spacer></v-spacer>
         <v-btn text small class="primary">start earning</v-btn>
       </v-card-actions>
     </v-card>
+    <v-tabs centered background-color="background"  class="px-0 mx-0">
+      <v-tab style="font-size:10px;min-width:20px;max-width:75px;">Feed</v-tab>
+      <v-tab style="font-size:10px;min-width:20px;max-width:75px;">News</v-tab>
+      <v-tab style="font-size:10px;min-width:20px;max-width:75px;">Leaders</v-tab>
+      <v-tab style="font-size:10px;min-width:75px;max-width:75px;">Competitions</v-tab>
+    </v-tabs>
     <v-card class="secondary mb-5" flat>
       <v-list-item>
         <v-list-item-avatar>

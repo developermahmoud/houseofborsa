@@ -130,7 +130,7 @@
 </template>
 
 <script>
-import Top from "../../components/partials/Top.vue";
+import Top from "../../components/partials/PartialsTop.vue";
 export default {
   components: { Top },
   layout: "internal",
