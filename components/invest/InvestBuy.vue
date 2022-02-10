@@ -84,14 +84,14 @@
             </v-col>
           </v-row>
           <div class="d-flex justify-space-between align-center">
-            <div>
-              <v-icon size="18" class="mr-1">mdi-wallet</v-icon>Available funds:
+            <div style="font-size:12px;">
+              <v-icon size="16" class="mr-1">mdi-wallet</v-icon>Available funds:
               $
               <br />
               <span class="green--text">7650,5555$</span>
             </div>
-            <div>
-              <v-icon size="18" class="mr-1">mdi-chart-pie</v-icon>Used margin:
+            <div style="font-size:12px;">
+              <v-icon size="16" class="mr-1">mdi-chart-pie</v-icon>Used margin:
               $ <br />
               <span class="green--text">2560,000$</span>
             </div>
