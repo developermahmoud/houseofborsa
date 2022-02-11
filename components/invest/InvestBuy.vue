@@ -9,9 +9,13 @@
           <v-toolbar-title>New Order</v-toolbar-title>
         </v-toolbar>
         <v-divider></v-divider>
-        <div class="text-center my-5">
-          <v-btn text class="red" @click="action = 'sell'">sell</v-btn>
-          <v-btn text class="green" @click="action = 'buy'">buy</v-btn>
+        <div class="d-flex my-5 mx-3">
+          <div style="width:50%;">
+            <v-btn text tile block class="red" @click="action = 'sell'">sell</v-btn>
+          </div>
+          <div style="width:50%;">
+            <v-btn text tile block class="green" @click="action = 'buy'">buy</v-btn>
+          </div>
         </div>
         <v-list-item two-line>
           <v-list-item-avatar>
@@ -179,6 +183,7 @@
             to="/order?page=invest"
             @click="orderedDialog = true"
             block
+            tile
             text
             :class="action == 'buy' ? 'green' : 'red'"
             >place order
@@ -196,6 +201,10 @@ export default {
       required: true,
       type: Boolean,
     },
+    type: {
+      required: true,
+      type: String
+    }
   },
   data() {
     return {
@@ -206,7 +215,9 @@ export default {
       toggle_none: null,
     };
   },
-  mounted() {},
+  mounted() {
+    this.action = this.type
+  },
 };
 </script>
 

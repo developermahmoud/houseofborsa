@@ -2,14 +2,22 @@
   <div>
     <div class="mb-3 d-flex justify-space-between align-center">
       <h4 class="text-truncate">Community posts & latest news</h4>
-      <nuxt-link to="/" class="text-decoration-none" style="font-size:12px;">Show All</nuxt-link>
+      <nuxt-link to="/" class="text-decoration-none" style="font-size: 12px"
+        >Show All</nuxt-link
+      >
     </div>
     <v-slide-group :show-arrows="false">
       <v-slide-item v-for="n in 15" :key="n">
         <v-card tile class="secondary mr-2" width="200" falt outlined>
           <v-img height="150" src="/news/shutterstock_756585199.webp">
             <div class="mt-3 ml-3">
-              <v-icon>mdi-lightning-bolt-circle</v-icon> BTC-Stories
+              <v-avatar size="30">
+                <img
+                  src="https://cdn.vuetifyjs.com/images/john.jpg"
+                  alt="John"
+                />
+              </v-avatar>
+              BTC-Stories
             </div>
           </v-img>
           <v-card-title class="body-1">
@@ -30,12 +38,19 @@
     </v-slide-group>
     <div class="my-3 d-flex justify-space-between align-center">
       <h4>Traders Ranking | Top</h4>
-      <nuxt-link to="/" class="text-decoration-none" style="font-size:12px;">Show All</nuxt-link>
+      <nuxt-link to="/" class="text-decoration-none" style="font-size: 12px"
+        >Show All</nuxt-link
+      >
     </div>
     <v-slide-group :show-arrows="false">
       <v-slide-item v-for="n in 15" :key="n">
-        <v-card tile class="secondary mr-2" width="220" falt outlined>
-          <v-card-title class="justify-center"> FRK technque </v-card-title>
+        <v-card tile class="secondary mr-2" width="200" falt outlined>
+          <v-card-title>
+            <v-avatar size="30">
+              <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+            </v-avatar>
+            FRK technque
+          </v-card-title>
           <v-card-actions class="justify-center align-center">
             <v-icon small class="mr-1">mdi-account-multiple-outline</v-icon> 205
             <v-rating
@@ -58,14 +73,14 @@
             :value="value"
             auto-draw
           ></v-sparkline>
-          <v-row>
+          <v-row no-gutters>
             <v-col>
-              <div class="text-center caption grey--text">Total profit</div>
-              <div class="text-center caption green--text">+331.002%</div>
+              <div class="caption grey--text">Total profit</div>
+              <div class="caption green--text">+331.002%</div>
             </v-col>
             <v-col>
               <div class="text-center caption grey--text">Followers equity</div>
-              <div>215.252 BTC</div>
+              <div class="caption">215.252 BTC</div>
               <div class="green--text caption">= 100,714 USD</div>
             </v-col>
           </v-row>

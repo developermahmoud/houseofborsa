@@ -8,9 +8,21 @@
         :key="i"
       >
         <nuxt-link :to="service.to" class="text-decoration-none">
-          <v-icon size="20" color="primary" v-text="service.icon"></v-icon>
+          <template v-if="service.icon === 'fa-trophy'">
+            <v-badge left offset-x="10" offset-y="10" color="red" content="HOT!">
+              <v-icon size="20" color="primary" v-text="service.icon"></v-icon>
+            </v-badge>
+          </template>
+          <v-icon
+            v-else
+            size="20"
+            color="primary"
+            v-text="service.icon"
+          ></v-icon>
           <br />
-          <span style="font-size: 11px" class="white--text">{{ service.text }}</span>
+          <span style="font-size: 11px" class="white--text">{{
+            service.text
+          }}</span>
         </nuxt-link>
       </v-col>
     </v-row>
@@ -48,9 +60,9 @@ export default {
           to: "/academy",
         },
         {
-          icon: "fa-users",
-          text: "Comunity",
-          to: "/community",
+          icon: "fa-trophy",
+          text: "Contests",
+          to: "/contests",
         },
         {
           icon: "fa-handshake",

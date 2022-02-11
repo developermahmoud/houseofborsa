@@ -11,7 +11,7 @@
           <v-icon class="mr-2">mdi-bell</v-icon>
           <v-icon color="amber">mdi-star</v-icon>
         </v-toolbar>
-          <v-list-item two-line>
+        <v-list-item two-line>
           <v-list-item-avatar>
             <v-img src="/currency/4.jpg" />
           </v-list-item-avatar>
@@ -20,7 +20,7 @@
             <v-list-item-subtitle
               ><v-chip outlined class="px-1" x-small color="white">CFD</v-chip>
               <v-icon small>mdi-clock</v-icon>
-              <span class="grey--text " style="font-size:12px;'"
+              <span class="grey--text" style="font-size:12px;'"
                 >MARKET OPEN</span
               >
             </v-list-item-subtitle>
@@ -30,6 +30,17 @@
             <span class="green--text">8.35%</span></v-list-item-action
           >
         </v-list-item>
+        <v-tabs center-active centered background-color="secondary" class="px-0 mx-0">
+          <v-tab style="font-size:13px;min-width: 20px; max-width: 65px">
+            Chart
+          </v-tab>
+          <v-tab style="font-size:13px;min-width: 20px; max-width: 65px">
+            <v-badge color="red" dot> News </v-badge>
+          </v-tab>
+          <v-tab style="font-size:13px;min-width: 20px; max-width: 85px">Analysis</v-tab>
+          <v-tab style="font-size:13px;min-width: 20px; max-width: 85px">Company</v-tab>
+          <v-tabs-slider color="primary"></v-tabs-slider>
+        </v-tabs>
         <v-card-text class="px-0">
           <div>
             <div class="tradingview-widget-container">
@@ -37,10 +48,24 @@
             </div>
           </div>
           <div class="text-center my-5">
-            <v-btn x-large text class="red" @click="buyDialog = true"
+            <v-btn
+              x-large
+              text
+              class="red"
+              @click="
+                buyDialog = true;
+                typeDialog = 'sell';
+              "
               ><v-icon>mdi-arrow-bottom-right-thick</v-icon> Sell
             </v-btn>
-            <v-btn x-large text class="green" @click="buyDialog = true"
+            <v-btn
+              x-large
+              text
+              class="green"
+              @click="
+                buyDialog = true;
+                typeDialog = 'buy';
+              "
               ><v-icon>mdi-arrow-top-right-thick</v-icon> Buy</v-btn
             >
           </div>
@@ -50,6 +75,7 @@
     <invest-buy
       v-if="buyDialog"
       :dialog="buyDialog"
+      :type="typeDialog"
       @close-dialog="buyDialog = false"
     />
   </div>
@@ -68,12 +94,13 @@ export default {
   data() {
     return {
       buyDialog: false,
+      typeDialog: "sell",
     };
   },
   mounted() {
     new TradingView.widget({
       width: "100%",
-      height: window.innerHeight - 230,
+      height: window.innerHeight - 260,
       symbol: "NASDAQ:AAPL",
       interval: "D",
       timezone: "Etc/UTC",

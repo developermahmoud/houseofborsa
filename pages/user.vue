@@ -282,6 +282,9 @@
           </v-list-item-icon>
         </v-list-item>
       </v-list>
+      <div class="text-center my-5 grey--text">
+        VERSION: <strong class="white--text">1.0.0</strong>
+      </div>
       <user-dialogs-market-data-subscribtion
         v-if="marketDataSubscribeDialog"
         :dialog="marketDataSubscribeDialog"

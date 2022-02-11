@@ -29,21 +29,16 @@
       <v-card-text class="text-center white--text">
         <div>
           <div class="d-flex align-center justify-center">
-             <v-icon small @click="showMargin = !showMargin"
+            <v-icon class="mr-2" small @click="showMargin = !showMargin"
               >mdi-arrow-expand</v-icon
             >
             <div>
               <span class="text-h6">$</span>
-              <strong
-                style="font-size: 27px"
-                :class="isBlur ? 'blur-text' : ''"
+              <strong style="font-size: 27px" :class="isBlur ? 'blur-text' : ''"
+                >9238.31</strong
               >
-                9238.</strong
-              >
-              <span class="text-h6">31</span>
             </div>
-           
-            <v-icon small @click="isBlur = !isBlur">{{
+            <v-icon class="ml-2" small @click="isBlur = !isBlur">{{
               isBlur ? "mdi-eye-off-outline" : "mdi-eye"
             }}</v-icon>
           </div>
