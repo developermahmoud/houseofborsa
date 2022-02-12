@@ -11,11 +11,8 @@
         <v-card tile class="secondary mr-2" width="200" falt outlined>
           <v-img height="150" src="/news/shutterstock_756585199.webp">
             <div class="mt-3 ml-3">
-              <v-avatar size="30">
-                <img
-                  src="https://cdn.vuetifyjs.com/images/john.jpg"
-                  alt="John"
-                />
+              <v-avatar size="26">
+                <img src="/avatar.jpg" alt="John" />
               </v-avatar>
               BTC-Stories
             </div>
@@ -46,8 +43,8 @@
       <v-slide-item v-for="n in 15" :key="n">
         <v-card tile class="secondary mr-2" width="200" falt outlined>
           <v-card-title>
-            <v-avatar size="30">
-              <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+            <v-avatar size="26" class="mr-1">
+              <img src="/avatar.jpg" alt="John" />
             </v-avatar>
             FRK technque
           </v-card-title>

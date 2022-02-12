@@ -94,9 +94,6 @@
               </v-text-field>
             </v-col>
           </v-row>
-          <v-alert class="my-3" type="error" dense text
-            >You need at least to trade</v-alert
-          >
           <div class="d-flex align-center mb-3">
             <v-icon small class="mr-1">mdi-wallet</v-icon> Available funds:
             <strong class="green--text">0.85 $</strong>

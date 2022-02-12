@@ -24,10 +24,11 @@
                   <v-avatar size="20" class="mr-2">
                     <img src="/avatar.jpg" />
                   </v-avatar>
-                  <span>Ahmed Ali</span>
+                  <span>MaryJames</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  Bitcoin vs US Dollar
+                  <v-icon color="grey" small>mdi-map</v-icon> Abercorn
+                  Court
                 </div>
               </td>
               <td>1.12485</td>
@@ -44,10 +45,10 @@
                   <v-avatar size="20" class="mr-2">
                     <img src="/avatar.jpg" />
                   </v-avatar>
-                  <span>Ahmed Ali</span>
+                  <span>Patricia Robert</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  Gold vs US Dollar
+                  <v-icon color="grey" small>mdi-map</v-icon> Abercrombie Way
                 </div>
               </td>
               <td>1.12485</td>
@@ -56,50 +57,14 @@
             </tr>
             <tr>
               <td>
-               <div class="d-flex">
+                <div class="d-flex">
                   <v-avatar size="20" class="mr-2">
                     <img src="/avatar.jpg" />
                   </v-avatar>
-                  <span>Ahmed Ali</span>
+                  <span>Jennifer John</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  Solana Token vs US Dollar
-                </div>
-              </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td>
-                <v-chip label small style="width: 57px" class="red"
-                  >0.5%</v-chip
-                >
-              </td>
-            </tr>
-            <tr>
-              <td>
-               <div class="d-flex">
-                  <v-avatar size="20" class="mr-2">
-                    <img src="/avatar.jpg" />
-                  </v-avatar>
-                  <span>Ahmed Ali</span>
-                </div>
-                <div class="grey--text" style="font-size: 12px; width: 140px">
-                  Apple inc.
-                </div>
-              </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
-              <td><v-chip label small class="green">10.5%</v-chip></td>
-            </tr>
-            <tr>
-              <td>
-               <div class="d-flex">
-                  <v-avatar size="20" class="mr-2">
-                    <img src="/avatar.jpg" />
-                  </v-avatar>
-                  <span>Ahmed Ali</span>
-                </div>
-                <div class="grey--text" style="font-size: 12px; width: 140px">
-                  Euro vs US Dollar
+                  <v-icon color="grey" small>mdi-map</v-icon> Aldrich Avenue
                 </div>
               </td>
               <td>1.12485</td>
@@ -116,10 +81,10 @@
                   <v-avatar size="20" class="mr-2">
                     <img src="/avatar.jpg" />
                   </v-avatar>
-                  <span>Ahmed Ali</span>
+                  <span>Michael William</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  Ethereum vs US Dollar
+                   <v-icon color="grey" small>mdi-map</v-icon> Barrymoore Loop
                 </div>
               </td>
               <td>1.12485</td>
@@ -132,10 +97,10 @@
                   <v-avatar size="20" class="mr-2">
                     <img src="/avatar.jpg" />
                   </v-avatar>
-                  <span>Ahmed Ali</span>
+                  <span>David Richard</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  Bitcoin vs US Dollar
+                  <v-icon color="grey" small>mdi-map</v-icon> Allagash Avenue
                 </div>
               </td>
               <td>1.12485</td>
@@ -148,14 +113,14 @@
             </tr>
             <tr>
               <td>
-               <div class="d-flex">
+                <div class="d-flex">
                   <v-avatar size="20" class="mr-2">
                     <img src="/avatar.jpg" />
                   </v-avatar>
-                  <span>Ahmed Ali</span>
+                  <span>Joseph Thomas</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  Bitcoin vs US Dollar
+                  <v-icon color="grey" small>mdi-map</v-icon> Anchorage Road
                 </div>
               </td>
               <td>1.12485</td>
@@ -168,10 +133,46 @@
                   <v-avatar size="20" class="mr-2">
                     <img src="/avatar.jpg" />
                   </v-avatar>
-                  <span>Ahmed Ali</span>
+                  <span>Charles Christopher</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  Bitcoin vs US Dollar
+                  <v-icon color="grey" small>mdi-map</v-icon> Armadillo Place
+                </div>
+              </td>
+              <td>1.12485</td>
+              <td>1.12493</td>
+              <td>
+                <v-chip label small style="width: 57px" class="red"
+                  >0.5%</v-chip
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex">
+                  <v-avatar size="20" class="mr-2">
+                    <img src="/avatar.jpg" />
+                  </v-avatar>
+                  <span>Daniel Matthew</span>
+                </div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  <v-icon color="grey" small>mdi-map</v-icon> Avecilla Drive
+                </div>
+              </td>
+              <td>1.12485</td>
+              <td>1.12493</td>
+              <td><v-chip label small class="green">10.5%</v-chip></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex">
+                  <v-avatar size="20" class="mr-2">
+                    <img src="/avatar.jpg" />
+                  </v-avatar>
+                  <span>Anthony Mark</span>
+                </div>
+                <div class="grey--text" style="font-size: 12px; width: 140px">
+                  <v-icon color="grey" small>mdi-map</v-icon> Ballesteros Drive
                 </div>
               </td>
               <td>1.12485</td>
@@ -180,14 +181,14 @@
             </tr>
             <tr>
               <td>
-               <div class="d-flex">
+                <div class="d-flex">
                   <v-avatar size="20" class="mr-2">
                     <img src="/avatar.jpg" />
                   </v-avatar>
                   <span>Ahmed Ali</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  Bitcoin vs US Dollar
+                  <v-icon color="grey" small>mdi-map</v-icon> Barraw Terrace
                 </div>
               </td>
               <td>1.12485</td>

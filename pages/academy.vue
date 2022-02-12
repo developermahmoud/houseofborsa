@@ -8,7 +8,15 @@
     <v-slide-group :show-arrows="false">
       <v-slide-item v-for="(item, i) in firstCatgegories" :key="i">
         <v-card class="secondary mr-2" width="200" falt outlined>
-          <v-img :src="item.src" />
+          <iframe
+            width="100%"
+            height="200"
+            :src="item.src"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
           <v-card-title>{{ item.name }}</v-card-title>
           <v-card-subtitle>{{ item.type }}</v-card-subtitle>
           <v-card-text>
@@ -34,7 +42,14 @@
     </div>
     <v-slide-group>
       <v-slide-item v-for="(item, i) in exams" :key="i">
-        <v-card :class="`${item.color} mr-2`" width="200" falt outlined link to="/articles">
+        <v-card
+          :class="`${item.color} mr-2`"
+          width="200"
+          falt
+          outlined
+          link
+          to="/articles"
+        >
           <v-card-title>{{ item.title }}</v-card-title>
           <v-responsive class="text-center">
             <v-avatar size="100">
@@ -90,7 +105,7 @@
         edge</v-card-text
       >
       <v-card-actions>
-        <img style="width:70px;" src="/cov-yield.875d03a81a9cb1ce.png" />
+        <img style="width: 70px" src="/cov-yield.875d03a81a9cb1ce.png" />
         <v-spacer></v-spacer>
         <v-btn text small class="primary">start earning</v-btn>
       </v-card-actions>
@@ -106,24 +121,24 @@ export default {
     return {
       firstCatgegories: [
         {
-          name: "Venom: Let There Be carnage",
-          type: "action & adventure",
-          src: "/movies/1.webp",
+          name: "MT5 multi asset HoB",
+          type: "Financial & BTC",
+          src: "https://www.youtube.com/embed/heEXtQaWK-Q",
         },
         {
-          name: "Venom: Let There Be carnage",
-          type: "action & adventure",
-          src: "/movies/2.webp",
+          name: "MT5 multi asset HoB",
+          type: "Financial & BTC",
+          src: "https://www.youtube.com/embed/heEXtQaWK-Q",
         },
         {
-          name: "Venom: Let There Be carnage",
-          type: "action & adventure",
-          src: "/movies/3.webp",
+          name: "MT5 multi asset HoB",
+          type: "Financial & BTC",
+          src: "https://www.youtube.com/embed/heEXtQaWK-Q",
         },
         {
-          name: "Venom: Let There Be carnage",
-          type: "action & adventure",
-          src: "/movies/4.webp",
+          name: "MT5 multi asset HoB",
+          type: "Financial & BTC",
+          src: "https://www.youtube.com/embed/heEXtQaWK-Q",
         },
       ],
       colors: [

@@ -1,20 +1,70 @@
 <template>
   <div>
     <v-card class="mb-5 secondary" flat rounded>
-      <v-card-title class="body-1">Earn up to 14% interest!<v-spacer></v-spacer><v-icon>mdi-close</v-icon></v-card-title>
-      <v-card-text class="pb-0">Start earning high returns on your crypto with Covesting Yield Account.</v-card-text>
+      <v-card-title class="body-1"
+        >Earn up to 14% interest!<v-spacer></v-spacer
+        ><v-icon>mdi-close</v-icon></v-card-title
+      >
+      <v-card-text class="pb-0"
+        >Start earning high returns on your crypto with Covesting Yield
+        Account.</v-card-text
+      >
       <v-card-actions>
-        <img style="width:70px;" src="/cov-yield.875d03a81a9cb1ce.png" />
+        <img style="width: 70px" src="/cov-yield.875d03a81a9cb1ce.png" />
         <v-spacer></v-spacer>
         <v-btn text small class="primary">start earning</v-btn>
       </v-card-actions>
     </v-card>
-    <v-tabs centered background-color="background"  class="px-0 mx-0">
-      <v-tab style="font-size:10px;min-width:20px;max-width:75px;">Feed</v-tab>
-      <v-tab style="font-size:10px;min-width:20px;max-width:75px;">News</v-tab>
-      <v-tab style="font-size:10px;min-width:20px;max-width:75px;">Leaders</v-tab>
-      <v-tab style="font-size:10px;min-width:75px;max-width:75px;">Competitions</v-tab>
-    </v-tabs>
+    <v-slide-group v-model="text" class="mb-5" mandatory>
+      <v-slide-item v-slot="{ active, toggle }">
+        <v-btn
+          class="mr-2"
+          value="Feed"
+          :input-value="active"
+          text
+          active-class="primary"
+          @click="toggle"
+        >
+          Feed
+        </v-btn>
+      </v-slide-item>
+      <v-slide-item v-slot="{ active, toggle }">
+        <v-btn
+          class="mr-2"
+          value="News"
+          text
+          :input-value="active"
+          active-class="primary"
+          @click="toggle"
+        >
+          News
+        </v-btn>
+      </v-slide-item>
+      <v-slide-item v-slot="{ active, toggle }">
+        <v-btn
+          class="mr-2"
+          value="Leaders"
+          text
+          :input-value="active"
+          active-class="primary"
+          @click="toggle"
+        >
+          Leaders
+        </v-btn>
+      </v-slide-item>
+      <v-slide-item v-slot="{ active, toggle }">
+        <v-btn
+          class="mr-2"
+          value="Competitions"
+          text
+          :input-value="active"
+          active-class="primary"
+          @click="toggle"
+        >
+          Competitions
+        </v-btn>
+      </v-slide-item>
+    </v-slide-group>
     <v-card class="secondary mb-5" flat>
       <v-list-item>
         <v-list-item-avatar>
@@ -149,8 +199,13 @@
         allowfullscreen
       ></iframe>
       <v-card-title>
-        <v-icon size="19">mdi-heart-outline</v-icon>&nbsp;<span style="font-size:15px;">1k</span>&nbsp;&nbsp;
-        <v-icon size="19">mdi-comment-outline</v-icon>&nbsp;<span style="font-size:15px;">10</span>&nbsp;&nbsp;
+        <v-icon size="19">mdi-heart-outline</v-icon>&nbsp;<span
+          style="font-size: 15px"
+          >1k</span
+        >&nbsp;&nbsp; <v-icon size="19">mdi-comment-outline</v-icon>&nbsp;<span
+          style="font-size: 15px"
+          >10</span
+        >&nbsp;&nbsp;
         <v-icon size="19">mdi-share</v-icon>
         <v-spacer></v-spacer>
         <v-avatar size="30" class="ml-n3">
@@ -228,10 +283,14 @@ export default {
   data() {
     return {
       postDotsDialog: false,
+      text: "Feed",
     };
+  },
+  methods: {
+    toggle() {},
   },
 };
 </script>
 
 <style>
-</style>
+</styles>
