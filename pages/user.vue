@@ -3,7 +3,14 @@
     <v-list-item three-line class="px-0">
       <v-list-item-action class="mr-4">
         <div class="avatarDiv">
-          <img src="/avatar.jpg" class="avatarClassImg" />
+          <v-badge overlap bottom offset-y="25" color="cyan" left>
+            <template v-slot:badge>
+              <v-icon class="cyan">mdi-check-decagram</v-icon>
+            </template>
+            <v-avatar size="55">
+              <v-img src="/avatar.jpg"></v-img>
+            </v-avatar>
+          </v-badge>
           <v-icon small color="black" class="iconAbsolute">mdi-camera</v-icon>
         </div>
       </v-list-item-action>

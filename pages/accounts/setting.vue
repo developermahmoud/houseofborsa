@@ -50,6 +50,13 @@
           <v-switch class="mr-2"></v-switch>
         </v-list-item-action>
       </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
+        <v-list-item-title>Private Account</v-list-item-title>
+        <v-list-item-action class="pr-4">
+          <v-switch class="mr-2"></v-switch>
+        </v-list-item-action>
+      </v-list-item>
     </v-list>
   </div>
 </template>

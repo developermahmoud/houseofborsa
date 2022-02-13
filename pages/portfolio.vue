@@ -53,17 +53,17 @@
       </v-btn>
     </v-card>
     <template v-if="showMargin">
-      <v-tabs background-color="transparent" fixed-tabs v-model="tab">
-        <v-tab href="#open"
-          >Open <v-badge content="4" offset-y="-4" color="green"></v-badge
-        ></v-tab>
-        <v-tab href="#pending"
-          >Pending <v-badge content="1" offset-y="-4" color="red"></v-badge
-        ></v-tab>
-        <v-tab href="#closed" @click="calendarDialog = true"
-          >Closed <v-badge content="1" offset-y="-4"></v-badge
-        ></v-tab>
-      </v-tabs>
+      <v-select
+        v-model="tab"
+        class="mx-3 mb-3"
+        label="Portfolio Value"
+        text
+        style="width:50%"
+        dense
+        outlined
+        hide-details
+        :items="['open', 'pending', 'closed']"
+      ></v-select>
       <v-tabs-items v-model="tab" class="transparent">
         <v-tab-item value="open">
           <v-list class="pa-0 transparent mb-2">
@@ -336,7 +336,13 @@ export default {
     PortfolioDialogsCalendar,
     PortfolioDialogsChart,
   },
-
+  watch: {
+    tab(value) {
+      if (value === "closed") {
+        this.calendarDialog = true;
+      }
+    },
+  },
   data() {
     return {
       items: [

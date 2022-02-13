@@ -27,12 +27,15 @@
                   <span>MaryJames</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="grey" small>mdi-map</v-icon> Abercorn
-                  Court
+                  <v-icon color="green" >mdi-flag</v-icon> Abercorn Court
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
+              <td>
+                <div style="width: 85px !important" class="caption">
+                  Trade Number:<br />20
+                </div>
+              </td>
+              <td>15%</td>
               <td>
                 <v-chip label small style="width: 57px" class="red"
                   >0.5%</v-chip
@@ -48,11 +51,15 @@
                   <span>Patricia Robert</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="grey" small>mdi-map</v-icon> Abercrombie Way
+                  <v-icon color="green" >mdi-flag</v-icon> Abercrombie Way
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
+              <td>
+                <div style="width: 85px !important" class="caption">
+                  Trade Number:<br />15
+                </div>
+              </td>
+              <td>20%</td>
               <td><v-chip label small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
@@ -64,11 +71,15 @@
                   <span>Jennifer John</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="grey" small>mdi-map</v-icon> Aldrich Avenue
+                  <v-icon color="green" >mdi-flag</v-icon> Aldrich Avenue
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
+              <td>
+                <div style="width: 85px !important" class="caption">
+                  Trade Number:<br />17
+                </div>
+              </td>
+              <td>12%</td>
               <td>
                 <v-chip label small style="width: 57px" class="red"
                   >0.5%</v-chip
@@ -84,11 +95,15 @@
                   <span>Michael William</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                   <v-icon color="grey" small>mdi-map</v-icon> Barrymoore Loop
+                  <v-icon color="green" >mdi-flag</v-icon> Barrymoore Loop
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
+              <td>
+                <div style="width: 85px !important" class="caption">
+                  Trade Number:<br />30
+                </div>
+              </td>
+              <td>1.2%</td>
               <td><v-chip label small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
@@ -100,11 +115,15 @@
                   <span>David Richard</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="grey" small>mdi-map</v-icon> Allagash Avenue
+                  <v-icon color="green" >mdi-flag</v-icon> Allagash Avenue
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
+              <td>
+                <div style="width: 85px !important" class="caption">
+                  Trade Number:<br />15
+                </div>
+              </td>
+              <td>24%</td>
               <td>
                 <v-chip label small style="width: 57px" class="red"
                   >0.5%</v-chip
@@ -120,11 +139,15 @@
                   <span>Joseph Thomas</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="grey" small>mdi-map</v-icon> Anchorage Road
+                  <v-icon color="green" >mdi-flag</v-icon> Anchorage Road
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
+              <td>
+                <div style="width: 85px !important" class="caption">
+                  Trade Number:<br />10
+                </div>
+              </td>
+              <td>25%</td>
               <td><v-chip label small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
@@ -133,14 +156,18 @@
                   <v-avatar size="20" class="mr-2">
                     <img src="/avatar.jpg" />
                   </v-avatar>
-                  <span>Charles Christopher</span>
+                  <span>Charles Chriopher</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="grey" small>mdi-map</v-icon> Armadillo Place
+                  <v-icon color="green" >mdi-flag</v-icon> Armadillo Place
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
+              <td>
+                <div style="width: 85px !important" class="caption">
+                  Trade Number:<br />24
+                </div>
+              </td>
+              <td>2%</td>
               <td>
                 <v-chip label small style="width: 57px" class="red"
                   >0.5%</v-chip
@@ -156,11 +183,15 @@
                   <span>Daniel Matthew</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="grey" small>mdi-map</v-icon> Avecilla Drive
+                  <v-icon color="green" >mdi-flag</v-icon> Avecilla Drive
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
+              <td>
+                <div style="width: 85px !important" class="caption">
+                  Trade Number:<br />18
+                </div>
+              </td>
+              <td>25%</td>
               <td><v-chip label small class="green">10.5%</v-chip></td>
             </tr>
             <tr>
@@ -172,11 +203,15 @@
                   <span>Anthony Mark</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="grey" small>mdi-map</v-icon> Ballesteros Drive
+                  <v-icon color="green" >mdi-flag</v-icon> Ballesteros Drive
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
+              <td>
+                <div style="width: 85px !important" class="caption">
+                  Trade Number:<br />13
+                </div>
+              </td>
+              <td>26%</td>
               <td><v-chip label small class="red">0.5%</v-chip></td>
             </tr>
             <tr>
@@ -188,11 +223,15 @@
                   <span>Ahmed Ali</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="grey" small>mdi-map</v-icon> Barraw Terrace
+                  <v-icon color="green" >mdi-flag</v-icon> Barraw Terrace
                 </div>
               </td>
-              <td>1.12485</td>
-              <td>1.12493</td>
+              <td>
+                <div style="width: 85px !important" class="caption">
+                  Trade Number:<br />17
+                </div>
+              </td>
+              <td>20%</td>
               <td><v-chip label small class="green">10.5%</v-chip></td>
             </tr>
           </tbody>

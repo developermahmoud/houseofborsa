@@ -7,7 +7,7 @@
       <v-spacer></v-spacer>
       <v-icon>mdi-information-outline</v-icon>
     </v-toolbar>
-    <div :class="`pa-2 primary rounded-lg rounded-t-0`">
+    <div :class="`pa-2 primary rounded-xl rounded-t-0`">
       <div class="text-center">02-2-2022</div>
       <div class="d-flex justify-space-between mt-4">
         <div class="mt-5">
@@ -57,6 +57,37 @@
         </div>
       </div>
     </div>
+    <v-simple-table class="mx-2 mt-5 secondary">
+      <template v-slot:default>
+        <thead>
+          <tr>
+            <th></th>
+            <th>User</th>
+            <th>Country</th>
+            <th>Performance</th>
+            <th>Reward</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="i in 10" :key="i">
+            <td>{{ i }}</td>
+            <td>
+              <div style="width: 150px">
+                <v-avatar size="30" class="mr-2">
+                  <v-img src="/avatar.jpg"></v-img>
+                </v-avatar>
+                Mahmoud
+              </div>
+            </td>
+            <td>
+              <div style="width: 60px"><v-icon color="cyan">mdi-flag</v-icon> KSA
+              </div></td>
+            <td>77%</td>
+            <td class="green--text">$6Credit</td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
   </div>
 </template>
 
