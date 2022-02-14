@@ -2,7 +2,7 @@
   <div>
     <div class="mb-3 d-flex justify-space-between align-center">
       <h4 class="text-truncate">Contests Rating</h4>
-      <nuxt-link to="/" class="text-decoration-none" style="font-size: 12px"
+      <nuxt-link to="/contests" class="text-decoration-none" style="font-size: 12px"
         >Show All</nuxt-link
       >
     </div>
@@ -12,7 +12,7 @@
           <thead>
             <tr>
               <th>Name</th>
-              <th>Weeks</th>
+              <th>Trade Number</th>
               <th>Drawdown%</th>
               <th>Growth%</th>
             </tr>
@@ -27,13 +27,11 @@
                   <span>MaryJames</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="green" >mdi-flag</v-icon> Abercorn Court
+                  <v-icon color="green">mdi-flag</v-icon> USA
                 </div>
               </td>
               <td>
-                <div style="width: 85px !important" class="caption">
-                  Trade Number:<br />20
-                </div>
+                <div class="caption">20</div>
               </td>
               <td>15%</td>
               <td>
@@ -51,13 +49,11 @@
                   <span>Patricia Robert</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="green" >mdi-flag</v-icon> Abercrombie Way
+                  <v-icon color="green">mdi-flag</v-icon> KSA
                 </div>
               </td>
               <td>
-                <div style="width: 85px !important" class="caption">
-                  Trade Number:<br />15
-                </div>
+                <div class="caption">15</div>
               </td>
               <td>20%</td>
               <td><v-chip label small class="green">10.5%</v-chip></td>
@@ -71,13 +67,11 @@
                   <span>Jennifer John</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="green" >mdi-flag</v-icon> Aldrich Avenue
+                  <v-icon color="green">mdi-flag</v-icon> Egypt
                 </div>
               </td>
               <td>
-                <div style="width: 85px !important" class="caption">
-                  Trade Number:<br />17
-                </div>
+                <div class="caption">17</div>
               </td>
               <td>12%</td>
               <td>
@@ -95,13 +89,11 @@
                   <span>Michael William</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="green" >mdi-flag</v-icon> Barrymoore Loop
+                  <v-icon color="green">mdi-flag</v-icon> Dubia
                 </div>
               </td>
               <td>
-                <div style="width: 85px !important" class="caption">
-                  Trade Number:<br />30
-                </div>
+                <div class="caption">30</div>
               </td>
               <td>1.2%</td>
               <td><v-chip label small class="green">10.5%</v-chip></td>
@@ -115,13 +107,11 @@
                   <span>David Richard</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="green" >mdi-flag</v-icon> Allagash Avenue
+                  <v-icon color="green">mdi-flag</v-icon> Moaracoo
                 </div>
               </td>
               <td>
-                <div style="width: 85px !important" class="caption">
-                  Trade Number:<br />15
-                </div>
+                <div class="caption">15</div>
               </td>
               <td>24%</td>
               <td>
@@ -139,13 +129,11 @@
                   <span>Joseph Thomas</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="green" >mdi-flag</v-icon> Anchorage Road
+                  <v-icon color="green">mdi-flag</v-icon> France
                 </div>
               </td>
               <td>
-                <div style="width: 85px !important" class="caption">
-                  Trade Number:<br />10
-                </div>
+                <div class="caption">10</div>
               </td>
               <td>25%</td>
               <td><v-chip label small class="green">10.5%</v-chip></td>
@@ -159,13 +147,11 @@
                   <span>Charles Chriopher</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="green" >mdi-flag</v-icon> Armadillo Place
+                  <v-icon color="green">mdi-flag</v-icon> England
                 </div>
               </td>
               <td>
-                <div style="width: 85px !important" class="caption">
-                  Trade Number:<br />24
-                </div>
+                <div class="caption">24</div>
               </td>
               <td>2%</td>
               <td>
@@ -183,13 +169,11 @@
                   <span>Daniel Matthew</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="green" >mdi-flag</v-icon> Avecilla Drive
+                  <v-icon color="green">mdi-flag</v-icon> Turkish
                 </div>
               </td>
               <td>
-                <div style="width: 85px !important" class="caption">
-                  Trade Number:<br />18
-                </div>
+                <div class="caption">18</div>
               </td>
               <td>25%</td>
               <td><v-chip label small class="green">10.5%</v-chip></td>
@@ -203,13 +187,11 @@
                   <span>Anthony Mark</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="green" >mdi-flag</v-icon> Ballesteros Drive
+                  <v-icon color="green">mdi-flag</v-icon> Italia
                 </div>
               </td>
               <td>
-                <div style="width: 85px !important" class="caption">
-                  Trade Number:<br />13
-                </div>
+                <div class="caption">13</div>
               </td>
               <td>26%</td>
               <td><v-chip label small class="red">0.5%</v-chip></td>
@@ -223,13 +205,11 @@
                   <span>Ahmed Ali</span>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
-                  <v-icon color="green" >mdi-flag</v-icon> Barraw Terrace
+                  <v-icon color="green">mdi-flag</v-icon> Barraw Terrace
                 </div>
               </td>
               <td>
-                <div style="width: 85px !important" class="caption">
-                  Trade Number:<br />17
-                </div>
+                <div class="caption">17</div>
               </td>
               <td>20%</td>
               <td><v-chip label small class="green">10.5%</v-chip></td>

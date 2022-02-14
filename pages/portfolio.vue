@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="primary mb-8" tile>
+    <v-card class="primary mb-6" tile>
       <v-card-title class="pb-0">
         <v-btn icon @click="accountsDialog = true">
           <v-icon color="white">mdi-format-align-center</v-icon>
@@ -53,18 +53,27 @@
       </v-btn>
     </v-card>
     <template v-if="showMargin">
-      <v-select
-        v-model="tab"
-        class="mx-3 mb-3"
-        label="Portfolio Value"
-        text
-        style="width:50%"
-        dense
-        outlined
-        hide-details
-        :items="['open', 'pending', 'closed']"
-      ></v-select>
-      <v-tabs-items v-model="tab" class="transparent">
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn small plain text v-bind="attrs" v-on="on">
+            <v-icon>mdi-chevron-down</v-icon> Portfolio value
+          </v-btn>
+        </template>
+        <v-list class="py-0 secondary" dense>
+          <v-list-item :class="`${tab==='open' ? 'primary': ''}`" @click="tab = 'open'">
+            <v-list-item-title>Open</v-list-item-title>
+          </v-list-item>
+          <v-divider></v-divider>
+          <v-list-item :class="`${tab==='pending' ? 'primary': ''}`" @click="tab = 'pending'">
+            <v-list-item-title>Pending</v-list-item-title>
+          </v-list-item>
+          <v-divider></v-divider>
+          <v-list-item :class="`${tab==='closed' ? 'primary': ''}`" @click="tab = 'closed'">
+            <v-list-item-title>Closed</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <v-tabs-items v-model="tab" class="transparent mt-3">
         <v-tab-item value="open">
           <v-list class="pa-0 transparent mb-2">
             <v-list-item style="min-height: 30px">

@@ -1,6 +1,24 @@
 <template>
   <div>
     <div class="mb-3 d-flex justify-space-between align-center">
+      <h4 class="text-truncate">Featured Creators</h4>
+      <nuxt-link to="/" class="text-decoration-none" style="font-size: 12px"
+        >Show All</nuxt-link
+      >
+    </div>
+    <v-slide-group class="mb-5" :show-arrows="false">
+      <v-slide-item v-for="n in 15" :key="n">
+        <v-card tile class="background mr-2" width="85" falt outlined>
+          <v-responsive class="text-center">
+            <v-avatar>
+              <v-img src="/avatar.jpg" />
+            </v-avatar>
+          </v-responsive>
+          <div class="text-center">Ahmed Ali</div>
+        </v-card>
+      </v-slide-item>
+    </v-slide-group>
+    <div class="mb-3 d-flex justify-space-between align-center">
       <h4 class="text-truncate">Top Traders</h4>
       <nuxt-link to="/" class="text-decoration-none" style="font-size: 12px"
         >Show All</nuxt-link
@@ -31,25 +49,25 @@
           <v-card-text>
             <div class="d-flex justify-space-between align-center">
               <div>
-                <div> <v-icon small color="green">mdi-arrow-up</v-icon><strong  class="green--text title">5.71%</strong></div>
+                <div>
+                  <v-icon small color="green">mdi-arrow-up</v-icon
+                  ><strong class="green--text title">5.71%</strong>
+                </div>
                 <div>RETURN</div>
                 <div>(LAST 12M)</div>
               </div>
-              <div>
-                <v-icon>mdi-numeric-1-box</v-icon>
-                <div class="text-center">RISK</div>
+              <div class="text-center">
+                <v-icon>mdi-account-arrow-left-outline</v-icon>
+                <div class="text-center">1,1005</div>
               </div>
-             
             </div>
           </v-card-text>
           <v-divider></v-divider>
           <v-card-text>
             <div class="d-flex justify-space-between">
               <div>
-                <div><strong class="white--text">289</strong> COPIERS</div>
-                <div class="caption">
-                  <v-icon small color="green">mdi-arrow-up</v-icon>1.05% LAST 7D
-                </div>
+                <div class="text--grey">Followers equity</div>
+                <div>215.252 BTC</div>
               </div>
               <v-btn class="background"><v-icon>mdi-plus</v-icon></v-btn>
             </div>

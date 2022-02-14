@@ -47,7 +47,7 @@
         <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
         <span>215</span>
         <br />
-        <span style="font-size: 12px" class="grey--text">Trade stats</span>
+        <span style="font-size: 12px" class="grey--text">Stats</span>
       </div>
       <div
         class="text-center body-2"

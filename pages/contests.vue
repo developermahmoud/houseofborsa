@@ -10,7 +10,7 @@
     <div :class="`pa-2 primary rounded-xl rounded-t-0`">
       <div class="text-center">02-2-2022</div>
       <div class="d-flex justify-space-between mt-4">
-        <div class="mt-5">
+        <div class="mt-10">
           <v-badge avatar overlap>
             <template v-slot:badge>
               <v-icon>fa-trophy</v-icon>
@@ -19,11 +19,13 @@
               <v-img src="/avatar.jpg"></v-img>
             </v-avatar>
           </v-badge>
-          <div class="caption">carter</div>
-          <div style="font-size: 11px" class="font-weight-bold">
-            Performance 93%
+          <div class="caption"><v-icon small color="cyan">mdi-flag</v-icon>  carter</div>
+          <h3 class="green--text">
+            <v-icon small color="green">mdi-arrow-up</v-icon>10.51%
+          </h3>
+          <div style="font-size: 11px" class="grey--text font-weight-bold">
+            RETURN
           </div>
-          <h3 class="green--text">+$15</h3>
         </div>
         <div>
           <v-badge avatar overlap>
@@ -34,13 +36,15 @@
               <v-img src="/avatar.jpg"></v-img>
             </v-avatar>
           </v-badge>
-          <div class="caption">berton</div>
-          <div style="font-size: 11px" class="font-weight-bold">
-            Performance 130%
+          <div class="caption"><v-icon small color="cyan">mdi-flag</v-icon>  berton</div>
+         <h3 class="green--text">
+            <v-icon small color="green">mdi-arrow-up</v-icon>10.51%
+          </h3>
+          <div style="font-size: 11px" class="grey--text font-weight-bold">
+            RETURN
           </div>
-          <h3 class="green--text">+$20</h3>
         </div>
-        <div class="mt-5">
+        <div class="mt-10">
           <v-badge avatar overlap>
             <template v-slot:badge>
               <v-icon>fa-trophy</v-icon>
@@ -49,11 +53,13 @@
               <v-img src="/avatar.jpg"></v-img>
             </v-avatar>
           </v-badge>
-          <div class="caption">faraz</div>
-          <div style="font-size: 11px" class="font-weight-bold">
-            Performance 77%
+          <div class="caption"><v-icon small color="cyan">mdi-flag</v-icon> faraz</div>
+          <h3 class="green--text">
+            <v-icon small color="green">mdi-arrow-up</v-icon>10.51%
+          </h3>
+          <div style="font-size: 11px" class="grey--text font-weight-bold">
+            RETURN
           </div>
-          <h3 class="green--text">+$12</h3>
         </div>
       </div>
     </div>
@@ -65,7 +71,7 @@
             <th>User</th>
             <th>Country</th>
             <th>Performance</th>
-            <th>Reward</th>
+            <th>Drawdown%</th>
           </tr>
         </thead>
         <tbody>
@@ -80,10 +86,12 @@
               </div>
             </td>
             <td>
-              <div style="width: 60px"><v-icon color="cyan">mdi-flag</v-icon> KSA
-              </div></td>
-            <td>77%</td>
-            <td class="green--text">$6Credit</td>
+              <div style="width: 60px">
+                <v-icon color="cyan">mdi-flag</v-icon> KSA
+              </div>
+            </td>
+            <td class="green--text"> 77%</td>
+            <td class="red--text">10%</td>
           </tr>
         </tbody>
       </template>
