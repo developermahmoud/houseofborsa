@@ -2,7 +2,7 @@
   <div>
     <div class="mb-3 d-flex justify-space-between align-center">
       <h4 class="text-truncate">Featured Creators</h4>
-      <nuxt-link to="/" class="text-decoration-none" style="font-size: 12px"
+      <nuxt-link to="/featured-creators" class="text-decoration-none" style="font-size: 12px"
         >Show All</nuxt-link
       >
     </div>
@@ -19,8 +19,8 @@
       </v-slide-item>
     </v-slide-group>
     <div class="mb-3 d-flex justify-space-between align-center">
-      <h4 class="text-truncate">Top Traders</h4>
-      <nuxt-link to="/" class="text-decoration-none" style="font-size: 12px"
+      <h4 class="text-truncate">Traders Ranking | Top</h4>
+      <nuxt-link to="/traders-ranking" class="text-decoration-none" style="font-size: 12px"
         >Show All</nuxt-link
       >
     </div>
@@ -67,7 +67,7 @@
             <div class="d-flex justify-space-between">
               <div>
                 <div class="text--grey">Followers equity</div>
-                <div>215.252 BTC</div>
+                <div class="green--text">215.252%</div>
               </div>
               <v-btn class="background"><v-icon>mdi-plus</v-icon></v-btn>
             </div>
