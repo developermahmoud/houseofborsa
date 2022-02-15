@@ -28,7 +28,7 @@
           ><v-icon small>mdi-map-marker</v-icon> Egypt,
           Giza</v-list-item-subtitle
         >
-        <v-list-item-subtitle>Fullstack Web Developer</v-list-item-subtitle>
+        <v-list-item-subtitle><strong class="green--text">27.88%</strong><span style="font-size:10px;">12 MONTHS RETURN</span></v-list-item-subtitle>
       </v-list-item-content>
       <v-list-item-action>
         <v-progress-circular

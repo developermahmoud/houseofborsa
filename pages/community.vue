@@ -2,7 +2,10 @@
   <div>
     <div class="mb-3 d-flex justify-space-between align-center">
       <h4 class="text-truncate">Featured Creators</h4>
-      <nuxt-link to="/featured-creators" class="text-decoration-none" style="font-size: 12px"
+      <nuxt-link
+        to="/featured-creators"
+        class="text-decoration-none"
+        style="font-size: 12px"
         >Show All</nuxt-link
       >
     </div>
@@ -20,7 +23,10 @@
     </v-slide-group>
     <div class="mb-3 d-flex justify-space-between align-center">
       <h4 class="text-truncate">Traders Ranking | Top</h4>
-      <nuxt-link to="/traders-ranking" class="text-decoration-none" style="font-size: 12px"
+      <nuxt-link
+        to="/traders-ranking"
+        class="text-decoration-none"
+        style="font-size: 12px"
         >Show All</nuxt-link
       >
     </div>
@@ -80,6 +86,7 @@
         <v-btn
           class="mr-2"
           value="Feed"
+          small
           :input-value="active"
           text
           active-class="primary"
@@ -92,6 +99,7 @@
         <v-btn
           class="mr-2"
           value="News"
+          small
           text
           :input-value="active"
           active-class="primary"
@@ -103,25 +111,27 @@
       <v-slide-item v-slot="{ active, toggle }">
         <v-btn
           class="mr-2"
-          value="Leaders"
+          value="investors"
+          small
           text
           :input-value="active"
           active-class="primary"
           @click="toggle"
         >
-          Leaders
+          Investors
         </v-btn>
       </v-slide-item>
       <v-slide-item v-slot="{ active, toggle }">
         <v-btn
           class="mr-2"
-          value="Competitions"
+          value="relaxation"
           text
+          small
           :input-value="active"
           active-class="primary"
           @click="toggle"
         >
-          Competitions
+          Relaxation
         </v-btn>
       </v-slide-item>
     </v-slide-group>
@@ -334,6 +344,10 @@
         </v-list>
       </v-card>
     </v-bottom-sheet>
+
+    <v-btn  color="green" small class="mb-14" fixed bottom right fab>
+      <v-icon>mdi-pen</v-icon>
+    </v-btn>
   </div>
 </template>
 

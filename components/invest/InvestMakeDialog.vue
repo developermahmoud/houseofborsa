@@ -16,13 +16,18 @@
             <v-img src="/currency/4.jpg" />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title> Apple </v-list-item-title>
+            <v-list-item-title>
+              Apple
+              <v-icon small @click="showInformationDialog = true"
+                >mdi-information-outline</v-icon
+              ></v-list-item-title
+            >
             <v-list-item-subtitle
               ><v-chip outlined class="px-1" x-small color="white">CFD</v-chip>
               <v-icon small>mdi-clock</v-icon>
               <span class="grey--text" style="font-size:12px;'"
-                >MARKET OPEN</span
-              >
+                >MARKET OPEN
+              </span>
             </v-list-item-subtitle>
           </v-list-item-content>
           <v-list-item-action
@@ -30,15 +35,24 @@
             <span class="green--text">8.35%</span></v-list-item-action
           >
         </v-list-item>
-        <v-tabs center-active centered background-color="secondary" class="px-0 mx-0">
-          <v-tab style="font-size:13px;min-width: 20px; max-width: 65px">
+        <v-tabs
+          center-active
+          centered
+          background-color="secondary"
+          class="px-0 mx-0"
+        >
+          <v-tab style="font-size: 13px; min-width: 20px; max-width: 65px">
             Chart
           </v-tab>
-          <v-tab style="font-size:13px;min-width: 20px; max-width: 65px">
+          <v-tab style="font-size: 13px; min-width: 20px; max-width: 65px">
             <v-badge color="red" dot> News </v-badge>
           </v-tab>
-          <v-tab style="font-size:13px;min-width: 20px; max-width: 85px">Analysis</v-tab>
-          <v-tab style="font-size:13px;min-width: 20px; max-width: 85px">Company</v-tab>
+          <v-tab style="font-size: 13px; min-width: 20px; max-width: 85px"
+            >Analysis</v-tab
+          >
+          <v-tab style="font-size: 13px; min-width: 20px; max-width: 85px"
+            >Company</v-tab
+          >
           <v-tabs-slider color="primary"></v-tabs-slider>
         </v-tabs>
         <v-card-text class="px-0">
@@ -72,6 +86,11 @@
         </v-card-text>
       </v-card>
     </v-dialog>
+    <invest-information
+      v-if="showInformationDialog"
+      :dialog="showInformationDialog"
+      @close-dialog="showInformationDialog = false"
+    />
     <invest-buy
       v-if="buyDialog"
       :dialog="buyDialog"
@@ -83,8 +102,9 @@
 
 <script>
 import InvestBuy from "./InvestBuy.vue";
+import InvestInformation from "./InvestInformation.vue";
 export default {
-  components: { InvestBuy },
+  components: { InvestBuy, InvestInformation },
   props: {
     dialog: {
       required: true,
@@ -93,6 +113,7 @@ export default {
   },
   data() {
     return {
+      showInformationDialog: false,
       buyDialog: false,
       typeDialog: "sell",
     };
