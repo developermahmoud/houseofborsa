@@ -26,7 +26,7 @@
         <v-spacer></v-spacer>
         <v-icon @click="dialog = true">mdi-cards</v-icon>
       </v-card-title>
-      <v-card-text class="text-center white--text">
+      <v-card-text class="text-center white--text px-0">
         <div>
           <div class="d-flex align-center justify-center">
             <v-icon class="mr-2" small @click="showMargin = !showMargin"
@@ -47,35 +47,37 @@
           <span class="font-weight-bold body-1"> P/L(22.1%)</span
           ><v-icon class="pa-0 mb-1">mdi-arrow-up-thin</v-icon>
         </div>
-        <v-menu offset-y>
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn  small plain text v-bind="attrs" v-on="on">
-              <v-icon>mdi-chevron-down</v-icon> {{ tab }} Order
-            </v-btn>
-          </template>
-          <v-list class="py-0 secondary" dense>
-            <v-list-item
-              :class="`${tab === 'open' ? 'primary' : ''}`"
-              @click="tab = 'open'"
-            >
-              <v-list-item-title>Open</v-list-item-title>
-            </v-list-item>
-            <v-divider></v-divider>
-            <v-list-item
-              :class="`${tab === 'pending' ? 'primary' : ''}`"
-              @click="tab = 'pending'"
-            >
-              <v-list-item-title>Pending</v-list-item-title>
-            </v-list-item>
-            <v-divider></v-divider>
-            <v-list-item
-              :class="`${tab === 'closed' ? 'primary' : ''}`"
-              @click="tab = 'closed'"
-            >
-              <v-list-item-title>Closed</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
+        <div class="text-left">
+          <v-menu offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn small plain text v-bind="attrs" v-on="on">
+                <v-icon>mdi-chevron-down</v-icon> {{ tab }} Order
+              </v-btn>
+            </template>
+            <v-list class="py-0 secondary" dense>
+              <v-list-item
+                :class="`${tab === 'open' ? 'primary' : ''}`"
+                @click="tab = 'open'"
+              >
+                <v-list-item-title>Open</v-list-item-title>
+              </v-list-item>
+              <v-divider></v-divider>
+              <v-list-item
+                :class="`${tab === 'pending' ? 'primary' : ''}`"
+                @click="tab = 'pending'"
+              >
+                <v-list-item-title>Pending</v-list-item-title>
+              </v-list-item>
+              <v-divider></v-divider>
+              <v-list-item
+                :class="`${tab === 'closed' ? 'primary' : ''}`"
+                @click="tab = 'closed'"
+              >
+                <v-list-item-title>Closed</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </div>
       </v-card-text>
       <v-btn fab class="white" bottom right absolute @click="showChart = true">
         <v-icon color="primary">mdi-selection-ellipse</v-icon>

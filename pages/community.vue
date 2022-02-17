@@ -75,7 +75,7 @@
                 <div class="text--grey">Followers equity</div>
                 <div class="green--text">215.252%</div>
               </div>
-              <v-btn class="background"><v-icon>mdi-plus</v-icon></v-btn>
+              <v-btn class="background" @click="dialogCopyTrade=true"><v-icon>mdi-plus</v-icon></v-btn>
             </div>
           </v-card-text>
         </v-card>
@@ -345,17 +345,26 @@
       </v-card>
     </v-bottom-sheet>
 
-    <v-btn  color="green" small class="mb-14" fixed bottom right fab>
+    <v-btn color="green" small class="mb-14" fixed bottom right fab>
       <v-icon>mdi-pen</v-icon>
     </v-btn>
+
+    <user-dialogs-copy-trader
+      v-if="dialogCopyTrade"
+      :dialog="dialogCopyTrade"
+      @close-dialog="dialogCopyTrade = false"
+    />
   </div>
 </template>
 
 <script>
+import UserDialogsCopyTrader from "../components/user/dialogs/UserDialogsCopyTrader.vue";
 export default {
+  components: { UserDialogsCopyTrader },
   layout: "community",
   data() {
     return {
+      dialogCopyTrade: false,
       postDotsDialog: false,
       text: "Feed",
     };
