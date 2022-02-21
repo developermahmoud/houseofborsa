@@ -73,7 +73,7 @@
             <div class="d-flex justify-space-between">
               <div>
                 <div class="text--grey">Followers equity</div>
-                <div class="green--text">215.252%</div>
+                <div class="green--text">215.252$</div>
               </div>
               <v-btn class="background" @click="dialogCopyTrade=true"><v-icon>mdi-plus</v-icon></v-btn>
             </div>

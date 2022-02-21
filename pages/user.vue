@@ -203,7 +203,7 @@
           </v-list-item-icon>
         </v-list-item>
         <v-divider></v-divider>
-        <v-list-item @click="referrDialog = true">
+        <v-list-item link to="/contests">
           <v-list-item-icon class="mr-3">
             <v-icon>mdi-podium-gold</v-icon>
           </v-list-item-icon>

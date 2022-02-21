@@ -183,6 +183,9 @@
         v-for="(item, i) in items"
         :key="i"
       >
+      <v-list-item-avatar size="30" tile>
+        <v-img :src="item.src" />
+      </v-list-item-avatar>
         <v-list-item-content>
           <v-list-item-title style="cursor: pointer" @click="showClosed"
             >{{ item.name }},
@@ -371,60 +374,70 @@ export default {
           color: "green",
           amount: 1555,
           is_open: false,
+          src:"/currency/oil.jpg",
         },
         {
           name: "Gold",
           color: "green",
           amount: 1555,
           is_open: false,
+          src: "/currency/gold.jpeg",
         },
         {
           name: "Silver",
           color: "red",
           amount: 123,
           is_open: false,
+          src: "/currency/silver.jpg",
         },
         {
           name: "FB",
           color: "green",
           amount: 1555,
           is_open: false,
+          src: "/currency/fb.png",
         },
         {
           name: "TWTR",
           color: "red",
           amount: 23,
           is_open: false,
+          src: "/currency/TWTR.png",
         },
         {
           name: "TSLA",
           color: "red",
           amount: 341,
           is_open: false,
+          src: "/currency/tesla--600.png",
         },
         {
           name: "AMZN",
           color: "green",
           amount: 1555,
           is_open: false,
+          src: "/opengraph.png",
         },
         {
           name: "Ripple XRP ",
           color: "green",
           amount: 1555,
           is_open: false,
+          src: "/currency/symbol-Ripple.jpg",
         },
         {
           name: "BTC",
           color: "red",
           amount: 33,
           is_open: false,
+          src: "/currency/1.png",
         },
         {
           name: "SPY. ETF",
           color: "green",
           amount: 1555,
           is_open: false,
+          src: "/currency/150x150.png",
         },
       ],
       tab: "open",

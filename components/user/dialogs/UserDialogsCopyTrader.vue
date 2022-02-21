@@ -20,8 +20,11 @@
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title
-              >HLadislave <strong>HLadislave Hervay</strong></v-list-item-title
+              >HLadislave Hervay</v-list-item-title
             >
+            <v-list-item-subtitle>
+              <v-icon color="cyan">mdi-flag</v-icon> Englang
+            </v-list-item-subtitle>
             <v-list-item-subtitle
               ><strong class="green--text">32.51%</strong
               ><span class="caption"

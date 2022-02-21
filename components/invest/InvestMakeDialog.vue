@@ -38,13 +38,20 @@
         <v-tabs
           center-active
           centered
+          v-model="tab"
           background-color="secondary"
           class="px-0 mx-0"
         >
-          <v-tab style="font-size: 13px; min-width: 20px; max-width: 65px">
+          <v-tab
+            href="#chart"
+            style="font-size: 13px; min-width: 20px; max-width: 65px"
+          >
             Chart
           </v-tab>
-          <v-tab style="font-size: 13px; min-width: 20px; max-width: 65px">
+          <v-tab
+            href="#news"
+            style="font-size: 13px; min-width: 20px; max-width: 65px"
+          >
             <v-badge color="red" dot> News </v-badge>
           </v-tab>
           <v-tab style="font-size: 13px; min-width: 20px; max-width: 85px"
@@ -55,35 +62,40 @@
           >
           <v-tabs-slider color="primary"></v-tabs-slider>
         </v-tabs>
-        <v-card-text class="px-0">
-          <div>
-            <div class="tradingview-widget-container">
-              <div id="tradingview_2e912"></div>
+        <v-tabs-items v-model="tab" class="background">
+          <v-tab-item value="chart">
+            <div>
+              <div class="tradingview-widget-container">
+                <div id="tradingview_2e912"></div>
+              </div>
             </div>
-          </div>
-          <div class="text-center my-5">
-            <v-btn
-              x-large
-              text
-              class="red"
-              @click="
-                buyDialog = true;
-                typeDialog = 'sell';
-              "
-              ><v-icon>mdi-arrow-bottom-right-thick</v-icon> Sell
-            </v-btn>
-            <v-btn
-              x-large
-              text
-              class="green"
-              @click="
-                buyDialog = true;
-                typeDialog = 'buy';
-              "
-              ><v-icon>mdi-arrow-top-right-thick</v-icon> Buy</v-btn
-            >
-          </div>
-        </v-card-text>
+            <div class="text-center my-5">
+              <v-btn
+                x-large
+                text
+                class="red"
+                @click="
+                  buyDialog = true;
+                  typeDialog = 'sell';
+                "
+                ><v-icon>mdi-arrow-bottom-right-thick</v-icon> Sell
+              </v-btn>
+              <v-btn
+                x-large
+                text
+                class="green"
+                @click="
+                  buyDialog = true;
+                  typeDialog = 'buy';
+                "
+                ><v-icon>mdi-arrow-top-right-thick</v-icon> Buy</v-btn
+              >
+            </div>
+          </v-tab-item>
+          <v-tab-item value="news">
+            <user-idias class="ma-2" />
+          </v-tab-item>
+        </v-tabs-items>
       </v-card>
     </v-dialog>
     <invest-information
@@ -113,6 +125,7 @@ export default {
   },
   data() {
     return {
+      tab: "chart",
       showInformationDialog: false,
       buyDialog: false,
       typeDialog: "sell",
