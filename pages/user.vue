@@ -85,6 +85,7 @@
       <user-idias />
     </template>
     <template v-else>
+      <UserSummaryChart />
       <v-img src="/HOB-credit-card final png2.png" class="mb-3" />
       <v-row>
         <v-col cols="6" class="text-center">
@@ -345,8 +346,10 @@ import UserDialogsMyProfile from "../components/user/dialogs/UserDialogsMyProfil
 import UserDialogsReferrFriend from "../components/user/dialogs/UserDialogsReferrFriend.vue";
 import UserDialogsTradingPlatform from "../components/user/dialogs/UserDialogsTradingPlatform.vue";
 import UserIdias from "../components/user/dialogs/UserIdias.vue";
+import UserSummaryChart from "../components/user/UserSummaryChart";
 export default {
   components: {
+    UserSummaryChart,
     UserDialogsMyAccount,
     UserDialogsAccountHistory,
     UserDialogsMyProfile,
@@ -374,6 +377,7 @@ export default {
 </script>
 
 <style scoped>
+
 .avatarDiv {
   width: 60px;
   height: 60px;
