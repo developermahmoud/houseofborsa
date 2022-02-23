@@ -179,11 +179,11 @@
     </template>
     <v-list two-line class="mx-2 transparent">
       <v-list-item
-        class="secondary rounded mb-3"
+        class="secondary rounded mb-3 pl-2"
         v-for="(item, i) in items"
         :key="i"
       >
-      <v-list-item-avatar size="30" tile>
+      <v-list-item-avatar size="30" class="mr-2">
         <v-img :src="item.src" />
       </v-list-item-avatar>
         <v-list-item-content>

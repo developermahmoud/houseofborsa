@@ -101,9 +101,9 @@
             </div>
           </div>
           <div class="d-flex align-center my-3">
-            <img style="width: 20px" src="/Terminal.ico" /> HOB Protector
+            <v-switch dense v-model="showDetails"></v-switch><img style="width: 20px" src="/Terminal.ico" /> HOB Protector
           </div>
-
+        <template v-if="showDetails">
           <div class="d-flex justify-space-between pa-1 background rounded-lg">
             <div style="width: 50%">
               <v-btn
@@ -112,7 +112,7 @@
                 text
                 @click="otherChange = 'amount'"
                 :class="otherChange == 'amount' ? 'secondary' : ''"
-                >Amount
+              >Amount
               </v-btn>
             </div>
             <div style="width: 50%">
@@ -122,7 +122,7 @@
                 text
                 @click="otherChange = 'specefic_rate'"
                 :class="otherChange == 'specefic_rate' ? 'secondary' : ''"
-                >Specfic Price
+              >Specfic Price
               </v-btn>
             </div>
           </div>
@@ -169,6 +169,8 @@
               <v-switch :value="true" dense></v-switch>
             </div>
           </div>
+        </template>
+
         </v-card-text>
         <v-alert class="mx-4 pa-1" color="warning" dense text >
           <div class="d-flex">
@@ -208,6 +210,7 @@ export default {
   },
   data() {
     return {
+      showDetails: false,
       orderedDialog: false,
       action: "buy",
       topChange: "current_price",
