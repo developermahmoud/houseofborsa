@@ -67,7 +67,7 @@
         <v-icon color="primary" small>mdi-account-arrow-right</v-icon>
         <span>20k</span>
         <br />
-        <span style="font-size: 12px" class="grey--text">Following</span>
+        <span style="font-size: 12px" class="grey--text">Visitors</span>
       </div>
 
       <div

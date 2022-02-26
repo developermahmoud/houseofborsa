@@ -1,59 +1,89 @@
 <template>
   <div>
     <div class="summaryCard rounded-lg mb-5">
-      <h4 class="mb-2">Trades Summary |  last 12 Month</h4>
+      <h4 class="mb-2">Performance |  last 12 Month</h4>
       <div class="d-flex justify-space-between mb-2">
-        <div class="black rounded-lg pa-2" style="width:100%;">
-          <h5>ROI</h5>
+        <div class="black rounded-lg pa-2 text-center" style="width:100%;">
+          <h6>ROI <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
           <strong class="green--text">+20%</strong>
         </div>
-        <div class="black rounded-lg mx-2 pa-2" style="width:100%;">
-          <h5>MaxDD</h5>
+        <div class="black rounded-lg mx-2 pa-2 text-center" style="width:100%;">
+          <h6>MaxDD <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
           <strong class="red--text">-16%</strong>
         </div>
-        <div class="black rounded-lg pa-2" style="width:100%;">
-          <h5>RiskLevel</h5>
+        <div class="black rounded-lg pa-2 text-center" style="width:100%;">
+          <h6>RiskLevel <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
           <strong class="white--text">6</strong>
         </div>
       </div>
       <div class="d-flex justify-space-between mb-2">
-        <div class="black rounded-lg pa-2" style="width:100%;">
-          <h5>Closed</h5>
-          <strong class="white--text">206</strong>
+        <div class="black rounded-lg pa-2 text-center" style="width:100%;">
+          <h6>AVG Profit <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
+          <strong class="green--text"><v-icon color="green" small>mdi-arrow-up</v-icon>98.2%</strong>
         </div>
-        <div class="black rounded-lg mx-2 pa-2" style="width:100%;">
-          <h5>Open</h5>
-          <strong class="white--text">34</strong>
+        <div class="black rounded-lg mx-2 pa-2 text-center" style="width:100%;">
+          <h6>AVG Profit <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
+          <strong class="red--text"><v-icon color="red" small>mdi-arrow-down</v-icon>14.4%</strong>
         </div>
-        <div class="black rounded-lg pa-2" style="width:100%;">
-          <h5>TotalTrades</h5>
+        <div class="black rounded-lg pa-2 text-center" style="width:100%;">
+          <h6>TotalTrades <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
           <strong class="white--text">50</strong>
         </div>
       </div>
+      <v-list dense class="pa-0 transparent mb-2">
+        <v-list-item style="min-height: 20px; height: 35px">
+          <v-list-item-icon>
+            <v-icon color="#ed6d77">mdi-square-rounded</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="body-1">Stock</v-list-item-title>
+          <v-list-item-action class="black--text">10%</v-list-item-action>
+        </v-list-item>
+        <v-list-item style="min-height: 20px; height: 35px">
+          <v-list-item-icon>
+            <v-icon color="#4992ff">mdi-square-rounded</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="body-1">ETFs</v-list-item-title>
+          <v-list-item-action class="black--text">35%</v-list-item-action>
+        </v-list-item>
+        <v-list-item style="min-height: 20px; height: 35px">
+          <v-list-item-icon>
+            <v-icon color="#7cffb2">mdi-square-rounded</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="body-1">Cryptocurrency</v-list-item-title>
+          <v-list-item-action class="black--text">35%</v-list-item-action>
+        </v-list-item>
+        <v-list-item style="min-height: 20px; height: 35px">
+          <v-list-item-icon>
+            <v-icon color="#f9dd60">mdi-square-rounded</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="body-1">Indices</v-list-item-title>
+          <v-list-item-action class="black--text">20%</v-list-item-action>
+        </v-list-item>
+      </v-list>
       <div class="d-flex">
         <v-chart class="chart text-center" :option="option" />
-        <div>
-          <div>
-            <v-chip small class="px-2" color="indigo darken-4">
-              <v-icon small color="green">mdi-circle</v-icon> VIX(20%)
-            </v-chip>
-          </div>
-          <div>
-            <v-chip small class="px-2" color="indigo darken-4">
-              <v-icon small color="yellow">mdi-circle</v-icon> GBPJPY(20%)
-            </v-chip>
-          </div>
-          <div>
-            <v-chip small class="px-2" color="indigo darken-4">
-              <v-icon small color="orange">mdi-circle</v-icon> CADJPY(20%)
-            </v-chip>
-          </div>
-          <div>
-            <v-chip small class="px-2" color="indigo darken-4">
-              <v-icon small color="grey">mdi-circle</v-icon> Other(20%)
-            </v-chip>
-          </div>
-        </div>
+<!--        <div>-->
+<!--          <div>-->
+<!--            <v-chip small class="px-2" color="indigo darken-4">-->
+<!--              <v-icon small color="green">mdi-circle</v-icon> VIX(20%)-->
+<!--            </v-chip>-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <v-chip small class="px-2" color="indigo darken-4">-->
+<!--              <v-icon small color="yellow">mdi-circle</v-icon> GBPJPY(20%)-->
+<!--            </v-chip>-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <v-chip small class="px-2" color="indigo darken-4">-->
+<!--              <v-icon small color="orange">mdi-circle</v-icon> CADJPY(20%)-->
+<!--            </v-chip>-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <v-chip small class="px-2" color="indigo darken-4">-->
+<!--              <v-icon small color="grey">mdi-circle</v-icon> Other(20%)-->
+<!--            </v-chip>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
     </div>
     <v-img src="/chart.jpeg" class="rounded-lg mb-5" />
@@ -152,6 +182,16 @@
         </tbody>
       </template>
     </v-simple-table>
+    <v-dialog max-width="700" v-model="showDetails">
+      <v-card class="secondary">
+        <v-card-title class="justify-center">Show Details</v-card-title>
+        <v-card-text>
+          <p>This card shows the user's past performance in a way that is simple to understand yet complex in design.</p>
+          <p>The monthly stats calculate the user's change in equity from the beginning of the month until the end of the month and offsets any deposits/withdrawals. The yearly figures are calculated by compounding the monthly gains hroughout the year.</p>
+          <p>Please click here for the full details and the exact formulas used.</p>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </div>
 
 </template>
@@ -196,6 +236,7 @@ export default {
   },
   data() {
     return {
+      showDetails: false,
       option: {
         backgroundColor: "rgba(0, 0, 200, 0.0)",
         title: {

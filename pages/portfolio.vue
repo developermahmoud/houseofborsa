@@ -441,7 +441,7 @@ export default {
         },
       ],
       tab: "open",
-      showMargin: true,
+      showMargin: false,
       showClosedDialog: false,
       isBlur: false,
       showChart: false,
