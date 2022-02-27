@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="primary mb-6" tile>
+    <v-card flat class="background" tile>
       <v-card-title class="pb-0">
         <v-btn icon @click="accountsDialog = true">
           <v-icon color="white">mdi-format-align-center</v-icon>
@@ -27,27 +27,29 @@
         <v-icon @click="dialog = true">mdi-cards</v-icon>
       </v-card-title>
       <v-card-text class="text-center white--text px-0">
-        <div>
-          <div class="d-flex align-center justify-center">
-            <v-icon class="mr-2" small @click="showMargin = !showMargin"
+        <div class="rounded-circle py-12  mx-auto" style="border: solid 2px grey;width:184px;">
+          <div>
+            <div class="d-flex align-center justify-center">
+              <v-icon class="" small @click="showMargin = !showMargin"
               >mdi-arrow-expand</v-icon
-            >
-            <div>
-              <span class="text-h6">$</span>
-              <strong style="font-size: 27px" :class="isBlur ? 'blur-text' : ''"
-                >9238.31</strong
               >
+              <div class="mx-1">
+                <span class="text-h6">$</span>
+                <strong style="font-size: 20px" :class="isBlur ? 'blur-text' : ''"
+                >9238.31</strong
+                >
+              </div>
+              <v-icon small @click="isBlur = !isBlur">{{
+                  isBlur ? "mdi-eye-off-outline" : "mdi-eye"
+                }}</v-icon>
             </div>
-            <v-icon class="ml-2" small @click="isBlur = !isBlur">{{
-              isBlur ? "mdi-eye-off-outline" : "mdi-eye"
-            }}</v-icon>
+          </div>
+          <div class="mt-5 text-center">
+            <span class="font-weight-bold body-1"> P/L(22.1%)</span
+            ><v-icon class="pa-0 mb-1">mdi-arrow-up-thin</v-icon>
           </div>
         </div>
-        <div>
-          <span class="font-weight-bold body-1"> P/L(22.1%)</span
-          ><v-icon class="pa-0 mb-1">mdi-arrow-up-thin</v-icon>
-        </div>
-        <div class="text-left">
+        <div class="text-center mt-5">
           <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
               <v-btn small plain text v-bind="attrs" v-on="on">
@@ -79,9 +81,9 @@
           </v-menu>
         </div>
       </v-card-text>
-      <v-btn fab class="white" bottom right absolute @click="showChart = true">
-        <v-icon color="primary">mdi-selection-ellipse</v-icon>
-      </v-btn>
+<!--      <v-btn fab class="white" bottom right absolute @click="showChart = true">-->
+<!--        <v-icon color="primary">mdi-selection-ellipse</v-icon>-->
+<!--      </v-btn>-->
     </v-card>
     <template v-if="showMargin">
       <v-tabs-items v-model="tab" class="transparent mt-3">

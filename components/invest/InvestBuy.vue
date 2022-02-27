@@ -9,25 +9,22 @@
           <v-toolbar-title>New Order</v-toolbar-title>
         </v-toolbar>
         <v-divider></v-divider>
-        <div class="d-flex my-5 mx-3">
-          <div style="width:50%;">
-            <v-btn text tile block class="red" @click="action = 'sell'">sell</v-btn>
-          </div>
-          <div style="width:50%;">
-            <v-btn text tile block class="green" @click="action = 'buy'">buy</v-btn>
-          </div>
-        </div>
         <v-list-item two-line>
           <v-list-item-avatar>
             <v-img src="/currency/4.jpg" />
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title> Apple </v-list-item-title>
-            <v-list-item-subtitle
-              ><v-chip outlined class="px-1" x-small color="white">CFD</v-chip>
+            <v-list-item-subtitle>
+              <v-chip-group v-model="typeChip" active-class="green" mandatory>
+                <v-chip value="cfd" outlined  x-small>CFD</v-chip>
+                <v-chip value="real" outlined  x-small>Real</v-chip>
+              </v-chip-group>
+            </v-list-item-subtitle>
+            <v-list-item-subtitle>
               <v-icon small>mdi-clock</v-icon>
               <span class="grey--text" style="font-size:12px;'"
-                >MARKET OPEN</span
+              >MARKET OPEN</span
               >
             </v-list-item-subtitle>
           </v-list-item-content>
@@ -36,7 +33,14 @@
             <span class="green--text">8.35%</span></v-list-item-action
           >
         </v-list-item>
+        <v-alert class="mx-2" color="info" dense text dense text v-if="typeChip == 'cfd'">
+          <v-icon color="info" size="20">mdi-alert-box</v-icon> This symbol is a CFD.
+        </v-alert>
+        <v-alert class="mx-2" color="info" dense text v-else>
+          <v-icon color="info" size="20">mdi-alert-box</v-icon> This symbol is a Real Stock.
+        </v-alert>
         <v-card-text>
+
           <div class="d-flex justify-space-between pa-1 background rounded-lg">
             <div style="width: 50%">
               <v-btn
@@ -58,6 +62,41 @@
                 >Market Price
               </v-btn>
             </div>
+          </div>
+          <div class="my-5">
+            <div class="text-center">
+              <v-menu offset-y>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    text
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    Value
+                    <v-icon>mdi-chevron-down</v-icon>
+                  </v-btn>
+                </template>
+                <v-list class="py-0 secondary" dense>
+                  <v-list-item>
+                    <v-list-item-title>Link</v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </div>
+            <div class="d-flex justify-space-between align-center">
+              <v-icon>mdi-cash-multiple</v-icon>
+              <div class="text-center">
+                <div class="display-1">&euro; {{ priceInEuru }}</div>
+                <div>~0.0268 shares</div>
+              </div>
+              <v-icon>mdi-dialpad</v-icon>
+            </div>
+            <v-slider
+              max="250"
+              min="-250"
+              v-model="priceInEuru"
+            >
+            </v-slider>
           </div>
           <v-row class="mt-5">
             <v-col cols="12" v-if="topChange === 'specefic_rate'">
@@ -179,18 +218,14 @@
           with requested price may be significant!</p>
           </div>
         </v-alert>
-        <v-card-actions>
-          <v-btn
-            link
-            to="/order?page=invest"
-            @click="orderedDialog = true"
-            block
-            tile
-            text
-            :class="action == 'buy' ? 'green' : 'red'"
-            >place order
-          </v-btn>
-        </v-card-actions>
+        <div class="d-flex my-5 mx-3">
+          <div style="width:50%;">
+            <v-btn text tile block class="red" to="/order?page=invest">sell</v-btn>
+          </div>
+          <div style="width:50%;">
+            <v-btn text tile block class="green" to="/order?page=invest">buy</v-btn>
+          </div>
+        </div>
       </v-card>
     </v-dialog>
   </div>
@@ -210,6 +245,8 @@ export default {
   },
   data() {
     return {
+      priceInEuru: 100,
+      typeChip: 'cfd',
       showDetails: false,
       orderedDialog: false,
       action: "buy",

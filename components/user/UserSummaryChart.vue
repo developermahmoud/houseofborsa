@@ -3,88 +3,91 @@
     <div class="summaryCard rounded-lg mb-5">
       <h4 class="mb-2">Performance |  last 12 Month</h4>
       <div class="d-flex justify-space-between mb-2">
-        <div class="black rounded-lg pa-2 text-center" style="width:100%;">
+        <div class="black rounded-lg px-2 py-4 text-center" style="width:100%;">
           <h6>ROI <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
           <strong class="green--text">+20%</strong>
         </div>
-        <div class="black rounded-lg mx-2 pa-2 text-center" style="width:100%;">
+        <div class="black rounded-lg mx-2 px-2 py-4 text-center" style="width:100%;">
           <h6>MaxDD <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
           <strong class="red--text">-16%</strong>
         </div>
-        <div class="black rounded-lg pa-2 text-center" style="width:100%;">
-          <h6>RiskLevel <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
+        <div class="black rounded-lg px-2 py-4 text-center" style="width:100%;">
+          <h6>Risk Level <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
           <strong class="white--text">6</strong>
         </div>
       </div>
       <div class="d-flex justify-space-between mb-2">
-        <div class="black rounded-lg pa-2 text-center" style="width:100%;">
+        <div class="black rounded-lg px-2 py-4 text-center" style="width:100%;">
           <h6>AVG Profit <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
           <strong class="green--text"><v-icon color="green" small>mdi-arrow-up</v-icon>98.2%</strong>
         </div>
-        <div class="black rounded-lg mx-2 pa-2 text-center" style="width:100%;">
-          <h6>AVG Profit <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
+        <div class="black rounded-lg mx-2 px-2 py-4 text-center" style="width:100%;">
+          <h6>AVG Loss <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
           <strong class="red--text"><v-icon color="red" small>mdi-arrow-down</v-icon>14.4%</strong>
         </div>
-        <div class="black rounded-lg pa-2 text-center" style="width:100%;">
-          <h6>TotalTrades <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
+        <div class="black rounded-lg px-2 py-4 text-center" style="width:100%;">
+          <h6>Total Trades <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
           <strong class="white--text">50</strong>
         </div>
       </div>
-      <v-list dense class="pa-0 transparent mb-2">
-        <v-list-item style="min-height: 20px; height: 35px">
-          <v-list-item-icon>
-            <v-icon color="#ed6d77">mdi-square-rounded</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title class="body-1">Stock</v-list-item-title>
-          <v-list-item-action class="black--text">10%</v-list-item-action>
-        </v-list-item>
-        <v-list-item style="min-height: 20px; height: 35px">
-          <v-list-item-icon>
-            <v-icon color="#4992ff">mdi-square-rounded</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title class="body-1">ETFs</v-list-item-title>
-          <v-list-item-action class="black--text">35%</v-list-item-action>
-        </v-list-item>
-        <v-list-item style="min-height: 20px; height: 35px">
-          <v-list-item-icon>
-            <v-icon color="#7cffb2">mdi-square-rounded</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title class="body-1">Cryptocurrency</v-list-item-title>
-          <v-list-item-action class="black--text">35%</v-list-item-action>
-        </v-list-item>
-        <v-list-item style="min-height: 20px; height: 35px">
-          <v-list-item-icon>
-            <v-icon color="#f9dd60">mdi-square-rounded</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title class="body-1">Indices</v-list-item-title>
-          <v-list-item-action class="black--text">20%</v-list-item-action>
-        </v-list-item>
-      </v-list>
-      <div class="d-flex">
-        <v-chart class="chart text-center" :option="option" />
-<!--        <div>-->
-<!--          <div>-->
-<!--            <v-chip small class="px-2" color="indigo darken-4">-->
-<!--              <v-icon small color="green">mdi-circle</v-icon> VIX(20%)-->
-<!--            </v-chip>-->
-<!--          </div>-->
-<!--          <div>-->
-<!--            <v-chip small class="px-2" color="indigo darken-4">-->
-<!--              <v-icon small color="yellow">mdi-circle</v-icon> GBPJPY(20%)-->
-<!--            </v-chip>-->
-<!--          </div>-->
-<!--          <div>-->
-<!--            <v-chip small class="px-2" color="indigo darken-4">-->
-<!--              <v-icon small color="orange">mdi-circle</v-icon> CADJPY(20%)-->
-<!--            </v-chip>-->
-<!--          </div>-->
-<!--          <div>-->
-<!--            <v-chip small class="px-2" color="indigo darken-4">-->
-<!--              <v-icon small color="grey">mdi-circle</v-icon> Other(20%)-->
-<!--            </v-chip>-->
-<!--          </div>-->
-<!--        </div>-->
-      </div>
+      <v-row no-gutters>
+        <v-col cols="12" md="6" sm="12">
+          <v-chart style="width: 95%;" class="chart text-center" :option="option" />
+        </v-col>
+        <v-col cols="12" md="6" sm="12">
+          <v-list dense class="pa-0 transparent mb-2">
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="#ed6d77">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">Stock</v-list-item-title>
+              <v-list-item-action class="black--text">10%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="#4992ff">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">ETFs</v-list-item-title>
+              <v-list-item-action class="black--text">35%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="#7cffb2">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">Cryptocurrency</v-list-item-title>
+              <v-list-item-action class="black--text">35%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="#f9dd60">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">Indices</v-list-item-title>
+              <v-list-item-action class="black--text">20%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="black">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">Commodities</v-list-item-title>
+              <v-list-item-action class="black--text">40%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="purple">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">Metals</v-list-item-title>
+              <v-list-item-action class="black--text">30%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="orange">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">FOREX</v-list-item-title>
+              <v-list-item-action class="black--text">50%</v-list-item-action>
+            </v-list-item>
+          </v-list>
+        </v-col>
+      </v-row>
     </div>
     <v-img src="/chart.jpeg" class="rounded-lg mb-5" />
     <v-simple-table class="secondary">

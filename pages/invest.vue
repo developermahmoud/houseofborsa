@@ -114,7 +114,14 @@
                     :src="item.icon"
                     style="width: 18px; height: 18px"
                     class="mr-2"
-                  /><span>{{ item.name }}</span>
+                  /><div>{{ item.name }}
+                  <template v-if="i == 3">
+                    <v-chip x-small>REAL</v-chip>
+                  </template>
+                  <template v-if="i == 4">
+                    <v-chip x-small>CFD</v-chip>
+                  </template>
+                </div>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
                   {{ item.subtitle }}
@@ -186,6 +193,13 @@ export default {
           subtitle: "Solana Token vs US Dollar ",
           color: "red",
           change: "0.5%",
+        },
+        {
+          icon: "/currency/4.jpg",
+          name: "AAPL",
+          subtitle: "Apple inc.",
+          color: "green",
+          change: "10.5%",
         },
         {
           icon: "/currency/4.jpg",

@@ -69,27 +69,14 @@
                 <div id="tradingview_2e912"></div>
               </div>
             </div>
-            <div class="text-center my-5">
-              <v-btn
-                x-large
-                text
-                class="red"
-                @click="
+            <div class="text-center my-5 " >
+              <v-btn text large class="blue" @click="
                   buyDialog = true;
                   typeDialog = 'sell';
-                "
-                ><v-icon>mdi-arrow-bottom-right-thick</v-icon> Sell
+                ">
+                <v-icon>mdi-sync-alert</v-icon>
+                TRADE
               </v-btn>
-              <v-btn
-                x-large
-                text
-                class="green"
-                @click="
-                  buyDialog = true;
-                  typeDialog = 'buy';
-                "
-                ><v-icon>mdi-arrow-top-right-thick</v-icon> Buy</v-btn
-              >
             </div>
           </v-tab-item>
           <v-tab-item value="news">
