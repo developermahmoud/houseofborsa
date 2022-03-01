@@ -27,7 +27,7 @@
         <v-icon @click="dialog = true">mdi-cards</v-icon>
       </v-card-title>
       <v-card-text class="text-center white--text px-0">
-        <div class="rounded-circle py-12  mx-auto" style="border: solid 2px grey;width:184px;">
+        <div class="py-12 circlePortfolio mx-auto mt-5">
           <div>
             <div class="d-flex align-center justify-center">
               <v-icon class="" small @click="showMargin = !showMargin"
@@ -35,7 +35,7 @@
               >
               <div class="mx-1">
                 <span class="text-h6">$</span>
-                <strong style="font-size: 20px" :class="isBlur ? 'blur-text' : ''"
+                <strong style="font-size: 20px" :class="isBlur ? 'blur-text green--text' : 'green--text'"
                 >9238.31</strong
                 >
               </div>
@@ -44,9 +44,12 @@
                 }}</v-icon>
             </div>
           </div>
-          <div class="mt-5 text-center">
-            <span class="font-weight-bold body-1"> P/L(22.1%)</span
-            ><v-icon class="pa-0 mb-1">mdi-arrow-up-thin</v-icon>
+          <div class="text-center">
+            <span class="font-weight-bold body-1"> P/L(<span class="green--text">22.1%</span>)</span
+            ><v-icon class="pa-0 mb-1" color="green">mdi-arrow-up-thin</v-icon>
+          </div>
+          <div  class="text-center">
+            <v-icon @click="showChart = true">mdi-information-outline</v-icon>
           </div>
         </div>
         <div class="text-center mt-5">
@@ -75,15 +78,12 @@
                 :class="`${tab === 'closed' ? 'primary' : ''}`"
                 @click="tab = 'closed'"
               >
-                <v-list-item-title>Closed</v-list-item-title>
+                <v-list-item-title>History</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
         </div>
       </v-card-text>
-<!--      <v-btn fab class="white" bottom right absolute @click="showChart = true">-->
-<!--        <v-icon color="primary">mdi-selection-ellipse</v-icon>-->
-<!--      </v-btn>-->
     </v-card>
     <template v-if="showMargin">
       <v-tabs-items v-model="tab" class="transparent mt-3">
@@ -465,4 +465,14 @@ export default {
 </script>
 
 <style scoped>
+.circlePortfolio {
+  width:184px;
+  border-radius: 100%;
+  border-style: solid;
+  border-width: 4px;
+  border-bottom-color: orange;
+  border-left-color: orange;
+  border-right-color: cyan;
+  border-top-color: green;
+}
 </style>

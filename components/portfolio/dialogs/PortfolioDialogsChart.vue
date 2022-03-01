@@ -6,8 +6,8 @@
       scrollable
       @click:outside="$emit('close-dialog')"
     >
-      <v-card class="secondary pt-5">
-        <v-chart class="chart" :option="option" />
+      <v-card class="summaryCard pt-5">
+        <v-chart style="width: 250px;" class="chart text-center" :option="option" />
         <v-list dense class="pa-0 transparent mb-2">
           <v-list-item style="min-height: 20px; height: 35px">
             <v-list-item-icon>
@@ -84,10 +84,10 @@ export default {
   data() {
     return {
       option: {
-        backgroundColor: "#24253d",
+        backgroundColor: "rgba(0, 0, 200, 0.0)",
         title: {
-          text: "Exposure",
-          left: "center",
+          text: "Asset allocation",
+          left: "left",
         },
         legend: {
           show: false,
@@ -127,5 +127,9 @@ export default {
   margin-right: 50px!important;
   width: 300px;
   height: 230px;
+}
+.summaryCard {
+  padding: 5px;
+  background-image: linear-gradient(to right, red , yellow);
 }
 </style>

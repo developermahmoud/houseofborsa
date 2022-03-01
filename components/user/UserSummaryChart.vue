@@ -4,7 +4,7 @@
       <h4 class="mb-2">Performance |  last 12 Month</h4>
       <div class="d-flex justify-space-between mb-2">
         <div class="black rounded-lg px-2 py-4 text-center" style="width:100%;">
-          <h6>ROI <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
+          <h6>RETURN <v-icon @click="showDetails=!showDetails" small>mdi-information</v-icon></h6>
           <strong class="green--text">+20%</strong>
         </div>
         <div class="black rounded-lg mx-2 px-2 py-4 text-center" style="width:100%;">

@@ -9,7 +9,7 @@
           <v-toolbar-title>New Order</v-toolbar-title>
         </v-toolbar>
         <v-divider></v-divider>
-        <v-list-item two-line>
+        <v-list-item three-line>
           <v-list-item-avatar>
             <v-img src="/currency/4.jpg" />
           </v-list-item-avatar>
@@ -40,8 +40,17 @@
           <v-icon color="info" size="20">mdi-alert-box</v-icon> This symbol is a Real Stock.
         </v-alert>
         <v-card-text>
-
           <div class="d-flex justify-space-between pa-1 background rounded-lg">
+            <div style="width: 50%">
+              <v-btn
+                small
+                text
+                block
+                @click="topChange = 'current_price'"
+                :class="topChange == 'current_price' ? 'secondary' : ''"
+              >Market Price
+              </v-btn>
+            </div>
             <div style="width: 50%">
               <v-btn
                 small
@@ -52,18 +61,9 @@
                 >Specfic Price</v-btn
               >
             </div>
-            <div style="width: 50%">
-              <v-btn
-                small
-                text
-                block
-                @click="topChange = 'current_price'"
-                :class="topChange == 'current_price' ? 'secondary' : ''"
-                >Market Price
-              </v-btn>
-            </div>
+
           </div>
-          <div class="my-5">
+          <div class="mt-5">
             <div class="text-center">
               <v-menu offset-y>
                 <template v-slot:activator="{ on, attrs }">
@@ -78,54 +78,58 @@
                 </template>
                 <v-list class="py-0 secondary" dense>
                   <v-list-item>
-                    <v-list-item-title>Link</v-list-item-title>
+                    <v-list-item-title>Investment</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-title>Position size</v-list-item-title>
                   </v-list-item>
                 </v-list>
               </v-menu>
             </div>
             <div class="d-flex justify-space-between align-center">
-              <v-icon>mdi-cash-multiple</v-icon>
+              <v-icon @click="isAutoFocus=true">mdi-cash-multiple</v-icon>
               <div class="text-center">
-                <div class="display-1">&euro; {{ priceInEuru }}</div>
+                <v-text-field type="number" :autofocus="isAutoFocus" dense hide-details single-line class="mx-auto" style="width:60px;font-size:25px;text-align: center;" prefix="€" v-model="priceInEuru"></v-text-field>
                 <div>~0.0268 shares</div>
               </div>
-              <v-icon>mdi-dialpad</v-icon>
+              <v-icon @click="isAutoFocus=true">mdi-dialpad</v-icon>
             </div>
             <v-slider
               max="250"
-              min="-250"
+              min="-0"
+              hide-details
               v-model="priceInEuru"
             >
             </v-slider>
           </div>
-          <v-row class="mt-5">
-            <v-col cols="12" v-if="topChange === 'specefic_rate'">
-              <v-text-field
-                value="178.85"
-                dense
-                label="Entry price"
-                type="number"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="5">
-              <v-text-field
-                prefix="$"
-                value="17.26"
-                dense
-                label="Investment"
-                type="number"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="2" align="center">=</v-col>
-            <v-col cols="5">
-              <v-text-field
-                type="number"
-                value="1.0"
-                dense
-                label="Position Size"
-              ></v-text-field>
-            </v-col>
-          </v-row>
+<!--          <v-row class="mt-5">-->
+<!--            <v-col cols="12" v-if="topChange === 'specefic_rate'">-->
+<!--              <v-text-field-->
+<!--                value="178.85"-->
+<!--                dense-->
+<!--                label="Entry price"-->
+<!--                type="number"-->
+<!--              ></v-text-field>-->
+<!--            </v-col>-->
+<!--            <v-col cols="5">-->
+<!--              <v-text-field-->
+<!--                prefix="$"-->
+<!--                value="17.26"-->
+<!--                dense-->
+<!--                label="Investment"-->
+<!--                type="number"-->
+<!--              ></v-text-field>-->
+<!--            </v-col>-->
+<!--            <v-col cols="2" align="center">=</v-col>-->
+<!--            <v-col cols="5">-->
+<!--              <v-text-field-->
+<!--                type="number"-->
+<!--                value="1.0"-->
+<!--                dense-->
+<!--                label="Position Size"-->
+<!--              ></v-text-field>-->
+<!--            </v-col>-->
+<!--          </v-row>-->
           <div class="d-flex justify-space-between align-center">
             <div style="font-size:12px;">
               <v-icon size="16" class="mr-1">mdi-wallet</v-icon>Available funds:
@@ -139,9 +143,9 @@
               <span class="green--text">2560,000$</span>
             </div>
           </div>
-          <div class="d-flex align-center my-3">
-            <v-switch dense v-model="showDetails"></v-switch><img style="width: 20px" src="/Terminal.ico" /> HOB Protector
-          </div>
+        <div class="d-flex align-center">
+          <v-switch dense v-model="showDetails"></v-switch><img style="width: 20px" src="/Terminal.ico" /> HOB Protector
+        </div>
         <template v-if="showDetails">
           <div class="d-flex justify-space-between pa-1 background rounded-lg">
             <div style="width: 50%">
@@ -209,7 +213,6 @@
             </div>
           </div>
         </template>
-
         </v-card-text>
         <v-alert class="mx-4 pa-1" color="warning" dense text >
           <div class="d-flex">
@@ -219,12 +222,20 @@
           </div>
         </v-alert>
         <div class="d-flex my-5 mx-3">
-          <div style="width:50%;">
-            <v-btn text tile block class="red" to="/order?page=invest">sell</v-btn>
-          </div>
-          <div style="width:50%;">
-            <v-btn text tile block class="green" to="/order?page=invest">buy</v-btn>
-          </div>
+          <template v-if="typeChip=='cfd'">
+            <div style="width:50%;" >
+              <v-btn text tile block class="red" to="/order?page=invest">sell</v-btn>
+            </div>
+            <div style="width:50%;">
+              <v-btn text tile block class="green" to="/order?page=invest">buy</v-btn>
+            </div>
+          </template>
+          <template v-else>
+            <div style="width: 100%;">
+              <v-btn text tile block class="green" to="/order?page=invest">buy</v-btn>
+            </div>
+          </template>
+
         </div>
       </v-card>
     </v-dialog>
@@ -246,6 +257,7 @@ export default {
   data() {
     return {
       priceInEuru: 100,
+      isAutoFocus: false,
       typeChip: 'cfd',
       showDetails: false,
       orderedDialog: false,

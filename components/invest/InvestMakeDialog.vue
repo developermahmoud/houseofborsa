@@ -23,7 +23,7 @@
               ></v-list-item-title
             >
             <v-list-item-subtitle
-              ><v-chip outlined class="px-1" x-small color="white">CFD</v-chip>
+              >
               <v-icon small>mdi-clock</v-icon>
               <span class="grey--text" style="font-size:12px;'"
                 >MARKET OPEN
@@ -69,8 +69,8 @@
                 <div id="tradingview_2e912"></div>
               </div>
             </div>
-            <div class="text-center my-5 " >
-              <v-btn text large class="blue" @click="
+            <div class="text-center my-5 mx-2" >
+              <v-btn block text large class="blue" @click="
                   buyDialog = true;
                   typeDialog = 'sell';
                 ">
