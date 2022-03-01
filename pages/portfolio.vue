@@ -44,12 +44,9 @@
                 }}</v-icon>
             </div>
           </div>
-          <div class="text-center">
+          <div class="text-center mt-2">
             <span class="font-weight-bold body-1"> P/L(<span class="green--text">22.1%</span>)</span
             ><v-icon class="pa-0 mb-1" color="green">mdi-arrow-up-thin</v-icon>
-          </div>
-          <div  class="text-center">
-            <v-icon @click="showChart = true">mdi-information-outline</v-icon>
           </div>
         </div>
         <div class="text-center mt-5">
@@ -81,7 +78,7 @@
                 <v-list-item-title>History</v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-menu>
+          </v-menu>  <v-icon size="16" @click="showChart = true">mdi-information-outline</v-icon>
         </div>
       </v-card-text>
     </v-card>

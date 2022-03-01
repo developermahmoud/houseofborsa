@@ -18,7 +18,7 @@
             <v-list-item-subtitle>
               <v-chip-group v-model="typeChip" active-class="green" mandatory>
                 <v-chip value="cfd" outlined  x-small>CFD</v-chip>
-                <v-chip value="real" outlined  x-small>Real</v-chip>
+                <v-chip value="real" outlined  x-small>REAL</v-chip>
               </v-chip-group>
             </v-list-item-subtitle>
             <v-list-item-subtitle>
@@ -72,15 +72,15 @@
                     v-bind="attrs"
                     v-on="on"
                   >
-                    Value
+                    {{ wordValue }}
                     <v-icon>mdi-chevron-down</v-icon>
                   </v-btn>
                 </template>
                 <v-list class="py-0 secondary" dense>
-                  <v-list-item>
-                    <v-list-item-title>Investment</v-list-item-title>
+                  <v-list-item @click="wordValue='Value'">
+                    <v-list-item-title>Value</v-list-item-title>
                   </v-list-item>
-                  <v-list-item>
+                  <v-list-item @click="wordValue='Position size'">
                     <v-list-item-title>Position size</v-list-item-title>
                   </v-list-item>
                 </v-list>
@@ -102,34 +102,14 @@
             >
             </v-slider>
           </div>
-<!--          <v-row class="mt-5">-->
-<!--            <v-col cols="12" v-if="topChange === 'specefic_rate'">-->
-<!--              <v-text-field-->
-<!--                value="178.85"-->
-<!--                dense-->
-<!--                label="Entry price"-->
-<!--                type="number"-->
-<!--              ></v-text-field>-->
-<!--            </v-col>-->
-<!--            <v-col cols="5">-->
-<!--              <v-text-field-->
-<!--                prefix="$"-->
-<!--                value="17.26"-->
-<!--                dense-->
-<!--                label="Investment"-->
-<!--                type="number"-->
-<!--              ></v-text-field>-->
-<!--            </v-col>-->
-<!--            <v-col cols="2" align="center">=</v-col>-->
-<!--            <v-col cols="5">-->
-<!--              <v-text-field-->
-<!--                type="number"-->
-<!--                value="1.0"-->
-<!--                dense-->
-<!--                label="Position Size"-->
-<!--              ></v-text-field>-->
-<!--            </v-col>-->
-<!--          </v-row>-->
+          <v-text-field
+            class="mt-2"
+            v-if="topChange === 'specefic_rate'"
+            value="178.85"
+            dense
+            label="Entry price"
+            type="number"
+          ></v-text-field>
           <div class="d-flex justify-space-between align-center">
             <div style="font-size:12px;">
               <v-icon size="16" class="mr-1">mdi-wallet</v-icon>Available funds:
@@ -256,6 +236,7 @@ export default {
   },
   data() {
     return {
+      wordValue: 'Value',
       priceInEuru: 100,
       typeChip: 'cfd',
       showDetails: false,
