@@ -271,7 +271,7 @@ export default {
   },
   methods: {
     autoFocus() {
-      document.getElementById('simplePrice').autofocus
+      document.getElementById('simplePrice').autofocus = true;
     }
   }
 };
