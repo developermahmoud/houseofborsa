@@ -87,12 +87,12 @@
               </v-menu>
             </div>
             <div class="d-flex justify-space-between align-center">
-              <v-icon @click="isAutoFocus=true">mdi-cash-multiple</v-icon>
+              <v-icon @click="autoFocus()">mdi-cash-multiple</v-icon>
               <div class="text-center">
-                <v-text-field type="number" :autofocus="isAutoFocus" dense hide-details single-line class="mx-auto" style="width:60px;font-size:25px;text-align: center;" prefix="€" v-model="priceInEuru"></v-text-field>
+                <v-text-field type="number" id="simplePrice" dense hide-details single-line class="mx-auto" style="width:60px;font-size:25px;text-align: center;" prefix="€" v-model="priceInEuru"></v-text-field>
                 <div>~0.0268 shares</div>
               </div>
-              <v-icon @click="isAutoFocus=true">mdi-dialpad</v-icon>
+              <v-icon @click="autoFocus()">mdi-dialpad</v-icon>
             </div>
             <v-slider
               max="250"
@@ -257,7 +257,6 @@ export default {
   data() {
     return {
       priceInEuru: 100,
-      isAutoFocus: false,
       typeChip: 'cfd',
       showDetails: false,
       orderedDialog: false,
@@ -270,6 +269,11 @@ export default {
   mounted() {
     this.action = this.type
   },
+  methods: {
+    autoFocus() {
+      document.getElementById('simplePrice').autofocus
+    }
+  }
 };
 </script>
 
