@@ -27,7 +27,7 @@
         <v-icon @click="dialog = true">mdi-cards</v-icon>
       </v-card-title>
       <v-card-text class="text-center white--text px-0">
-        <div class="py-12 circlePortfolio mx-auto mt-5">
+        <div class="py-16 circlePortfolio mx-auto mt-5">
           <div>
             <div class="d-flex align-center justify-center">
               <v-icon class="" small @click="showMargin = !showMargin"
@@ -35,7 +35,7 @@
               >
               <div class="mx-1">
                 <span class="text-h6">$</span>
-                <strong style="font-size: 20px" :class="isBlur ? 'blur-text green--text' : 'green--text'"
+                <strong style="font-size: 20px" :class="isBlur ? 'blur-text' : ''"
                 >9238.31</strong
                 >
               </div>
@@ -44,8 +44,8 @@
                 }}</v-icon>
             </div>
           </div>
-          <div class="text-center mt-2">
-            <span class="font-weight-bold body-1"> P/L(<span class="green--text">22.1%</span>)</span
+          <div class="text-center mt-2 green--text">
+            <span class="font-weight-bold body-1"> P/L(<span class="">22.1%</span>)</span
             ><v-icon class="pa-0 mb-1" color="green">mdi-arrow-up-thin</v-icon>
           </div>
         </div>
@@ -463,7 +463,7 @@ export default {
 
 <style scoped>
 .circlePortfolio {
-  width:184px;
+  width:230px;
   border-radius: 100%;
   border-style: solid;
   border-width: 4px;

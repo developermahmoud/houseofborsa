@@ -16,7 +16,7 @@
           <v-list-item-content>
             <v-list-item-title>Buy Apple </v-list-item-title>
             <v-list-item-subtitle
-              ><v-chip outlined class="px-1" x-small color="white">CFD</v-chip>
+              >
               <v-icon small>mdi-clock</v-icon>
               <span class="grey--text" style="font-size:12px;'"
                 >MARKET OPEN</span
@@ -98,77 +98,79 @@
             <v-icon small class="mr-1">mdi-wallet</v-icon> Available funds:
             <strong class="green--text">0.85 $</strong>
           </div>
-          <div class="d-flex align-center mb-3">
-            <img style="width: 20px" src="/Terminal.ico" /> HOB Protector
+          <div class="d-flex align-center">
+            <v-switch dense v-model="showDetails"></v-switch><img style="width: 20px" src="/Terminal.ico" /> HOB Protector
           </div>
-
-          <div class="d-flex justify-space-between pa-1 background rounded-lg">
-            <div style="width: 50%">
-              <v-btn
-                small
-                block
-                text
-                @click="otherChange = 'amount'"
-                :class="otherChange == 'amount' ? 'secondary' : ''"
+          <template v-if="showDetails">
+            <div  class="d-flex justify-space-between pa-1 background rounded-lg">
+              <div style="width: 50%">
+                <v-btn
+                  small
+                  block
+                  text
+                  @click="otherChange = 'amount'"
+                  :class="otherChange == 'amount' ? 'secondary' : ''"
                 >Amount
-              </v-btn>
-            </div>
-            <div style="width: 50%">
-              <v-btn
-                small
-                block
-                text
-                @click="otherChange = 'specefic_rate'"
-                :class="otherChange == 'specefic_rate' ? 'secondary' : ''"
+                </v-btn>
+              </div>
+              <div style="width: 50%">
+                <v-btn
+                  small
+                  block
+                  text
+                  @click="otherChange = 'specefic_rate'"
+                  :class="otherChange == 'specefic_rate' ? 'secondary' : ''"
                 >Specfic Price
-              </v-btn>
+                </v-btn>
+              </div>
             </div>
-          </div>
-          <div class="d-flex justify-space-between align-center">
-            <div>
-              <v-text-field
-                type="number"
-                dense
-                hide-details
-                label=""
-                prefix="$"
-                :value="otherChange == 'amount' ? '-8.63' : '0.00'"
-              >
-                <template v-slot:label>
-                  <strong class="red--text body-1">Stop Loss</strong>
-                </template>
-              </v-text-field>
+            <div class="d-flex justify-space-between align-center">
+              <div>
+                <v-text-field
+                  type="number"
+                  dense
+                  hide-details
+                  label=""
+                  prefix="$"
+                  :value="otherChange == 'amount' ? '-8.63' : '0.00'"
+                >
+                  <template v-slot:label>
+                    <strong class="red--text body-1">Stop Loss</strong>
+                  </template>
+                </v-text-field>
+              </div>
+              <div style="width: 150px">
+                <template v-if="otherChange == 'amount'">164.01</template>
+                <template v-else>$ -8.63</template>
+              </div>
+              <div>
+                <v-switch value="true" dense></v-switch>
+              </div>
             </div>
-            <div style="width: 150px">
-              <template v-if="otherChange == 'amount'">164.01</template>
-              <template v-else>$ -8.63</template>
+            <div class="d-flex justify-space-between align-center">
+              <div>
+                <v-text-field
+                  type="number"
+                  hide-details
+                  label=""
+                  prefix="$"
+                  :value="otherChange == 'amount' ? '8.63' : '0.00'"
+                >
+                  <template v-slot:label>
+                    <strong class="green--text body-1">Take Profit</strong>
+                  </template>
+                </v-text-field>
+              </div>
+              <div style="width: 150px">
+                <template v-if="otherChange == 'amount'">181.27</template>
+                <template v-else>$ 8.63</template>
+              </div>
+              <div>
+                <v-switch :value="true" dense></v-switch>
+              </div>
             </div>
-            <div>
-              <v-switch value="true" dense></v-switch>
-            </div>
-          </div>
-          <div class="d-flex justify-space-between align-center">
-            <div>
-              <v-text-field
-                type="number"
-                hide-details
-                label=""
-                prefix="$"
-                :value="otherChange == 'amount' ? '8.63' : '0.00'"
-              >
-                <template v-slot:label>
-                  <strong class="green--text body-1">Take Profit</strong>
-                </template>
-              </v-text-field>
-            </div>
-            <div style="width: 150px">
-              <template v-if="otherChange == 'amount'">181.27</template>
-              <template v-else>$ 8.63</template>
-            </div>
-            <div>
-              <v-switch :value="true" dense></v-switch>
-            </div>
-          </div>
+          </template>
+
         </v-card-text>
         <v-alert class="mx-4" type="warning" dense text style="font-size: 12px">
           Attention! The trade will be executed at market conditions, difference
@@ -198,6 +200,7 @@ export default {
   data() {
     return {
       action: "buy",
+      showDetails: false,
       topChange: "current_price",
       otherChange: "amount",
       toggle_none: null,

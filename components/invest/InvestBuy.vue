@@ -77,10 +77,10 @@
                   </v-btn>
                 </template>
                 <v-list class="py-0 secondary" dense>
-                  <v-list-item @click="wordValue='Value'">
+                  <v-list-item @click="wordValue='Value';valuePrefix='$'">
                     <v-list-item-title>Value</v-list-item-title>
                   </v-list-item>
-                  <v-list-item @click="wordValue='Position size'">
+                  <v-list-item @click="wordValue='Position size'; valuePrefix=''">
                     <v-list-item-title>Position size</v-list-item-title>
                   </v-list-item>
                 </v-list>
@@ -89,7 +89,7 @@
             <div class="d-flex justify-space-between align-center">
               <v-icon @click="autoFocus()">mdi-cash-multiple</v-icon>
               <div class="text-center">
-                <v-text-field type="number" id="simplePrice" dense hide-details single-line class="mx-auto" style="width:60px;font-size:25px;text-align: center;" prefix="€" v-model="priceInEuru"></v-text-field>
+                <v-text-field type="number" id="simplePrice" dense hide-details single-line class="mx-auto" style="width:60px;font-size:25px;text-align: center;" :prefix="valuePrefix" v-model="priceInEuru"></v-text-field>
                 <div>~0.0268 shares</div>
               </div>
               <v-icon @click="autoFocus()">mdi-dialpad</v-icon>
@@ -110,18 +110,8 @@
             label="Entry price"
             type="number"
           ></v-text-field>
-          <div class="d-flex justify-space-between align-center">
-            <div style="font-size:12px;">
-              <v-icon size="16" class="mr-1">mdi-wallet</v-icon>Available funds:
-              $
-              <br />
-              <span class="green--text">7650,5555$</span>
-            </div>
-            <div style="font-size:12px;">
-              <v-icon size="16" class="mr-1">mdi-chart-pie</v-icon>Used margin:
-              $ <br />
-              <span class="green--text">2560,000$</span>
-            </div>
+          <div style="font-size:12px;">
+            <v-icon size="16" class="mr-1">mdi-wallet</v-icon>Available funds: <span class="green--text">7650,5555$</span>
           </div>
         <div class="d-flex align-center">
           <v-switch dense v-model="showDetails"></v-switch><img style="width: 20px" src="/Terminal.ico" /> HOB Protector
@@ -236,6 +226,7 @@ export default {
   },
   data() {
     return {
+      valuePrefix: '$',
       wordValue: 'Value',
       priceInEuru: 100,
       typeChip: 'cfd',
