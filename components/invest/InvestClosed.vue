@@ -15,8 +15,7 @@
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title>Buy Apple </v-list-item-title>
-            <v-list-item-subtitle
-              >
+            <v-list-item-subtitle>
               <v-icon small>mdi-clock</v-icon>
               <span class="grey--text" style="font-size:12px;'"
                 >MARKET OPEN</span
@@ -64,7 +63,57 @@
               </v-text-field>
             </v-col>
           </v-row>
-          <v-row class="mt-5">
+          <div class="mt-5">
+            <div class="text-center">
+              <v-menu offset-y>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn text v-bind="attrs" v-on="on">
+                    {{ wordValue }}
+                    <v-icon>mdi-chevron-down</v-icon>
+                  </v-btn>
+                </template>
+                <v-list class="py-0 secondary" dense>
+                  <v-list-item
+                    @click="
+                      wordValue = 'Value';
+                      valuePrefix = '$';
+                    "
+                  >
+                    <v-list-item-title>Value</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item
+                    @click="
+                      wordValue = 'Position size';
+                      valuePrefix = '';
+                    "
+                  >
+                    <v-list-item-title>Position size</v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </div>
+            <div class="d-flex justify-space-between align-center">
+              <v-icon @click="autoFocus()">mdi-cash-multiple</v-icon>
+              <div class="text-center">
+                <v-text-field
+                  type="number"
+                  id="simplePrice"
+                  dense
+                  hide-details
+                  single-line
+                  class="mx-auto"
+                  style="width: 60px; font-size: 25px; text-align: center"
+                  :prefix="valuePrefix"
+                  v-model="priceInEuru"
+                ></v-text-field>
+                <div>~0.0268 shares</div>
+              </div>
+              <v-icon @click="autoFocus()">mdi-dialpad</v-icon>
+            </div>
+            <v-slider max="250" min="-0" hide-details v-model="priceInEuru">
+            </v-slider>
+          </div>
+          <!-- <v-row class="mt-5">
             <v-col cols="12" v-if="topChange === 'specefic_rate'">
               <v-text-field value="178.85" dense disabled type="number">
                 <template v-slot:label>
@@ -93,16 +142,19 @@
                 </template>
               </v-text-field>
             </v-col>
-          </v-row>
+          </v-row> -->
           <div class="d-flex align-center mb-3">
             <v-icon small class="mr-1">mdi-wallet</v-icon> Available funds:
             <strong class="green--text">0.85 $</strong>
           </div>
           <div class="d-flex align-center">
-            <v-switch dense v-model="showDetails"></v-switch><img style="width: 20px" src="/Terminal.ico" /> HOB Protector
+            <v-switch dense v-model="showDetails"></v-switch
+            ><img style="width: 20px" src="/Terminal.ico" /> HOB Protector
           </div>
           <template v-if="showDetails">
-            <div  class="d-flex justify-space-between pa-1 background rounded-lg">
+            <div
+              class="d-flex justify-space-between pa-1 background rounded-lg"
+            >
               <div style="width: 50%">
                 <v-btn
                   small
@@ -110,7 +162,7 @@
                   text
                   @click="otherChange = 'amount'"
                   :class="otherChange == 'amount' ? 'secondary' : ''"
-                >Amount
+                  >Amount
                 </v-btn>
               </div>
               <div style="width: 50%">
@@ -120,7 +172,7 @@
                   text
                   @click="otherChange = 'specefic_rate'"
                   :class="otherChange == 'specefic_rate' ? 'secondary' : ''"
-                >Specfic Price
+                  >Specfic Price
                 </v-btn>
               </div>
             </div>
@@ -170,7 +222,6 @@
               </div>
             </div>
           </template>
-
         </v-card-text>
         <v-alert class="mx-4" type="warning" dense text style="font-size: 12px">
           Attention! The trade will be executed at market conditions, difference
@@ -199,6 +250,9 @@ export default {
   },
   data() {
     return {
+      valuePrefix: '$',
+      wordValue: 'Value',
+      priceInEuru: 100,
       action: "buy",
       showDetails: false,
       topChange: "current_price",
@@ -207,6 +261,11 @@ export default {
     };
   },
   mounted() {},
+  methods: {
+    autoFocus() {
+      document.getElementById("simplePrice").focus();
+    },
+  },
 };
 </script>
 

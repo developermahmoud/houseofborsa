@@ -33,7 +33,7 @@
             <span class="green--text">8.35%</span></v-list-item-action
           >
         </v-list-item>
-        <v-alert class="mx-2" color="info" dense text dense text v-if="typeChip == 'cfd'">
+        <v-alert class="mx-2" color="info" dense text v-if="typeChip == 'cfd'">
           <v-icon color="info" size="20">mdi-alert-box</v-icon> This symbol is a CFD.
         </v-alert>
         <v-alert class="mx-2" color="info" dense text v-else>
