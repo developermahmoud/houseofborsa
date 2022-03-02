@@ -7,37 +7,72 @@
       @click:outside="$emit('close-dialog')"
     >
       <v-card class="summaryCard pt-5">
-        <v-chart style="width: 250px;" class="chart text-center" :option="option" />
-        <v-list dense class="pa-0 transparent mb-2">
-          <v-list-item style="min-height: 20px; height: 35px">
-            <v-list-item-icon>
-              <v-icon color="#ed6d77">mdi-square-rounded</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title class="body-1">Stock</v-list-item-title>
-            <v-list-item-action>10%</v-list-item-action>
-          </v-list-item>
-          <v-list-item style="min-height: 20px; height: 35px">
-            <v-list-item-icon>
-              <v-icon color="#4992ff">mdi-square-rounded</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title class="body-1">ETFs</v-list-item-title>
-            <v-list-item-action>35%</v-list-item-action>
-          </v-list-item>
-          <v-list-item style="min-height: 20px; height: 35px">
-            <v-list-item-icon>
-              <v-icon color="#7cffb2">mdi-square-rounded</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title class="body-1">Cryptocurrency</v-list-item-title>
-            <v-list-item-action>35%</v-list-item-action>
-          </v-list-item>
-          <v-list-item style="min-height: 20px; height: 35px">
-            <v-list-item-icon>
-              <v-icon color="#f9dd60">mdi-square-rounded</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title class="body-1">Indices</v-list-item-title>
-            <v-list-item-action>20%</v-list-item-action>
-          </v-list-item>
-        </v-list>
+        <v-row no-gutters>
+          <v-col cols="12" sm="6" md="12">
+            <v-chart
+              style="width: 250px"
+              class="chart text-center"
+              :option="option"
+            />
+          </v-col>
+          <v-col cols="12" sm="6" md="12">
+            <v-list dense class="pa-0 transparent mb-2">
+              <v-list-item style="min-height: 20px; height: 35px">
+                <v-list-item-icon>
+                  <v-icon color="#ed6d77">mdi-square-rounded</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title class="body-1">Stock</v-list-item-title>
+                <v-list-item-action class="black--text">10%</v-list-item-action>
+              </v-list-item>
+              <v-list-item style="min-height: 20px; height: 35px">
+                <v-list-item-icon>
+                  <v-icon color="#4992ff">mdi-square-rounded</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title class="body-1">ETFs</v-list-item-title>
+                <v-list-item-action class="black--text">35%</v-list-item-action>
+              </v-list-item>
+              <v-list-item style="min-height: 20px; height: 35px">
+                <v-list-item-icon>
+                  <v-icon color="#7cffb2">mdi-square-rounded</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title class="body-1"
+                  >Cryptocurrency</v-list-item-title
+                >
+                <v-list-item-action class="black--text">35%</v-list-item-action>
+              </v-list-item>
+              <v-list-item style="min-height: 20px; height: 35px">
+                <v-list-item-icon>
+                  <v-icon color="#f9dd60">mdi-square-rounded</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title class="body-1">Indices</v-list-item-title>
+                <v-list-item-action class="black--text">20%</v-list-item-action>
+              </v-list-item>
+              <v-list-item style="min-height: 20px; height: 35px">
+                <v-list-item-icon>
+                  <v-icon color="black">mdi-square-rounded</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title class="body-1"
+                  >Commodities</v-list-item-title
+                >
+                <v-list-item-action class="black--text">40%</v-list-item-action>
+              </v-list-item>
+              <v-list-item style="min-height: 20px; height: 35px">
+                <v-list-item-icon>
+                  <v-icon color="purple">mdi-square-rounded</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title class="body-1">Metals</v-list-item-title>
+                <v-list-item-action class="black--text">30%</v-list-item-action>
+              </v-list-item>
+              <v-list-item style="min-height: 20px; height: 35px">
+                <v-list-item-icon>
+                  <v-icon color="white">mdi-square-rounded</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title class="body-1">FOREX</v-list-item-title>
+                <v-list-item-action class="black--text">50%</v-list-item-action>
+              </v-list-item>
+            </v-list>
+          </v-col>
+        </v-row>
       </v-card>
     </v-dialog>
   </div>
@@ -124,12 +159,12 @@ export default {
 
 <style scoped>
 .chart {
-  margin-right: 50px!important;
+  margin-right: 50px !important;
   width: 300px;
   height: 230px;
 }
 .summaryCard {
   padding: 5px;
-  background-image: linear-gradient(to right, red , yellow);
+  background-image: linear-gradient(to right, red, yellow);
 }
 </style>

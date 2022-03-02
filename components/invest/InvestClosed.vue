@@ -56,7 +56,15 @@
               </v-text-field>
             </v-col>
             <v-col cols="4">
-              <v-text-field type="number" prefix="%" value="12" disabled dense>
+              <v-text-field
+                id="plPrice"
+                type="number"
+                prefix="%"
+                value="12"
+                disabled
+                style="color: green !important"
+                dense
+              >
                 <template v-slot:label>
                   <strong class="body-1">P/L (%)</strong>
                 </template>
@@ -106,7 +114,7 @@
                   :prefix="valuePrefix"
                   v-model="priceInEuru"
                 ></v-text-field>
-                <div>~0.0268 shares</div>
+                <div>~0.0268 {{wordValue == 'Value' ?  'size' : '$'}}</div>
               </div>
               <v-icon @click="autoFocus()">mdi-dialpad</v-icon>
             </div>
@@ -176,14 +184,13 @@
                 </v-btn>
               </div>
             </div>
-            <div class="d-flex justify-space-between align-center">
-              <div>
+            <div class="d-flex justify-space-between align-center mt-3">
+              <div style="width: 48%">
                 <v-text-field
                   type="number"
                   dense
                   hide-details
-                  label=""
-                  prefix="$"
+                  :prefix="otherChange == 'amount' ?'$':''"
                   :value="otherChange == 'amount' ? '-8.63' : '0.00'"
                 >
                   <template v-slot:label>
@@ -191,34 +198,28 @@
                   </template>
                 </v-text-field>
               </div>
-              <div style="width: 150px">
-                <template v-if="otherChange == 'amount'">164.01</template>
-                <template v-else>$ -8.63</template>
-              </div>
-              <div>
-                <v-switch value="true" dense></v-switch>
-              </div>
-            </div>
-            <div class="d-flex justify-space-between align-center">
-              <div>
+              <div style="width: 48%">
                 <v-text-field
                   type="number"
+                  dense
                   hide-details
-                  label=""
-                  prefix="$"
-                  :value="otherChange == 'amount' ? '8.63' : '0.00'"
+                  :prefix="otherChange == 'amount' ?'$':''"
+                  :value="otherChange == 'amount' ? '-8.63' : '0.00'"
                 >
                   <template v-slot:label>
                     <strong class="green--text body-1">Take Profit</strong>
                   </template>
                 </v-text-field>
               </div>
-              <div style="width: 150px">
+            </div>
+            <div class="d-flex justify-space-between align-center">
+              <div>
                 <template v-if="otherChange == 'amount'">181.27</template>
                 <template v-else>$ 8.63</template>
               </div>
               <div>
-                <v-switch :value="true" dense></v-switch>
+                <template v-if="otherChange == 'amount'">164.01</template>
+                <template v-else>$ -8.63</template>
               </div>
             </div>
           </template>
@@ -250,8 +251,8 @@ export default {
   },
   data() {
     return {
-      valuePrefix: '$',
-      wordValue: 'Value',
+      valuePrefix: "$",
+      wordValue: "Value",
       priceInEuru: 100,
       action: "buy",
       showDetails: false,
@@ -270,4 +271,7 @@ export default {
 </script>
 
 <style>
+#plPrice {
+  color: green;
+}
 </style>

@@ -25,8 +25,8 @@
           ></v-list-item-subtitle
         >
         <v-list-item-subtitle
-          ><v-icon small>mdi-map-marker</v-icon> Egypt,
-          Giza</v-list-item-subtitle
+          ><v-icon small>mdi-map-marker</v-icon> United Kingdom,
+          London</v-list-item-subtitle
         >
         <v-list-item-subtitle><strong class="green--text">27.88%</strong><span style="font-size:10px;">12 MONTHS RETURN</span></v-list-item-subtitle>
       </v-list-item-content>
