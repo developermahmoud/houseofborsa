@@ -45,7 +45,7 @@
     <v-slide-group class="mb-5" :show-arrows="false">
       <v-slide-item v-for="n in 15" :key="n">
         <v-card tile class="secondary mr-2" width="230" falt outlined>
-          <v-list-item>
+          <v-list-item link to="/user?type=profile">
             <v-list-item-action class="mr-4">
               <v-badge overlap bottom offset-y="19" color="transparent" right>
                 <template v-slot:badge>

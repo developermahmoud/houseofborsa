@@ -17,7 +17,7 @@
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title>
-              Apple
+              AAPL
               <v-icon small @click="showInformationDialog = true"
                 >mdi-information-outline</v-icon
               ></v-list-item-title

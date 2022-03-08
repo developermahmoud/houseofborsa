@@ -14,7 +14,7 @@
             <v-img src="/currency/4.jpg" />
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title>Buy Apple </v-list-item-title>
+            <v-list-item-title>Buy AAPL </v-list-item-title>
             <v-list-item-subtitle>
               <v-icon small>mdi-clock</v-icon>
               <span class="grey--text" style="font-size:12px;'"
@@ -29,46 +29,36 @@
         </v-list-item>
         <v-card-text class="px-2">
           <v-row class="mt-5">
-            <v-col cols="4">
+            <v-col cols="6">
               <v-text-field
                 prefix="$"
                 value="17.26"
+                hide-details
                 dense
                 disabled
+                
                 type="number"
               >
                 <template v-slot:label>
                   <strong class="body-1">Open Price</strong>
                 </template>
               </v-text-field>
+              <span class="caption">2022.01.11 14:18</span>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6">
               <v-text-field
                 type="number"
                 value="1.33"
                 disabled
+                hide-details
                 prefix="$"
                 dense
               >
                 <template v-slot:label>
-                  <strong class="body-1">CURRENT P/L $</strong>
+                  <strong class="body-1">CURRENT P/L</strong>
                 </template>
               </v-text-field>
-            </v-col>
-            <v-col cols="4">
-              <v-text-field
-                id="plPrice"
-                type="number"
-                prefix="%"
-                value="12"
-                disabled
-                style="color: green !important"
-                dense
-              >
-                <template v-slot:label>
-                  <strong class="body-1">P/L (%)</strong>
-                </template>
-              </v-text-field>
+              <span class="caption green--text"> 12%</span>
             </v-col>
           </v-row>
           <div class="mt-5">
@@ -83,11 +73,11 @@
                 <v-list class="py-0 secondary" dense>
                   <v-list-item
                     @click="
-                      wordValue = 'Value';
+                      wordValue = 'Invested';
                       valuePrefix = '$';
                     "
                   >
-                    <v-list-item-title>Value</v-list-item-title>
+                    <v-list-item-title>Invested</v-list-item-title>
                   </v-list-item>
                   <v-list-item
                     @click="
@@ -114,7 +104,7 @@
                   :prefix="valuePrefix"
                   v-model="priceInEuru"
                 ></v-text-field>
-                <div>~0.0268 {{wordValue == 'Value' ?  'size' : '$'}}</div>
+                <div>~0.0268 {{wordValue == 'Invested' ?  'size' : '$'}}</div>
               </div>
               <v-icon @click="autoFocus()">mdi-dialpad</v-icon>
             </div>
@@ -157,7 +147,7 @@
           </div>
           <div class="d-flex align-center">
             <v-switch dense v-model="showDetails"></v-switch
-            ><img style="width: 20px" src="/Terminal.ico" /> HOB Protector
+            ><img style="width: 20px" src="/Terminal.ico" /> HOB Add Protector
           </div>
           <template v-if="showDetails">
             <div
@@ -252,7 +242,7 @@ export default {
   data() {
     return {
       valuePrefix: "$",
-      wordValue: "Value",
+      wordValue: "Invested",
       priceInEuru: 100,
       action: "buy",
       showDetails: false,

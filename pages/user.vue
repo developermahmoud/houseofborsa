@@ -361,6 +361,11 @@ export default {
     UserDialogsTradingPlatform,
     UserDialogsReferrFriend,
   },
+  mounted() {
+    if(this.$route.query.type) {
+      this.showSummary = true
+    }
+  },
   data() {
     return {
       showSummary: false,
