@@ -28,7 +28,12 @@
           ><v-icon small>mdi-map-marker</v-icon> United Kingdom,
           London</v-list-item-subtitle
         >
-        <v-list-item-subtitle><strong class="green--text">27.88%</strong><span style="font-size:10px;">12 MONTHS RETURN</span></v-list-item-subtitle>
+        <v-list-item-subtitle
+          ><strong class="green--text">27.88%</strong
+          ><span style="font-size: 10px"
+            >12 MONTHS RETURN</span
+          ></v-list-item-subtitle
+        >
       </v-list-item-content>
       <v-list-item-action>
         <v-progress-circular
@@ -43,12 +48,27 @@
       </v-list-item-action>
     </v-list-item>
     <div class="d-flex align-center justify-space-between mb-3">
-      <div class="text-center body-2" style="cursor: pointer"  @click="showSummary = !showSummary">
-        <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
-        <span>215</span>
-        <br />
-        <span style="font-size: 12px" class="grey--text">STATS</span>
-      </div>
+      <template v-if="$route.query.type">
+        <div class="text-center body-2" style="cursor: pointer">
+          <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
+          <span>215</span>
+          <br />
+          <span style="font-size: 12px" class="grey--text">STATS</span>
+        </div>
+      </template>
+      <template v-else>
+        <div
+          class="text-center body-2"
+          style="cursor: pointer"
+          @click="showSummary = !showSummary"
+        >
+          <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
+          <span>215</span>
+          <br />
+          <span style="font-size: 12px" class="grey--text">STATS</span>
+        </div>
+      </template>
+
       <div
         class="text-center body-2"
         style="cursor: pointer"
@@ -97,7 +117,9 @@
             >
               <v-icon color="primary">fas fa-user</v-icon>
               <br />
-              <span style="font-size: 14px" class="white--text">My Profile</span>
+              <span style="font-size: 14px" class="white--text"
+                >My Profile</span
+              >
             </v-card>
           </v-col>
           <v-col cols="6" class="text-center">
@@ -108,7 +130,9 @@
             >
               <v-icon color="primary">fas fa-user-clock</v-icon>
               <br />
-              <span style="font-size: 14px" class="white--text">My Accounts</span>
+              <span style="font-size: 14px" class="white--text"
+                >My Accounts</span
+              >
             </v-card>
           </v-col>
           <v-col cols="6" class="text-center">
@@ -119,7 +143,9 @@
             >
               <v-icon color="primary">far fa-credit-card</v-icon>
               <br />
-              <span style="font-size: 14px" class="white--text">My HÖB Card</span>
+              <span style="font-size: 14px" class="white--text"
+                >My HÖB Card</span
+              >
             </v-card>
           </v-col>
           <v-col cols="6" class="text-center">
@@ -143,7 +169,9 @@
             >
               <v-icon color="primary">fas fa-arrow-up</v-icon>
               <br />
-              <span style="font-size: 14px" class="white--text">Withdrawal</span>
+              <span style="font-size: 14px" class="white--text"
+                >Withdrawal</span
+              >
             </v-card>
           </v-col>
           <v-col cols="6" class="text-center">
@@ -362,8 +390,8 @@ export default {
     UserDialogsReferrFriend,
   },
   mounted() {
-    if(this.$route.query.type) {
-      this.showSummary = true
+    if (this.$route.query.type) {
+      this.showSummary = true;
     }
   },
   data() {
@@ -385,7 +413,6 @@ export default {
 </script>
 
 <style scoped>
-
 .avatarDiv {
   width: 60px;
   height: 60px;

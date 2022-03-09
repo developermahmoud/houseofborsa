@@ -22,6 +22,9 @@
                 >mdi-information-outline</v-icon
               ></v-list-item-title
             >
+            <v-list-item-subtitle>
+              Apple inc
+            </v-list-item-subtitle>
             <v-list-item-subtitle
               >
               <v-icon small>mdi-clock</v-icon>
