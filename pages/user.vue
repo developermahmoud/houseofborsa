@@ -48,16 +48,7 @@
       </v-list-item-action>
     </v-list-item>
     <div class="d-flex align-center justify-space-between mb-3">
-      <template v-if="$route.query.type">
-        <div class="text-center body-2" style="cursor: pointer">
-          <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
-          <span>215</span>
-          <br />
-          <span style="font-size: 12px" class="grey--text">STATS</span>
-        </div>
-      </template>
-      <template v-else>
-        <div
+      <div
           class="text-center body-2"
           style="cursor: pointer"
           @click="showSummary = !showSummary"
@@ -67,7 +58,6 @@
           <br />
           <span style="font-size: 12px" class="grey--text">STATS</span>
         </div>
-      </template>
 
       <div
         class="text-center body-2"
