@@ -329,7 +329,9 @@
           <v-list-item-content>
             <v-list-item-title style="cursor: pointer" @click="showClosed"
               >{{ item.name }},
-              <span class="primary--text">buy 500.00</span></v-list-item-title
+              <span class="primary--text">buy 
+                <template v-if="$nuxt.$route.name === 'profile'">1%</template>
+                <template v-else>500.00</template></span></v-list-item-title
             >
             <v-list-item-subtitle
               ><v-icon
@@ -440,11 +442,18 @@
             </template>
             <template v-else>
               <div class="font-weight-bold">
-                <v-chip label small :color="item.color" style="width: 60px"
-                  >${{ item.amount }}</v-chip
+                <v-chip label small :color="item.color"
+                  >
+                  <template v-if="$nuxt.$route.name === 'profile'">
+                    %1
+                  </template>
+                  <template v-else>
+                    ${{ item.amount }}
+                  </template>
+                  </v-chip
                 >
               </div>
-              <div
+              <div v-if="$nuxt.$route.name != 'profile'"
                 :class="`mt-1 ${item.color}--text`"
                 style="font-size: 0.875rem; text-align: left"
               >
@@ -650,6 +659,13 @@ export default {
   },
   provide: {
     [THEME_KEY]: "dark",
+  },
+  watch: {
+    tab(value) {
+      if (value === "closed") {
+        this.calendarDialog = true;
+      }
+    },
   },
   data() {
     return {
