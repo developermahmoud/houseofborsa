@@ -29,10 +29,8 @@
           London</v-list-item-subtitle
         >
         <v-list-item-subtitle
-          ><strong class="green--text">27.88%</strong
-          ><span style="font-size: 10px"
-            >12 MONTHS RETURN</span
-          ></v-list-item-subtitle
+          ><span style="font-size: 12px">Followers equity</span
+          > <span style="font-size: 12px" class="green--text">215.252$</span></v-list-item-subtitle
         >
       </v-list-item-content>
       <v-list-item-action>
@@ -49,11 +47,11 @@
     </v-list-item>
     <div class="d-flex align-center justify-space-between mb-3">
       <div class="text-center body-2" style="cursor: pointer">
-          <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
-          <span>215</span>
-          <br />
-          <span style="font-size: 12px" class="grey--text">STATS</span>
-        </div>
+        <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
+        <span>215</span>
+        <br />
+        <span style="font-size: 12px" class="grey--text">STATS</span>
+      </div>
       <div
         class="text-center body-2"
         style="cursor: pointer"
