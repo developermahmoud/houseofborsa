@@ -33,17 +33,6 @@
           > <span style="font-size: 12px" class="green--text">215.252$</span></v-list-item-subtitle
         >
       </v-list-item-content>
-      <v-list-item-action>
-        <v-progress-circular
-          :rotate="360"
-          :size="50"
-          :width="4"
-          :value="80"
-          color="primary"
-        >
-          80%
-        </v-progress-circular>
-      </v-list-item-action>
     </v-list-item>
     <div class="d-flex align-center justify-space-between mb-3">
       <div class="text-center body-2" style="cursor: pointer">

@@ -10,7 +10,7 @@
       <v-slide-item v-for="n in 15" :key="n">
         <v-card tile class="secondary mr-2" width="200" falt outlined>
           <v-img height="150" src="/news/shutterstock_756585199.webp">
-            <div class="mt-3 ml-3">
+            <div class="mt-3 ml-3" style="cursor: pointer;" @click="$router.push('/profile')">
               <v-avatar size="26">
                 <img src="/avatar.jpg" alt="John" />
               </v-avatar>

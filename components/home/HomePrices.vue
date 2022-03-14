@@ -20,7 +20,7 @@
           <tbody>
             <tr>
               <td>
-                <div class="d-flex">
+                <div class="d-flex" style="cursor: pointer;" @click="$router.push('/profile')">
                   <v-avatar size="20" class="mr-2">
                     <img src="/avatar.jpg" />
                   </v-avatar>

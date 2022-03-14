@@ -7,7 +7,7 @@
       <v-spacer></v-spacer>
       <div class="text-center">
         <div class="primary--text">HÓB</div>
-        <div style="font-size:14px;">digital investment banking</div>
+        <div style="font-size:14px;">HOUSE OF BÖRSE</div>
        
       </div>
       <v-spacer></v-spacer>
