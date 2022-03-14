@@ -1,5 +1,7 @@
 <template>
   <div>
+
+    
     <div class="mb-3 d-flex justify-space-between align-center">
       <h4 class="text-truncate">Community posts & latest news</h4>
       <nuxt-link to="/" class="text-decoration-none" style="font-size: 12px"
