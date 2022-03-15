@@ -290,7 +290,7 @@
         </v-list-item-content>
         <v-list-item-action-text v-if="!item.is_open">
           <template v-if="tab == 'pending'">
-            <v-btn plain>placed</v-btn>
+            <v-btn plain>placed</v-btn> <v-icon icon color="red" @click="items.splice(item, 1)">mdi-delete</v-icon>
           </template>
           <template v-else>
             <div class="font-weight-bold">
