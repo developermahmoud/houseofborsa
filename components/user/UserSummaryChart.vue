@@ -142,8 +142,8 @@
     </div>
     <div v-if="showPortfolio">
        <v-card flat class="background" tile>
-      <v-card-title class="pb-0">
-        <v-btn v-if="$nuxt.$route.name != 'profile'" icon @click="accountsDialog = true">
+      <v-card-title v-if="$nuxt.$route.name != 'profile'" class="pb-0">
+        <v-btn  icon @click="accountsDialog = true">
           <v-icon color="white">mdi-format-align-center</v-icon>
         </v-btn>
         <v-spacer></v-spacer>
@@ -165,11 +165,11 @@
           >
         </div>
         <v-spacer></v-spacer>
-        <v-icon v-if="$nuxt.$route.name != 'profile'" @click="dialogWallet = true">mdi-cards</v-icon>
+        <v-icon @click="dialogWallet = true">mdi-cards</v-icon>
       </v-card-title>
       <v-card-text class="text-center white--text px-0">
-        <div class="py-15 circlePortfolio mx-auto mt-5">
-          <div>
+        <div class="py-16 circlePortfolio mx-auto mt-5">
+          <div v-if="$nuxt.$route.name != 'profile'">
             <div class="d-flex align-center justify-center">
               <v-icon class="" small @click="showMargin = !showMargin"
               >mdi-arrow-expand</v-icon

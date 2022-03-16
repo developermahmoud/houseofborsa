@@ -1,6 +1,65 @@
 <template>
   <div>
-    <v-card class="secondary" flat tile>
+    <v-row>
+      <v-col>
+        <v-card
+          class="secondary"
+          :input-value="active"
+          active-class="primary"
+          @click="toggle"
+        >
+          <h6 class="pa-2 pb-0 mb-0">
+            <v-icon x-small class="mr-1" color="purple"
+              >mdi-checkbox-blank-circle</v-icon
+            >
+            DOW JONES
+          </h6>
+          <div class="pa-2">
+            <h4>33,544,34</h4>
+            <strong class="green--text">+5.82%</strong>
+          </div>
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-card
+          class="secondary"
+          :input-value="active"
+          active-class="primary"
+          @click="toggle"
+        >
+          <h6 class="pa-2 pb-0 mb-0">
+            <v-icon x-small class="mr-1" color="cyan"
+              >mdi-checkbox-blank-circle</v-icon
+            >
+            S&P 500
+          </h6>
+          <div class="pa-2">
+            <h4>42,655,34</h4>
+            <strong class="green--text">+2.14%</strong>
+          </div>
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-card
+          class="secondary"
+          :input-value="active"
+          active-class="primary"
+          @click="toggle"
+        >
+          <h6 class="pa-2 pb-0 mb-0">
+            <v-icon x-small class="mr-1" color="orange"
+              >mdi-checkbox-blank-circle</v-icon
+            >
+            NASDAQ
+          </h6>
+          <div class="pa-2">
+            <h4>12,984,34</h4>
+            <strong class="green--text">+2.92%</strong>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-card class="mt-5 secondary" flat tile>
       <v-card-text class="text-center">
         <v-text-field
           outlined
@@ -114,8 +173,8 @@
                     :src="item.icon"
                     style="width: 18px; height: 18px"
                     class="mr-2"
-                  /><div>{{ item.name }}
-                </div>
+                  />
+                  <div>{{ item.name }}</div>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
                   {{ item.subtitle }}

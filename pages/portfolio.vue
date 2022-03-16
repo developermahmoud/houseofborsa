@@ -8,7 +8,51 @@
         <v-spacer></v-spacer>
         <div>
           <span style="font-size: 20px">
-            <v-tooltip bottom>
+            <v-menu offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn icon small v-bind="attrs" v-on="on">
+                  <v-icon>mdi-chevron-down</v-icon>
+                </v-btn>
+              </template>
+              <v-list class="py-0 secondary" dense>
+                <v-list-item
+                  :class="`${
+                    portfolioMenu === 'Portfolio P/L' ? 'primary' : ''
+                  }`"
+                  @click="
+                    portfolioMenu = 'Portfolio P/L';
+                    portfolioNumber = '9238.31';
+                  "
+                >
+                  <v-list-item-title>Portfolio Balance</v-list-item-title>
+                </v-list-item>
+                <v-divider></v-divider>
+                <v-list-item
+                  :class="`${
+                    portfolioMenu === 'Portfolio Balance' ? 'primary' : ''
+                  }`"
+                  @click="
+                    portfolioMenu = 'Portfolio Balance';
+                    portfolioNumber = '8237.31';
+                  "
+                >
+                  <v-list-item-title>Portfolio Balance</v-list-item-title>
+                </v-list-item>
+                <v-divider></v-divider>
+                <v-list-item
+                  :class="`${
+                    portfolioMenu === 'Portfolio Equity' ? 'primary' : ''
+                  }`"
+                  @click="
+                    portfolioMenu = 'Portfolio Equity';
+                    portfolioNumber = '5134.28';
+                  "
+                >
+                  <v-list-item-title>Portfolio Equity</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+            <!-- <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
                 <v-icon color="green" small v-bind="attrs" v-on="on">
                   mdi-chevron-down-circle
@@ -19,7 +63,7 @@
                 <v-chip label small color="grey">silver</v-chip>
                 <v-chip label small color="green">live</v-chip>
               </div>
-            </v-tooltip>
+            </v-tooltip> -->
             Portfolio P/L($)</span
           >
         </div>
@@ -31,21 +75,24 @@
           <div>
             <div class="d-flex align-center justify-center">
               <v-icon class="" small @click="showMargin = !showMargin"
-              >mdi-arrow-expand</v-icon
+                >mdi-arrow-expand</v-icon
               >
               <div class="mx-1">
                 <span class="text-h6">$</span>
-                <strong style="font-size: 24px" :class="isBlur ? 'blur-text' : ''"
-                >9238.31</strong
+                <strong
+                  style="font-size: 24px"
+                  :class="isBlur ? 'blur-text' : ''"
+                  >{{ portfolioNumber }}</strong
                 >
               </div>
               <v-icon small @click="isBlur = !isBlur">{{
-                  isBlur ? "mdi-eye-off-outline" : "mdi-eye"
-                }}</v-icon>
+                isBlur ? "mdi-eye-off-outline" : "mdi-eye"
+              }}</v-icon>
             </div>
           </div>
-          <div class="text-center mt-3 green--text">
-            <span style="font-size:12px;"> P/L(<span class="">22.1%</span>)</span
+          <div class="text-center green--text">
+            <span style="font-size: 12px">
+              P/L(<span class="">22.1%</span>)</span
             ><v-icon class="pa-0 mb-1" color="green">mdi-arrow-up-thin</v-icon>
           </div>
         </div>
@@ -78,7 +125,10 @@
                 <v-list-item-title>History</v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-menu>  <v-icon size="16" @click="showChart = true">mdi-information-outline</v-icon>
+          </v-menu>
+          <v-icon size="16" @click="showChart = true"
+            >mdi-information-outline</v-icon
+          >
         </div>
       </v-card-text>
     </v-card>
@@ -182,9 +232,9 @@
         v-for="(item, i) in items"
         :key="i"
       >
-      <v-list-item-avatar size="30" class="mr-2">
-        <v-img :src="item.src" />
-      </v-list-item-avatar>
+        <v-list-item-avatar size="30" class="mr-2">
+          <v-img :src="item.src" />
+        </v-list-item-avatar>
         <v-list-item-content>
           <v-list-item-title style="cursor: pointer" @click="showClosed"
             >{{ item.name }},
@@ -290,7 +340,10 @@
         </v-list-item-content>
         <v-list-item-action-text v-if="!item.is_open">
           <template v-if="tab == 'pending'">
-            <v-btn plain>placed</v-btn> <v-icon icon color="red" @click="items.splice(item, 1)">mdi-delete</v-icon>
+            <v-btn plain>placed</v-btn>
+            <v-icon icon color="red" @click="items.splice(item, 1)"
+              >mdi-delete</v-icon
+            >
           </template>
           <template v-else>
             <div class="font-weight-bold">
@@ -367,13 +420,15 @@ export default {
   },
   data() {
     return {
+      portfolioMenu: "Portfolio P/L",
+      portfolioNumber: "9238.31",
       items: [
         {
           name: "Oil",
           color: "green",
           amount: 1555,
           is_open: false,
-          src:"/currency/oil.jpg",
+          src: "/currency/oil.jpg",
         },
         {
           name: "Gold",
@@ -463,7 +518,7 @@ export default {
 
 <style scoped>
 .circlePortfolio {
-  width:200px;
+  width: 200px;
   border-radius: 100%;
   border-style: solid;
   border-width: 4px;
