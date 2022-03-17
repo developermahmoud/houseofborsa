@@ -4,9 +4,7 @@
       <v-col>
         <v-card
           class="secondary"
-          :input-value="active"
           active-class="primary"
-          @click="toggle"
         >
           <h6 class="pa-2 pb-0 mb-0">
             <v-icon x-small class="mr-1" color="purple"
@@ -23,9 +21,7 @@
       <v-col>
         <v-card
           class="secondary"
-          :input-value="active"
           active-class="primary"
-          @click="toggle"
         >
           <h6 class="pa-2 pb-0 mb-0">
             <v-icon x-small class="mr-1" color="cyan"
@@ -42,9 +38,7 @@
       <v-col>
         <v-card
           class="secondary"
-          :input-value="active"
           active-class="primary"
-          @click="toggle"
         >
           <h6 class="pa-2 pb-0 mb-0">
             <v-icon x-small class="mr-1" color="orange"
