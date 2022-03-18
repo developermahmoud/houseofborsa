@@ -186,7 +186,8 @@
             </div>
           </div>
           <div class="text-center mt-3 green--text">
-            <span style="font-size:12px;"> P/L(<span class="">22.1%</span>)</span
+            <h3 v-if="$nuxt.$route.name == 'profile'" class="white--text">Portfolio P/L ( % )</h3>
+            <span style="font-size:15px;"> P/L(<span class="">22.1%</span>)</span
             ><v-icon class="pa-0 mb-1" color="green">mdi-arrow-up-thin</v-icon>
           </div>
         </div>
