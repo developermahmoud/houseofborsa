@@ -17,14 +17,14 @@
               <v-list class="py-0 secondary" dense>
                 <v-list-item
                   :class="`${
-                    portfolioMenu === 'Portfolio P/L' ? 'primary' : ''
+                    portfolioMenu === 'Portfolio P/L($)' ? 'primary' : ''
                   }`"
                   @click="
-                    portfolioMenu = 'Portfolio P/L';
+                    portfolioMenu = 'Portfolio P/L($)';
                     portfolioNumber = '9238.31';
                   "
                 >
-                  <v-list-item-title>Portfolio Balance</v-list-item-title>
+                  <v-list-item-title>Portfolio P/L($)</v-list-item-title>
                 </v-list-item>
                 <v-divider></v-divider>
                 <v-list-item
@@ -64,7 +64,7 @@
                 <v-chip label small color="green">live</v-chip>
               </div>
             </v-tooltip> -->
-            Portfolio P/L($)</span
+            {{ portfolioMenu }}</span
           >
         </div>
         <v-spacer></v-spacer>

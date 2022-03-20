@@ -33,6 +33,9 @@
           > <span style="font-size: 12px" class="green--text">215.252$</span></v-list-item-subtitle
         >
       </v-list-item-content>
+      <v-list-item-action-text>
+        <v-icon>mdi-account-plus</v-icon>
+      </v-list-item-action-text>
     </v-list-item>
     <div class="d-flex align-center justify-space-between mb-3">
       <div class="text-center body-2" style="cursor: pointer">

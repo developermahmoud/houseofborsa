@@ -187,7 +187,7 @@
           </div>
           <div class="text-center mt-3 green--text">
             <h3 v-if="$nuxt.$route.name == 'profile'" class="white--text">Portfolio P/L ( % )</h3>
-            <span style="font-size:15px;"> P/L(<span class="">22.1%</span>)</span
+            <span style="font-size:15px;"> <template v-if="$nuxt.$route.name != 'profile'">P/L</template> (<span class="">22.1%</span>)</span
             ><v-icon class="pa-0 mb-1" color="green">mdi-arrow-up-thin</v-icon>
           </div>
         </div>
@@ -370,17 +370,9 @@
                   </div>
                   <div>
                     T/P:
-                    <br />
-                    Swap:
-                    <br />
-                    Commission:
                   </div>
                   <div>
                     -
-                    <br />
-                    0.00
-                    <br />
-                    -3.50
                   </div>
                 </div>
               </div>
