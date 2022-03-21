@@ -56,7 +56,7 @@
           >
         </div>
         <v-spacer></v-spacer>
-        <v-icon @click="dialog = true">mdi-chart-bar-stacked</v-icon>
+        <v-icon @click="summaryChartDialog = !summaryChartDialog">mdi-chart-bar-stacked</v-icon>
       </v-card-title>
       <v-card-text class="text-center white--text px-0">
         <div class="py-15 circlePortfolio mx-auto mt-5">
@@ -114,8 +114,8 @@
               </v-list-item>
             </v-list>
           </v-menu>
-          <v-icon size="16" @click="showChart = true"
-            >mdi-information-outline</v-icon
+          <v-icon color="primary" size="16" @click="dialog = true"
+            >mdi-wallet-plus</v-icon
           >
         </div>
       </v-card-text>
@@ -214,7 +214,11 @@
         <v-tab-item value="pending"></v-tab-item>
       </v-tabs-items>
     </template>
-    <v-list two-line class="mx-2 transparent">
+    <template v-if="summaryChartDialog">
+      <user-summary-chart-portfolio class="pa-3" />
+    </template>
+    <template v-else>
+      <v-list two-line class="mx-2 transparent">
       <v-list-item
         class="secondary rounded mb-3 pl-2"
         v-for="(item, i) in items"
@@ -350,6 +354,8 @@
         </v-list-item-action-text>
       </v-list-item>
     </v-list>
+    </template>
+    
     <invest-closed
       v-if="showClosedDialog"
       :dialog="showClosedDialog"
@@ -389,6 +395,7 @@ import PortfolioDialogsAccounts from "../components/portfolio/dialogs/PortfolioD
 import PortfolioDialogsWallet from "../components/portfolio/dialogs/PortfolioDialogsWallet.vue";
 import PortfolioDialogsCalendar from "../components/portfolio/dialogs/PortfolioDialogsCalendar.vue";
 import PortfolioDialogsChart from "../components/portfolio/dialogs/PortfolioDialogsChart.vue";
+import UserSummaryChartPortfolio from '../components/user/UserSummaryChartPortfolio.vue';
 
 export default {
   layout: "internal",
@@ -398,6 +405,7 @@ export default {
     PortfolioDialogsWallet,
     PortfolioDialogsCalendar,
     PortfolioDialogsChart,
+    UserSummaryChartPortfolio,
   },
   watch: {
     tab(value) {
@@ -408,6 +416,7 @@ export default {
   },
   data() {
     return {
+      summaryChartDialog: false,
       portfolioMenu: "Portfolio P/L($)",
       portfolioNumber: "9238.31",
       items: [

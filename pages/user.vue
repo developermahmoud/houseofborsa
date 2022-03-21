@@ -61,10 +61,10 @@
           style="cursor: pointer"
           @click="showSummary = !showSummary"
         >
-          <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
+          <v-icon color="primary" small>mdi-account-group</v-icon>
           <span>215</span>
           <br />
-          <span style="font-size: 12px" class="grey--text">STATS</span>
+          <span style="font-size: 12px" class="grey--text">REFER FRIEND</span>
         </div>
 
       
