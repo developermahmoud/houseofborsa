@@ -7,7 +7,7 @@
         </v-btn>
         <v-spacer></v-spacer>
         <div>
-          <span style="font-size: 20px">
+          <span style="font-size: 18px">
             <v-menu offset-y>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn icon small v-bind="attrs" v-on="on">
@@ -29,46 +29,34 @@
                 <v-divider></v-divider>
                 <v-list-item
                   :class="`${
-                    portfolioMenu === 'Portfolio Balance' ? 'primary' : ''
+                    portfolioMenu === 'Portfolio Balance($)' ? 'primary' : ''
                   }`"
                   @click="
-                    portfolioMenu = 'Portfolio Balance';
+                    portfolioMenu = 'Portfolio Balance($)';
                     portfolioNumber = '8237.31';
                   "
                 >
-                  <v-list-item-title>Portfolio Balance</v-list-item-title>
+                  <v-list-item-title>Portfolio Balance($)</v-list-item-title>
                 </v-list-item>
                 <v-divider></v-divider>
                 <v-list-item
                   :class="`${
-                    portfolioMenu === 'Portfolio Equity' ? 'primary' : ''
+                    portfolioMenu === 'Portfolio Equity($)' ? 'primary' : ''
                   }`"
                   @click="
-                    portfolioMenu = 'Portfolio Equity';
+                    portfolioMenu = 'Portfolio Equity($)';
                     portfolioNumber = '5134.28';
                   "
                 >
-                  <v-list-item-title>Portfolio Equity</v-list-item-title>
+                  <v-list-item-title>Portfolio Equity($)</v-list-item-title>
                 </v-list-item>
               </v-list>
             </v-menu>
-            <!-- <v-tooltip bottom>
-              <template v-slot:activator="{ on, attrs }">
-                <v-icon color="green" small v-bind="attrs" v-on="on">
-                  mdi-chevron-down-circle
-                </v-icon>
-              </template>
-              <div>
-                <v-chip label small color="black">6091858</v-chip>
-                <v-chip label small color="grey">silver</v-chip>
-                <v-chip label small color="green">live</v-chip>
-              </div>
-            </v-tooltip> -->
             {{ portfolioMenu }}</span
           >
         </div>
         <v-spacer></v-spacer>
-        <v-icon @click="dialog = true">mdi-cards</v-icon>
+        <v-icon @click="dialog = true">mdi-chart-bar-stacked</v-icon>
       </v-card-title>
       <v-card-text class="text-center white--text px-0">
         <div class="py-15 circlePortfolio mx-auto mt-5">
@@ -420,7 +408,7 @@ export default {
   },
   data() {
     return {
-      portfolioMenu: "Portfolio P/L",
+      portfolioMenu: "Portfolio P/L($)",
       portfolioNumber: "9238.31",
       items: [
         {
