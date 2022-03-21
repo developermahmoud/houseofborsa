@@ -3,9 +3,6 @@
     <div class="summaryCard rounded-lg mb-5">
       <div class="d-flex justify-space-between align-center mb-2">
         <h4>Performance | last 12 Month</h4>
-        <v-btn icon @click="showPortfolio = !showPortfolio">
-          <v-icon color="black">mdi-chart-pie</v-icon>
-        </v-btn>
       </div>
       <div class="d-flex justify-space-between mb-2">
         <div class="black rounded-lg px-2 py-4 text-center" style="width: 100%">

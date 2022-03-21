@@ -59,7 +59,7 @@
       <div
           class="text-center body-2"
           style="cursor: pointer"
-          @click="showSummary = !showSummary"
+          @click="referrDialog = true"
         >
           <v-icon color="primary" small>mdi-account-group</v-icon>
           <span>215</span>

@@ -56,7 +56,7 @@
           >
         </div>
         <v-spacer></v-spacer>
-        <v-icon @click="summaryChartDialog = !summaryChartDialog">mdi-chart-bar-stacked</v-icon>
+        <v-icon @click="summaryChartDialog = !summaryChartDialog" v-text="`${ summaryChartDialog ? 'mdi-chart-pie':'mdi-chart-bar-stacked'}`"></v-icon>
       </v-card-title>
       <v-card-text class="text-center white--text px-0">
         <div class="py-15 circlePortfolio mx-auto mt-5">
