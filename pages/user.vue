@@ -316,11 +316,11 @@
           :dialog="marketDataSubscribeDialog"
           @close-dialog="marketDataSubscribeDialog = false"
         />
-        <user-dialogs-my-account
+        <!-- <user-dialogs-my-account
           v-if="myAccountsDialog"
           :dialog="myAccountsDialog"
           @close-dialog="myAccountsDialog = false"
-        />
+        /> -->
         <user-dialogs-account-history
           v-if="myAccountsHistoryDialog"
           :dialog="myAccountsHistoryDialog"
@@ -353,10 +353,16 @@
       :dialog="referrDialog"
       @close-dialog="referrDialog = false"
     />
+    <portfolio-dialogs-accounts
+      v-if="myAccountsDialog"
+      :dialog="myAccountsDialog"
+      @close-dialog="myAccountsDialog = false"
+    />
   </div>
 </template>
 
 <script>
+import PortfolioDialogsAccounts from '../components/portfolio/dialogs/PortfolioDialogsAccounts.vue';
 import UserDialogFollowing from "../components/user/dialogs/UserDialogFollowing.vue";
 import UserDialogsAccountHistory from "../components/user/dialogs/UserDialogsAccountHistory.vue";
 import UserDialogsHOBCard from "../components/user/dialogs/UserDialogsHOBCard.vue";
@@ -377,6 +383,7 @@ export default {
     UserIdias,
     UserDialogsTradingPlatform,
     UserDialogsReferrFriend,
+    PortfolioDialogsAccounts,
   },
   mounted() {
     if (this.$route.query.type) {
