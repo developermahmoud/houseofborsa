@@ -18,7 +18,7 @@
             <v-list-item-subtitle>
               <v-chip-group v-model="typeChip" active-class="green" mandatory>
                 <v-chip value="cfd" outlined x-small>CFD</v-chip>
-                <v-chip value="real" outlined x-small>Equiti</v-chip>
+                <v-chip value="real" outlined x-small>Equity</v-chip>
               </v-chip-group>
             </v-list-item-subtitle>
             <v-list-item-subtitle>
