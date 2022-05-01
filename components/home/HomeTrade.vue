@@ -28,7 +28,7 @@
         </v-list-item>
       </v-col>
       <v-col cols="12" class="mt-2">
-        <v-list-item class="secondary rounded">
+        <v-list-item link to="https://www.houseofborse.com/hob-card" class="secondary rounded">
           <v-list-item-avatar tile width="50">
             <img src="/hobcard.jpg" />
           </v-list-item-avatar>

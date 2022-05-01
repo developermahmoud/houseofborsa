@@ -1,10 +1,35 @@
 <template>
-  <div class="mb-2 secondary rounded pt-3">
+  <div class="mb-2  rounded pt-3">
     <v-row no-gutters>
+      <v-col
+        class="text-center mb-6"
+        cols="3"
+        v-for="(service, i) in services"
+        :key="i"
+      >
+        <nuxt-link :to="service.to" class="text-decoration-none">
+          <template v-if="service.icon === 'fa-trophy'">
+            <v-badge left offset-x="10" offset-y="10" color="red" content="HOT!">
+              <v-icon size="20" color="primary" v-text="service.icon"></v-icon>
+            </v-badge>
+          </template>
+          <v-icon
+            v-else
+            size="20"
+            color="primary"
+            v-text="service.icon"
+          ></v-icon>
+          <br />
+          <span style="font-size: 11px" class="white--text">{{
+            service.text
+          }}</span>
+        </nuxt-link>
+      </v-col>
+
       <v-col
         class="text-center mb-3"
         cols="3"
-        v-for="(service, i) in services"
+        v-for="(service, i) in services2"
         :key="i"
       >
         <nuxt-link :to="service.to" class="text-decoration-none">
@@ -54,6 +79,8 @@ export default {
           text: "About us",
           to: "/services/about-us",
         },
+      ],
+      services2: [
         {
           icon: "fa-graduation-cap",
           text: "HÓB Academy",
