@@ -24,12 +24,12 @@
                 :rotate="360"
                 :size="50"
                 :width="4"
-                :value="100"
+                :value="90"
                 color="primary"
               >
-                100
+                90%
               </v-progress-circular>
-              <h5 class="white--text mt-3">Forex</h5>
+              <h5 class="white--text mt-3">Stocks</h5>
             </v-card-text>
           </v-card>
         </v-col>
@@ -43,9 +43,9 @@
                 :value="100"
                 color="primary"
               >
-                100
+                100%
               </v-progress-circular>
-              <h5 class="white--text mt-3">Commodities</h5>
+              <h5 class="white--text mt-3">ETFs</h5>
             </v-card-text>
           </v-card>
         </v-col>
@@ -56,10 +56,10 @@
                 :rotate="360"
                 :size="50"
                 :width="4"
-                :value="100"
+                :value="60"
                 color="primary"
               >
-                100
+                60%
               </v-progress-circular>
               <h5 class="white--text mt-3">Indices</h5>
             </v-card-text>
@@ -72,12 +72,12 @@
                 :rotate="360"
                 :size="50"
                 :width="4"
-                :value="92"
+                :value="100"
                 color="primary"
               >
-                92
+                100%
               </v-progress-circular>
-              <h5 class="white--text mt-3">Cryptocurrency</h5>
+              <h5 class="white--text mt-3">Forex</h5>
             </v-card-text>
           </v-card>
         </v-col>
@@ -88,22 +88,28 @@
                 :rotate="360"
                 :size="50"
                 :width="4"
-                :value="100"
+                :value="15"
                 color="primary"
               >
-                100
+                15%
               </v-progress-circular>
-              <h5 class="white--text mt-3">U.S.</h5>
+              <h5 class="white--text mt-3">Cryptos</h5>
             </v-card-text>
           </v-card>
         </v-col>
         <v-col cols="4" class="pb-0 pt-2">
           <v-card flat class="secondary text-center">
             <v-card-text>
-              <v-avatar class="background">
-                <v-icon>mdi-brightness-2</v-icon>
-              </v-avatar>
-              <h5 class="white--text mt-3">Europe</h5>
+              <v-progress-circular
+                :rotate="360"
+                :size="50"
+                :width="4"
+                :value="100"
+                color="primary"
+              >
+                100%
+              </v-progress-circular>
+              <h5 class="white--text mt-3">GOLD & Oil</h5>
             </v-card-text>
           </v-card>
         </v-col>
@@ -151,7 +157,7 @@ import HomePrices from "../components/home/HomePrices.vue";
 import HomeServices from "../components/home/HomeServices.vue";
 import HomeSlider from "../components/home/HomeSlider.vue";
 import HomeTrade from "../components/home/HomeTrade.vue";
-import BottomLinks from '../components/partials/BottomLinks.vue';
+import BottomLinks from "../components/partials/BottomLinks.vue";
 export default {
   components: {
     HomeSlider,

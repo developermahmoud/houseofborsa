@@ -168,7 +168,7 @@
                     style="width: 18px; height: 18px"
                     class="mr-2"
                   />
-                  <div>{{ item.name }}</div>
+                  <div>{{ item.name }} <span class="primary--text caption">{{ item.percentage }}</span></div>
                 </div>
                 <div class="grey--text" style="font-size: 12px; width: 140px">
                   {{ item.subtitle }}
@@ -226,6 +226,7 @@ export default {
           subtitle: "Bitcoin vs US Dollar ",
           color: "red",
           change: "0.5%",
+          percentage: "10X"
         },
         {
           icon: "/currency/usdc.svg",
@@ -233,6 +234,7 @@ export default {
           subtitle: "Gold vs US Dollar ",
           color: "green",
           change: "10.5%",
+          percentage: "8X"
         },
         {
           icon: "/currency/3.png",
@@ -240,6 +242,7 @@ export default {
           subtitle: "Solana Token vs US Dollar ",
           color: "red",
           change: "0.5%",
+          percentage: "10X"
         },
         {
           icon: "/currency/4.jpg",
@@ -247,6 +250,7 @@ export default {
           subtitle: "Apple inc.",
           color: "green",
           change: "10.5%",
+          percentage: "10X"
         },
         {
           icon: "/currency/4.png",
@@ -254,6 +258,7 @@ export default {
           subtitle: "Euro vs US Dollar",
           color: "red",
           change: "0.5%",
+          percentage: "9X"
         },
         {
           icon: "/currency/eth.svg",
@@ -261,6 +266,7 @@ export default {
           subtitle: "Ethereum vs US Dollar",
           color: "green",
           change: "10.5%",
+          percentage: "10X"
         },
         {
           icon: "/opengraph.png",
@@ -268,6 +274,7 @@ export default {
           subtitle: "AMZN vs US Dollar",
           color: "green",
           change: "10.5%",
+          percentage: "7X"
         },
         {
           icon: "/currency/oil.jpg",
@@ -275,6 +282,7 @@ export default {
           subtitle: "Oil vs US Dollar",
           color: "red",
           change: "0.5%",
+          percentage: "10X"
         },
         {
           icon: "/currency/gold.jpeg",
@@ -282,6 +290,7 @@ export default {
           subtitle: "Gold vs US Dollar",
           color: "red",
           change: "0.5%",
+          percentage: "5X"
         },
         {
           icon: "/currency/silver.jpg",
@@ -289,6 +298,7 @@ export default {
           subtitle: "Silver vs US Dollar",
           color: "green",
           change: "10.5%",
+          percentage: "10X"
         },
         {
           icon: "/currency/fb.png",
@@ -296,6 +306,7 @@ export default {
           subtitle: "FB vs US Dollar",
           color: "red",
           change: "0.5%",
+          percentage: "10X"
         },
         {
           icon: "/currency/TWTR.png",
@@ -303,6 +314,7 @@ export default {
           subtitle: "TWTR vs US Dollar",
           color: "green",
           change: "10.5%",
+          percentage: "10X"
         },
         {
           icon: "/currency/tesla--600.png",
@@ -310,6 +322,7 @@ export default {
           subtitle: "TSLA vs US Dollar",
           color: "green",
           change: "10.5%",
+          percentage: "12X"
         },
         {
           icon: "/currency/symbol-Ripple.jpg",
@@ -317,6 +330,7 @@ export default {
           subtitle: "Ripple XRP  vs US Dollar",
           color: "red",
           change: "0.5%",
+          percentage: "5X"
         },
         {
           icon: "/currency/150x150.png",
@@ -324,6 +338,7 @@ export default {
           subtitle: "SPY. ETF vs US Dollar",
           color: "green",
           change: "10.5%",
+          percentage: "10X"
         },
       ],
     };

@@ -56,7 +56,12 @@
           >
         </div>
         <v-spacer></v-spacer>
-        <v-icon @click="summaryChartDialog = !summaryChartDialog" v-text="`${ summaryChartDialog ? 'mdi-chart-pie':'mdi-chart-bar-stacked'}`"></v-icon>
+        <v-icon
+          @click="summaryChartDialog = !summaryChartDialog"
+          v-text="
+            `${summaryChartDialog ? 'mdi-chart-pie' : 'mdi-chart-bar-stacked'}`
+          "
+        ></v-icon>
       </v-card-title>
       <v-card-text class="text-center white--text px-0">
         <div class="py-15 circlePortfolio mx-auto mt-5">
@@ -218,144 +223,301 @@
       <user-summary-chart-portfolio class="pa-3" />
     </template>
     <template v-else>
-      <v-list two-line class="mx-2 transparent">
-      <v-list-item
-        class="secondary rounded mb-3 pl-2"
+      <div
+        class="secondary rounded mb-3 pa-2"
         v-for="(item, i) in items"
         :key="i"
       >
-        <v-list-item-avatar size="30" class="mr-2">
-          <v-img :src="item.src" />
-        </v-list-item-avatar>
-        <v-list-item-content>
-          <v-list-item-title style="cursor: pointer" @click="showClosed"
-            >{{ item.name }},
-            <span class="primary--text">buy 500.00</span></v-list-item-title
-          >
-          <v-list-item-subtitle
-            ><v-icon class="ml-1" small @click="item.is_open = !item.is_open">{{
-              item.is_open ? "mdi-chevron-up" : "mdi-chevron-down"
-            }}</v-icon>
-            30.94
-            <v-icon>mdi-arrow-right-thin</v-icon>
-            30.15</v-list-item-subtitle
-          >
-          <template v-if="item.is_open">
-            <div v-if="tab == 'closed'">
-              2022.01.11 14:18
-              <div
-                class="d-flex justify-space-between grey--text"
-                style="font-size: 11px"
-              >
-                <div>
-                  S/L:
-                  <br />
-                  Open
-                  <br />
-                  ID
-                </div>
-                <div>
-                  -
-                  <br />
-                  2021.10.26 16:46:11
-                  <br />
-                  #84158208
-                </div>
-                <div>
-                  T/P:
-                  <br />
-                  Swap:
-                  <br />
-                  Commission:
-                </div>
-                <div>
-                  -
-                  <br />
-                  0.00
-                  <br />
-                  -3.50
-                </div>
-              </div>
+        <div class="d-flex justify-space-between align-center">
+          <div>
+            <div style="cursor: pointer" @click="showClosed">
+              <v-avatar size="30" class="mr-2">
+                <v-img :src="item.src" />
+              </v-avatar>
+              {{ item.name }},
+              <span class="primary--text">buy 500.00</span>
             </div>
-            <div v-else-if="tab == 'pending'">
-              2022.01.11 14:18
-              <div class="d-flex justify-space-between my-1 mt-3">
-                <div style="width: 50px">S/L:</div>
-                <div style="width: 50px" class="text-center">--</div>
-                <div style="width: 50px">Price</div>
-                <div>0.24000</div>
-              </div>
-              <v-divider></v-divider>
-              <div class="d-flex aling-center justify-space-between my-1">
-                <div style="width: 50px">T/P:</div>
-                <div style="width: 50px" class="text-center">--</div>
-                <div style="width: 50px"></div>
-                <div>#47984</div>
-              </div>
+            <div class="ml-9">
+              <v-icon
+                class="ml-1"
+                small
+                @click="item.is_open = !item.is_open"
+                >{{
+                  item.is_open ? "mdi-chevron-up" : "mdi-chevron-down"
+                }}</v-icon
+              >
+              30.94
+              <v-icon>mdi-arrow-right-thin</v-icon>
+              30.15
             </div>
-            <div v-else>
-              2022.01.11 14:18
-              <div class="d-flex justify-space-between my-1 mt-3">
-                <div>S/L:</div>
-                <div v-if="tab == 'pending'">T/P:</div>
-                <div v-if="tab != 'pending'">Swap</div>
-                <div v-if="tab != 'pending'">0.24$</div>
-              </div>
-              <v-divider></v-divider>
-              <div
-                class="d-flex justify-space-between my-1"
-                v-if="['closed'].includes(tab)"
-              >
-                <div>T/P:</div>
-                <div v-if="tab != 'pending'">Commission</div>
-                <div v-if="tab != 'pending'">-0.00$</div>
-              </div>
-              <v-divider></v-divider>
-              <div
-                v-if="tab == 'open'"
-                class="d-flex justify-space-between my-1"
-              >
-                <div>T/P:</div>
-                <div>-</div>
-                <div>ID: 47984555</div>
-              </div>
-              <div
-                v-if="tab == 'pending'"
-                class="d-flex justify-space-between my-1"
-              >
-                <div>ID:</div>
-                <div>-</div>
-                <div>#47984555</div>
-              </div>
-            </div>
-          </template>
-        </v-list-item-content>
-        <v-list-item-action-text v-if="!item.is_open">
-          <template v-if="tab == 'pending'">
-            <v-btn plain>placed</v-btn>
-            <v-icon icon color="red" @click="items.splice(item, 1)"
-              >mdi-delete</v-icon
+          </div>
+          <div style="width: 100px" class="hidden-sm-and-down">
+            <v-sparkline
+              :fill="true"
+              :gradient="selectedGradient"
+              :line-width="2"
+              :padding="8"
+              :smooth="10"
+              :value="[0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0]"
+              auto-draw
+            ></v-sparkline>
+          </div>
+
+          <div>
+            <template v-if="!item.is_open">
+              <template v-if="tab == 'pending'">
+                <v-btn plain>placed</v-btn>
+                <v-icon icon color="red" @click="items.splice(item, 1)"
+                  >mdi-delete</v-icon
+                >
+              </template>
+              <template v-else>
+                <div class="font-weight-bold">
+                  <v-chip label small :color="item.color" style="width: 60px"
+                    >${{ item.amount }}</v-chip
+                  >
+                </div>
+                <div
+                  :class="`mt-1 ${item.color}--text`"
+                  style="font-size: 0.875rem; text-align: left"
+                >
+                  <template v-if="item.color == 'red'">-0.92%</template>
+                  <template v-else>+1.92%</template>
+                </div>
+              </template>
+            </template>
+          </div>
+        </div>
+        <div class="ml-9" v-if="item.is_open">
+          <div v-if="tab == 'closed'">
+            2022.01.11 14:18
+            <div
+              class="d-flex justify-space-between grey--text"
+              style="font-size: 11px"
             >
-          </template>
-          <template v-else>
-            <div class="font-weight-bold">
-              <v-chip label small :color="item.color" style="width: 60px"
-                >${{ item.amount }}</v-chip
-              >
+              <div>
+                S/L:
+                <br />
+                Open
+                <br />
+                ID
+              </div>
+              <div>
+                -
+                <br />
+                2021.10.26 16:46:11
+                <br />
+                #84158208
+              </div>
+              <div>
+                T/P:
+                <br />
+                Swap:
+                <br />
+                Commission:
+              </div>
+              <div>
+                -
+                <br />
+                0.00
+                <br />
+                -3.50
+              </div>
+            </div>
+          </div>
+          <div v-else-if="tab == 'pending'">
+            2022.01.11 14:18
+            <div class="d-flex justify-space-between my-1 mt-3">
+              <div style="width: 50px">S/L:</div>
+              <div style="width: 50px" class="text-center">--</div>
+              <div style="width: 50px">Price</div>
+              <div>0.24000</div>
+            </div>
+            <v-divider></v-divider>
+            <div class="d-flex aling-center justify-space-between my-1">
+              <div style="width: 50px">T/P:</div>
+              <div style="width: 50px" class="text-center">--</div>
+              <div style="width: 50px"></div>
+              <div>#47984</div>
+            </div>
+          </div>
+          <div v-else>
+            2022.01.11 14:18
+            <div class="d-flex justify-space-between my-1 mt-3">
+              <div>S/L:</div>
+              <div v-if="tab == 'pending'">T/P:</div>
+              <div v-if="tab != 'pending'">Swap</div>
+              <div v-if="tab != 'pending'">0.24$</div>
+            </div>
+            <v-divider></v-divider>
+            <div
+              class="d-flex justify-space-between my-1"
+              v-if="['closed'].includes(tab)"
+            >
+              <div>T/P:</div>
+              <div v-if="tab != 'pending'">Commission</div>
+              <div v-if="tab != 'pending'">-0.00$</div>
+            </div>
+            <v-divider></v-divider>
+            <div v-if="tab == 'open'" class="d-flex justify-space-between my-1">
+              <div>T/P:</div>
+              <div>-</div>
+              <div>ID: 47984555</div>
             </div>
             <div
-              :class="`mt-1 ${item.color}--text`"
-              style="font-size: 0.875rem; text-align: left"
+              v-if="tab == 'pending'"
+              class="d-flex justify-space-between my-1"
             >
-              <template v-if="item.color == 'red'">-0.92%</template>
-              <template v-else>+1.92%</template>
+              <div>ID:</div>
+              <div>-</div>
+              <div>#47984555</div>
             </div>
-          </template>
-        </v-list-item-action-text>
-      </v-list-item>
-    </v-list>
+          </div>
+        </div>
+      </div>
+      <!-- <v-list two-line class="mx-2 transparent">
+        <v-list-item
+          class="secondary rounded mb-3 pl-2"
+          v-for="(item, i) in items"
+          :key="i"
+        >
+          <v-list-item-avatar size="30" class="mr-2">
+            <v-img :src="item.src" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title style="cursor: pointer" @click="showClosed"
+              >{{ item.name }},
+              <span class="primary--text">buy 500.00</span></v-list-item-title
+            >
+            <v-list-item-subtitle
+              ><v-icon
+                class="ml-1"
+                small
+                @click="item.is_open = !item.is_open"
+                >{{
+                  item.is_open ? "mdi-chevron-up" : "mdi-chevron-down"
+                }}</v-icon
+              >
+              30.94
+              <v-icon>mdi-arrow-right-thin</v-icon>
+              30.15</v-list-item-subtitle
+            >
+            <template v-if="item.is_open">
+              <div v-if="tab == 'closed'">
+                2022.01.11 14:18
+                <div
+                  class="d-flex justify-space-between grey--text"
+                  style="font-size: 11px"
+                >
+                  <div>
+                    S/L:
+                    <br />
+                    Open
+                    <br />
+                    ID
+                  </div>
+                  <div>
+                    -
+                    <br />
+                    2021.10.26 16:46:11
+                    <br />
+                    #84158208
+                  </div>
+                  <div>
+                    T/P:
+                    <br />
+                    Swap:
+                    <br />
+                    Commission:
+                  </div>
+                  <div>
+                    -
+                    <br />
+                    0.00
+                    <br />
+                    -3.50
+                  </div>
+                </div>
+              </div>
+              <div v-else-if="tab == 'pending'">
+                2022.01.11 14:18
+                <div class="d-flex justify-space-between my-1 mt-3">
+                  <div style="width: 50px">S/L:</div>
+                  <div style="width: 50px" class="text-center">--</div>
+                  <div style="width: 50px">Price</div>
+                  <div>0.24000</div>
+                </div>
+                <v-divider></v-divider>
+                <div class="d-flex aling-center justify-space-between my-1">
+                  <div style="width: 50px">T/P:</div>
+                  <div style="width: 50px" class="text-center">--</div>
+                  <div style="width: 50px"></div>
+                  <div>#47984</div>
+                </div>
+              </div>
+              <div v-else>
+                2022.01.11 14:18
+                <div class="d-flex justify-space-between my-1 mt-3">
+                  <div>S/L:</div>
+                  <div v-if="tab == 'pending'">T/P:</div>
+                  <div v-if="tab != 'pending'">Swap</div>
+                  <div v-if="tab != 'pending'">0.24$</div>
+                </div>
+                <v-divider></v-divider>
+                <div
+                  class="d-flex justify-space-between my-1"
+                  v-if="['closed'].includes(tab)"
+                >
+                  <div>T/P:</div>
+                  <div v-if="tab != 'pending'">Commission</div>
+                  <div v-if="tab != 'pending'">-0.00$</div>
+                </div>
+                <v-divider></v-divider>
+                <div
+                  v-if="tab == 'open'"
+                  class="d-flex justify-space-between my-1"
+                >
+                  <div>T/P:</div>
+                  <div>-</div>
+                  <div>ID: 47984555</div>
+                </div>
+                <div
+                  v-if="tab == 'pending'"
+                  class="d-flex justify-space-between my-1"
+                >
+                  <div>ID:</div>
+                  <div>-</div>
+                  <div>#47984555</div>
+                </div>
+              </div>
+            </template>
+          </v-list-item-content>
+          <v-list-item-action-text v-if="!item.is_open">
+            <template v-if="tab == 'pending'">
+              <v-btn plain>placed</v-btn>
+              <v-icon icon color="red" @click="items.splice(item, 1)"
+                >mdi-delete</v-icon
+              >
+            </template>
+            <template v-else>
+              <div class="font-weight-bold">
+                <v-chip label small :color="item.color" style="width: 60px"
+                  >${{ item.amount }}</v-chip
+                >
+              </div>
+              <div
+                :class="`mt-1 ${item.color}--text`"
+                style="font-size: 0.875rem; text-align: left"
+              >
+                <template v-if="item.color == 'red'">-0.92%</template>
+                <template v-else>+1.92%</template>
+              </div>
+            </template>
+          </v-list-item-action-text>
+        </v-list-item>
+      </v-list> -->
     </template>
-    
+
     <invest-closed
       v-if="showClosedDialog"
       :dialog="showClosedDialog"
@@ -395,8 +557,15 @@ import PortfolioDialogsAccounts from "../components/portfolio/dialogs/PortfolioD
 import PortfolioDialogsWallet from "../components/portfolio/dialogs/PortfolioDialogsWallet.vue";
 import PortfolioDialogsCalendar from "../components/portfolio/dialogs/PortfolioDialogsCalendar.vue";
 import PortfolioDialogsChart from "../components/portfolio/dialogs/PortfolioDialogsChart.vue";
-import UserSummaryChartPortfolio from '../components/user/UserSummaryChartPortfolio.vue';
-
+import UserSummaryChartPortfolio from "../components/user/UserSummaryChartPortfolio.vue";
+const gradients = [
+  ["#222"],
+  ["#42b3f4"],
+  ["red", "orange", "yellow"],
+  ["purple", "violet"],
+  ["#00c6ff", "#F0F", "#FF0"],
+  ["#f72047", "#ffd200", "#1feaea"],
+];
 export default {
   layout: "internal",
   components: {
@@ -501,6 +670,7 @@ export default {
       calendarDialog: false,
       dialog: false,
       accountsDialog: false,
+      selectedGradient: gradients[2],
     };
   },
   methods: {
