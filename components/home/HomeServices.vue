@@ -61,12 +61,12 @@ export default {
       services: [
         {
           icon: "fa-user-circle",
-          text: "Trading\nAccounts",
+          text: "Accounts",
           to: "/tradings/accounts",
         },
         {
           icon: "fa-search-dollar",
-          text: "Trading\nProducts",
+          text: "Products",
           to: "/tradings/products",
         },
         {

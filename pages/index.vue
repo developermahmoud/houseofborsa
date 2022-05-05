@@ -14,7 +14,7 @@
     </div>
     <home-services />
     <home-trade class="mb-3" />
-    <h3 class="mb-2">Vitality index</h3>
+    <h3 class="mb-2">Financial Markets</h3>
     <div class="mb-6">
       <v-row>
         <v-col cols="4" class="pb-0">

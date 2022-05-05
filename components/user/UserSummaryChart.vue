@@ -141,183 +141,196 @@
       </v-row>
     </div>
     <div v-if="showPortfolio">
-       <v-card flat class="background" tile>
-      <v-card-title v-if="$nuxt.$route.name != 'profile'" class="pb-0">
-        <v-btn  icon @click="accountsDialog = true">
-          <v-icon color="white">mdi-format-align-center</v-icon>
-        </v-btn>
-        <v-spacer></v-spacer>
-        <div>
-          <span style="font-size: 20px">
-            <v-tooltip bottom>
-              <template v-slot:activator="{ on, attrs }">
-                <v-icon color="green" small v-bind="attrs" v-on="on">
-                  mdi-chevron-down-circle
-                </v-icon>
-              </template>
-              <div>
-                <v-chip label small color="black">6091858</v-chip>
-                <v-chip label small color="grey">silver</v-chip>
-                <v-chip label small color="green">live</v-chip>
-              </div>
-            </v-tooltip>
-            Portfolio P/L($)</span
-          >
-        </div>
-        <v-spacer></v-spacer>
-        <v-icon @click="dialogWallet = true">mdi-cards</v-icon>
-      </v-card-title>
-      <v-card-text class="text-center white--text px-0">
-        <div class="py-16 circlePortfolio mx-auto mt-5">
-          <div v-if="$nuxt.$route.name != 'profile'">
-            <div class="d-flex align-center justify-center">
-              <v-icon class="" small @click="showMargin = !showMargin"
-              >mdi-arrow-expand</v-icon
-              >
-              <div class="mx-1">
-                <span class="text-h6">$</span>
-                <strong style="font-size: 24px" :class="isBlur ? 'blur-text' : ''"
-                >9238.31</strong
+      <v-card flat class="background" tile>
+        <v-card-title v-if="$nuxt.$route.name != 'profile'" class="pb-0">
+          <v-btn icon @click="accountsDialog = true">
+            <v-icon color="white">mdi-format-align-center</v-icon>
+          </v-btn>
+          <v-spacer></v-spacer>
+          <div>
+            <span style="font-size: 20px">
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-icon color="green" small v-bind="attrs" v-on="on">
+                    mdi-chevron-down-circle
+                  </v-icon>
+                </template>
+                <div>
+                  <v-chip label small color="black">6091858</v-chip>
+                  <v-chip label small color="grey">silver</v-chip>
+                  <v-chip label small color="green">live</v-chip>
+                </div>
+              </v-tooltip>
+              Portfolio P/L($)</span
+            >
+          </div>
+          <v-spacer></v-spacer>
+          <v-icon @click="dialogWallet = true">mdi-cards</v-icon>
+        </v-card-title>
+        <v-card-text class="text-center white--text px-0">
+          <div class="py-16 circlePortfolio mx-auto mt-5">
+            <div v-if="$nuxt.$route.name != 'profile'">
+              <div class="d-flex align-center justify-center">
+                <v-icon class="" small @click="showMargin = !showMargin"
+                  >mdi-arrow-expand</v-icon
                 >
-              </div>
-              <v-icon small @click="isBlur = !isBlur">{{
+                <div class="mx-1">
+                  <span class="text-h6">$</span>
+                  <strong
+                    style="font-size: 24px"
+                    :class="isBlur ? 'blur-text' : ''"
+                    >9238.31</strong
+                  >
+                </div>
+                <v-icon small @click="isBlur = !isBlur">{{
                   isBlur ? "mdi-eye-off-outline" : "mdi-eye"
                 }}</v-icon>
+              </div>
+            </div>
+            <div class="text-center mt-3 green--text">
+              <h3 v-if="$nuxt.$route.name == 'profile'" class="white--text">
+                Portfolio P/L ( % )
+              </h3>
+              <span style="font-size: 15px">
+                <template v-if="$nuxt.$route.name != 'profile'">P/L</template>
+                (<span class="">22.1%</span>)</span
+              ><v-icon class="pa-0 mb-1" color="green"
+                >mdi-arrow-up-thin</v-icon
+              >
+              <div>
+                <v-icon size="16" @click="showChart = true"
+                  >mdi-information-outline</v-icon
+                >
+              </div>
             </div>
           </div>
-          <div class="text-center mt-3 green--text">
-            <h3 v-if="$nuxt.$route.name == 'profile'" class="white--text">Portfolio P/L ( % )</h3>
-            <span style="font-size:15px;"> <template v-if="$nuxt.$route.name != 'profile'">P/L</template> (<span class="">22.1%</span>)</span
-            ><v-icon class="pa-0 mb-1" color="green">mdi-arrow-up-thin</v-icon>
+          <div class="text-center mt-5">
+            <v-menu offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn small plain text v-bind="attrs" v-on="on">
+                  <v-icon>mdi-chevron-down</v-icon> {{ tab }} Order
+                </v-btn>
+              </template>
+              <v-list class="py-0 secondary" dense>
+                <v-list-item
+                  :class="`${tab === 'open' ? 'primary' : ''}`"
+                  @click="tab = 'open'"
+                >
+                  <v-list-item-title>Open</v-list-item-title>
+                </v-list-item>
+                <v-divider></v-divider>
+                <v-list-item
+                  :class="`${tab === 'pending' ? 'primary' : ''}`"
+                  @click="tab = 'pending'"
+                >
+                  <v-list-item-title>Pending</v-list-item-title>
+                </v-list-item>
+                <v-divider></v-divider>
+                <v-list-item
+                  :class="`${tab === 'closed' ? 'primary' : ''}`"
+                  @click="tab = 'closed'"
+                >
+                  <v-list-item-title>History</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
           </div>
-        </div>
-        <div class="text-center mt-5">
-          <v-menu offset-y>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn small plain text v-bind="attrs" v-on="on">
-                <v-icon>mdi-chevron-down</v-icon> {{ tab }} Order
-              </v-btn>
-            </template>
-            <v-list class="py-0 secondary" dense>
-              <v-list-item
-                :class="`${tab === 'open' ? 'primary' : ''}`"
-                @click="tab = 'open'"
-              >
-                <v-list-item-title>Open</v-list-item-title>
+        </v-card-text>
+      </v-card>
+      <template v-if="showMargin">
+        <v-tabs-items v-model="tab" class="transparent mt-3">
+          <v-tab-item value="open">
+            <v-list class="pa-0 transparent mb-2">
+              <v-list-item style="min-height: 30px">
+                <v-list-item-title>Portfolio Balance</v-list-item-title>
+                <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                  >$00.00</v-list-item-action-text
+                >
               </v-list-item>
-              <v-divider></v-divider>
-              <v-list-item
-                :class="`${tab === 'pending' ? 'primary' : ''}`"
-                @click="tab = 'pending'"
-              >
-                <v-list-item-title>Pending</v-list-item-title>
+              <v-list-item style="min-height: 30px">
+                <v-list-item-title>Portfolio Equity</v-list-item-title>
+                <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                  >$00.00</v-list-item-action-text
+                >
               </v-list-item>
-              <v-divider></v-divider>
-              <v-list-item
-                :class="`${tab === 'closed' ? 'primary' : ''}`"
-                @click="tab = 'closed'"
-              >
-                <v-list-item-title>History</v-list-item-title>
+              <v-list-item style="min-height: 30px">
+                <v-list-item-title>invested Value</v-list-item-title>
+                <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                  >$00.00</v-list-item-action-text
+                >
+              </v-list-item>
+              <v-list-item style="min-height: 30px">
+                <v-list-item-title>Available cash</v-list-item-title>
+                <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                  >$00.00</v-list-item-action-text
+                >
+              </v-list-item>
+              <v-list-item style="min-height: 30px">
+                <v-list-item-title
+                  >Margin Level(%):
+                  <v-icon @click="marginInfoDialog = true" small
+                    >mdi-information-outline</v-icon
+                  ></v-list-item-title
+                >
+                <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                  >$00.00</v-list-item-action-text
+                >
               </v-list-item>
             </v-list>
-          </v-menu>  <v-icon size="16" @click="showChart = true">mdi-information-outline</v-icon>
-        </div>
-      </v-card-text>
-    </v-card>
-    <template v-if="showMargin">
-      <v-tabs-items v-model="tab" class="transparent mt-3">
-        <v-tab-item value="open">
-          <v-list class="pa-0 transparent mb-2">
+          </v-tab-item>
+          <v-tab-item value="closed">
             <v-list-item style="min-height: 30px">
-              <v-list-item-title>Portfolio Balance</v-list-item-title>
+              <v-list-item-title>Total Profits</v-list-item-title>
               <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
                 >$00.00</v-list-item-action-text
               >
             </v-list-item>
             <v-list-item style="min-height: 30px">
-              <v-list-item-title>Portfolio Equity</v-list-item-title>
+              <v-list-item-title>Returns(%)</v-list-item-title>
               <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
                 >$00.00</v-list-item-action-text
               >
             </v-list-item>
             <v-list-item style="min-height: 30px">
-              <v-list-item-title>invested Value</v-list-item-title>
+              <v-list-item-title>commission</v-list-item-title>
               <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
                 >$00.00</v-list-item-action-text
               >
             </v-list-item>
             <v-list-item style="min-height: 30px">
-              <v-list-item-title>Available cash</v-list-item-title>
+              <v-list-item-title>Dividends</v-list-item-title>
               <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
                 >$00.00</v-list-item-action-text
               >
             </v-list-item>
             <v-list-item style="min-height: 30px">
-              <v-list-item-title
-                >Margin Level(%):
-                <v-icon @click="marginInfoDialog = true" small
-                  >mdi-information-outline</v-icon
-                ></v-list-item-title
-              >
+              <v-list-item-title>Fees</v-list-item-title>
               <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
                 >$00.00</v-list-item-action-text
               >
             </v-list-item>
-          </v-list>
-        </v-tab-item>
-        <v-tab-item value="closed">
-          <v-list-item style="min-height: 30px">
-            <v-list-item-title>Total Profits</v-list-item-title>
-            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-              >$00.00</v-list-item-action-text
-            >
-          </v-list-item>
-          <v-list-item style="min-height: 30px">
-            <v-list-item-title>Returns(%)</v-list-item-title>
-            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-              >$00.00</v-list-item-action-text
-            >
-          </v-list-item>
-          <v-list-item style="min-height: 30px">
-            <v-list-item-title>commission</v-list-item-title>
-            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-              >$00.00</v-list-item-action-text
-            >
-          </v-list-item>
-          <v-list-item style="min-height: 30px">
-            <v-list-item-title>Dividends</v-list-item-title>
-            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-              >$00.00</v-list-item-action-text
-            >
-          </v-list-item>
-          <v-list-item style="min-height: 30px">
-            <v-list-item-title>Fees</v-list-item-title>
-            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-              >$00.00</v-list-item-action-text
-            >
-          </v-list-item>
-          <v-list-item style="min-height: 30px">
-            <v-list-item-title>Taxes</v-list-item-title>
-            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-              >$00.00</v-list-item-action-text
-            >
-          </v-list-item>
-          <v-list-item style="min-height: 30px">
-            <v-list-item-title>Swap</v-list-item-title>
-            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-              >$00.00</v-list-item-action-text
-            >
-          </v-list-item>
-          <v-list-item style="min-height: 30px">
-            <v-list-item-title>Net Balance</v-list-item-title>
-            <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
-              >$00.00</v-list-item-action-text
-            >
-          </v-list-item>
-        </v-tab-item>
-        <v-tab-item value="pending"></v-tab-item>
-      </v-tabs-items>
-    </template>
+            <v-list-item style="min-height: 30px">
+              <v-list-item-title>Taxes</v-list-item-title>
+              <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                >$00.00</v-list-item-action-text
+              >
+            </v-list-item>
+            <v-list-item style="min-height: 30px">
+              <v-list-item-title>Swap</v-list-item-title>
+              <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                >$00.00</v-list-item-action-text
+              >
+            </v-list-item>
+            <v-list-item style="min-height: 30px">
+              <v-list-item-title>Net Balance</v-list-item-title>
+              <v-list-item-action-text :class="isBlur ? 'blur-text' : ''"
+                >$00.00</v-list-item-action-text
+              >
+            </v-list-item>
+          </v-tab-item>
+          <v-tab-item value="pending"></v-tab-item>
+        </v-tabs-items>
+      </template>
       <v-list two-line class="mx-2 transparent">
         <v-list-item
           class="secondary rounded mb-3 pl-2"
@@ -330,9 +343,11 @@
           <v-list-item-content>
             <v-list-item-title style="cursor: pointer" @click="showClosed"
               >{{ item.name }},
-              <span class="primary--text">buy 
+              <span class="primary--text"
+                >buy
                 <template v-if="$nuxt.$route.name === 'profile'">1%</template>
-                <template v-else>500.00</template></span></v-list-item-title
+                <template v-else>500.00</template></span
+              ></v-list-item-title
             >
             <v-list-item-subtitle
               ><v-icon
@@ -368,12 +383,8 @@
                     <br />
                     #84158208
                   </div>
-                  <div>
-                    T/P:
-                  </div>
-                  <div>
-                    -
-                  </div>
+                  <div>T/P:</div>
+                  <div>-</div>
                 </div>
               </div>
               <div v-else-if="tab == 'pending'">
@@ -435,18 +446,15 @@
             </template>
             <template v-else>
               <div class="font-weight-bold">
-                <v-chip label small :color="item.color"
-                  >
+                <v-chip label small :color="item.color">
                   <template v-if="$nuxt.$route.name === 'profile'">
                     %1
                   </template>
-                  <template v-else>
-                    ${{ item.amount }}
-                  </template>
-                  </v-chip
-                >
+                  <template v-else> ${{ item.amount }} </template>
+                </v-chip>
               </div>
-              <div v-if="$nuxt.$route.name != 'profile'"
+              <div
+                v-if="$nuxt.$route.name != 'profile'"
                 :class="`mt-1 ${item.color}--text`"
                 style="font-size: 0.875rem; text-align: left"
               >
@@ -783,8 +791,8 @@ export default {
     };
   },
   mounted() {
-    if(this.$nuxt.$route.name === 'profile') {
-      this.showPortfolio = true
+    if (this.$nuxt.$route.name === "profile") {
+      this.showPortfolio = true;
     }
   },
   methods: {
@@ -808,7 +816,7 @@ export default {
   background-image: linear-gradient(to right, red, yellow);
 }
 .circlePortfolio {
-  width:200px;
+  width: 230px;
   border-radius: 100%;
   border-style: solid;
   border-width: 4px;
