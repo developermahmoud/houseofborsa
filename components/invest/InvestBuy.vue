@@ -107,11 +107,11 @@
                   :prefix="valuePrefix"
                   v-model="priceInEuru"
                 ></v-text-field>
-                <div>~0.0268 {{wordValue == 'Value' ?  'size' : '$'}}</div>
+                <div>~0.0268 {{ wordValue == "Value" ? "size" : "$" }}</div>
               </div>
               <v-icon @click="autoFocus()">mdi-dialpad</v-icon>
             </div>
-            <v-slider max="250" min="-0" hide-details v-model="priceInEuru">
+            <v-slider max="250" min="-0" hide-details thumb-label v-model="priceInEuru">
             </v-slider>
           </div>
           <v-text-field
@@ -157,40 +157,44 @@
             </div>
             <div class="d-flex justify-space-between align-center mt-3">
               <div style="width: 48%">
+                <div>
+                  <strong class="red--text body-1">Stop Loss</strong>
+                  <v-icon @click="sheetStopLoss = true" small color="grey"
+                    >mdi-information-outline</v-icon
+                  >
+                </div>
                 <v-text-field
                   type="number"
                   dense
+                  v-model="stopLossValue"
                   hide-details
-                  :prefix="otherChange == 'amount' ?'$':''"
-                  :value="otherChange == 'amount' ? '-8.63' : '0.00'"
+                  :prefix="otherChange == 'amount' ? '$' : ''"
+                  @click="dialogStopLoss = true;stopLossValueSheet=0"
                 >
-                  <template v-slot:label>
-                    <strong class="red--text body-1">Stop Loss</strong>
-                  </template>
                 </v-text-field>
+                <div>
+                  {{ stopLossValue == 0 ? 0 : (stopLossValue * 0.1).toFixed(2) }}
+                </div>
               </div>
               <div style="width: 48%">
+                <div>
+                  <strong class="green--text body-1">Take Profit</strong>
+                  <v-icon small color="grey" @click="sheetTakeProfit = true"
+                    >mdi-information-outline</v-icon
+                  >
+                </div>
                 <v-text-field
                   type="number"
+                  v-model="takeProfitValue"
+                  @click="dialogTakeProfit = true;takeProfitValueSheet=0"
                   dense
                   hide-details
-                  :prefix="otherChange == 'amount' ?'$':''"
-                  :value="otherChange == 'amount' ? '8.63' : '0.00'"
+                  :prefix="otherChange == 'amount' ? '$' : ''"
                 >
-                  <template v-slot:label>
-                    <strong class="green--text body-1">Take Profit</strong>
-                  </template>
                 </v-text-field>
-              </div>
-            </div>
-            <div class="d-flex justify-space-between align-center">
-              <div>
-                <template v-if="otherChange == 'amount'">181.27</template>
-                <template v-else>$ 8.63</template>
-              </div>
-              <div>
-                <template v-if="otherChange == 'amount'">164.01</template>
-                <template v-else>$ -8.63</template>
+                <div>
+                  {{ takeProfitValue == 0 ? 0 : (takeProfitValue * 0.1).toFixed(2) }}
+                </div>
               </div>
             </div>
           </template>
@@ -227,6 +231,118 @@
         </div>
       </v-card>
     </v-dialog>
+    <v-bottom-sheet v-model="sheetStopLoss">
+      <div class="secondary pa-3">
+        <h3>Stop Loss</h3>
+        <p>
+          When the price reaches "Stop loss" you have set, the position will be
+          automatically closed to limit the loss to a smaller range.
+        </p>
+      </div>
+    </v-bottom-sheet>
+    <v-bottom-sheet v-model="sheetTakeProfit">
+      <div class="secondary pa-3">
+        <h3>Take Profit</h3>
+        <p>
+          When the price reaches "Take profit" you have set, the position will
+          be automatically closed to gain profits.
+        </p>
+      </div>
+    </v-bottom-sheet>
+    <v-bottom-sheet v-model="dialogStopLoss">
+      <v-card class="secondary">
+        <v-card-title>Stop Loss</v-card-title>
+        <v-card-title>
+          <v-spacer></v-spacer>
+          <span></span>
+        </v-card-title>
+        <v-card-text>
+          <div class="d-flex justify-space-between align-center">
+            <div></div>
+            <div class="grey--text">Price {{ stopLossValueSheet }}</div>
+            <div class="grey--text">
+              Pipe {{ stopLossValueSheet == 0 ? 0 : (stopLossValueSheet * 0.1).toFixed(2) }}
+            </div>
+          </div>
+          <v-slider
+            v-model="stopLossValueSheet"
+            track-color="grey"
+            always-dirty
+            min="0"
+            hide-details
+            max="218"
+          >
+            <template v-slot:prepend>
+              <v-icon @click="--stopLossValueSheet"> mdi-minus </v-icon>
+            </template>
+            <template v-slot:append>
+              <v-icon @click="++stopLossValueSheet"> mdi-plus </v-icon>
+            </template>
+          </v-slider>
+        </v-card-text>
+        <v-card-actions>
+          <v-btn text width="50%" @click="dialogStopLoss = false">Cancel</v-btn>
+          <v-spacer></v-spacer>
+          <v-btn
+            text
+            class="primary"
+            width="50%"
+            @click="
+              stopLossValue = stopLossValueSheet;
+              dialogStopLoss = false;
+            "
+            >Confirm</v-btn
+          >
+        </v-card-actions>
+      </v-card>
+    </v-bottom-sheet>
+    <v-bottom-sheet v-model="dialogTakeProfit">
+      <v-card class="secondary">
+        <v-card-title>Take Profit</v-card-title>
+        <v-card-title>
+          <v-spacer></v-spacer>
+          <span></span>
+        </v-card-title>
+        <v-card-text>
+          <div class="d-flex justify-space-between align-center">
+            <div></div>
+            <div class="grey--text">Price {{ takeProfitValueSheet }}</div>
+            <div class="grey--text">
+              Pipe {{ takeProfitValueSheet == 0 ? 0 : (takeProfitValueSheet * 0.1).toFixed(2) }}
+            </div>
+          </div>
+          <v-slider
+            v-model="takeProfitValueSheet"
+            track-color="grey"
+            always-dirty
+            min="0"
+            hide-details
+            max="218"
+          >
+            <template v-slot:prepend>
+              <v-icon @click="--takeProfitValueSheet"> mdi-minus </v-icon>
+            </template>
+            <template v-slot:append>
+              <v-icon @click="++takeProfitValueSheet"> mdi-plus </v-icon>
+            </template>
+          </v-slider>
+        </v-card-text>
+        <v-card-actions>
+          <v-btn text width="50%" @click="dialogTakeProfit = false">Cancel</v-btn>
+          <v-spacer></v-spacer>
+          <v-btn
+            text
+            class="primary"
+            width="50%"
+            @click="
+              takeProfitValue = takeProfitValueSheet;
+              dialogTakeProfit = false;
+            "
+            >Confirm</v-btn
+          >
+        </v-card-actions>
+      </v-card>
+    </v-bottom-sheet>
   </div>
 </template>
 
@@ -244,6 +360,14 @@ export default {
   },
   data() {
     return {
+      stopLossValue: 0,
+      takeProfitValue: 0,
+      stopLossValueSheet: 0,
+      takeProfitValueSheet: 0,
+      sheetStopLoss: false,
+      sheetTakeProfit: false,
+      dialogStopLoss: false,
+      dialogTakeProfit: false,
       valuePrefix: "$",
       wordValue: "Value",
       priceInEuru: 100,
@@ -267,5 +391,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
