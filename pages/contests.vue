@@ -78,7 +78,7 @@
           <tr v-for="i in 10" :key="i">
             <td>{{ i }}</td>
             <td>
-              <div style="width: 150px">
+              <div style="cursor: pointer;width: 150px;" @click="$router.push('/profile')">
                 <v-avatar size="30" class="mr-2">
                   <v-img src="/avatar.jpg"></v-img>
                 </v-avatar>

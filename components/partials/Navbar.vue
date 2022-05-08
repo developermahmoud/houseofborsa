@@ -7,7 +7,10 @@
       <v-spacer></v-spacer>
       <div class="text-center">
         <div class="primary--text">HÓB</div>
-        <div style="font-size:14px;">HOUSE OF BÖRSE</div>
+        <div style="font-size:14px;">
+        <template v-if=" $nuxt.$route.path === '/user'">$9238.31</template>
+        <template v-else>HOUSE OF BÖRSE</template>
+        </div>
        
       </div>
       <v-spacer></v-spacer>
