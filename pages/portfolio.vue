@@ -88,6 +88,11 @@
               P/L(<span class="">22.1%</span>)</span
             ><v-icon class="pa-0 mb-1" color="green">mdi-arrow-up-thin</v-icon>
           </div>
+          <div>
+            <v-icon size="16" @click="showChart = true"
+              >mdi-information-outline</v-icon
+            >
+          </div>
         </div>
         <div class="text-center mt-5">
           <v-menu offset-y>
@@ -685,7 +690,7 @@ export default {
 
 <style scoped>
 .circlePortfolio {
-  width: 200px;
+   width: 230px;
   border-radius: 100%;
   border-style: solid;
   border-width: 4px;

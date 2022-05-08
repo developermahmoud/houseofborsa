@@ -75,7 +75,8 @@
           <strong class="white--text">50</strong>
         </div>
       </div>
-      <v-row v-if="!showPortfolio" no-gutters>
+      
+      <!-- <v-row v-if="!showPortfolio" no-gutters>
         <v-col cols="12" md="6" sm="12">
           <v-chart
             style="width: 95%"
@@ -138,7 +139,15 @@
             </v-list-item>
           </v-list>
         </v-col>
-      </v-row>
+      </v-row> -->
+    </div>
+     <div class="mb-5" v-if="!showPortfolio">
+      <h4>Investing</h4>
+      <h3>$25,143,55</h3>
+      <div>
+        <span class="green--text"><v-icon color="green" small>mdi-arrow-top-right</v-icon> $1,215.51(4.88%) </span> <span>Past Week</span>
+      </div>
+      <v-img src="/WhatsApp Image 2022-05-08 at 5.05.21 AM.jpeg"></v-img>
     </div>
     <div v-if="showPortfolio">
       <v-card flat class="background" tile>
