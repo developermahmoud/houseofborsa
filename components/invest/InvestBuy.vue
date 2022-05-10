@@ -112,7 +112,7 @@
               <v-icon @click="autoFocus()">mdi-dialpad</v-icon>
             </div>
             <v-slider
-            thumb-color="transparent"
+              thumb-color="transparent"
               max="100"
               min="0"
               hide-details
@@ -348,12 +348,15 @@
           </div>
           <v-slider
             v-model="takeProfitValueSheet"
-            track-color="grey"
-            always-dirty
+            thumb-label="always"
+            thumb-color="transparent"
             min="0"
             hide-details
             max="218"
           >
+            <template v-slot:thumb-label="{ value }">
+              {{ value + " USD" }}
+            </template>
             <template v-slot:prepend>
               <v-icon @click="--takeProfitValueSheet"> mdi-minus </v-icon>
             </template>
