@@ -14,6 +14,33 @@
     </div>
     <home-services />
     <home-trade class="mb-3" />
+    <v-img src="/cover-img-xs.jpg" height="320" class="mb-3">
+      <div class="py-10">
+        <h2 class="text-center primary--text">
+          MULTI-ASSET GLOBAL INVESTMENT BOUTIQUE
+        </h2>
+        <h2 class="ml-3">Invest And Trade up .</h2>
+        <h2 class="ml-3">Switch to HOB Now.</h2>
+        <v-list-item>
+          <v-list-item-avatar tile>
+            <v-img src="/live.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>Open</v-list-item-title>
+            <v-list-item-subtitle>Live Account</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-avatar tile>
+            <v-img src="/demo.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>Open</v-list-item-title>
+            <v-list-item-subtitle>Demo Account</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+      </div>
+    </v-img>
     <h3 class="mb-2">Financial Markets</h3>
     <div class="caption">LICENSED AND REGULATED by the FCA UK</div>
     <h3 class="primary--text">
@@ -159,15 +186,12 @@
       </v-col>
     </v-row>
     <v-img width="100%" src="/platform.png" />
-    <h3 class="text-center my-3">WHY HOUSE OF BORSE?</h3>
-    <p class="body-2 text-center">
-      WE PROVIDE PROFESSIONAL AND CORPORATE CLIENTS THE OPPORTUNITY TO TRADE
-      WITH TIER 1 BANKS AND INSTITUTIONS ON TIGHT SPREADS, WITH ULTRA FAST
-      EXECUTION AND AT INCREDIBLY LOW-COST. WE OFFER A BROAD RANGE OF
-      INSTRUMENTS, INCLUDING FX, INDICES, COMMODITIES AND EQUITIES. BEING
-      REGULATED IN THE UK BY THE FCA ENSURES WE MEET THE HIGHEST STANDARDS OF
-      CONSUMER PROTECTION AND CUSTOMER SERVICE. OUR GOAL IS TO PERESERVE OUR
-      CLIENTS’ INTEREST AT ALL TIMES.
+    <h3 class="text-center my-3 primary--text">
+      WHY TRADE WITH HOUSE OF BORSE ?
+    </h3>
+    <p class="body-2 text-center text-uppercase">
+      We’re a trusted MULTI-ASSET GLOBAL INVESTMENT BOUTIQUE with competitive
+      pricing
     </p>
     <v-row class="mb-4">
       <v-col cols="12" sm="12" md="4">
