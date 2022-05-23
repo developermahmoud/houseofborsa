@@ -117,6 +117,8 @@
     </div>
     <home-charts class="mb-3" />
     <h3 class="mb-3">HÓB platforms</h3>
+    <p>Invest  And Trade on the world’s most popular platform
+MT5 Or HOB App trading offering 5000+ US stocks, Cryptocurrencies, Forex, commodities, and metals ,on ANY device, 24/5 customer support & real-time market news</p>
     <v-row class="mb-1">
       <v-col class="text-center">
         <v-icon size="20">fab fa-windows</v-icon>
