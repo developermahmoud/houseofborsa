@@ -15,6 +15,12 @@
     <home-services />
     <home-trade class="mb-3" />
     <h3 class="mb-2">Financial Markets</h3>
+    <p>
+      LICENSED AND REGULATED by the FCA UK (Invest weth Multi-Asset global
+      Investment Boutique) One investment account for trading US shares ,ETFs
+      ,forex, cryptos, indices, & commodity CFDs globally. Easily open accounts
+      to from any device with tight spreads and low-to-zero commission.
+    </p>
     <div class="mb-6">
       <v-row>
         <v-col cols="4" class="pb-0">
@@ -117,8 +123,11 @@
     </div>
     <home-charts class="mb-3" />
     <h3 class="mb-3">HÓB platforms</h3>
-    <p>Invest  And Trade on the world’s most popular platform
-MT5 Or HOB App trading offering 5000+ US stocks, Cryptocurrencies, Forex, commodities, and metals ,on ANY device, 24/5 customer support & real-time market news</p>
+    <p>
+      Invest And Trade on the world’s most popular platform MT5 Or HOB App
+      trading offering 5000+ US stocks, Cryptocurrencies, Forex, commodities,
+      and metals ,on ANY device, 24/5 customer support & real-time market news
+    </p>
     <v-row class="mb-1">
       <v-col class="text-center">
         <v-icon size="20">fab fa-windows</v-icon>
