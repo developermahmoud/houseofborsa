@@ -13,34 +13,8 @@
       <v-icon>mdi-format-list-bulleted</v-icon>
     </div>
     <home-services />
+
     <home-trade class="mb-3" />
-    <v-img src="/cover-img-xs.jpg" height="320" class="mb-3">
-      <div class="py-10">
-        <h2 class="text-center primary--text">
-          MULTI-ASSET GLOBAL INVESTMENT BOUTIQUE
-        </h2>
-        <h2 class="ml-3">Invest And Trade up .</h2>
-        <h2 class="ml-3">Switch to HOB Now.</h2>
-        <v-list-item>
-          <v-list-item-avatar tile>
-            <v-img src="/live.png" />
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title>Open</v-list-item-title>
-            <v-list-item-subtitle>Live Account</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-avatar tile>
-            <v-img src="/demo.png" />
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title>Open</v-list-item-title>
-            <v-list-item-subtitle>Demo Account</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-      </div>
-    </v-img>
     <h3 class="mb-2">Financial Markets</h3>
     <div class="caption">LICENSED AND REGULATED by the FCA UK</div>
     <h3 class="primary--text">
@@ -151,41 +125,6 @@
         </v-col>
       </v-row>
     </div>
-    <home-charts class="mb-3" />
-    <h3 class="mb-3">HÓB platforms</h3>
-    <p>
-      Invest And Trade on the world’s most popular platform MT5 Or HOB App
-      trading offering 5000+ US stocks, Cryptocurrencies, Forex, commodities,
-      and metals ,on ANY device, 24/5 customer support & real-time market news
-    </p>
-    <v-row class="mb-1">
-      <v-col class="text-center">
-        <v-icon size="20">fab fa-windows</v-icon>
-        <br />
-        <span style="font-size: 9px">Widnows</span>
-      </v-col>
-      <v-col class="text-center">
-        <v-icon size="20">mdi-desktop-mac</v-icon>
-        <br />
-        <span style="font-size: 9px">Mac</span>
-      </v-col>
-      <v-col class="text-center">
-        <v-icon size="20">mdi-web</v-icon>
-        <br />
-        <span style="font-size: 9px">Web</span>
-      </v-col>
-      <v-col class="text-center">
-        <v-icon size="20">mdi-apple</v-icon>
-        <br />
-        <span style="font-size: 9px">IOS</span>
-      </v-col>
-      <v-col class="text-center">
-        <v-icon size="20">mdi-android</v-icon>
-        <br />
-        <span style="font-size: 9px">Android</span>
-      </v-col>
-    </v-row>
-    <v-img width="100%" src="/platform.png" />
     <h3 class="text-center my-3 primary--text">
       WHY TRADE WITH HOUSE OF BORSE ?
     </h3>
@@ -278,6 +217,68 @@
         </v-list-item>
       </v-col>
     </v-row>
+    <home-charts class="mb-3" />
+    <h3 class="mb-3">HÓB platforms</h3>
+    <p>
+      Invest And Trade on the world’s most popular platform MT5 Or HOB App
+      trading offering 5000+ US stocks, Cryptocurrencies, Forex, commodities,
+      and metals ,on ANY device, 24/5 customer support & real-time market news
+    </p>
+    <v-row class="mb-1">
+      <v-col class="text-center">
+        <v-icon size="20">fab fa-windows</v-icon>
+        <br />
+        <span style="font-size: 9px">Widnows</span>
+      </v-col>
+      <v-col class="text-center">
+        <v-icon size="20">mdi-desktop-mac</v-icon>
+        <br />
+        <span style="font-size: 9px">Mac</span>
+      </v-col>
+      <v-col class="text-center">
+        <v-icon size="20">mdi-web</v-icon>
+        <br />
+        <span style="font-size: 9px">Web</span>
+      </v-col>
+      <v-col class="text-center">
+        <v-icon size="20">mdi-apple</v-icon>
+        <br />
+        <span style="font-size: 9px">IOS</span>
+      </v-col>
+      <v-col class="text-center">
+        <v-icon size="20">mdi-android</v-icon>
+        <br />
+        <span style="font-size: 9px">Android</span>
+      </v-col>
+    </v-row>
+    <v-img width="100%" src="/platform.png" />
+    <v-img src="/cover-img-xs.jpg" height="320" class="mb-3">
+      <div class="py-10">
+        <h2 class="text-center primary--text">
+          MULTI-ASSET GLOBAL INVESTMENT BOUTIQUE
+        </h2>
+        <h2 class="ml-3">Invest And Trade up .</h2>
+        <h2 class="ml-3">Switch to HOB Now.</h2>
+        <v-list-item>
+          <v-list-item-avatar tile>
+            <v-img src="/live.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>Open</v-list-item-title>
+            <v-list-item-subtitle>Live Account</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-avatar tile>
+            <v-img src="/demo.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>Open</v-list-item-title>
+            <v-list-item-subtitle>Demo Account</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+      </div>
+    </v-img>
     <home-news class="mb-3" />
     <home-prices />
     <bottom-links class="mt-5" />
