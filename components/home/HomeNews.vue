@@ -1,7 +1,5 @@
 <template>
   <div>
-
-    
     <div class="mb-3 d-flex justify-space-between align-center">
       <h4 class="text-truncate">Community posts & latest news</h4>
       <nuxt-link to="/" class="text-decoration-none" style="font-size: 12px"
@@ -35,7 +33,7 @@
         </v-card>
       </v-slide-item>
     </v-slide-group>
-    <div class="mb-3 my-5 d-flex justify-space-between align-center">
+    <!-- <div class="mb-3 my-5 d-flex justify-space-between align-center">
       <h4 class="text-truncate">Traders Ranking | Top</h4>
       <nuxt-link
         to="/traders-ranking"
@@ -94,7 +92,7 @@
           </v-card-text>
         </v-card>
       </v-slide-item>
-    </v-slide-group>
+    </v-slide-group> -->
     <!-- <div class="my-3 d-flex justify-space-between align-center">
       <h4>Traders Ranking | Top</h4>
       <nuxt-link to="/" class="text-decoration-none" style="font-size: 12px"

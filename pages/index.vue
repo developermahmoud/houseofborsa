@@ -15,11 +15,14 @@
     <home-services />
     <home-trade class="mb-3" />
     <h3 class="mb-2">Financial Markets</h3>
-    <p>
-      LICENSED AND REGULATED by the FCA UK (Invest weth Multi-Asset global
-      Investment Boutique) One investment account for trading US shares ,ETFs
-      ,forex, cryptos, indices, & commodity CFDs globally. Easily open accounts
-      to from any device with tight spreads and low-to-zero commission.
+    <div class="caption">LICENSED AND REGULATED by the FCA UK</div>
+    <h3 class="primary--text">
+      Invest weth Multi-Asset global Investment Boutique
+    </h3>
+    <p class="body-2">
+      One investment account for trading US shares ,ETFs ,forex, cryptos,
+      indices, & commodity CFDs globally. Easily open accounts to from any
+      device with tight spreads and low-to-zero commission.
     </p>
     <div class="mb-6">
       <v-row>
@@ -156,6 +159,101 @@
       </v-col>
     </v-row>
     <v-img width="100%" src="/platform.png" />
+    <h3 class="text-center my-3">WHY HOUSE OF BORSE?</h3>
+    <p class="body-2 text-center">
+      WE PROVIDE PROFESSIONAL AND CORPORATE CLIENTS THE OPPORTUNITY TO TRADE
+      WITH TIER 1 BANKS AND INSTITUTIONS ON TIGHT SPREADS, WITH ULTRA FAST
+      EXECUTION AND AT INCREDIBLY LOW-COST. WE OFFER A BROAD RANGE OF
+      INSTRUMENTS, INCLUDING FX, INDICES, COMMODITIES AND EQUITIES. BEING
+      REGULATED IN THE UK BY THE FCA ENSURES WE MEET THE HIGHEST STANDARDS OF
+      CONSUMER PROTECTION AND CUSTOMER SERVICE. OUR GOAL IS TO PERESERVE OUR
+      CLIENTS’ INTEREST AT ALL TIMES.
+    </p>
+    <v-row class="mb-4">
+      <v-col cols="12" sm="12" md="4">
+        <v-list-item>
+          <v-list-item-avatar tile>
+            <img src="/why/2.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title> Ultra-Low Spreads</v-list-item-title>
+            <v-list-item-subtitle
+              >Competitive Market Spreads.</v-list-item-subtitle
+            >
+          </v-list-item-content>
+        </v-list-item>
+      </v-col>
+      <v-col cols="12" sm="12" md="4">
+        <v-list-item>
+          <v-list-item-avatar tile>
+            <img src="/why/3.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title> Aggregator Of Tier-1 Banks</v-list-item-title>
+            <v-list-item-subtitle
+              >Access to deep liquidity and a broad range of liquidity
+              providers.</v-list-item-subtitle
+            >
+          </v-list-item-content>
+        </v-list-item>
+      </v-col>
+      <v-col cols="12" sm="12" md="4">
+        <v-list-item>
+          <v-list-item-avatar tile>
+            <img src="/why/4.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title> Fast Execution</v-list-item-title>
+            <v-list-item-subtitle
+              >Execution At Best Available Price With Low
+              Latency.</v-list-item-subtitle
+            >
+          </v-list-item-content>
+        </v-list-item>
+      </v-col>
+      <v-col cols="12" sm="12" md="4">
+        <v-list-item>
+          <v-list-item-avatar tile>
+            <img src="/why/5.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>Matched Principle ECN Broker</v-list-item-title>
+            <v-list-item-subtitle
+              >We send all trades through to the market so have no conflict of
+              interest with our clients.</v-list-item-subtitle
+            >
+          </v-list-item-content>
+        </v-list-item>
+      </v-col>
+      <v-col cols="12" sm="12" md="4">
+        <v-list-item>
+          <v-list-item-avatar tile>
+            <img src="/why/1.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>Variety Of Products</v-list-item-title>
+            <v-list-item-subtitle
+              >Access to Different Assets Such as Equities, Forex, Metals,
+              etc...</v-list-item-subtitle
+            >
+          </v-list-item-content>
+        </v-list-item>
+      </v-col>
+      <v-col cols="12" sm="12" md="4">
+        <v-list-item>
+          <v-list-item-avatar tile>
+            <img src="/why/6.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>FCA UK Regulated</v-list-item-title>
+            <v-list-item-subtitle
+              >Fully Authorised and Regulated by the FCA in the United
+              Kingdom.</v-list-item-subtitle
+            >
+          </v-list-item-content>
+        </v-list-item>
+      </v-col>
+    </v-row>
     <home-news class="mb-3" />
     <home-prices />
     <bottom-links class="mt-5" />
