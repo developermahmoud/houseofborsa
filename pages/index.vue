@@ -279,6 +279,49 @@
         </v-list-item>
       </div>
     </v-img>
+    <h3 class="mb-3 text-center">Start Trading in 4 Steps</h3>
+    <v-row>
+      <v-col cols="12" md="3" sm="12">
+        <div class="text-center">
+          <div style="height: 89px">
+            <img src="/reg/register.png" />
+          </div>
+          <h3 class="primary--text">Register</h3>
+          <p class="caption">Apply for your ICM Direct</p>
+        </div>
+      </v-col>
+      <v-col cols="12" md="3" sm="12">
+        <div class="text-center">
+          <div style="height: 89px">
+            <img src="/reg/verify.png" />
+          </div>
+          <h3 class="primary--text">Verify</h3>
+          <p class="caption">
+            Submit your ID and Proof of Residency and get verified
+          </p>
+        </div>
+      </v-col>
+      <v-col cols="12" md="3" sm="12">
+        <div class="text-center">
+          <div style="height: 89px">
+            <img src="/reg/fund.png" />
+          </div>
+          <h3 class="primary--text">Fund</h3>
+          <p class="caption">Deposit Funds in your live account</p>
+        </div>
+      </v-col>
+      <v-col cols="12" md="3" sm="12">
+        <div class="text-center">
+          <div style="height: 89px">
+            <img src="/reg/trade.png" />
+          </div>
+          <h3 class="primary--text">Trade</h3>
+          <p class="caption">
+            Enjoy being a part of the global financial markets
+          </p>
+        </div>
+      </v-col>
+    </v-row>
     <home-news class="mb-3" />
     <home-prices />
     <bottom-links class="mt-5" />
