@@ -1,22 +1,22 @@
 <template>
   <div>
-    <v-row>
+    <v-row no-gutters>
       <v-col>
-        <v-card class="secondary" active-class="primary">
-          <h6 class="pa-2 pb-0 mb-0">
+        <v-card class="secondary" tile flat active-class="primary">
+          <h6 class="pa-2 pb-0 mb-0" style="font-size: 10px;">
             <v-icon x-small class="mr-1" color="purple"
               >mdi-checkbox-blank-circle</v-icon
             >
             DOW JONES
           </h6>
           <div class="pa-2">
-            <h4>33,544,34</h4>
+            <h4>33,54,34</h4>
             <strong class="green--text">+5.82%</strong>
           </div>
         </v-card>
       </v-col>
       <v-col>
-        <v-card class="secondary" active-class="primary">
+        <v-card class="secondary mx-2" flat tile active-class="primary">
           <h6 class="pa-2 pb-0 mb-0">
             <v-icon x-small class="mr-1" color="cyan"
               >mdi-checkbox-blank-circle</v-icon
@@ -24,13 +24,13 @@
             S&P 500
           </h6>
           <div class="pa-2">
-            <h4>42,655,34</h4>
+            <h4>42,65,34</h4>
             <strong class="green--text">+2.14%</strong>
           </div>
         </v-card>
       </v-col>
       <v-col>
-        <v-card class="secondary" active-class="primary">
+        <v-card class="secondary" tile flat active-class="primary">
           <h6 class="pa-2 pb-0 mb-0">
             <v-icon x-small class="mr-1" color="orange"
               >mdi-checkbox-blank-circle</v-icon
@@ -38,7 +38,7 @@
             NASDAQ
           </h6>
           <div class="pa-2">
-            <h4>12,984,34</h4>
+            <h4>12,84,34</h4>
             <strong class="green--text">+2.92%</strong>
           </div>
         </v-card>
@@ -192,9 +192,18 @@
 
               </td>
               <td>
-                <v-chip label small :color="item.color">
-                  1.12485
-                </v-chip>
+                <div style="width:120px;">
+                  <div class="text-center">
+                    <v-chip label small :color="item.color">
+                      1.12485
+                    </v-chip>
+                  </div>
+
+                  <div class="caption grey--text mt-2">
+                    L: 1.4333. H: 1.4555
+                  </div>
+                </div>
+
               </td>
             </tr>
           </tbody>
