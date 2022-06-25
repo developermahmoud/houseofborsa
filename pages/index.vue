@@ -16,14 +16,11 @@
 
     <home-trade class="mb-3" />
     <h3 class="mb-2">Financial Markets</h3>
-    <div class="caption">LICENSED AND REGULATED by the FCA UK</div>
     <h3 class="primary--text">
       Invest weth Multi-Asset global Investment Boutique
     </h3>
-    <p class="body-2">
-      One investment account for trading US shares ,ETFs ,forex, cryptos,
-      indices, & commodity CFDs globally. Easily open accounts to from any
-      device with tight spreads and low-to-zero commission.
+    <p class="caption">
+      One investment account for trading globally. Easily open accounts to from any device with tight spreads and low-to-zero commission.
     </p>
     <div class="mb-6">
       <v-row>
