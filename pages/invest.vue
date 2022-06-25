@@ -141,9 +141,9 @@
           <thead>
             <tr>
               <th>Market</th>
+              <th>Chart</th>
               <th>Sell</th>
               <th>Buy</th>
-              <th>Change%</th>
             </tr>
           </thead>
           <tbody>
@@ -169,6 +169,28 @@
                 <div class="grey--text" style="font-size: 12px; width: 140px">
                   {{ item.subtitle }}
                 </div>
+                <div :class="`${item.color}--text`">
+                  {{
+                    item.change
+                  }}
+                </div>
+              </td>
+              <td>
+                <div style="width: 70px;">
+                  <v-sparkline
+                    :color="item.color"
+                    :value="[0, 2, 5, 9, 5, 10, 3, 5, 0, 0, 1, 8, 2, 9, 0]"
+                    smooth="10"
+                    padding="8"
+                    line-width="5"
+                    :stroke-linecap="'round'"
+                    :fill="false"
+                    :type="'trend'"
+                    :auto-line-width="false"
+                    auto-draw
+                  ></v-sparkline>
+                </div>
+
               </td>
               <td>
                 1.12485
@@ -179,11 +201,6 @@
                 1.12493
                 <br />
                 <div class="grey--text caption">High-1.6422</div>
-              </td>
-              <td>
-                <v-chip label  style="width: 57px" :class="item.color">{{
-                  item.change
-                }}</v-chip>
               </td>
             </tr>
           </tbody>
