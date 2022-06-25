@@ -142,8 +142,7 @@
             <tr>
               <th>Market</th>
               <th>Chart</th>
-              <th>Sell</th>
-              <th>Buy</th>
+              <th>List Price</th>
             </tr>
           </thead>
           <tbody>
@@ -193,14 +192,9 @@
 
               </td>
               <td>
-                1.12485
-                <br />
-                <div class="grey--text caption">Low-1.4222</div>
-              </td>
-              <td>
-                1.12493
-                <br />
-                <div class="grey--text caption">High-1.6422</div>
+                <v-chip label small :color="item.color">
+                  1.12485
+                </v-chip>
               </td>
             </tr>
           </tbody>
