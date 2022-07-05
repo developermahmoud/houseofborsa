@@ -30,10 +30,9 @@
               </span>
             </v-list-item-subtitle>
           </v-list-item-content>
-          <v-list-item-action-text>
-            <v-icon color="green">mdi-chevron-up</v-icon> 109.23<br />
-            <v-icon color="red">mdi-chevron-down</v-icon>
-            109.24</v-list-item-action-text
+          <v-list-item-action
+            >$172.44<br />
+            <span class="green--text">8.35%</span></v-list-item-action
           >
         </v-list-item>
         <v-tabs
