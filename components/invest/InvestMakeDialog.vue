@@ -22,20 +22,18 @@
                 >mdi-information-outline</v-icon
               ></v-list-item-title
             >
+            <v-list-item-subtitle> Apple inc </v-list-item-subtitle>
             <v-list-item-subtitle>
-              Apple inc
-            </v-list-item-subtitle>
-            <v-list-item-subtitle
-              >
               <v-icon small>mdi-clock</v-icon>
               <span class="grey--text" style="font-size:12px;'"
                 >MARKET OPEN
               </span>
             </v-list-item-subtitle>
           </v-list-item-content>
-          <v-list-item-action
-            >$172.44<br />
-            <span class="green--text">8.35%</span></v-list-item-action
+          <v-list-item-action-text>
+            <v-icon color="green">mdi-chevron-up</v-icon> 109.23<br />
+            <v-icon color="red">mdi-chevron-down</v-icon>
+            109.24</v-list-item-action-text
           >
         </v-list-item>
         <v-tabs
@@ -72,11 +70,17 @@
                 <div id="tradingview_2e912"></div>
               </div>
             </div>
-            <div class="text-center my-5 mx-2" >
-              <v-btn block text large class="blue" @click="
+            <div class="text-center my-5 mx-2">
+              <v-btn
+                block
+                text
+                large
+                class="blue"
+                @click="
                   buyDialog = true;
                   typeDialog = 'sell';
-                ">
+                "
+              >
                 <v-icon>mdi-sync-alert</v-icon>
                 TRADE
               </v-btn>
@@ -140,5 +144,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
