@@ -52,7 +52,7 @@
         <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
         <span>215</span>
         <br />
-        <span style="font-size: 12px" class="grey--text">PIRTFOLIO</span>
+        <span style="font-size: 12px" class="grey--text">OPEN ORDER</span>
       </div>
       
       <div
