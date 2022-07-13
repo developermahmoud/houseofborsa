@@ -50,6 +50,12 @@
         </v-list-item-action-text>
       </v-list-item>
       <div class="d-flex align-center justify-space-between mb-3">
+         <div @click="showIdeas=false" class="text-center body-2" style="cursor: pointer">
+          <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
+          <span>215</span>
+          <br />
+          <span style="font-size: 12px" class="grey--text">PORTFOLIO</span>
+        </div>
         <div
           class="text-center body-2"
           style="cursor: pointer"
@@ -60,12 +66,7 @@
           <br />
           <span style="font-size: 12px" class="grey--text">IDEAS</span>
         </div>
-        <div @click="showIdeas=false" class="text-center body-2" style="cursor: pointer">
-          <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
-          <span>215</span>
-          <br />
-          <span style="font-size: 12px" class="grey--text">PORTFOLIO</span>
-        </div>
+       
 
         <div
           style="cursor: pointer"
