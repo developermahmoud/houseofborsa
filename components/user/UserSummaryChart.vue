@@ -243,10 +243,9 @@
               </div>
               <div v-else>
                 2022.01.11 14:18
-                <div
-                  v-if="tab == 'open'"
-                  class="d-flex justify-space-between my-1"
-                >
+                <div class="d-flex justify-space-between my-1 mt-3">
+                  <div>S/L:</div>
+                  <div>20.2</div>
                   <div>T/P:</div>
                   <div>0.24000</div>
                 </div>
