@@ -5,6 +5,10 @@
         ><v-icon size="20">fa-question-circle</v-icon></nuxt-link
       >
       <v-spacer></v-spacer>
+      <div style="font-size: 14px">
+        <strong class="body-1">$9238.31</strong>
+      </div>
+      <v-spacer></v-spacer>
       <nuxt-link class="text-decoration-none" link to="/messages"
         ><v-icon size="18">fa-envelope-open-text</v-icon></nuxt-link
       >
