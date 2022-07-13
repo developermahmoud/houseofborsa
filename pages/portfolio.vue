@@ -56,12 +56,9 @@
           >
         </div>
         <v-spacer></v-spacer>
-        <v-icon
-          @click="summaryChartDialog = !summaryChartDialog"
-          v-text="
-            `${summaryChartDialog ? 'mdi-chart-pie' : 'mdi-chart-bar-stacked'}`
-          "
-        ></v-icon>
+           <v-icon  @click="dialog = true"
+            >mdi-wallet-plus</v-icon
+          >
       </v-card-title>
       <v-card-text class="text-center white--text px-0">
         <div class="py-15 circlePortfolio mx-auto mt-5">
@@ -124,9 +121,14 @@
               </v-list-item>
             </v-list>
           </v-menu>
-          <v-icon color="primary" size="16" @click="dialog = true"
-            >mdi-wallet-plus</v-icon
-          >
+          <v-icon
+          color="primary" size="16"
+          @click="summaryChartDialog = !summaryChartDialog"
+          v-text="
+            `${summaryChartDialog ? 'mdi-chart-pie' : 'mdi-chart-bar-stacked'}`
+          "
+        ></v-icon>
+         
         </div>
       </v-card-text>
     </v-card>
