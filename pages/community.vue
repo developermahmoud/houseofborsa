@@ -11,7 +11,7 @@
     </div>
     <v-slide-group class="mb-5" :show-arrows="false">
       <v-slide-item v-for="n in 15" :key="n">
-        <v-card tile class="background mr-2" width="85" falt outlined link to="/john-profile">
+        <v-card tile class="background mr-2" width="85" falt outlined link to="/profile">
           <v-responsive class="text-center">
             <v-avatar>
               <v-img src="/avatar.jpg" />
@@ -33,7 +33,7 @@
     <v-slide-group class="mb-5" :show-arrows="false">
       <v-slide-item v-for="n in 15" :key="n">
         <v-card tile class="secondary mr-2" width="230" falt outlined>
-          <v-list-item link to="/john-profile">
+          <v-list-item link to="/profile">
             <v-list-item-action class="mr-4">
               <v-badge overlap bottom offset-y="19" color="transparent" right>
                 <template v-slot:badge>
