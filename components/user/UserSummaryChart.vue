@@ -142,16 +142,16 @@
       </v-row> -->
     </div>
     <div class="mb-5" v-if="!showPortfolio">
-      <h4>Investing</h4>
-      <h3>$25,143,55</h3>
+      <h4 v-if="false">Investing</h4>
+      <h3 v-if="false">$25,143,55</h3>
       <div>
         <span class="green--text"
           ><v-icon color="green" small>mdi-arrow-top-right</v-icon>
-          $1,215.51(4.88%)
+          <span v-if="false">$1,215.51</span>(4.88%)
         </span>
         <span>Past Week</span>
       </div>
-      <v-img src="/WhatsApp Image 2022-05-08 at 5.05.21 AM.jpeg"></v-img>
+      <v-img class="mt-2" src="/WhatsApp Image 2022-05-08 at 5.05.21 AM.jpeg"></v-img>
     </div>
     <div v-if="showPortfolio">
       <v-card flat class="background" tile>
@@ -478,104 +478,104 @@
           </v-list-item-action-text>
         </v-list-item>
       </v-list>
+      <v-img src="/chart.jpeg" class="rounded-lg mb-5" />
+      <v-simple-table class="secondary">
+        <template v-slot:default>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Jan</th>
+              <th>Feb</th>
+              <th>Mar</th>
+              <th>Apr</th>
+              <th>May</th>
+              <th>Jun</th>
+              <th>Jul</th>
+              <th>Aug</th>
+              <th>Sep</th>
+              <th>Oct</th>
+              <th>Nov</th>
+              <th>Dec</th>
+              <th>YTD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2019</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>3.88</td>
+              <td>0.00%</td>
+            </tr>
+            <tr>
+              <td>2020</td>
+              <td>13.12</td>
+              <td>5.95</td>
+              <td>10.52</td>
+              <td>10.55</td>
+              <td>15.25</td>
+              <td>15.123</td>
+              <td>18.25</td>
+              <td>17.55</td>
+              <td>19.2</td>
+              <td class="primary--text">1.55</td>
+              <td class="primary--text">55.455</td>
+              <td class="primary--text">455.55</td>
+              <td class="primary--text">11.43%</td>
+            </tr>
+            <tr>
+              <td>2021</td>
+              <td class="primary--text">15.25</td>
+              <td class="primary--text">152.22</td>
+              <td class="primary--text">175.25</td>
+              <td class="primary--text">652.25</td>
+              <td class="primary--text">445.3</td>
+              <td class="primary--text">12.33</td>
+              <td class="primary--text">14.5</td>
+              <td class="primary--text">178.25</td>
+              <td class="primary--text">12.55</td>
+              <td class="primary--text">17.22</td>
+              <td class="primary--text">123.55</td>
+              <td class="primary--text">1.22</td>
+              <td class="primary--text">0.00%</td>
+            </tr>
+            <tr>
+              <td>2022</td>
+              <td class="primary--text">7.33</td>
+              <td class="primary--text">5.17</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="primary--text">12.98%</td>
+            </tr>
+            <tr>
+              <td colspan="12">
+                <v-icon small>mdi-alert-box</v-icon> Trading style has changed.
+                Part of history is not included in statistics
+              </td>
+              <td>Total:</td>
+              <td class="primary--text">141.10%</td>
+            </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
     </div>
-    <v-img src="/chart.jpeg" class="rounded-lg mb-5" />
-    <v-simple-table class="secondary">
-      <template v-slot:default>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Jan</th>
-            <th>Feb</th>
-            <th>Mar</th>
-            <th>Apr</th>
-            <th>May</th>
-            <th>Jun</th>
-            <th>Jul</th>
-            <th>Aug</th>
-            <th>Sep</th>
-            <th>Oct</th>
-            <th>Nov</th>
-            <th>Dec</th>
-            <th>YTD</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2019</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>3.88</td>
-            <td>0.00%</td>
-          </tr>
-          <tr>
-            <td>2020</td>
-            <td>13.12</td>
-            <td>5.95</td>
-            <td>10.52</td>
-            <td>10.55</td>
-            <td>15.25</td>
-            <td>15.123</td>
-            <td>18.25</td>
-            <td>17.55</td>
-            <td>19.2</td>
-            <td class="primary--text">1.55</td>
-            <td class="primary--text">55.455</td>
-            <td class="primary--text">455.55</td>
-            <td class="primary--text">11.43%</td>
-          </tr>
-          <tr>
-            <td>2021</td>
-            <td class="primary--text">15.25</td>
-            <td class="primary--text">152.22</td>
-            <td class="primary--text">175.25</td>
-            <td class="primary--text">652.25</td>
-            <td class="primary--text">445.3</td>
-            <td class="primary--text">12.33</td>
-            <td class="primary--text">14.5</td>
-            <td class="primary--text">178.25</td>
-            <td class="primary--text">12.55</td>
-            <td class="primary--text">17.22</td>
-            <td class="primary--text">123.55</td>
-            <td class="primary--text">1.22</td>
-            <td class="primary--text">0.00%</td>
-          </tr>
-          <tr>
-            <td>2022</td>
-            <td class="primary--text">7.33</td>
-            <td class="primary--text">5.17</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="primary--text">12.98%</td>
-          </tr>
-          <tr>
-            <td colspan="12">
-              <v-icon small>mdi-alert-box</v-icon> Trading style has changed.
-              Part of history is not included in statistics
-            </td>
-            <td>Total:</td>
-            <td class="primary--text">141.10%</td>
-          </tr>
-        </tbody>
-      </template>
-    </v-simple-table>
     <v-dialog max-width="700" v-model="showDetails">
       <v-card class="secondary">
         <v-card-title class="justify-center">Show Details</v-card-title>
