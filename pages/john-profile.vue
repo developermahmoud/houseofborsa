@@ -29,8 +29,10 @@
           London</v-list-item-subtitle
         >
         <v-list-item-subtitle
-          ><span style="font-size: 12px">Followers equity</span
-          > <span style="font-size: 12px" class="green--text">215.252$</span></v-list-item-subtitle
+          ><span style="font-size: 12px">Followers equity</span>
+          <span style="font-size: 12px" class="green--text"
+            >215.252$</span
+          ></v-list-item-subtitle
         >
       </v-list-item-content>
       <v-list-item-action-text>
@@ -48,13 +50,13 @@
         <br />
         <span style="font-size: 12px" class="grey--text">IDEAS</span>
       </div>
-      <div class="text-center body-2" style="cursor: pointer">
+      <div @click="showIdeas=false" class="text-center body-2" style="cursor: pointer">
         <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
         <span>215</span>
         <br />
         <span style="font-size: 12px" class="grey--text">PORTFOLIO</span>
       </div>
-      
+
       <div
         style="cursor: pointer"
         class="text-center body-2"
