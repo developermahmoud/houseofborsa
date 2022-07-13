@@ -1,88 +1,102 @@
 <template>
   <div>
-    <v-list-item three-line class="px-0">
-      <v-list-item-action class="mr-4">
-        <div class="avatarDiv">
-          <v-badge overlap bottom offset-y="25" color="cyan" left>
-            <template v-slot:badge>
-              <v-icon class="cyan">mdi-check-decagram</v-icon>
-            </template>
-            <v-avatar size="55">
-              <v-img src="/avatar.jpg"></v-img>
-            </v-avatar>
-          </v-badge>
-          <v-icon small color="black" class="iconAbsolute">mdi-camera</v-icon>
+    <v-app-bar fixed class="background" flat app>
+      <nuxt-link class="text-decoration-none" link to="/support"
+        ><v-icon size="20">fa-question-circle</v-icon></nuxt-link
+      >
+      <v-spacer></v-spacer>
+      <nuxt-link class="text-decoration-none" link to="/messages"
+        ><v-icon size="18">fa-envelope-open-text</v-icon></nuxt-link
+      >
+    </v-app-bar>
+    <v-container>
+      <v-list-item three-line class="px-0">
+        <v-list-item-action class="mr-4">
+          <div class="avatarDiv">
+            <v-badge overlap bottom offset-y="25" color="cyan" left>
+              <template v-slot:badge>
+                <v-icon class="cyan">mdi-check-decagram</v-icon>
+              </template>
+              <v-avatar size="55">
+                <v-img src="/avatar.jpg"></v-img>
+              </v-avatar>
+            </v-badge>
+            <v-icon small color="black" class="iconAbsolute">mdi-camera</v-icon>
+          </div>
+        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title
+            ><v-icon small color="green">mdi-circle</v-icon> Mahmoud,
+            24</v-list-item-title
+          >
+          <v-list-item-subtitle>
+            <v-chip x-small label color="primary"
+              >Platinum</v-chip
+            ></v-list-item-subtitle
+          >
+          <v-list-item-subtitle
+            ><v-icon small>mdi-map-marker</v-icon> United Kingdom,
+            London</v-list-item-subtitle
+          >
+          <v-list-item-subtitle
+            ><span style="font-size: 12px">Followers equity</span>
+            <span style="font-size: 12px" class="green--text"
+              >215.252$</span
+            ></v-list-item-subtitle
+          >
+        </v-list-item-content>
+        <v-list-item-action-text>
+          <v-icon>mdi-account-plus</v-icon>
+        </v-list-item-action-text>
+      </v-list-item>
+      <div class="d-flex align-center justify-space-between mb-3">
+        <div
+          class="text-center body-2"
+          style="cursor: pointer"
+          @click="showIdeas = !showIdeas"
+        >
+          <v-icon color="primary" small>mdi-head-lightbulb</v-icon>
+          <span>120</span>
+          <br />
+          <span style="font-size: 12px" class="grey--text">IDEAS</span>
         </div>
-      </v-list-item-action>
-      <v-list-item-content>
-        <v-list-item-title
-          ><v-icon small color="green">mdi-circle</v-icon> Mahmoud,
-          24</v-list-item-title
-        >
-        <v-list-item-subtitle>
-          <v-chip x-small label color="primary"
-            >Platinum</v-chip
-          ></v-list-item-subtitle
-        >
-        <v-list-item-subtitle
-          ><v-icon small>mdi-map-marker</v-icon> United Kingdom,
-          London</v-list-item-subtitle
-        >
-        <v-list-item-subtitle
-          ><span style="font-size: 12px">Followers equity</span
-          > <span style="font-size: 12px" class="green--text">215.252$</span></v-list-item-subtitle
-        >
-      </v-list-item-content>
-      <v-list-item-action-text>
-        <v-icon>mdi-account-plus</v-icon>
-      </v-list-item-action-text>
-    </v-list-item>
-    <div class="d-flex align-center justify-space-between mb-3">
-      <div
-        class="text-center body-2"
-        style="cursor: pointer"
-        @click="showIdeas = !showIdeas"
-      >
-        <v-icon color="primary" small>mdi-head-lightbulb</v-icon>
-        <span>120</span>
-        <br />
-        <span style="font-size: 12px" class="grey--text">IDEAS</span>
-      </div>
-      <div class="text-center body-2" style="cursor: pointer">
-        <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
-        <span>215</span>
-        <br />
-        <span style="font-size: 12px" class="grey--text">PORTFOLIO</span>
-      </div>
-      
-      <div
-        style="cursor: pointer"
-        class="text-center body-2"
-        @click="followingDialog = true"
-      >
-        <v-icon color="primary" small>mdi-account-arrow-right</v-icon>
-        <span>20k</span>
-        <br />
-        <span style="font-size: 12px" class="grey--text">VISITORS</span>
-      </div>
+        <div @click="showIdeas=false" class="text-center body-2" style="cursor: pointer">
+          <v-icon color="primary" small>mdi-chart-bar-stacked</v-icon>
+          <span>215</span>
+          <br />
+          <span style="font-size: 12px" class="grey--text">PORTFOLIO</span>
+        </div>
 
-      <div
-        style="cursor: pointer"
-        class="text-center body-2"
-        @click="followingDialog = true"
-      >
-        <v-icon color="primary" small>mdi-account-arrow-left</v-icon>
-        <span>100</span>
-        <br />
-        <span style="font-size: 12px" class="grey--text">FOLLOWERS</span>
+        <div
+          style="cursor: pointer"
+          class="text-center body-2"
+          @click="followingDialog = true"
+        >
+          <v-icon color="primary" small>mdi-account-arrow-right</v-icon>
+          <span>20k</span>
+          <br />
+          <span style="font-size: 12px" class="grey--text">VISITORS</span>
+        </div>
+
+        <div
+          style="cursor: pointer"
+          class="text-center body-2"
+          @click="followingDialog = true"
+        >
+          <v-icon color="primary" small>mdi-account-arrow-left</v-icon>
+          <span>100</span>
+          <br />
+          <span style="font-size: 12px" class="grey--text">FOLLOWERS</span>
+        </div>
       </div>
-    </div>
-    <template v-if="showIdeas">
-      <user-idias />
-    </template>
-    <template v-else>
-      <UserSummaryChart v-if="showSummary" />
-    </template>
+      <template v-if="showIdeas">
+        <user-idias />
+      </template>
+      <template v-else>
+        <UserSummaryChart v-if="showSummary" />
+      </template>
+    </v-container>
+
     <user-dialog-following
       v-if="followingDialog"
       :dialog="followingDialog"
@@ -112,6 +126,7 @@ import UserDialogsTradingPlatform from "../components/user/dialogs/UserDialogsTr
 import UserIdias from "../components/user/dialogs/UserIdias.vue";
 import UserSummaryChart from "../components/user/UserSummaryChart";
 export default {
+  layout: "internal",
   components: {
     UserSummaryChart,
     UserDialogsMyAccount,
