@@ -64,7 +64,10 @@
           </v-list>
         </v-menu>
         <v-btn icon @click="showPortfolio = !showPortfolio">
-          <v-icon color="primary">mdi-chart-pie</v-icon>
+          <v-icon color="primary">
+            <template v-if="showPortfolio">mdi-chart-pie</template>
+            <template v-else>mdi-finance</template>
+          </v-icon>
         </v-btn>
       </div>
     </v-card-text>
@@ -222,31 +225,7 @@
               30.15</v-list-item-subtitle
             >
             <template v-if="item.is_open">
-              <div v-if="tab == 'closed'">
-                2022.01.11 14:18
-                <div
-                  class="d-flex justify-space-between grey--text"
-                  style="font-size: 11px"
-                >
-                  <div>
-                    S/L:
-                    <br />
-                    Open
-                    <br />
-                    ID
-                  </div>
-                  <div>
-                    -
-                    <br />
-                    2021.10.26 16:46:11
-                    <br />
-                    #84158208
-                  </div>
-                  <div>T/P:</div>
-                  <div>-</div>
-                </div>
-              </div>
-              <div v-else-if="tab == 'pending'">
+              <div v-if="tab == 'pending'">
                 2022.01.11 14:18
                 <div class="d-flex justify-space-between my-1 mt-3">
                   <div style="width: 50px">S/L:</div>
@@ -264,37 +243,12 @@
               </div>
               <div v-else>
                 2022.01.11 14:18
-                <div class="d-flex justify-space-between my-1 mt-3">
-                  <div>S/L:</div>
-                  <div v-if="tab == 'pending'">T/P:</div>
-                  <div v-if="tab != 'pending'">Swap</div>
-                  <div v-if="tab != 'pending'">0.24$</div>
-                </div>
-                <v-divider></v-divider>
-                <div
-                  class="d-flex justify-space-between my-1"
-                  v-if="['closed'].includes(tab)"
-                >
-                  <div>T/P:</div>
-                  <div v-if="tab != 'pending'">Commission</div>
-                  <div v-if="tab != 'pending'">-0.00$</div>
-                </div>
-                <v-divider></v-divider>
                 <div
                   v-if="tab == 'open'"
                   class="d-flex justify-space-between my-1"
                 >
                   <div>T/P:</div>
-                  <div>-</div>
-                  <div>ID: 47984555</div>
-                </div>
-                <div
-                  v-if="tab == 'pending'"
-                  class="d-flex justify-space-between my-1"
-                >
-                  <div>ID:</div>
-                  <div>-</div>
-                  <div>#47984555</div>
+                  <div>0.24000</div>
                 </div>
               </div>
             </template>
