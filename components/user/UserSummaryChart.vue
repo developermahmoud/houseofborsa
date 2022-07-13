@@ -1,253 +1,74 @@
 <template>
   <div>
-    <div class="summaryCard rounded-lg mb-5">
-      <div class="d-flex justify-space-between align-center mb-2">
-        <h4>Performance | last 12 Month</h4>
-        <v-btn icon @click="showPortfolio = !showPortfolio">
-          <v-icon color="black">mdi-chart-pie</v-icon>
-        </v-btn>
-      </div>
-      <div class="d-flex justify-space-between mb-2">
-        <div class="black rounded-lg px-2 py-4 text-center" style="width: 100%">
-          <h6>
-            RETURN
-            <v-icon @click="showDetails = !showDetails" small
-              >mdi-information</v-icon
+    <v-card-text class="text-center white--text px-0">
+      <div class="py-16 circlePortfolio mx-auto">
+        <div v-if="$nuxt.$route.name != 'profile'">
+          <div class="d-flex align-center justify-center">
+            <v-icon class="" small @click="showMargin = !showMargin"
+              >mdi-arrow-expand</v-icon
             >
-          </h6>
-          <strong class="green--text">+20%</strong>
-        </div>
-        <div
-          class="black rounded-lg mx-2 px-2 py-4 text-center"
-          style="width: 100%"
-        >
-          <h6>
-            MaxDD
-            <v-icon @click="showDetails = !showDetails" small
-              >mdi-information</v-icon
-            >
-          </h6>
-          <strong class="red--text">-16%</strong>
-        </div>
-        <div class="black rounded-lg px-2 py-4 text-center" style="width: 100%">
-          <h6>
-            Risk Level
-            <v-icon @click="showDetails = !showDetails" small
-              >mdi-information</v-icon
-            >
-          </h6>
-          <strong class="white--text">6</strong>
-        </div>
-      </div>
-      <div class="d-flex justify-space-between mb-2">
-        <div class="black rounded-lg px-2 py-4 text-center" style="width: 100%">
-          <h6>
-            AVG Profit
-            <v-icon @click="showDetails = !showDetails" small
-              >mdi-information</v-icon
-            >
-          </h6>
-          <strong class="green--text"
-            ><v-icon color="green" small>mdi-arrow-up</v-icon>98.2%</strong
-          >
-        </div>
-        <div
-          class="black rounded-lg mx-2 px-2 py-4 text-center"
-          style="width: 100%"
-        >
-          <h6>
-            AVG Loss
-            <v-icon @click="showDetails = !showDetails" small
-              >mdi-information</v-icon
-            >
-          </h6>
-          <strong class="red--text"
-            ><v-icon color="red" small>mdi-arrow-down</v-icon>14.4%</strong
-          >
-        </div>
-        <div class="black rounded-lg px-2 py-4 text-center" style="width: 100%">
-          <h6>
-            Total Trades
-            <v-icon @click="showDetails = !showDetails" small
-              >mdi-information</v-icon
-            >
-          </h6>
-          <strong class="white--text">50</strong>
-        </div>
-      </div>
-      
-      <!-- <v-row v-if="!showPortfolio" no-gutters>
-        <v-col cols="12" md="6" sm="12">
-          <v-chart
-            style="width: 95%"
-            class="chart text-center"
-            :option="option"
-          />
-        </v-col>
-        <v-col cols="12" md="6" sm="12">
-          <v-list dense class="pa-0 transparent mb-2">
-            <v-list-item style="min-height: 20px; height: 35px">
-              <v-list-item-icon>
-                <v-icon color="#ed6d77">mdi-square-rounded</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title class="body-1">Stock</v-list-item-title>
-              <v-list-item-action class="black--text">10%</v-list-item-action>
-            </v-list-item>
-            <v-list-item style="min-height: 20px; height: 35px">
-              <v-list-item-icon>
-                <v-icon color="#4992ff">mdi-square-rounded</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title class="body-1">ETFs</v-list-item-title>
-              <v-list-item-action class="black--text">35%</v-list-item-action>
-            </v-list-item>
-            <v-list-item style="min-height: 20px; height: 35px">
-              <v-list-item-icon>
-                <v-icon color="#7cffb2">mdi-square-rounded</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title class="body-1"
-                >Cryptocurrency</v-list-item-title
+            <div class="mx-1">
+              <span class="text-h6">$</span>
+              <strong style="font-size: 24px" :class="isBlur ? 'blur-text' : ''"
+                >9238.31</strong
               >
-              <v-list-item-action class="black--text">35%</v-list-item-action>
+            </div>
+            <v-icon small @click="isBlur = !isBlur">{{
+              isBlur ? "mdi-eye-off-outline" : "mdi-eye"
+            }}</v-icon>
+          </div>
+        </div>
+        <div class="text-center mt-3 green--text">
+          <h3 v-if="$nuxt.$route.name == 'profile'" class="white--text">
+            Portfolio P/L ( % )
+          </h3>
+          <span style="font-size: 15px">
+            <template v-if="$nuxt.$route.name != 'profile'">P/L</template>
+            (<span class="">22.1%</span>)</span
+          ><v-icon class="pa-0 mb-1" color="green">mdi-arrow-up-thin</v-icon>
+          <div>
+            <v-icon size="16" @click="showChart = true"
+              >mdi-information-outline</v-icon
+            >
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <v-menu offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn small plain text v-bind="attrs" v-on="on">
+              <v-icon>mdi-chevron-down</v-icon> {{ tab }} Order
+            </v-btn>
+          </template>
+          <v-list class="py-0 secondary" dense>
+            <v-list-item
+              :class="`${tab === 'open' ? 'primary' : ''}`"
+              @click="tab = 'open'"
+            >
+              <v-list-item-title>Open</v-list-item-title>
             </v-list-item>
-            <v-list-item style="min-height: 20px; height: 35px">
-              <v-list-item-icon>
-                <v-icon color="#f9dd60">mdi-square-rounded</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title class="body-1">Indices</v-list-item-title>
-              <v-list-item-action class="black--text">20%</v-list-item-action>
+            <v-divider></v-divider>
+            <v-list-item
+              :class="`${tab === 'pending' ? 'primary' : ''}`"
+              @click="tab = 'pending'"
+            >
+              <v-list-item-title>Pending</v-list-item-title>
             </v-list-item>
-            <v-list-item style="min-height: 20px; height: 35px">
-              <v-list-item-icon>
-                <v-icon color="black">mdi-square-rounded</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title class="body-1">Commodities</v-list-item-title>
-              <v-list-item-action class="black--text">40%</v-list-item-action>
-            </v-list-item>
-            <v-list-item style="min-height: 20px; height: 35px">
-              <v-list-item-icon>
-                <v-icon color="purple">mdi-square-rounded</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title class="body-1">Metals</v-list-item-title>
-              <v-list-item-action class="black--text">30%</v-list-item-action>
-            </v-list-item>
-            <v-list-item style="min-height: 20px; height: 35px">
-              <v-list-item-icon>
-                <v-icon color="orange">mdi-square-rounded</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title class="body-1">FOREX</v-list-item-title>
-              <v-list-item-action class="black--text">50%</v-list-item-action>
+            <v-divider></v-divider>
+            <v-list-item
+              :class="`${tab === 'closed' ? 'primary' : ''}`"
+              @click="tab = 'closed'"
+            >
+              <v-list-item-title>History</v-list-item-title>
             </v-list-item>
           </v-list>
-        </v-col>
-      </v-row> -->
-    </div>
-     <div class="mb-5" v-if="!showPortfolio">
-      <h4 v-if="false">Investing</h4>
-      <h3 v-if="false">$25,143,55</h3>
-      <div>
-        <span class="green--text"><v-icon color="green" small>mdi-arrow-top-right</v-icon> 
-        <span v-if="false">$1,215.51</span>(4.88%) </span> <span>Past Week</span>
+        </v-menu>
+        <v-btn icon @click="showPortfolio = !showPortfolio">
+          <v-icon color="primary">mdi-chart-pie</v-icon>
+        </v-btn>
       </div>
-      <v-img class="mt-5" src="/WhatsApp Image 2022-05-08 at 5.05.21 AM.jpeg"></v-img>
-       <v-img src="/chart.jpeg" class="rounded-lg mb-5" />
-    <v-simple-table class="secondary">
-      <template v-slot:default>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Jan</th>
-            <th>Feb</th>
-            <th>Mar</th>
-            <th>Apr</th>
-            <th>May</th>
-            <th>Jun</th>
-            <th>Jul</th>
-            <th>Aug</th>
-            <th>Sep</th>
-            <th>Oct</th>
-            <th>Nov</th>
-            <th>Dec</th>
-            <th>YTD</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2019</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>3.88</td>
-            <td>0.00%</td>
-          </tr>
-          <tr>
-            <td>2020</td>
-            <td>13.12</td>
-            <td>5.95</td>
-            <td>10.52</td>
-            <td>10.55</td>
-            <td>15.25</td>
-            <td>15.123</td>
-            <td>18.25</td>
-            <td>17.55</td>
-            <td>19.2</td>
-            <td class="primary--text">1.55</td>
-            <td class="primary--text">55.455</td>
-            <td class="primary--text">455.55</td>
-            <td class="primary--text">11.43%</td>
-          </tr>
-          <tr>
-            <td>2021</td>
-            <td class="primary--text">15.25</td>
-            <td class="primary--text">152.22</td>
-            <td class="primary--text">175.25</td>
-            <td class="primary--text">652.25</td>
-            <td class="primary--text">445.3</td>
-            <td class="primary--text">12.33</td>
-            <td class="primary--text">14.5</td>
-            <td class="primary--text">178.25</td>
-            <td class="primary--text">12.55</td>
-            <td class="primary--text">17.22</td>
-            <td class="primary--text">123.55</td>
-            <td class="primary--text">1.22</td>
-            <td class="primary--text">0.00%</td>
-          </tr>
-          <tr>
-            <td>2022</td>
-            <td class="primary--text">7.33</td>
-            <td class="primary--text">5.17</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="primary--text">12.98%</td>
-          </tr>
-          <tr>
-            <td colspan="12">
-              <v-icon small>mdi-alert-box</v-icon> Trading style has changed.
-              Part of history is not included in statistics
-            </td>
-            <td>Total:</td>
-            <td class="primary--text">141.10%</td>
-          </tr>
-        </tbody>
-      </template>
-    </v-simple-table>
-    </div>
-    <div v-if="showPortfolio">
+    </v-card-text>
+    <template v-if="showPortfolio">
       <v-card flat class="background" tile>
         <v-card-title v-if="$nuxt.$route.name != 'profile'" class="pb-0">
           <v-btn icon @click="accountsDialog = true">
@@ -274,75 +95,6 @@
           <v-spacer></v-spacer>
           <v-icon @click="dialogWallet = true">mdi-cards</v-icon>
         </v-card-title>
-        <v-card-text class="text-center white--text px-0">
-          <div class="py-16 circlePortfolio mx-auto mt-5">
-            <div v-if="$nuxt.$route.name != 'profile'">
-              <div class="d-flex align-center justify-center">
-                <v-icon class="" small @click="showMargin = !showMargin"
-                  >mdi-arrow-expand</v-icon
-                >
-                <div class="mx-1">
-                  <span class="text-h6">$</span>
-                  <strong
-                    style="font-size: 24px"
-                    :class="isBlur ? 'blur-text' : ''"
-                    >9238.31</strong
-                  >
-                </div>
-                <v-icon small @click="isBlur = !isBlur">{{
-                  isBlur ? "mdi-eye-off-outline" : "mdi-eye"
-                }}</v-icon>
-              </div>
-            </div>
-            <div class="text-center mt-3 green--text">
-              <h3 v-if="$nuxt.$route.name == 'profile'" class="white--text">
-                Portfolio P/L ( % )
-              </h3>
-              <span style="font-size: 15px">
-                <template v-if="$nuxt.$route.name != 'profile'">P/L</template>
-                (<span class="">22.1%</span>)</span
-              ><v-icon class="pa-0 mb-1" color="green"
-                >mdi-arrow-up-thin</v-icon
-              >
-              <div>
-                <v-icon size="16" @click="showChart = true"
-                  >mdi-information-outline</v-icon
-                >
-              </div>
-            </div>
-          </div>
-          <div class="text-center mt-5">
-            <v-menu offset-y>
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn small plain text v-bind="attrs" v-on="on">
-                  <v-icon>mdi-chevron-down</v-icon> {{ tab }} Order
-                </v-btn>
-              </template>
-              <v-list class="py-0 secondary" dense>
-                <v-list-item
-                  :class="`${tab === 'open' ? 'primary' : ''}`"
-                  @click="tab = 'open'"
-                >
-                  <v-list-item-title>Open</v-list-item-title>
-                </v-list-item>
-                <v-divider></v-divider>
-                <v-list-item
-                  :class="`${tab === 'pending' ? 'primary' : ''}`"
-                  @click="tab = 'pending'"
-                >
-                  <v-list-item-title>Pending</v-list-item-title>
-                </v-list-item>
-                <v-divider></v-divider>
-                <v-list-item
-                  :class="`${tab === 'closed' ? 'primary' : ''}`"
-                  @click="tab = 'closed'"
-                >
-                  <v-list-item-title>History</v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </v-menu>
-          </div>
-        </v-card-text>
       </v-card>
       <template v-if="showMargin">
         <v-tabs-items v-model="tab" class="transparent mt-3">
@@ -572,7 +324,269 @@
           </v-list-item-action-text>
         </v-list-item>
       </v-list>
-    </div>
+    </template>
+    <template v-else>
+      <div class="summaryCard rounded-lg mb-5">
+        <div class="d-flex justify-space-between align-center mb-2">
+          <h4>Performance | last 12 Month</h4>
+        </div>
+        <div class="d-flex justify-space-between mb-2">
+          <div
+            class="black rounded-lg px-2 py-4 text-center"
+            style="width: 100%"
+          >
+            <h6>
+              RETURN
+              <v-icon @click="showDetails = !showDetails" small
+                >mdi-information</v-icon
+              >
+            </h6>
+            <strong class="green--text">+20%</strong>
+          </div>
+          <div
+            class="black rounded-lg mx-2 px-2 py-4 text-center"
+            style="width: 100%"
+          >
+            <h6>
+              MaxDD
+              <v-icon @click="showDetails = !showDetails" small
+                >mdi-information</v-icon
+              >
+            </h6>
+            <strong class="red--text">-16%</strong>
+          </div>
+          <div
+            class="black rounded-lg px-2 py-4 text-center"
+            style="width: 100%"
+          >
+            <h6>
+              Risk Level
+              <v-icon @click="showDetails = !showDetails" small
+                >mdi-information</v-icon
+              >
+            </h6>
+            <strong class="white--text">6</strong>
+          </div>
+        </div>
+        <div class="d-flex justify-space-between mb-2">
+          <div
+            class="black rounded-lg px-2 py-4 text-center"
+            style="width: 100%"
+          >
+            <h6>
+              AVG Profit
+              <v-icon @click="showDetails = !showDetails" small
+                >mdi-information</v-icon
+              >
+            </h6>
+            <strong class="green--text"
+              ><v-icon color="green" small>mdi-arrow-up</v-icon>98.2%</strong
+            >
+          </div>
+          <div
+            class="black rounded-lg mx-2 px-2 py-4 text-center"
+            style="width: 100%"
+          >
+            <h6>
+              AVG Loss
+              <v-icon @click="showDetails = !showDetails" small
+                >mdi-information</v-icon
+              >
+            </h6>
+            <strong class="red--text"
+              ><v-icon color="red" small>mdi-arrow-down</v-icon>14.4%</strong
+            >
+          </div>
+          <div
+            class="black rounded-lg px-2 py-4 text-center"
+            style="width: 100%"
+          >
+            <h6>
+              Total Trades
+              <v-icon @click="showDetails = !showDetails" small
+                >mdi-information</v-icon
+              >
+            </h6>
+            <strong class="white--text">50</strong>
+          </div>
+        </div>
+
+        <!-- <v-row v-if="!showPortfolio" no-gutters>
+        <v-col cols="12" md="6" sm="12">
+          <v-chart
+            style="width: 95%"
+            class="chart text-center"
+            :option="option"
+          />
+        </v-col>
+        <v-col cols="12" md="6" sm="12">
+          <v-list dense class="pa-0 transparent mb-2">
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="#ed6d77">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">Stock</v-list-item-title>
+              <v-list-item-action class="black--text">10%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="#4992ff">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">ETFs</v-list-item-title>
+              <v-list-item-action class="black--text">35%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="#7cffb2">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1"
+                >Cryptocurrency</v-list-item-title
+              >
+              <v-list-item-action class="black--text">35%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="#f9dd60">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">Indices</v-list-item-title>
+              <v-list-item-action class="black--text">20%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="black">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">Commodities</v-list-item-title>
+              <v-list-item-action class="black--text">40%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="purple">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">Metals</v-list-item-title>
+              <v-list-item-action class="black--text">30%</v-list-item-action>
+            </v-list-item>
+            <v-list-item style="min-height: 20px; height: 35px">
+              <v-list-item-icon>
+                <v-icon color="orange">mdi-square-rounded</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title class="body-1">FOREX</v-list-item-title>
+              <v-list-item-action class="black--text">50%</v-list-item-action>
+            </v-list-item>
+          </v-list>
+        </v-col>
+      </v-row> -->
+      </div>
+      <h4 v-if="false">Investing</h4>
+      <h3 v-if="false">$25,143,55</h3>
+      <div>
+        <span class="green--text"
+          ><v-icon color="green" small>mdi-arrow-top-right</v-icon>
+          <span v-if="false">$1,215.51</span>(4.88%)
+        </span>
+        <span>Past Week</span>
+      </div>
+      <v-img
+        class="mt-5"
+        src="/WhatsApp Image 2022-05-08 at 5.05.21 AM.jpeg"
+      ></v-img>
+      <v-img src="/chart.jpeg" class="rounded-lg my-5" />
+      <v-simple-table class="secondary">
+        <template v-slot:default>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Jan</th>
+              <th>Feb</th>
+              <th>Mar</th>
+              <th>Apr</th>
+              <th>May</th>
+              <th>Jun</th>
+              <th>Jul</th>
+              <th>Aug</th>
+              <th>Sep</th>
+              <th>Oct</th>
+              <th>Nov</th>
+              <th>Dec</th>
+              <th>YTD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2019</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>3.88</td>
+              <td>0.00%</td>
+            </tr>
+            <tr>
+              <td>2020</td>
+              <td>13.12</td>
+              <td>5.95</td>
+              <td>10.52</td>
+              <td>10.55</td>
+              <td>15.25</td>
+              <td>15.123</td>
+              <td>18.25</td>
+              <td>17.55</td>
+              <td>19.2</td>
+              <td class="primary--text">1.55</td>
+              <td class="primary--text">55.455</td>
+              <td class="primary--text">455.55</td>
+              <td class="primary--text">11.43%</td>
+            </tr>
+            <tr>
+              <td>2021</td>
+              <td class="primary--text">15.25</td>
+              <td class="primary--text">152.22</td>
+              <td class="primary--text">175.25</td>
+              <td class="primary--text">652.25</td>
+              <td class="primary--text">445.3</td>
+              <td class="primary--text">12.33</td>
+              <td class="primary--text">14.5</td>
+              <td class="primary--text">178.25</td>
+              <td class="primary--text">12.55</td>
+              <td class="primary--text">17.22</td>
+              <td class="primary--text">123.55</td>
+              <td class="primary--text">1.22</td>
+              <td class="primary--text">0.00%</td>
+            </tr>
+            <tr>
+              <td>2022</td>
+              <td class="primary--text">7.33</td>
+              <td class="primary--text">5.17</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="primary--text">12.98%</td>
+            </tr>
+            <tr>
+              <td colspan="12">
+                <v-icon small>mdi-alert-box</v-icon> Trading style has changed.
+                Part of history is not included in statistics
+              </td>
+              <td>Total:</td>
+              <td class="primary--text">141.10%</td>
+            </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
+    </template>
     <v-dialog max-width="700" v-model="showDetails">
       <v-card class="secondary">
         <v-card-title class="justify-center">Show Details</v-card-title>
